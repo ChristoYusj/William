@@ -14,13 +14,25 @@ from .extract import build_text
 from .shared import prompts
 
 
+# The model sometimes answers "german" / "ge" instead of an ISO 639-1 code
+LANG_ALIASES = {"ge": "de", "ger": "de", "deu": "de", "german": "de", "deutsch": "de",
+                "fra": "fr", "fre": "fr", "french": "fr", "francais": "fr", "français": "fr",
+                "ita": "it", "italian": "it", "italiano": "it",
+                "roh": "rm", "romansh": "rm", "rumantsch": "rm", "eng": "en", "english": "en"}
+
+
+def _lang(raw) -> str:
+    raw = str(raw or "de").strip().lower()
+    return LANG_ALIASES.get(raw, raw[:2])
+
+
 def summarize(text: str, *, model: str | None = None, with_news: bool = True) -> dict:
     p = prompts()["summarize"]
     body, truncated = (text[: prompts()["max_doc_chars"]], len(text) > prompts()["max_doc_chars"])
     out, usage = llm.chat(p["system"], p["user_template"].replace("{text}", body), max_tokens=1200, model=model)
     data = llm.parse_json(out)
     summary = str(data.get("summary") or "")
-    lang = str(data.get("language") or "de")[:2].lower()
+    lang = _lang(data.get("language"))
     topics = []
     for t in data.get("topics") or []:
         if not isinstance(t, dict) or not t.get("phrase"):

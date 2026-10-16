@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William — parliamentary affairs</title>
+<style>
+:root{
+  --bg:#f5f6f8;--card:#fff;--ink:#1b1f24;--muted:#5f6b78;--line:#e2e6eb;--soft:#eef1f4;
+  --accent:#c8102e;--accent-ink:#fff;--link:#0b57d0;--ok:#1a7f37;--warn:#9a6700;--bad:#c62828;--code:#f3f4f6;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f1216;--card:#171b21;--ink:#e6e9ed;--muted:#97a1ad;--line:#2a3038;--soft:#222831;
+  --accent:#e04558;--link:#8ab4f8;--ok:#4ac26b;--warn:#d4a72c;--bad:#ff7b72;--code:#11151a;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--link)}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.logo{width:34px;height:34px;border-radius:8px;background:var(--accent);display:grid;place-items:center}
+.logo svg{width:20px;height:20px}
+h1{font-size:22px;margin:0;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13.5px;margin:0}
+.grow{flex:1}
+.pill{font-size:12.5px;padding:4px 10px;border-radius:99px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.pill.ok::before,.pill.bad::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.pill.ok::before{background:var(--ok)}.pill.bad::before{background:var(--bad)}
+.pill.bad{color:var(--bad)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+textarea{width:100%;min-height:120px;resize:vertical;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;
+  background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.opt{display:flex;gap:8px;align-items:flex-start;cursor:pointer;user-select:none}
+.opt input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px}
+.opt small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+.opt.disabled{opacity:.55;cursor:not-allowed}
+button{font:inherit;font-size:14px;border-radius:8px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button:hover{background:var(--soft)}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+button.primary:hover{filter:brightness(1.08)}
+button:disabled{opacity:.5;cursor:default}
+.linkbtn{border:0;background:none;color:var(--link);padding:0;font-size:13px}
+.linkbtn:hover{background:none;text-decoration:underline}
+.hint{color:var(--muted);font-size:12.5px}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:22px 0 12px}
+.toolbar h2{font-size:16px;margin:0 8px 0 0}
+#results{display:grid;gap:14px}
+.doc .top{display:flex;gap:10px;align-items:flex-start}
+.doc .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:12.5px;font-weight:600;color:var(--muted)}
+.doc h3{margin:0;font-size:17px;line-height:1.35}
+.doc .url{font-size:12px;color:var(--muted);word-break:break-all}
+.state{margin-left:auto;font-size:12px;white-space:nowrap;padding:3px 9px;border-radius:99px;background:var(--soft);color:var(--muted)}
+.state.done{color:var(--ok)}.state.error{color:var(--bad)}
+.state.working::before{content:"";display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%;
+  border:2px solid currentColor;border-right-color:transparent;animation:spin .8s linear infinite;vertical-align:-1px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.state.working::before{animation:none}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.chip{font-size:12.5px;background:var(--soft);border-radius:6px;padding:2px 8px}
+.chip b{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-right:4px}
+section.blk{margin-top:16px}
+section.blk h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+.summary p{margin:0 0 6px}
+.summary ul{margin:4px 0 0;padding-left:20px}
+.press .topic{margin:10px 0 2px;font-size:13px;font-weight:600}
+.press ul{list-style:none;margin:0;padding:0}
+.press li{padding:6px 0;border-top:1px solid var(--line)}
+.press li:first-child{border-top:0}
+.press .meta{font-size:12px;color:var(--muted)}
+.press .src{font-weight:600}
+mark.hl{background:color-mix(in srgb,var(--accent) 16%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+table.kv{width:100%;border-collapse:collapse;font-size:13.5px}
+table.kv th{text-align:left;vertical-align:top;color:var(--muted);font-weight:500;width:140px;padding:5px 10px 5px 0;white-space:nowrap}
+table.kv td{padding:5px 0;vertical-align:top;border-top:1px solid var(--line)}
+table.kv tr:first-child td{border-top:0}
+.fv sup{font-size:10px;color:var(--muted);margin-left:2px}
+.fv.s-inferred{color:var(--warn)}
+.tag{font-style:normal;font-size:10.5px;padding:0 5px;border-radius:4px;background:var(--soft);color:var(--warn);margin-left:4px}
+.q{display:none;font-size:12px;color:var(--muted);border-left:2px solid var(--line);padding-left:8px;margin:3px 0 2px;quotes:"“" "”"}
+.q::before{content:open-quote}.q::after{content:close-quote}
+.showq .q{display:block}
+details{margin-top:12px}
+summary{cursor:pointer;font-size:13px;color:var(--muted)}
+summary:hover{color:var(--ink)}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:11.5px;overflow:auto;max-height:420px}
+.bar{height:6px;border-radius:99px;background:var(--soft);overflow:hidden;width:120px;display:inline-block;vertical-align:middle;margin-right:8px}
+.bar i{display:block;height:100%;background:var(--ok)}
+.quality{font-size:12.5px;color:var(--muted);display:flex;gap:4px 14px;flex-wrap:wrap;align-items:center}
+.flags{margin:6px 0 0;padding-left:18px;font-size:12.5px;color:var(--warn)}
+.err{color:var(--bad);font-size:13.5px;margin:10px 0 0}
+.empty{color:var(--muted);font-size:13px}
+.legend{font-size:12px;color:var(--muted);margin-top:10px}
+.legend .fv{margin-right:10px}
+@media (max-width:600px){table.kv th{width:96px;white-space:normal}.state{margin-left:0}.doc .top{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true"><svg viewBox="0 0 20 20" fill="#fff"><path d="M8 3h4v5h5v4h-5v5H8v-5H3V8h5z"/></svg></div>
+    <div>
+      <h1>William</h1>
+      <p class="sub">Swiss parliamentary affairs → one verified structure, with Apertus</p>
+    </div>
+    <div class="grow"></div>
+    <span id="health" class="pill">checking model…</span>
+    <a class="pill" href="/docs">API docs</a>
+  </header>
+
+  <form id="form" class="card">
+    <label for="urls" class="hint">Links, one per line: PDFs, HTML pages, <code>api.openparldata.ch/v1/affairs/ID</code> or <code>/v1/docs/ID</code> (max 20)</label>
+    <textarea id="urls" spellcheck="false" placeholder="https://api.openparldata.ch/v1/docs/928926"></textarea>
+    <div class="row">
+      <label class="opt" id="opt-summary-wrap"><input type="checkbox" id="opt-summary" checked>
+        <span>Summary<small>4–8 sentences in the document's language</small></span></label>
+      <label class="opt"><input type="checkbox" id="opt-news" checked>
+        <span>Press articles<small>Swiss news on the issue (Google News, CH)</small></span></label>
+      <div class="grow"></div>
+      <button type="button" class="linkbtn" id="examples">Load examples</button>
+      <button type="submit" class="primary" id="run">Extract</button>
+    </div>
+    <p class="hint" id="count" style="margin:8px 0 0">About 1–2 minutes per document; up to 4 run at once. Ctrl+Enter to start.</p>
+  </form>
+
+  <div class="toolbar" id="toolbar" hidden>
+    <h2>Results</h2>
+    <span class="hint" id="progress"></span>
+    <div class="grow"></div>
+    <label class="opt" style="font-size:13px"><input type="checkbox" id="showq"><span>Show source quotes</span></label>
+    <button type="button" id="dl-json" disabled>Download JSON</button>
+    <button type="button" id="dl-pdf" disabled>PDF report</button>
+  </div>
+  <div id="results"></div>
+  <p class="legend" id="legend" hidden>
+    <span class="fv">value<sup>p.2</sup></span> found verbatim on page 2 ·
+    <span class="fv s-inferred">value <em class="tag">inferred</em></span> no supporting quote, needs review ·
+    hover a value to see its quote
+  </p>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^https?:\/\//i.test(String(u || "")) ? String(u) : "#";
+const human = k => String(k ?? "").replace(/_/g, " ");
+const EXAMPLES = [
+  "https://api.openparldata.ch/v1/docs/928926",
+  "https://api.openparldata.ch/v1/docs/448120",
+  "https://api.openparldata.ch/v1/docs/316738",
+];
+const CONCURRENCY = 4, MAX = 20;
+let VOCAB = null, items = [], running = false;
+
+fetch("/v1/vocab").then(r => r.json()).then(v => { VOCAB = v; }).catch(() => {});
+fetch("/health").then(r => r.json()).then(h => {
+  const el = $("#health");
+  el.textContent = h.api_key_set ? (h.model || "model ready").split("/").pop() : "LLM_API_KEY not set";
+  el.className = "pill " + (h.api_key_set ? "ok" : "bad");
+  el.title = `${h.model || ""} @ ${h.base_url || ""}`;
+}).catch(() => { $("#health").textContent = "API unreachable"; $("#health").className = "pill bad"; });
+
+// labels from the shared vocabularies (English), falling back to the key
+function label(group, key) {
+  const g = VOCAB && VOCAB[group], e = g && !Array.isArray(g) ? g[key] : null;
+  if (e && typeof e === "object") return (e.label && e.label.en) || e.en || human(key);
+  return human(key);
+}
+
+// one provenance-carrying field {value, status, page, quote}
+function F(f, group) {
+  if (!f || f.value == null || f.value === "") return "";
+  const v = group ? label(group, f.value) : f.value;
+  const tip = [f.page ? `page ${f.page}` : "", f.quote ? `“${f.quote}”` : "", f.source || ""].filter(Boolean).join(" · ");
+  return `<span class="fv s-${esc(f.status)}" title="${esc(tip)}">${esc(v)}${f.page ? `<sup>p.${esc(f.page)}</sup>` : ""}` +
+    `${f.status === "inferred" ? '<em class="tag">inferred</em>' : ""}</span>` +
+    (f.quote ? `<span class="q">${esc(f.quote)}</span>` : "");
+}
+
+const opts = () => ({ summary: $("#opt-summary").checked || $("#opt-news").checked, news: $("#opt-news").checked });
+
+// press articles need the summary's topics, so ticking "Press articles" forces "Summary"
+function syncOpts() {
+  const news = $("#opt-news").checked;
+  if (news) $("#opt-summary").checked = true;
+  $("#opt-summary").disabled = news;
+  $("#opt-summary-wrap").classList.toggle("disabled", news);
+  $("#opt-summary-wrap").title = news ? "Needed for press articles" : "";
+}
+$("#opt-news").addEventListener("change", syncOpts);
+syncOpts();
+
+$("#examples").onclick = () => { $("#urls").value = EXAMPLES.join("\n"); updateCount(); $("#urls").focus(); };
+$("#urls").addEventListener("input", updateCount);
+$("#urls").addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) $("#form").requestSubmit(); });
+$("#showq").onchange = e => $("#results").classList.toggle("showq", e.target.checked);
+
+function parseUrls() { return [...new Set($("#urls").value.split(/\s+/).map(s => s.trim()).filter(Boolean))]; }
+function updateCount() {
+  const n = parseUrls().length;
+  $("#count").textContent = n
+    ? `${n} link${n > 1 ? "s" : ""}${n > MAX ? ` — only the first ${MAX} will run` : ""} · about 1–2 minutes per document; up to ${CONCURRENCY} run at once.`
+    : "About 1–2 minutes per document; up to 4 run at once. Ctrl+Enter to start.";
+}
+
+$("#form").onsubmit = async e => {
+  e.preventDefault();
+  if (running) return;
+  const urls = parseUrls().slice(0, MAX);
+  if (!urls.length) { $("#urls").focus(); return; }
+  const o = opts();
+  running = true; $("#run").disabled = true; $("#run").textContent = "Working…";
+  $("#toolbar").hidden = false; $("#legend").hidden = false;
+  $("#dl-json").disabled = $("#dl-pdf").disabled = true;
+  $("#results").innerHTML = "";
+  items = urls.map(url => ({ url }));
+  const cards = urls.map((u, i) => makeCard(u, i));
+  let next = 0, done = 0;
+  const progress = () => { $("#progress").textContent = `${done} of ${urls.length} done`; };
+  progress();
+  const worker = async () => {
+    while (next < urls.length) {
+      const i = next++;
+      await runOne(cards[i], i, o);
+      done++; progress();
+      $("#dl-json").disabled = $("#dl-pdf").disabled = false;
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(CONCURRENCY, urls.length) }, worker));
+  running = false; $("#run").disabled = false; $("#run").textContent = "Extract";
+};
+
+function makeCard(url, i) {
+  const el = document.createElement("article");
+  el.className = "card doc";
+  el.innerHTML = `<div class="top"><span class="n">${i + 1}</span><div style="min-width:0">
+      <h3 class="title">${esc(url)}</h3><div class="url"></div></div>
+      <span class="state">queued</span></div><div class="body"></div>`;
+  $("#results").append(el);
+  return { el, state: el.querySelector(".state"), body: el.querySelector(".body"),
+           title: el.querySelector(".title"), url: el.querySelector(".url") };
+}
+
+function setState(card, cls, text) { card.state.className = "state " + cls; card.state.textContent = text; }
+
+async function runOne(card, i, o) {
+  const t0 = Date.now();
+  setState(card, "working", "working… 0 s");
+  const timer = setInterval(() => setState(card, "working", `working… ${Math.round((Date.now() - t0) / 1000)} s`), 1000);
+  let it;
+  try {
+    const r = await fetch("/v1/extract", { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ urls: [items[i].url], summary: o.summary, news: o.news }) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
+    it = (await r.json()).items[0];
+  } catch (err) {
+    it = { url: items[i].url, error: String(err.message || err) };
+  }
+  clearInterval(timer);
+  items[i] = it;
+  const secs = Math.round((Date.now() - t0) / 1000);
+  if (it.error) setState(card, "error", "failed");
+  else setState(card, "done", `done · ${secs} s`);
+  render(card, it, o);
+}
+
+function render(card, it, o) {
+  if (it.error) {
+    card.title.textContent = "Could not process this link";
+    card.url.textContent = it.url;
+    card.body.innerHTML = `<p class="err">${esc(it.error)}</p>`;
+    return;
+  }
+  const r = it.record || {}, a = r.affair || {}, b = r.body || {}, q = r.quality || {}, s = it.summary;
+  card.title.textContent = (a.title && a.title.value) || "(no verified title)";
+  card.url.innerHTML = `<a href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener noreferrer">${esc(it.url)}</a>`;
+
+  const chip = (k, v) => v ? `<span class="chip"><b>${esc(k)}</b>${v}</span>` : "";
+  const t = a.type;
+  let html = `<div class="chips">` +
+    chip("level", F(b.level, "levels")) +
+    chip("parliament", F(b.parliament)) +
+    chip("type", t ? F(t, "affair_types") + (a.type_original ? ` <span class="hint">(${esc(a.type_original.value)})</span>` : "") : "") +
+    chip("no.", F(a.affair_number)) +
+    chip("submitted", F(a.submission_date)) +
+    chip("state", F(a.state, "procedural_states")) +
+    chip("lang", r.language ? esc(String(r.language).toUpperCase()) : "") +
+    `</div>`;
+
+  if (s && s.summary) {
+    let sum = esc(s.summary);
+    for (const tp of s.topics || []) {
+      if (!tp.phrase || !tp.in_summary) continue;
+      const p = esc(tp.phrase), idx = sum.toLowerCase().indexOf(p.toLowerCase());
+      if (idx >= 0) sum = sum.slice(0, idx) + `<mark class="hl">${sum.slice(idx, idx + p.length)}</mark>` + sum.slice(idx + p.length);
+    }
+    html += `<section class="blk summary"><h4>Summary</h4><p>${sum}</p>` +
+      ((s.key_points || []).length ? `<ul>${s.key_points.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : "") + `</section>`;
+  }
+
+  if (o.news) html += pressBlock(s);
+
+  html += `<details class="struct" open><summary>Extracted structure</summary>${structTable(a)}</details>`;
+
+  const vc = q.value_counts || {}, share = typeof q.verified_share === "number" ? q.verified_share : null;
+  html += `<section class="blk"><div class="quality">` +
+    (share != null ? `<span><span class="bar"><i style="width:${Math.round(share * 100)}%"></i></span>${Math.round(share * 100)}% verified</span>` : "") +
+    `<span>${vc.extracted || 0} extracted · ${vc.normalised || 0} normalised · ${vc.metadata || 0} metadata · ${vc.inferred || 0} inferred · ${vc.rejected || 0} rejected</span>` +
+    (r.source && r.source.pages ? `<span>${esc(r.source.pages)} page(s)</span>` : "") +
+    `</div>` +
+    ((q.flags || []).length ? `<ul class="flags">${q.flags.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : "") +
+    `</section>`;
+
+  if ((q.rejected_values || []).length)
+    html += `<details><summary>${q.rejected_values.length} value(s) removed — quote not found in the document</summary><table class="kv">` +
+      q.rejected_values.map(x => `<tr><th>${esc(x.path)}</th><td>${esc(typeof x.value === "string" ? x.value : JSON.stringify(x.value))}</td></tr>`).join("") +
+      `</table></details>`;
+
+  const slim = { ...r, extractor: Object.fromEntries(Object.entries(r.extractor || {}).filter(([k]) => k !== "raw_model_output")) };
+  html += `<details><summary>JSON record (opd-affair/0.1)</summary><pre>${esc(JSON.stringify(slim, null, 2))}</pre></details>`;
+  card.body.innerHTML = html;
+}
+
+function pressBlock(s) {
+  const topics = ((s && s.topics) || []).filter(t => (t.articles || []).length);
+  if (!topics.length) return `<section class="blk press"><h4>In the press</h4><p class="empty">No Swiss press articles found for this affair's topics.</p></section>`;
+  const seen = new Set();
+  let out = `<section class="blk press"><h4>In the press</h4>`;
+  for (const tp of topics) {
+    const arts = tp.articles.filter(x => x.url && !seen.has(x.url) && seen.add(x.url)).slice(0, 3);
+    if (!arts.length) continue;
+    out += `<div class="topic">${esc(tp.phrase)} <span class="hint" style="font-weight:400">— search: ${esc(tp.query)}</span></div><ul>` +
+      arts.map(x => {
+        const d = x.published ? new Date(x.published) : null;
+        const date = d && !isNaN(d) ? d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
+        return `<li><a href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a>` +
+          `<div class="meta"><span class="src">${esc(x.source)}</span>${date ? " · " + esc(date) : ""}</div></li>`;
+      }).join("") + `</ul>`;
+  }
+  return out + `</section>`;
+}
+
+function structTable(a) {
+  const rows = [];
+  const row = (k, v) => { if (v) rows.push(`<tr><th>${esc(k)}</th><td>${v}</td></tr>`); };
+  row("Addressed to", F(a.addressed_to));
+  for (const ac of a.actors || [])
+    row(ac.role ? label("actor_roles", ac.role.value) : "Actor",
+      F(ac.name) + (ac.party_or_group ? ` · ${F(ac.party_or_group)}` : "") + (ac.kind ? ` <span class="hint">(${esc(human(ac.kind.value))})</span>` : ""));
+  (a.requests || []).forEach((r, i) => row(i ? "" : "Requests", F(r)));
+  (a.questions || []).forEach((qq, i) => {
+    row(`Question ${qq.number && qq.number.value ? qq.number.value : i + 1}`, F(qq.question));
+    if (qq.answer) row("Answer", F(qq.answer));
+  });
+  for (const h of a.procedural_history || [])
+    row(h.date ? h.date.value : "Step", [F(h.state, "procedural_states"), F(h.description)].filter(Boolean).join(" — "));
+  for (const d of a.decisions || []) {
+    const votes = ["votes_yes", "votes_no", "votes_abstain"].map(k => d[k] && d[k].value != null ? d[k].value : "–");
+    row("Decision", [F(d.outcome, "decision_outcomes"), F(d.date), F(d.body)].filter(Boolean).join(" · ") +
+      (votes.some(v => v !== "–") ? ` <span class="hint">(${votes.join(" : ")})</span>` : ""));
+  }
+  for (const rel of a.related_affairs || [])
+    row("Related", F(rel.reference) + (rel.relation ? ` <span class="hint">(${esc(human(rel.relation.value))})</span>` : ""));
+  if ((a.keywords || []).length) row("Keywords", a.keywords.map(k => `<span class="chip">${esc(k)}</span>`).join(" "));
+  return rows.length ? `<table class="kv">${rows.join("")}</table>` : `<p class="empty">No further fields verified.</p>`;
+}
+
+function save(blob, name) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+const finished = () => items.filter(x => x.record || x.error);
+
+$("#dl-json").onclick = () =>
+  save(new Blob([JSON.stringify({ schema_version: "opd-affair/0.1", items: finished() }, null, 2)], { type: "application/json" }), "william.json");
+
+$("#dl-pdf").onclick = async () => {
+  const btn = $("#dl-pdf"); btn.disabled = true; btn.textContent = "Building PDF…";
+  try {
+    const r = await fetch("/v1/report/items", { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ items: finished() }) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    save(await r.blob(), "william-report.pdf");
+  } catch (err) { alert("PDF report failed: " + (err.message || err)); }
+  btn.disabled = false; btn.textContent = "PDF report";
+};
+</script>
+</body>
+</html>

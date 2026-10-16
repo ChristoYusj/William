@@ -2,6 +2,7 @@
 
 POST /v1/extract   {"urls": [...], "summary": true}      -> JSON records (opd-affair/0.1)
 POST /v1/report    {"urls": [...]}                       -> application/pdf
+POST /v1/report/items {"items": [...]}                   -> application/pdf from /v1/extract items (no model calls)
 POST /v1/summarize {"text": "...", "news": true}         -> summary + news-linked topics
 GET  /v1/schema                                          -> JSON Schema of a record
 GET  /v1/vocab                                           -> controlled vocabularies
@@ -9,6 +10,7 @@ GET  /v1/vocab                                           -> controlled vocabular
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, Response
@@ -24,6 +26,7 @@ app = FastAPI(title="William — OpenParlData affair extractor (Apertus)", versi
 # No CORS: the API has no auth and spends the operator's Apertus credits, so browsers on other sites must not call it.
 
 MAX_URLS = 20
+WEB_DIR = Path(__file__).resolve().parent / "web"
 
 
 class ExtractRequest(BaseModel):
@@ -31,6 +34,10 @@ class ExtractRequest(BaseModel):
     summary: bool = True
     news: bool = True
     model: str | None = None
+
+
+class ItemsRequest(BaseModel):
+    items: list[dict] = Field(..., min_length=1, max_length=MAX_URLS)
 
 
 class SummarizeRequest(BaseModel):
@@ -86,6 +93,13 @@ def post_report(req: ExtractRequest):
                     headers={"Content-Disposition": 'attachment; filename="william-report.pdf"'})
 
 
+@app.post("/v1/report/items")
+def post_report_items(req: ItemsRequest):
+    """PDF from items the web page already got from /v1/extract, so Apertus isn't called twice."""
+    return Response(report.build(req.items), media_type="application/pdf",
+                    headers={"Content-Disposition": 'attachment; filename="william-report.pdf"'})
+
+
 @app.post("/v1/summarize")
 def post_summarize(req: SummarizeRequest):
     try:
@@ -96,13 +110,4 @@ def post_summarize(req: SummarizeRequest):
 
 @app.get("/", response_class=HTMLResponse)
 def index():
-    return """<!doctype html><meta charset=utf-8><title>William API</title>
-<style>body{font:15px system-ui;max-width:760px;margin:40px auto;padding:0 16px}textarea{width:100%;height:140px}</style>
-<h1>William API</h1><p>OpenParlData affair extraction with Apertus. Interactive docs: <a href=/docs>/docs</a>.</p>
-<form id=f><textarea id=u placeholder="one link per line (PDF, HTML, api.openparldata.ch/v1/affairs/ID or /docs/ID)"></textarea>
-<p><button name=a value=json>JSON</button> <button name=a value=pdf>PDF report</button></p></form><pre id=o></pre>
-<script>f.onsubmit=async e=>{e.preventDefault();const urls=u.value.split(/\\s+/).filter(Boolean);
-const pdf=e.submitter.value==='pdf';o.textContent='working...';
-const r=await fetch(pdf?'/v1/report':'/v1/extract',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({urls})});
-if(pdf){const b=await r.blob();const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='william-report.pdf';a.click();o.textContent='done';}
-else o.textContent=JSON.stringify(await r.json(),null,1);}</script>"""
+    return (WEB_DIR / "index.html").read_text(encoding="utf-8")
