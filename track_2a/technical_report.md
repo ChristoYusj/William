@@ -44,6 +44,9 @@ link ─► fetch (PDF via pypdf / pdf.js, HTML, OpenParlData API & file links)
   extension and the API.
 * `src/extension/shared/core.js` and `src/william/{verify,extract}.py`: the verifier and record assembly, written
   twice. `tests/parity.mjs` checks that they produce **identical records** on all 13 stored documents (0 differences).
+* Optional translation: Apertus translates the summary and key points into DE / FR / IT / RM / EN
+  (`translate_to` on `/v1/extract` and `/v1/summarize`, or `POST /v1/translate`). The original-language summary is
+  always kept next to the translation.
 * `src/william/api.py`: FastAPI (`/v1/extract`, `/v1/report`, `/v1/summarize`, `/v1/schema`, `/v1/vocab`).
   `make run` starts it in Docker.
 * The extension's PDF report is written by a 150-line dependency-free PDF writer (`shared/minipdf.js`). Its output was

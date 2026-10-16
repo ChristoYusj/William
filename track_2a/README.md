@@ -10,7 +10,7 @@ William comes in three parts. All three share the same prompts, vocabularies and
 |---|---|
 | **Firefox extension** ([`src/extension`](src/extension)) | Opens parliamentary PDFs in its own viewer. Summarises the **document or the selected text in the document's language** (DE/FR/IT/RM). Highlights the political topics in the summary; each highlight links to **Swiss news articles** on the subject (Google News, CH edition). Extracts the affair into the common JSON with page-level evidence. Context menu: summarise any selection or page on any website. |
 | **Batch page** (inside the extension, `batch/batch.html`) | Paste many links (PDFs, HTML pages, `api.openparldata.ch/v1/affairs/ID`, `/v1/docs/ID`, `files.openparldata.ch/doc/…`). For each link it produces a summary plus one `opd-affair/0.1` record. Download everything as **JSON** or as a **PDF report**, generated in the browser. |
-| **HTTP API** ([`src/william`](src/william)) | The same pipeline without a browser: `POST /v1/extract`, `POST /v1/report` (PDF), `POST /v1/summarize`, `GET /v1/schema`, `GET /v1/vocab`; plus a CLI. |
+| **HTTP API + web page** ([`src/william`](src/william)) | The same pipeline without a browser: web page at `/`, `POST /v1/extract`, `POST /v1/report` (PDF), `POST /v1/report/items`, `POST /v1/summarize`, `POST /v1/translate` (summary → DE/FR/IT/RM/EN with Apertus; also `translate_to` on extract/summarize), `GET /v1/schema`, `GET /v1/vocab`; plus a CLI. |
 
 ## Run it (judges)
 
