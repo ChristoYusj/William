@@ -1,0 +1,1121 @@
+{
+  "schema_version": "opd-affair/0.1",
+  "generated_at": "2026-10-16T08:14:58.131Z",
+  "items": [
+    {
+      "url": "https://api.openparldata.ch/v1/docs/928926",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/5192/592b1e53ea42d39cd74b6c66309cd362b91b0eb79393ee48b58137b3aaa9f283",
+          "sha256": "e818b58a474dbb660642d2021ebcbab7f1f8a0590e391bf68b24afdb40eb3eeb",
+          "content_type": "application/pdf",
+          "pages": 3,
+          "opd_doc_id": 928926,
+          "opd_affair_id": 341403,
+          "retrieved_at": "2026-10-16T08:14:44.505Z"
+        },
+        "language": "it",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "5192",
+          "parliament": {
+            "value": "Consiglio Comunale di Lugano",
+            "status": "inferred",
+            "page": 3,
+            "quote": "Consiglio Comunale",
+            "char_start": 2132,
+            "char_end": 2150
+          },
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "1654",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Interrogazione no. 1654",
+            "char_start": 33,
+            "char_end": 56
+          },
+          "title": {
+            "value": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Legge sulle Commesse Pubbliche, ce la facciamo",
+            "char_start": 60,
+            "char_end": 106
+          },
+          "type": {
+            "page": 1,
+            "quote": "Interrogazione",
+            "char_start": 33,
+            "char_end": 47,
+            "value": "question",
+            "status": "normalised",
+            "source": "type_terms lookup on type_original",
+            "opd_type_harmonized_id": 12,
+            "wikidata": "Q2052854"
+          },
+          "type_original": {
+            "value": "interrogazione",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Interrogazione",
+            "char_start": 33,
+            "char_end": 47
+          },
+          "submission_date": {
+            "value": "2026-10-05",
+            "status": "normalised",
+            "page": 1,
+            "quote": "5 ottobre 2026",
+            "char_start": 254,
+            "char_end": 268
+          },
+          "actors": [
+            {
+              "name": {
+                "value": "Demis Fumasoli",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Onorevole Signor\nDemis Fumasoli",
+                "char_start": 2666,
+                "char_end": 2697
+              },
+              "role": {
+                "value": "submitter",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "normalised",
+                "page": 1,
+                "quote": "persona",
+                "char_start": 1939,
+                "char_end": 1946
+              },
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Municipio di Lugano",
+                "status": "inferred",
+                "page": 1,
+                "quote": "Città di Lugano",
+                "char_start": 2419,
+                "char_end": 2434
+              },
+              "role": {
+                "value": "respondent",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "executive",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Municipio di Lugano",
+            "status": "inferred",
+            "page": 1,
+            "quote": "Onorevole Signor Fumasoli",
+            "char_start": 112,
+            "char_end": 137
+          },
+          "requests": [
+            {
+              "value": "Confermare se l'ufficio preposto è consapevole dell'obbligo di verificare i CCL applicabili e indicare le procedure interne in caso di dubbi",
+              "status": "normalised",
+              "page": 2,
+              "quote": "Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazione? Il Municipio ha mai richiesto o intende\nrichiedere un parere alla Commissione paritetica competente oppure all’associazione\npadronale di categoria suissetec Ticino e Moesano",
+              "char_start": 1207,
+              "char_end": 1519
+            },
+            {
+              "value": "Elencare le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripetersi di situazioni non conformi alla LCPubb",
+              "status": "normalised",
+              "page": 2,
+              "quote": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni",
+              "char_start": 1890,
+              "char_end": 2047
+            },
+            {
+              "value": "Indicare se nuovi provvedimenti sono previsti per migliorare le conoscenze dei verificatori e se la situazione analoga giustifica ulteriori misure",
+              "status": "normalised",
+              "page": 3,
+              "quote": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle\npersone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non\nconformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende\nprocedere il Municipio alla luce del fatto che una situazione analoga era già stata\noggetto di una precedente interpellanza e che, inseguito alla stessa, erano state\nfornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione",
+              "char_start": 92,
+              "char_end": 596
+            },
+            {
+              "value": "Specificare i provvedimenti disciplinari in caso di superficialità dei funzionari e confermare l'assenza di reiterazione dell'errore",
+              "status": "normalised",
+              "page": 3,
+              "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una\n“reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle\nresponsabilità e, se del caso, all’adozione di provvedimenti disciplinari",
+              "char_start": 1231,
+              "char_end": 1629
+            }
+          ],
+          "questions": [
+            {
+              "number": null,
+              "question": {
+                "value": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già\nstate segnalate da suissetec Ticino e Moesano come non in regola o non idonee",
+                "char_start": 590,
+                "char_end": 757
+              },
+              "answer": {
+                "value": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazione dello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino e Moesano.",
+                "status": "normalised",
+                "page": 2,
+                "quote": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogaione\ndello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino\ne Moesano",
+                "char_start": 759,
+                "char_end": 954
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all’associazione padronale di categoria suissetec Ticino e Moesano?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole\ndell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e\nregionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazione? Il Municipio ha mai richiesto o intende\nrichiedere un parere alla Commissione paritetica competente oppure all’associazione\npadronale di categoria suissetec Ticino e Moesano",
+                "char_start": 959,
+                "char_end": 1519
+              },
+              "answer": {
+                "value": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne sono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità di informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di rivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e collaborazione.",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne\nsono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità\ndi informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di\nrivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e\ncollaborazione",
+                "char_start": 1521,
+                "char_end": 1885
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato\nquanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che\ngli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona\napprossimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni\ncontrarie alla Legge sulle commesse pubbliche (LCPubb",
+                "char_start": 1890,
+                "char_end": 2356
+              },
+              "answer": {
+                "value": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso anno: adeguamento della banca dati interna, verifica della presenza delle attestazioni relative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione coinvolti nel processo degli acquisti. Gli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di queste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione. Naturalmente nessun sistema amministrativo consente di escludere in termini assoluti la possibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte consentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e del rispetto dei contratti collettivi applicabili.",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso\nanno: adeguamento della banca dati interna, verifica della presenza delle attestazioni\nrelative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione\ncoinvolti nel processo degli acquisti.\nGli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di\nqueste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione.\nNaturalmente nessun sistema amministrativo consente di escludere in termini assoluti la\npossibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte\nconsentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e\ndel rispetto dei contratti collettivi applicabili",
+                "char_start": 2359,
+                "char_end": 3153
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, in seguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+                "status": "extracted",
+                "page": 3,
+                "quote": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle\npersone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non\nconformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende\nprocedere il Municipio alla luce del fatto che una situazione analoga era già stata\noggetto di una precedente interpellanza e che, inseguito alla stessa, erano state\nfornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione",
+                "char_start": 92,
+                "char_end": 596
+              },
+              "answer": {
+                "value": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione della problematica successivamente all’adeguamento della procedura e non rende pertanto necessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò non significa evidentemente che le procedure siano considerate immutabili. Il Centro di competenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà ad aggiornare le proprie modalità operative qualora intervengano modifiche legislative, nuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento.",
+                "status": "extracted",
+                "page": 3,
+                "quote": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione\ndella problematica successivamente all’adeguamento della procedura e non rende pertanto\nnecessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò\nnon significa evidentemente che le procedure siano considerate immutabili. Il Centro di\ncompetenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà\nad aggiornare le proprie modalità operative qualora intervengano modifiche legislative,\nnuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento",
+                "char_start": 598,
+                "char_end": 1226
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una \"reiterazione dell'errore\" il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all'adozione di provvedimenti disciplinari?",
+                "status": "extracted",
+                "page": 3,
+                "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una\n“reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle\nresponsabilità e, se del caso, all’adozione di provvedimenti disciplinari",
+                "char_start": 1231,
+                "char_end": 1629
+              },
+              "answer": {
+                "value": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è verificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di natura disciplinare.",
+                "status": "extracted",
+                "page": 3,
+                "quote": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è\nverificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di\nnatura disciplinare",
+                "char_start": 1631,
+                "char_end": 1837
+              }
+            }
+          ],
+          "procedural_history": [],
+          "state": {
+            "value": "answered",
+            "status": "inferred",
+            "page": null,
+            "quote": null,
+            "char_start": null,
+            "char_end": null,
+            "opd_state_name_harmonized_id": null
+          },
+          "decisions": [],
+          "related_affairs": [
+            {
+              "reference": {
+                "value": "interrogazione no. 1531 del 25 settembre 2025",
+                "status": "extracted",
+                "page": 1,
+                "quote": "interrogazione\nno. 1531 del 25 settembre 2025",
+                "char_start": 583,
+                "char_end": 628
+              },
+              "relation": {
+                "value": "follow_up_of",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              }
+            },
+            {
+              "reference": {
+                "value": "interpellanza no. 4408 del 15 settembre 2026",
+                "status": "extracted",
+                "page": 1,
+                "quote": "interpellanza no. 4408 del 15 settembre 2026",
+                "char_start": 163,
+                "char_end": 207
+              },
+              "relation": {
+                "value": "replies_to",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              }
+            }
+          ],
+          "keywords": [
+            "commesse pubbliche",
+            "LCPubb",
+            "Suissetec Ticino e Moesano",
+            "contratti collettivi",
+            "CCL",
+            "idoneità imprese",
+            "Lugano"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 15,
+            "normalised": 8,
+            "inferred": 10,
+            "rejected": 8,
+            "metadata": 1
+          },
+          "verified_share": 0.585,
+          "rejected_values": [
+            {
+              "path": "questions[0].number",
+              "value": "1",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[1].number",
+              "value": "2",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[2].number",
+              "value": "3",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[3].number",
+              "value": "4",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[4].number",
+              "value": "5",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].date",
+              "value": "2026-10-08",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Risoluzione municipale del 8 ottobre 2026 che risponde all'interrogazione no. 1654",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Spiegare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec come non idonee",
+              "page": 1,
+              "quote": "Rispondere puntualmente alle domande poste, in particolare se nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte segnalate da suissetec Ticino e Moesano come non in regola o non idonee"
+            }
+          ],
+          "flags": [
+            "model type 'interpellation' replaced by 'question' from the original term 'interrogazione'",
+            "8 model value(s) rejected: quote not found in the document"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.2",
+          "usage": {
+            "prompt_tokens": 2935,
+            "total_tokens": 5437,
+            "completion_tokens": 2502,
+            "prompt_tokens_details": {
+              "cached_tokens": 2912,
+              "multimodal_tokens": null
+            }
+          },
+          "runtime": "firefox-extension",
+          "raw_model_output": {
+            "language": "it",
+            "level": {
+              "v": "communal",
+              "p": "1",
+              "q": "comunale"
+            },
+            "parliament": {
+              "v": "Consiglio Comunale di Lugano",
+              "p": "1",
+              "q": "Consiglio Comunale"
+            },
+            "affair_number": {
+              "v": "1654",
+              "p": "1",
+              "q": "Interrogazione no. 1654"
+            },
+            "title": {
+              "v": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+              "p": "1",
+              "q": "\"Legge sulle Commesse Pubbliche, ce la facciamo...?\""
+            },
+            "affair_type": {
+              "v": "interpellation",
+              "p": "1",
+              "q": "Interrogazione"
+            },
+            "affair_type_original": {
+              "v": "interrogazione",
+              "p": "1",
+              "q": "interrogazione"
+            },
+            "submission_date": {
+              "v": "2026-10-05",
+              "p": "1",
+              "q": "5 ottobre 2026"
+            },
+            "actors": [
+              {
+                "name": {
+                  "v": "Demis Fumasoli",
+                  "p": "1",
+                  "q": "Onorevole Signor Demis Fumasoli"
+                },
+                "role": {
+                  "v": "submitter",
+                  "p": "1",
+                  "q": "presenta l'interrogazione"
+                },
+                "kind": {
+                  "v": "person",
+                  "p": "1",
+                  "q": "persona"
+                },
+                "party_or_group": {
+                  "v": null,
+                  "p": "1",
+                  "q": null
+                }
+              },
+              {
+                "name": {
+                  "v": "Municipio di Lugano",
+                  "p": "1",
+                  "q": "Città di Lugano"
+                },
+                "role": {
+                  "v": "respondent",
+                  "p": "1",
+                  "q": "risponde all'interrogazione"
+                },
+                "kind": {
+                  "v": "executive",
+                  "p": "1",
+                  "q": "esecutivo comunale"
+                },
+                "party_or_group": {
+                  "v": null,
+                  "p": "1",
+                  "q": null
+                }
+              }
+            ],
+            "addressed_to": {
+              "v": "Municipio di Lugano",
+              "p": "1",
+              "q": "Onorevole Signor Fumasoli"
+            },
+            "requests": [
+              {
+                "v": "Spiegare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec come non idonee",
+                "p": "1",
+                "q": "Rispondere puntualmente alle domande poste, in particolare se nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte segnalate da suissetec Ticino e Moesano come non in regola o non idonee"
+              },
+              {
+                "v": "Confermare se l'ufficio preposto è consapevole dell'obbligo di verificare i CCL applicabili e indicare le procedure interne in caso di dubbi",
+                "p": "1",
+                "q": "Qualora vi fossero dubbi sull'interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all'associazione padronale di categoria suissetec Ticino e Moesano?"
+              },
+              {
+                "v": "Elencare le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripetersi di situazioni non conformi alla LCPubb",
+                "p": "1",
+                "q": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni?"
+              },
+              {
+                "v": "Indicare se nuovi provvedimenti sono previsti per migliorare le conoscenze dei verificatori e se la situazione analoga giustifica ulteriori misure",
+                "p": "1",
+                "q": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, in seguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?"
+              },
+              {
+                "v": "Specificare i provvedimenti disciplinari in caso di superficialità dei funzionari e confermare l'assenza di reiterazione dell'errore",
+                "p": "3",
+                "q": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una \"reiterazione dell'errore\" il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all'adozione di provvedimenti disciplinari?"
+              }
+            ],
+            "questions": [
+              {
+                "number": "1",
+                "question": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+                "answer": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazione dello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino e Moesano."
+              },
+              {
+                "number": "2",
+                "question": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all’associazione padronale di categoria suissetec Ticino e Moesano?",
+                "answer": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne sono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità di informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di rivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e collaborazione."
+              },
+              {
+                "number": "3",
+                "question": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+                "answer": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso anno: adeguamento della banca dati interna, verifica della presenza delle attestazioni relative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione coinvolti nel processo degli acquisti. Gli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di queste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione. Naturalmente nessun sistema amministrativo consente di escludere in termini assoluti la possibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte consentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e del rispetto dei contratti collettivi applicabili."
+              },
+              {
+                "number": "4",
+                "question": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, in seguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+                "answer": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione della problematica successivamente all’adeguamento della procedura e non rende pertanto necessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò non significa evidentemente che le procedure siano considerate immutabili. Il Centro di competenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà ad aggiornare le proprie modalità operative qualora intervengano modifiche legislative, nuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento."
+              },
+              {
+                "number": "5",
+                "question": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una \"reiterazione dell'errore\" il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all'adozione di provvedimenti disciplinari?",
+                "answer": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è verificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di natura disciplinare."
+              }
+            ],
+            "procedural_history": [
+              {
+                "date": "2026-10-08",
+                "state": "answered",
+                "description": "Risoluzione municipale del 8 ottobre 2026 che risponde all'interrogazione no. 1654"
+              }
+            ],
+            "state": {
+              "v": "answered",
+              "p": "1",
+              "q": "Risoluzione municipale del 8 ottobre 2026"
+            },
+            "decisions": [],
+            "related_affairs": [
+              {
+                "reference": "interrogazione no. 1531 del 25 settembre 2025",
+                "relation": "follow_up_of"
+              },
+              {
+                "reference": "interpellanza no. 4408 del 15 settembre 2026",
+                "relation": "replies_to"
+              }
+            ],
+            "keywords": [
+              "commesse pubbliche",
+              "LCPubb",
+              "Suissetec Ticino e Moesano",
+              "contratti collettivi",
+              "CCL",
+              "idoneità imprese",
+              "Lugano"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "language": "it",
+        "summary": "Il Municipio di Lugano ha risposto all'interrogazione parlamentare no. 1654 riguardante l'applicazione della Legge sulle Commesse Pubbliche, confermando che le procedure sono state adeguate nel settembre 2025 dopo le segnalazioni di Suissetec Ticino e Moesano. Le verifiche hanno escluso che nel 2025 siano stati deliberati appalti a ditte segnalate come non idonee e che l'ufficio competente sia pienamente consapevole dell'obbligo di verificare i contratti collettivi applicabili. Le misure adottate includono l'aggiornamento della banca dati interna e l'informazione ai collaboratori, ritenute sufficienti per evitare future violazioni della LCPubb, senza necessità di nuovi provvedimenti correttivi.",
+        "key_points": [
+          "Adeguamento delle procedure di controllo nel settembre 2025",
+          "Nessun appalto deliberato nel 2025 a ditte segnalate come non idonee",
+          "Ufficio competente pienamente consapevole dell'obbligo di verificare i CCL",
+          "Misure adottate: aggiornamento banca dati e informazione al personale",
+          "Nessuna necessità di nuovi provvedimenti correttivi per il momento"
+        ],
+        "topics": [
+          {
+            "phrase": "verifica rispetto contratti collettivi nelle commesse pubbliche",
+            "query": "verifica CCL commesse pubbliche Lugano",
+            "span": null,
+            "in_summary": false,
+            "articles": [
+              {
+                "title": "Appalti pubblici a Lugano: ‘Nessuna reiterazione della problematica’",
+                "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRHB6VFhjMFhNVEtYbDkxVEhvWFRpbFhxMEhSaU1iRHlGUWZuWVoyNzA5czEtMWdTd3RLckpRVDV6aDZWMWh4UnN2cXBFZk5mZmk0a2FuUkdfSE92czlLX3F2anNVQXJRZXNKaVdlUVZ3TDVPRUgxa2ZOaGtFMFg4Q3ppLWZlUVEtaVFXcEt5dzVwOENobUVMVC01LXB4N3pOdklj?oc=5",
+                "source": "laRegione",
+                "published": "Sun, 11 Oct 2026 17:28:00 GMT",
+                "query": "verifica CCL commesse pubbliche Lugano"
+              },
+              {
+                "title": "Bagnovini: 'Chiederemo l’obbligo del badge di riconoscimento'",
+                "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSVFGaVpxeG5LSGo3emhqVzMxM1ZQX2FmZWVkVkZWX1I0U194Y0lXTXlGTFNDbDFjMHc5b1pROGg0UTMtZDJPSFg3aHR5V3hCcE96SEZNQXhxQmxlUkFQY2JIUk9vSVk4eFk3UG9PX0RPNFNQWnpYSVp6d2RTcm5WSjF3cnFzUXJpRjRRMEJBUUVEa3dvbDlIa2h2S2wtemJDWl9oc1JKZ2JrQ0p2VEE2LVZDM3l3am5Z?oc=5",
+                "source": "laRegione",
+                "published": "Thu, 01 Apr 2021 07:00:00 GMT",
+                "query": "verifica CCL commesse pubbliche Lugano"
+              },
+              {
+                "title": "Notizie online sempre aggiornate dal Ticino e dalla Svizzera",
+                "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1ZbEJyLVJPNngwZHpOYm9ESVFTUU1xWGhQOFZlQnF1UE1iLUFlaEVoVGtYXzh2OXRuSVkzd2VFWklrZ3NuVndtejZHZk5Xd2c?oc=5",
+                "source": "laRegione",
+                "published": "Fri, 26 Mar 2021 10:39:02 GMT",
+                "query": "verifica CCL commesse pubbliche Lugano"
+              },
+              {
+                "title": "Cubetti portoghesi a Giubiasco, l'impresa ammette l'errore",
+                "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNVnBvWm9VaW9DOFlkVDlLakFnRXhhY0tSbmVvMExRM0ExQXhqY015LWNtSFNDV1drZWt1aVlYTGlHM1FLOF9ZWWJsbU14dnhGbTNtekFtTDNPRThsMTdkVVZjN2NlYUFzZnpTMkxMcjhTZzdSVEswUFR2Wi1PN1VsaXRSQVUxTkxFVVJfWU11QnpiRDJRS09VTVpBZEdKTmotdVJIMmRNTC1zV3k5NUdTcw?oc=5",
+                "source": "laRegione",
+                "published": "Thu, 08 Mar 2018 08:00:00 GMT",
+                "query": "verifica CCL commesse pubbliche Lugano"
+              },
+              {
+                "title": "Le ditte corteggiano gli operai degli altri: «Ti offriamo di più»",
+                "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRDR0SS1tSkQ3dW1wUXBRN1ZhZHpRS1F2ekpJWFl1eWNYVkVfaGFNM2dDQm1sTGlaUjRRdk1UYVhfSzAteGJzTDJOMU1BMVpobWhqdWtUUVZ1aVNNYjBpUE1fNTlYbVpSVnF3OGQwZGQ1RkdRSzBOUVhpMTJsTGVBZlVmX2xScWtEOGtWcFhJY3UyVlBnaWNnQk1RV0M0Z3VnX1E?oc=5",
+                "source": "Corriere del Ticino",
+                "published": "Mon, 28 Jul 2025 07:00:00 GMT",
+                "query": "verifica CCL commesse pubbliche Lugano"
+              }
+            ]
+          },
+          {
+            "phrase": "adeguamento procedure controllo idoneità fornitori",
+            "query": "procedure controllo idoneità ditte appalti Lugano",
+            "span": null,
+            "in_summary": false,
+            "articles": [
+              {
+                "title": "Appalti pubblici a Lugano: ‘Nessuna reiterazione della problematica’",
+                "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRHB6VFhjMFhNVEtYbDkxVEhvWFRpbFhxMEhSaU1iRHlGUWZuWVoyNzA5czEtMWdTd3RLckpRVDV6aDZWMWh4UnN2cXBFZk5mZmk0a2FuUkdfSE92czlLX3F2anNVQXJRZXNKaVdlUVZ3TDVPRUgxa2ZOaGtFMFg4Q3ppLWZlUVEtaVFXcEt5dzVwOENobUVMVC01LXB4N3pOdklj?oc=5",
+                "source": "laRegione",
+                "published": "Sun, 11 Oct 2026 17:28:00 GMT",
+                "query": "procedure controllo idoneità ditte appalti Lugano"
+              },
+              {
+                "title": "Incarichi diretti in ambito costruttivo: tutto a posto a Bellinzona?",
+                "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUlV0WUhpZ0hXaVFzTlk5OWcwNXQ0dlRITDg0eW13Zkd5ODZkczBYR25qX2lUd0ZHeTN4ckdTVEJ5azRWbURmRmVXVnh0Z2lCUzlJQklMcVZLdURlMlBkMnkxS1B0OVlLbFh1MFgwLWFsUG56ZjJPWnExTGhlMjhpSzRERnY1LTBRY0toTHg0T095SFg5dVcwZnVEWQ?oc=5",
+                "source": "laRegione",
+                "published": "Fri, 18 Sep 2026 07:00:00 GMT",
+                "query": "procedure controllo idoneità ditte appalti Lugano"
+              }
+            ]
+          },
+          {
+            "phrase": "risposta Municipio segnalazioni Suissetec",
+            "query": "risposta Lugano segnalazioni Suissetec commesse pubbliche",
+            "span": [
+              217,
+              242
+            ],
+            "in_summary": true,
+            "articles": [
+              {
+                "title": "Appalti pubblici a Lugano: ‘Nessuna reiterazione della problematica’",
+                "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRHB6VFhjMFhNVEtYbDkxVEhvWFRpbFhxMEhSaU1iRHlGUWZuWVoyNzA5czEtMWdTd3RLckpRVDV6aDZWMWh4UnN2cXBFZk5mZmk0a2FuUkdfSE92czlLX3F2anNVQXJRZXNKaVdlUVZ3TDVPRUgxa2ZOaGtFMFg4Q3ppLWZlUVEtaVFXcEt5dzVwOENobUVMVC01LXB4N3pOdklj?oc=5",
+                "source": "laRegione",
+                "published": "Sun, 11 Oct 2026 17:28:00 GMT",
+                "query": "risposta Lugano segnalazioni Suissetec commesse pubbliche"
+              }
+            ]
+          }
+        ],
+        "truncated": false,
+        "usage": {
+          "prompt_tokens": 2377,
+          "total_tokens": 2816,
+          "completion_tokens": 439,
+          "prompt_tokens_details": {
+            "cached_tokens": 96,
+            "multimodal_tokens": null
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/448120",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/GE/7ef98b02bb89f011d9a0b031d622599afc380bdee1a278e2330c2addbdcdc5cc",
+          "sha256": "626e699d5dc2a82f5b447cc40a7ac2b308486b694e01ab9d6973a09c789f4e57",
+          "content_type": "application/pdf",
+          "pages": 5,
+          "opd_doc_id": 448120,
+          "opd_affair_id": 198208,
+          "retrieved_at": "2026-10-16T08:13:55.348Z"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "cantonal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "GE",
+          "parliament": {
+            "value": "Grand Conseil genevois",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Grand Conseil genevois",
+            "char_start": 205,
+            "char_end": 227
+          },
+          "opd_body_type": "canton"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "R 687",
+            "status": "extracted",
+            "page": 1,
+            "quote": "R 687",
+            "char_start": 170,
+            "char_end": 175
+          },
+          "title": {
+            "value": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le droit d’initiative cantonal pour demander de soustraire les jeunes adultes de la compensation des risques LAMal",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Proposition de résolution\ndu Grand Conseil genevois à l’Assemblée fédérale exerçant le\ndroit d’initiative cantonal pour demander de soustraire les jeunes\nadultes de la compensation des risques LAMal",
+            "char_start": 176,
+            "char_end": 374
+          },
+          "type": {
+            "page": 1,
+            "quote": "Proposition de résolution",
+            "char_start": 176,
+            "char_end": 201,
+            "value": "resolution",
+            "status": "normalised",
+            "source": "type_terms lookup on type_original",
+            "opd_type_harmonized_id": null,
+            "wikidata": null
+          },
+          "type_original": {
+            "value": "Proposition de résolution",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Proposition de résolution",
+            "char_start": 176,
+            "char_end": 201
+          },
+          "submission_date": null,
+          "actors": [
+            {
+              "name": {
+                "value": "Eric Leyvraz",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Eric Leyvraz",
+                "char_start": 108,
+                "char_end": 120
+              },
+              "role": {
+                "value": "submitter",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Patrick Lussi",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Patrick Lussi",
+                "char_start": 124,
+                "char_end": 137
+              },
+              "role": {
+                "value": "submitter",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Assemblée fédérale",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Assemblée fédérale",
+            "char_start": 232,
+            "char_end": 250
+          },
+          "requests": [
+            {
+              "value": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’assurance-maladie des jeunes adultes à charge de leurs familles du régime de la compensation des risques",
+              "status": "extracted",
+              "page": 2,
+              "quote": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire\nles primes d’assurance-maladie des jeunes adultes à charge de leurs familles\ndu régime de la compensation des risques",
+              "char_start": 160,
+              "char_end": 351
+            }
+          ],
+          "questions": [],
+          "procedural_history": [],
+          "state": {
+            "value": "submitted",
+            "status": "inferred",
+            "page": null,
+            "quote": null,
+            "char_start": null,
+            "char_end": null,
+            "opd_state_name_harmonized_id": 1
+          },
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "assurance-maladie",
+            "compensation des risques",
+            "jeunes adultes",
+            "primes maladie",
+            "subsides",
+            "LAMal"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 8,
+            "normalised": 0,
+            "inferred": 6,
+            "rejected": 1,
+            "metadata": 1
+          },
+          "verified_share": 0.6,
+          "rejected_values": [
+            {
+              "path": "submission_date",
+              "value": "2012-02-21",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.2",
+          "usage": {
+            "prompt_tokens": 3275,
+            "total_tokens": 3625,
+            "completion_tokens": 350,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          },
+          "runtime": "firefox-extension",
+          "raw_model_output": {
+            "language": "fr",
+            "level": "cantonal",
+            "parliament": "Grand Conseil genevois",
+            "affair_number": "R 687",
+            "title": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le droit d’initiative cantonal pour demander de soustraire les jeunes adultes de la compensation des risques LAMal",
+            "affair_type": "resolution",
+            "affair_type_original": "Proposition de résolution",
+            "submission_date": "2012-02-21",
+            "actors": [
+              {
+                "name": "Eric Leyvraz",
+                "role": "submitter",
+                "kind": "person",
+                "party_or_group": null
+              },
+              {
+                "name": "Patrick Lussi",
+                "role": "submitter",
+                "kind": "person",
+                "party_or_group": null
+              }
+            ],
+            "addressed_to": "Assemblée fédérale",
+            "requests": [
+              "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’assurance-maladie des jeunes adultes à charge de leurs familles du régime de la compensation des risques"
+            ],
+            "questions": [],
+            "procedural_history": [],
+            "state": "submitted",
+            "decisions": [],
+            "related_affairs": [],
+            "keywords": [
+              "assurance-maladie",
+              "compensation des risques",
+              "jeunes adultes",
+              "primes maladie",
+              "subsides",
+              "LAMal"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "language": "fr",
+        "summary": "Des députés genevois proposent de modifier la LAMal afin d'exclure les primes d'assurance-maladie des jeunes adultes (moins de 25 ans) vivant chez leurs parents du régime de la compensation des risques. Ils soutiennent que ces jeunes, souvent en formation et disposant de revenus modestes, financent une solidarité intergénérationnelle qu'ils ne peuvent assumer, alors que leurs coûts de santé sont faibles. Cette mesure viserait à alléger la charge financière des familles et à réduire les subsides cantonaux nécessaires pour couvrir ces primes, qui ont fortement augmenté ces dernières années.",
+        "key_points": [
+          "Proposition de résolution du Grand Conseil genevois",
+          "Demande d'exclusion des jeunes adultes (moins de 25 ans) vivant chez leurs parents de la compensation des risques LAMal",
+          "Objectif d'alléger la charge financière des familles",
+          "Critique de la hausse des primes d'assurance-maladie",
+          "Impact sur les subsides cantonaux et les finances publiques"
+        ],
+        "topics": [
+          {
+            "phrase": "exclusion des jeunes adultes de la compensation des risques LAMal",
+            "query": "compensation des risques LAMal jeunes adultes",
+            "span": [
+              177,
+              233
+            ],
+            "in_summary": true,
+            "articles": [
+              {
+                "title": "Primes maladie: changement de caisse-maladie (assurance-maladie) et réduction de primes",
+                "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOOTdVdi1USVNUNDhraGVWQ1FrbTEzeWtEVmZUT0YxQ0tidjY4bm1ObDlOcWhhNHA4X3NEUUo0Tkc5M2JKRGxybXE4MEtXUUdveUVVTWh3T0VZQW9oTFVKWU00a3pKeXRqV0l0d3FXLTA0TjVOTEQ1clg0bU1VWkJsYVoxOXVJUWhaaVRiRVdPaEhlS1FMbzl5MVQwRF9RMmdaNHRjRnFfZnZJa1FhRk1qZjBrSUQ1dGxhdDc3UEhjOGtJQWVsbGJYUVdPRE42TlZmZWVZTURNZnhwVVV5V0lzLVhMMHQzWGZlR1FfZF8zdTRYUnR6X2J1N1NTWFA5QQ?oc=5",
+                "source": "FR.ch",
+                "published": "Wed, 07 Dec 2022 10:59:38 GMT",
+                "query": "compensation des risques LAMal jeunes adultes"
+              }
+            ]
+          },
+          {
+            "phrase": "hausse des primes d'assurance-maladie",
+            "query": "hausse primes assurance-maladie Genève",
+            "span": [
+              71,
+              97
+            ],
+            "in_summary": true,
+            "articles": [
+              {
+                "title": "Notre graphique: voici la hausse des primes maladie, assureur par assureur",
+                "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNSG1NQzFnWEhfM09GTDJiNUkxLVRCOS00Vm9HdWJSYmNHMUJWRDI0a1VkZmJIcktodEQ2eEVTQnNaU3NRVjFhRl95Tm5tVTRUU1lYSXJqRTlCS3FxLXR3SVJqVEhYTTRqOXlJdVlFM0NlMmRnakdLR2gxcXMwYzBvdElrY09xS2VXejZSdjRjSXkySi1MTDJkekVkRTdoU0tsc29Idg?oc=5",
+                "source": "Le Temps",
+                "published": "Tue, 29 Sep 2026 07:00:00 GMT",
+                "query": "hausse primes assurance-maladie Genève"
+              },
+              {
+                "title": "Assurance maladie: Les primes en hausse de 5%, davantage pour de nombreux Romands",
+                "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQXzgyQV9BSk5ZVFUwU2hMVmQzZFdBcWVKQlV4M19GTlpSZWJRWU9BYkVON096MDF6ckJsc2dhZGJjWF9hQnJiS3Y5ZHlFMUhPYUlIc2lGTjh6WEpIek9ETTNFQTU1OXJRRmozWERybzJXUnQwLUVHZ2I2WFB1andzSmk2dWNUSk42WmhNUmFUOFBCcS00dzhQbXpOZTdpLXRMSG5jZEVNdjBhaEZ6aFFkVDR4dlZOQlFx?oc=5",
+                "source": "Le Matin",
+                "published": "Tue, 29 Sep 2026 07:00:00 GMT",
+                "query": "hausse primes assurance-maladie Genève"
+              },
+              {
+                "title": "Primes maladie à Genève : Maudet dénonce une hausse insupportable",
+                "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTzc3RW01b1FzZWJOM0pXVTU2MWliZjJHbzFqU2N4TkRRSnRJbVNuT3kwS3FYTURZUVFzZTYxWTBMajdxV1hkbE5LTnZoc2R3bnozX2V0aUotU2pVYlRDQkFPaERNbjJoQ013M2s2aFBla1o1VjNzU3kycXc3anN6Q05KSWhra1JXYklqZU51Z1oySElkSkFwdENnbGFtMWhxbHZrRQ?oc=5",
+                "source": "La Télé",
+                "published": "Tue, 29 Sep 2026 12:24:00 GMT",
+                "query": "hausse primes assurance-maladie Genève"
+              },
+              {
+                "title": "Genève veut tester un nouveau modèle de santé pour contrer la hausse des primes d'assurance",
+                "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPOHV6NzZuMm1BSlh1OHJyS1dKNldSQ0s1V1FFcXlHTnRVYWRqWjlKQl93UGJFUms0NlZZSkszQUFjcEFWcGFnR3lpSGI2Xzd6Qll2YnU0RXNhUmRsU2lPN2pKMWdYM1Eta1dhV0FEdkp1YUdnaFNxQ2tSRWhxME03WEhpbUVYZXRSQmNCNFpTUGNDNXRpUDRWbENJTUpoUjZWdzFwVnRlOA?oc=5",
+                "source": "20 Min",
+                "published": "Wed, 23 Sep 2026 07:00:00 GMT",
+                "query": "hausse primes assurance-maladie Genève"
+              },
+              {
+                "title": "Primes maladie 2027 : une nouvelle hausse annoncée en Suisse",
+                "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUjdIYjhFZEdZZVFlWWlVdFpOdHA1MzBqVkktYURWSERzaHVwNnR4UXkwejNLV3hWdFRIaVhuVkhjMm56eXR5NW5FRmpsRm8wckhfbDhHM2FDTVJQUjY3Ukx3QXRweDNMMFkwVkVBNWpOTXI5RnQ0QzVMWmY5c3drdkQ0UDFuNkQ2R0dVbmFCMHlWV25jSnBWdHVGRGNMN0xuUk4zUERVS24wNEg5U21QZXhtNTJVTUk?oc=5",
+                "source": "rts.ch",
+                "published": "Tue, 29 Sep 2026 07:00:00 GMT",
+                "query": "hausse primes assurance-maladie Genève"
+              }
+            ]
+          },
+          {
+            "phrase": "subsides cantonaux assurance-maladie",
+            "query": "subsides assurance-maladie cantonaux",
+            "span": [
+              80,
+              97
+            ],
+            "in_summary": true,
+            "articles": [
+              {
+                "title": "Subsides des primes de l'assurance-maladie dans le canton du Jura pour 2026",
+                "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPcTV0UVRhMUFsXzdQMmlqdUF2UC1YZlBjVDlPaVpTYWJPb1Vwc0tuNzY4OGZaOEZMLXgxNmhDbFlWOXpadWVhTk5XNm9fSG5pSE9ibXhISjZuUVVaSzdFd05maXpWSV9IMHFkZ21zMjZhRUR3dmw0RnFwaWdHT29KR0piejlsbVUzOURMRFVLczhTLWl2Rk5sRUFZbXdKWTZzb2tiazdVTUw3NUNqcHlsYUUxc050dkZQVFlfeUtfVWo3TnZkNzg0YTkxV00yZy1ta3BQdnZiTFZhb04ybzRrOVdLeXVrUjVzdlB4aHp4aVhOUzc2X0RNN212RQ?oc=5",
+                "source": "République et Canton du Jura",
+                "published": "Thu, 30 Oct 2025 07:00:00 GMT",
+                "query": "subsides assurance-maladie cantonaux"
+              },
+              {
+                "title": "Vaud durcit les règles pour toucher des subsides à l’assurance maladie en 2027",
+                "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQU5MQmE2dUt1M3ZqWk0xelFoS21fTERMMmZyVFpiZVoyT0VQcHNVbVZMUDQyTmQtY0xlT0liZjNJbGJjem40V3FvTEQ3VE9Ya1l4MXZtSm1JZjE2eWtYQXVXVU55cmFRdllQaTBmb2ZENUFta0xOLXg2Z1A3Q3NGb1VRSHR4aEJ1Z3RVOEJHbXhmSjBFTWRiZHBab28?oc=5",
+                "source": "24 Heures",
+                "published": "Thu, 08 Oct 2026 17:01:42 GMT",
+                "query": "subsides assurance-maladie cantonaux"
+              },
+              {
+                "title": "Subsides à l’assurance-maladie 2026 : maintien des mesures et introduction d’un nouveau modèle d’octroi",
+                "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQb0paMHkzUkFDb0JwejJTeXIybWVkZ2hIVEJSUFhlMmNMMHlGcFZZYkdjaXhFcjFNZ1ZCZHk0TjVDZ213NjRvRUtWZ3FLSE43dDRJdlVCaTltYnhBLTFLZ0VhNUdCbW85Tm1WWkZuVHAtSUF0X3hvZFpUakh0MjU3ZHEyRTNTaXF4THFYdTkzZTU3Vk9idlk3SXRMT0FnYVhZbzJ4d3MxTVlCQTV4SERCMUtma2dFa0g1SmpDZzE3VFpWaWtrem9SVkhhUjdGSWVIQXc?oc=5",
+                "source": "ne.ch",
+                "published": "Fri, 28 Nov 2025 08:00:00 GMT",
+                "query": "subsides assurance-maladie cantonaux"
+              },
+              {
+                "title": "Le canton du Jura clarifie la situation des subsides pour les primes maladie",
+                "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSmxZNGRpSURpUG5jYzdZOVBnNldzZW00ZW45NGdPbnl1OVlYSWJKeGY1MzROX2F5QVQtNl9lQzhtbU5HQlEyMjlJQk9pLXkya2EyV0w4RTVCQWg2ei03MVJDWG5JSEdELTVBMU1PMmtCRnR0ZGVUSG5TWkd3QUxmYkJwR3gteVZrSlI3Mm5EMTZBRkJlWTlMQ0F2SWhEMWZ2clhKX0lrWjdYMDlKSFlGaUoyTEkyOGNGUTJ1SXZsT0gwazdpUVFrYTR3?oc=5",
+                "source": "RFJ",
+                "published": "Tue, 28 Oct 2025 07:00:00 GMT",
+                "query": "subsides assurance-maladie cantonaux"
+              },
+              {
+                "title": "Réduction des primes de l'assurance-maladie dans le canton du Jura pour 2025",
+                "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOU09BLUZzQmlqS1NuVnowaW5yeEF4aFFZdHloRjdGdEp4cFlEdTltU2xMR1BPYzB1SFBfdDdDRFBROXJZaFlWTEU2Tl9aRC1HbU5XSDdyNlBKMVk4UUVjMElwT25hT0xjWFREbHFIYm5qNTcyZTJMdWxzOUUzRXZoVjBYaWdadk5qMkhmaVlqTUU4cl9XMUJEd0g5Zkx2UXRMU2gyVVRoUkcwNnM4M3ZqWnM0T19mUWJNOFo1eGIxT2p2OThVU0tiV0FqMTIwN08xR3JTQXBGYmxFeDlfQ1VCY1VpY09hY2dTdTRyTk5qZUxpZHJHMDVFclJsZEU?oc=5",
+                "source": "République et Canton du Jura",
+                "published": "Fri, 11 Oct 2024 07:00:00 GMT",
+                "query": "subsides assurance-maladie cantonaux"
+              }
+            ]
+          },
+          {
+            "phrase": "charge financière familles jeunes adultes",
+            "query": "charge financière familles primes maladie",
+            "span": [
+              443,
+              473
+            ],
+            "in_summary": true,
+            "articles": [
+              {
+                "title": "Hanoï apporte un soutien financier pour les primes d'assurance maladie à différents groupes de bénéficiaires.",
+                "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbkJ6U1QwY01UMmZOVkFJckR0WjZqV3hUWlFqcHI3cGV2QzdNNFY4XzNYdXFnOUgyVllQbC1LdDMxUEwyb3RVcDVNamFndk9qd3VkcjMzdTN3ekpYNkEzTnFBZWxvWnJwcDJnVFFKYlJsR25MMUtoM21hUUJ3QzNKT3NITHlsYVhZQTNxa0NtSi0ybmdBOTk0TkRn?oc=5",
+                "source": "Vietnam.vn",
+                "published": "Mon, 12 Oct 2026 21:54:59 GMT",
+                "query": "charge financière familles primes maladie"
+              },
+              {
+                "title": "Le canton de Berne fait un geste sur les primes maladie pour les familles",
+                "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPaXA5cGNKT2gyM1hJbUEzQWlObnVMWC1hUjk4eW5nZWgxS0U2V3ZMbmQ5R2pCZUVUZWFQMVhiODhocTBNQ2tNa21hYVBsaG1wZHJHcUhLV1dveWQ3YU9JR3pEZ05UMDZmbVB3QlpBZTVHWHBNZmNFYjZVQXNUbUhtVjlINjctNTV1R2tvLTQ1NmtieTh4LXpYMUxjejhyb2lxTkpPcW5zMldFSUYzQXdmV1lGZUJITW9VNFJEMXVLVnlfV3c?oc=5",
+                "source": "rts.ch",
+                "published": "Tue, 29 Aug 2023 07:00:00 GMT",
+                "query": "charge financière familles primes maladie"
+              },
+              {
+                "title": "Primes maladie : le Conseil d’État fribourgeois présente son contre-projet",
+                "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQd3BQbEx2S2NfYnJJcnB6SmEzc2RJTzJWcWRveDdJZjF1NnBZN3JLZ3lmRzFXZFViTEg3Z0c4UkQxYzZ3MWpoVUxCTHRPeWVOU1VHTkZRdkNOczFvLVdWbTdMVDBUZjNnNzIxUGZwZmhIeTdCRUowdVYzTzNWLUt5T0dyRlpoeWR5SWhRT2VUcw?oc=5",
+                "source": "La Télé",
+                "published": "Mon, 12 Oct 2026 15:15:00 GMT",
+                "query": "charge financière familles primes maladie"
+              },
+              {
+                "title": "Primes d'assurance maladie 2027: les partis suisses proposent des solutions radicales",
+                "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOTd6TVJZVGR4OWszY1ktZmhmLXZFeHhTeURGekJtY1VPcVhOYVlyQ0RIb1VQcUJpenIxYmpUT1dlX2RkYTRKWklVbGtnVkhGLUxBM1ZIX2ItRmpuZFVTZ1ZxekNvQ0R2Tm16aWw0UHNkWWJnZngxc0EwaEEwRjVVNGwtNzk4N2hqT1lxTjlENHRmTnBUSFkwMEhRMlF6SEVSZmVhWEhEMElJRERRMDE1X2NR?oc=5",
+                "source": "20 Min",
+                "published": "Tue, 29 Sep 2026 07:00:00 GMT",
+                "query": "charge financière familles primes maladie"
+              },
+              {
+                "title": "Primes maladie : des moyens d’action cantonaux vont être analysés",
+                "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOMFo1T19aWjExWXQxZ1VreEh2ZGRpYW5TcEh4S29OenZXby1zTWhoUVpXZ19hSVBoTGM0YzJmdVRtT3Z3QlZDQng3SG1UWG5Uc1gtNVRzRkU4U0lxbjJWTUdIRnZCRDhpWENmUURvc0lPUnlPQVBJT1ZHOGFNQlhwN1JkY3h4OXdER0gwTG0wZDdnMUpxSi1VZm1nVDYxMWJ3M3NHd2gza2tabVhoVlV2MV85YXB2alZkNlVpT2xpUTZtUWkxMnI0X25NZnlwZVVnRFdJQk1tR0dHVHlVcjQ1Qkx6cl93V2pwU1JBWGMxb19rdWxkR1UxZWhfMU5EdnhtQmRv?oc=5",
+                "source": "RFJ",
+                "published": "Fri, 02 Oct 2026 07:00:00 GMT",
+                "query": "charge financière familles primes maladie"
+              }
+            ]
+          }
+        ],
+        "truncated": false,
+        "usage": {
+          "prompt_tokens": 2717,
+          "total_tokens": 3091,
+          "completion_tokens": 374,
+          "prompt_tokens_details": {
+            "cached_tokens": 96,
+            "multimodal_tokens": null
+          }
+        }
+      }
+    },
+    {
+      "url": "https://example.invalid/missing.pdf",
+      "error": "NetworkError when attempting to fetch resource."
+    }
+  ]
+}

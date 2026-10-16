@@ -39,6 +39,124 @@ curl -s localhost:8000/v1/report -H 'content-type: application/json' \
   -d '{"urls":["https://api.openparldata.ch/v1/docs/928926","https://api.openparldata.ch/v1/docs/448120"]}' -o report.pdf
 ```
 
+## Samples
+
+* **14-document sample** (federal / cantonal / communal × DE / FR / IT): inputs in
+  [`data/sample/urls.txt`](data/sample/urls.txt). Full Apertus outputs and the verified records are in
+  [`eval/sample_70b_reverified.json`](eval/sample_70b_reverified.json); the evaluation tables are in
+  [`technical_report.md`](technical_report.md) §5.
+* **Validator:** the provenance verifier ([`src/william/verify.py`](src/william/verify.py),
+  [`src/extension/shared/core.js`](src/extension/shared/core.js)) plus the JSON Schema
+  [`docs/opd-affair-0.1.schema.json`](docs/opd-affair-0.1.schema.json) (`GET /v1/schema`).
+  `python -m william.evaluate reverify|stats|crosscheck` re-checks stored outputs offline.
+* **Apertus prompts:** [`src/extension/shared/prompts.json`](src/extension/shared/prompts.json).
+* **Extension end-to-end run** (headless Firefox, 19/19): screenshots and results in [`eval/e2e/`](eval/e2e).
+
+Excerpt of a real record: a Lugano reply to a written question (communal, Italian). Ticino's *interrogazione* is
+mapped to `question` by the type lookup, even though Apertus first said *interpellation*:
+
+```json
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/5192/592b1e53ea42d39cd74b6…",
+  "pages": 3,
+  "opd_doc_id": 928926
+ },
+ "language": "it",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "5192"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "1654",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Interrogazione no. 1654"
+  },
+  "title": {
+   "value": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Legge sulle Commesse Pubbliche, ce la facciamo"
+  },
+  "type": {
+   "value": "question",
+   "status": "normalised",
+   "page": 1,
+   "quote": "Interrogazione",
+   "opd_type_harmonized_id": 12
+  },
+  "type_original": {
+   "value": "interrogazione",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Interrogazione"
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Demis Fumasoli",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Onorevole Signor\nDemis Fumasoli"
+    },
+    "role": {
+     "value": "submitter",
+     "status": "normalised",
+     "page": 1,
+     "quote": "presentata unitamente ad un altro cofirmatario"
+    }
+   },
+   {
+    "name": {
+     "value": "Municipio di Lugano",
+     "status": "inferred",
+     "page": 1,
+     "quote": "il Municipio"
+    },
+    "role": {
+     "value": "respondent",
+     "status": "normalised",
+     "page": 1,
+     "quote": "il Municipio"
+    }
+   }
+  ],
+  "questions": [
+   {
+    "question": {
+     "value": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già\nstate segnalate da suissetec Ticino e Moesano come non in regola o non idonee"
+    }
+   }
+  ],
+  "…": "…"
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 15,
+   "normalised": 11,
+   "inferred": 5,
+   "rejected": 8,
+   "metadata": 1
+  },
+  "verified_share": 0.675,
+  "flags": [
+   "model type 'interpellation' replaced by 'question' from the original term 'interrogazione'",
+   "8 model value(s) rejected: quote not found in the document"
+  ]
+ }
+}
+```
+
 ## Install the Firefox extension
 
 1. Firefox → `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on…** → pick `src/extension/manifest.json`

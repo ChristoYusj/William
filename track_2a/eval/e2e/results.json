@@ -12,22 +12,22 @@
  {
   "check": "viewer: pages rendered with selectable text layer",
   "pass": true,
-  "detail": "3 pages, 163 text spans"
+  "detail": "1 pages, 10 text spans"
  },
  {
   "check": "viewer: document summary in document language",
   "pass": true,
-  "detail": "Summary of the document · language it | Il Municipio di Lugano ha risposto all'interrogazione no. 1654 del consigliere Demis Fumasoli riguardo al rispetto dei c"
+  "detail": "Summary of the document · language it | Il Municipio di Lugano ha risposto all'interrogazione parlamentare no. 1654 riguardante l'applicazione della Legge sulle"
  },
  {
   "check": "viewer: topic highlights present (inline in summary)",
   "pass": true,
-  "detail": "2 inline / 2 total"
+  "detail": "1 inline / 3 total"
  },
  {
   "check": "viewer: clicking a highlight lists Swiss news articles",
   "pass": true,
-  "detail": "3 articles, e.g. Appalti pubblici a Lugano: ‘Nessuna reiterazione della problematica’"
+  "detail": "5 articles, e.g. A Lugano ci sono volute 75 ore per rispondere a un'interrogazione"
  },
  {
   "check": "viewer: 'Summarise selection' enables after selecting text",
@@ -52,7 +52,7 @@
  {
   "check": "viewer: Download JSON",
   "pass": true,
-  "detail": "592b1e53ea42d39cd74b6c66309cd362b91b0eb79393ee48b58137b3aaa9f283.opd-affair.json"
+  "detail": "OpenParlData_document_5192_592b1e53.opd-affair.json"
  },
  {
   "check": "batch: 3 links processed (2 records, 1 clean error)",
@@ -62,7 +62,7 @@
  {
   "check": "batch: summaries with inline topic highlights",
   "pass": true,
-  "detail": "3 inline highlights"
+  "detail": "4 inline highlights"
  },
  {
   "check": "batch: Download JSON (all items)",
@@ -72,7 +72,7 @@
  {
   "check": "batch: Download PDF report (valid, summary inside)",
   "pass": true,
-  "detail": "11 pages"
+  "detail": "12 pages"
  },
  {
   "check": "popup: loads with buttons, no missing-key warning",
@@ -82,7 +82,7 @@
  {
   "check": "panel: page summary injected into a live website",
   "pass": true,
-  "detail": "{'lang': 'de', 'located': 3, 'ok': True, 'topics': 4} | 2 inline highlights"
+  "detail": "{'lang': 'de', 'located': 2, 'ok': True, 'topics': 4} | 2 inline highlights"
  },
  {
   "check": "panel: highlight opens Swiss news list",
