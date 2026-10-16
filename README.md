@@ -9,10 +9,10 @@ common, provenance-carrying structure (`opd-affair/0.1`). It runs as a Firefox e
 HTTP API.
 
 ➡ **Project:** [`track_2a/`](track_2a) · [README](track_2a/README.md) · [technical report](track_2a/technical_report.md)
-([PDF](track_2a/RedPandas_Report.pdf)) · [schema](track_2a/docs/schema.md)
+([PDF](track_2a/RedPandas_William_Report.pdf)) · [schema](track_2a/docs/schema.md)
 
 ```bash
 cd track_2a && make run      # needs LLM_API_KEY (and optionally LLM_BASE_URL / LLM_NAME)
 ```
 
-Licence: Apache-2.0 (see [LICENSE](LICENSE)).
+Licences: code Apache-2.0 ([LICENSE](LICENSE)); report/docs CC-BY-4.0; data CDLA-Permissive-2.0.

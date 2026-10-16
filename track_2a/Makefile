@@ -45,5 +45,5 @@ extension:
 
 # Team only (needs pandoc + xelatex locally): the submission PDF from technical_report.md
 report:
-	pandoc technical_report.md -o RedPandas_Report.pdf --pdf-engine=xelatex -H tools/report_header.tex \
+	pandoc technical_report.md -o RedPandas_William_Report.pdf --pdf-engine=xelatex \
 	  -V geometry:margin=1.8cm -V fontsize=10pt -V mainfont=Calibri -V monofont=Consolas -V colorlinks=true

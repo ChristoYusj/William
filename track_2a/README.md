@@ -262,4 +262,4 @@ Firefox ≥ 115 for the extension.
 
 ## Licence
 
-Apache-2.0 (see repository root). pdf.js (Apache-2.0) is included in `src/extension/lib/`.
+Code: Apache-2.0 (repository `LICENSE`). Report and docs: CC-BY-4.0. Data we produced (`data/`, `eval/`, `tests/fixtures/`): CDLA-Permissive-2.0. pdf.js (Apache-2.0) is included in `src/extension/lib/`.
