@@ -1,7 +1,7 @@
 // William engine — the same pipeline as src/william (Python), for the Firefox extension.
 // Prompts and vocabularies come from shared/prompts.json and shared/vocab.json (single source).
 import * as pdfjsLib from "../lib/pdf.min.mjs";
-import { parseJson, buildText, assemble, SCHEMA_VERSION, locatePhrase, highlightSegments } from "./core.js";
+import { parseJson, buildText, assemble, SCHEMA_VERSION, locatePhrase, highlightSegments, normLang } from "./core.js";
 export { parseJson, buildText, assemble, SCHEMA_VERSION };
 export { PageIndex, normalise, dateSupported } from "./core.js";
 
@@ -64,6 +64,17 @@ export async function chat(system, user, { maxTokens = 3000 } = {}) {
     }
   }
   throw last;
+}
+
+// One retry with a stricter instruction when the model's JSON is invalid or cut off.
+async function chatJson(system, user, maxTokens, prompts) {
+  const first = await chat(system, user, { maxTokens });
+  try {
+    return { raw: parseJson(first.text), usage: first.usage };
+  } catch {
+    const second = await chat(system, user + prompts.json_retry_suffix, { maxTokens });
+    return { raw: parseJson(second.text), usage: { ...second.usage, retried: true } };
+  }
 }
 
 // ---------------------------------------------------------------- documents
@@ -180,8 +191,7 @@ export async function extract(doc) {
   for (const [k, v] of Object.entries(rep)) user = user.replaceAll(k, v.join(", "));
   user = user.replace("{text}", () => text);
   const s = await settings();
-  const { text: out, usage } = await chat(prompts.extract.system, user, { maxTokens: 3500 });
-  const raw = parseJson(out);
+  const { raw, usage } = await chatJson(prompts.extract.system, user, 6000, prompts);
   const rec = assemble(doc, raw, { usage, truncated, model: s.model, vocab, prompts });
   rec.extractor.raw_model_output = raw; // kept so verification can be re-run offline
   return rec;
@@ -194,10 +204,9 @@ export async function summarize(text, { withNews = true } = {}) {
   const max = prompts.max_doc_chars;
   let user = prompts.summarize.user_template.replace("{text}", () => text.slice(0, max));
   if (s.summaryLang && s.summaryLang !== "doc") user += `\nWrite the summary and key points in this language instead: ${s.summaryLang}.`;
-  const { text: out, usage } = await chat(prompts.summarize.system, user, { maxTokens: 1200 });
-  const d = parseJson(out);
+  const { raw: d, usage } = await chatJson(prompts.summarize.system, user, 1500, prompts);
   const summary = String(d.summary || "");
-  const lang = String(d.language || "de").slice(0, 2).toLowerCase();
+  const lang = normLang(d.language, summary);
   const topics = [];
   for (const t of d.topics || []) {
     if (!t || !t.phrase) continue;
@@ -214,20 +223,27 @@ export async function news(query, lang = "de", limit = 5) {
   const { prompts } = await shared();
   const cfg = prompts.news;
   if (!cfg.supported_lang.includes(lang)) lang = cfg.fallback_lang;
-  const url = cfg.google_news_rss.replace("{query}", encodeURIComponent(query)).replaceAll("{lang}", lang);
-  try {
-    const r = await fetch(url, { credentials: "omit" });
-    const x = new DOMParser().parseFromString(await r.text(), "text/xml");
-    return [...x.querySelectorAll("item")].slice(0, limit).map((it) => {
-      const source = it.querySelector("source")?.textContent?.trim() || "";
-      let title = it.querySelector("title")?.textContent?.trim() || "";
-      if (source && title.endsWith(" - " + source)) title = title.slice(0, -(source.length + 3));
-      return { title, url: it.querySelector("link")?.textContent?.trim() || "", source,
-        published: it.querySelector("pubDate")?.textContent?.trim() || "" };
-    });
-  } catch {
-    return [];
+  const sites = cfg.swiss_sites?.[lang];
+  const words = (query.match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 4);
+  // progressively shorter queries: the model's query is sometimes too specific to match anything
+  const queries = [...new Set([query, words.slice(0, 3).join(" "), words.slice(0, 2).join(" ")].filter((q) => q.trim()))];
+  for (const q of queries) {
+    const full = sites ? `${q} (${sites.map((x) => "site:" + x).join(" OR ")})` : q;
+    const url = cfg.google_news_rss.replace("{query}", encodeURIComponent(full)).replaceAll("{lang}", lang);
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      const x = new DOMParser().parseFromString(await r.text(), "text/xml");
+      const items = [...x.querySelectorAll("item")].slice(0, limit).map((it) => {
+        const source = it.querySelector("source")?.textContent?.trim() || "";
+        let title = it.querySelector("title")?.textContent?.trim() || "";
+        if (source && title.endsWith(" - " + source)) title = title.slice(0, -(source.length + 3));
+        return { title, url: it.querySelector("link")?.textContent?.trim() || "", source,
+          published: it.querySelector("pubDate")?.textContent?.trim() || "", query: q };
+      });
+      if (items.length) return items;
+    } catch {}
   }
+  return [];
 }
 
 // ---------------------------------------------------------------- UI helpers

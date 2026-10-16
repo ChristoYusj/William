@@ -113,3 +113,23 @@ def test_ssrf_guard_blocks_local_and_non_http():
                 "http://10.0.0.5/a.pdf", "file:///etc/passwd", "ftp://example.org/a.pdf"):
         with pytest.raises(ValueError):
             _check_host(bad)
+
+
+def test_language_codes_are_normalised():
+    from william.summarize import norm_lang
+    assert norm_lang("ge", "Der Gemeinderat hat die Motion abgelehnt") == "de"
+    assert norm_lang("FR", "") == "fr"
+    assert norm_lang("xx", "Il Municipio di Lugano ha risposto che non è possibile per il momento") == "it"
+    assert norm_lang(None, "Le Conseil d'Etat est invité à présenter une étude pour les familles") == "fr"
+
+
+def test_bad_json_is_retried_once(monkeypatch):
+    from william import llm
+    calls = []
+
+    def fake_chat(system, user, **kw):
+        calls.append(user)
+        return ('{"a": 1' if len(calls) == 1 else '{"a": 1}'), {"prompt_tokens": 1}
+    monkeypatch.setattr(llm, "chat", fake_chat)
+    raw, usage = llm.chat_json("s", "u", max_tokens=10, retry_suffix=" RETRY")
+    assert raw == {"a": 1} and usage["retried"] and calls[1].endswith(" RETRY")

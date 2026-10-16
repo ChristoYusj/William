@@ -88,3 +88,13 @@ def parse_json(text: str) -> dict:
             if depth == 0:
                 return json.loads(t[start:i + 1])
     raise LLMError("unterminated JSON object in model output")
+
+
+def chat_json(system: str, user: str, *, max_tokens: int, retry_suffix: str, model: str | None = None) -> tuple[dict, dict]:
+    """One retry with a stricter instruction when the model's JSON is invalid or cut off."""
+    text, usage = chat(system, user, max_tokens=max_tokens, model=model)
+    try:
+        return parse_json(text), usage
+    except (LLMError, json.JSONDecodeError):
+        text, usage = chat(system, user + retry_suffix, max_tokens=max_tokens, model=model)
+        return parse_json(text), {**usage, "retried": True}

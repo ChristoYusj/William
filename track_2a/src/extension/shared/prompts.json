@@ -10,12 +10,24 @@
     "user_template": "Pages are marked with === PAGE n ===.\n<<<\n{text}\n>>>\n\nAllowed affair_type values: {affair_types}\nAllowed actor roles: {actor_roles}\nAllowed actor kinds: {actor_kinds}\nAllowed procedural states: {procedural_states}\nAllowed decision outcomes: {decision_outcomes}\nAllowed relation types: {relation_types}\n\nA field F is written as {\"v\": <value>, \"p\": <page number>, \"q\": \"<verbatim quote>\"} or null.\nReturn exactly this JSON object:\n{\n \"language\": \"<ISO 639-1 code>\",\n \"level\": F with v in [\"federal\",\"cantonal\",\"communal\"],\n \"parliament\": F (name of the parliament or council as written),\n \"affair_number\": F,\n \"title\": F,\n \"affair_type\": F with v from the allowed list,\n \"affair_type_original\": F (the type word exactly as written, e.g. 'Kleine Anfrage', 'Interpellation urgente'),\n \"submission_date\": F with v as YYYY-MM-DD,\n \"actors\": [{\"name\": F, \"role\": F, \"kind\": F, \"party_or_group\": F}],\n \"addressed_to\": F,\n \"requests\": [F] (each demand / ask of the affair, short),\n \"questions\": [{\"number\": F, \"question\": F, \"answer\": F}] (answer = the reply text if present, shortened quote ok),\n \"procedural_history\": [{\"date\": F, \"state\": F, \"description\": F}],\n \"state\": F,\n \"decisions\": [{\"date\": F, \"body\": F, \"outcome\": F, \"votes_yes\": F, \"votes_no\": F, \"votes_abstain\": F}],\n \"related_affairs\": [{\"reference\": F, \"relation\": F}],\n \"keywords\": [\"<3-6 subject keywords in the document language>\"]\n}\nFor F of vocabulary fields (affair_type, role, kind, state, outcome, relation, level) the quote must be the text that justifies the choice. Use [] for empty lists.\nIMPORTANT: \"q\" is REQUIRED for every non-null F. Copy it character-for-character from the page (original language and spelling, no translation, no paraphrase) and give its page number in \"p\". If you cannot quote it, set the field to null."
   },
   "news": {
-    "google_news_rss": "https://news.google.com/rss/search?q={query}&hl={lang}-CH&gl=CH&ceid=CH:{lang}",
+    "google_news_rss": "https://news.google.com/rss/search?q={query}&hl={lang}&gl=CH&ceid=CH:{lang}",
     "supported_lang": [
       "de",
       "fr",
       "it"
     ],
-    "fallback_lang": "de"
-  }
+    "fallback_lang": "de",
+    "swiss_sites": {
+      "_note": "Google News has no Swiss edition for Italian (it-CH redirects to Italy), so Italian queries are restricted to Swiss outlets.",
+      "it": [
+        "rsi.ch",
+        "laregione.ch",
+        "cdt.ch",
+        "tio.ch",
+        "swissinfo.ch",
+        "ticinonews.ch"
+      ]
+    }
+  },
+  "json_retry_suffix": "\n\nYour previous answer was not valid or was cut off. Return ONLY the JSON object, compact (no indentation), with no text before or after it. Keep quotes short."
 }

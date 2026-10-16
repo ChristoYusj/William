@@ -14,25 +14,13 @@ from .extract import build_text
 from .shared import prompts
 
 
-# The model sometimes answers "german" / "ge" instead of an ISO 639-1 code
-LANG_ALIASES = {"ge": "de", "ger": "de", "deu": "de", "german": "de", "deutsch": "de",
-                "fra": "fr", "fre": "fr", "french": "fr", "francais": "fr", "français": "fr",
-                "ita": "it", "italian": "it", "italiano": "it",
-                "roh": "rm", "romansh": "rm", "rumantsch": "rm", "eng": "en", "english": "en"}
-
-
-def _lang(raw) -> str:
-    raw = str(raw or "de").strip().lower()
-    return LANG_ALIASES.get(raw, raw[:2])
-
-
 def summarize(text: str, *, model: str | None = None, with_news: bool = True) -> dict:
     p = prompts()["summarize"]
     body, truncated = (text[: prompts()["max_doc_chars"]], len(text) > prompts()["max_doc_chars"])
-    out, usage = llm.chat(p["system"], p["user_template"].replace("{text}", body), max_tokens=1200, model=model)
-    data = llm.parse_json(out)
+    data, usage = llm.chat_json(p["system"], p["user_template"].replace("{text}", body), max_tokens=1500,
+                                retry_suffix=prompts()["json_retry_suffix"], model=model)
     summary = str(data.get("summary") or "")
-    lang = _lang(data.get("language"))
+    lang = norm_lang(data.get("language"), summary)
     topics = []
     for t in data.get("topics") or []:
         if not isinstance(t, dict) or not t.get("phrase"):
@@ -84,28 +72,51 @@ def summarize_pages(pages: list[str], **kw) -> dict:
     return summarize(text, **kw)
 
 
+LANG_ALIAS = {"ge": "de", "ger": "de", "deu": "de", "fre": "fr", "fra": "fr", "ita": "it", "roh": "rm", "rom": "rm", "rum": "rm", "eng": "en"}
+STOP = {"de": ["der", "die", "und", "das", "nicht", "mit", "für", "ist"], "fr": ["le", "la", "les", "des", "et", "est", "pour", "une"],
+        "it": ["il", "che", "della", "per", "non", "una", "sono", "del"], "en": ["the", "and", "of", "to", "is", "for", "that", "with"],
+        "rm": ["da", "la", "il", "e", "per", "cun", "ina", "ils"]}
+
+
+def norm_lang(code, text: str) -> str:
+    """Same as core.js normLang: fix aliases like 'ge'; else guess from stopwords."""
+    c = str(code or "").strip().lower()[:3]
+    if c[:2] in ("de", "fr", "it", "rm", "en") and c not in LANG_ALIAS:
+        return c[:2]
+    if c in LANG_ALIAS:
+        return LANG_ALIAS[c]
+    words = re.findall(r"[^\W\d_]+", (text or "").lower())
+    return max(STOP, key=lambda lang: sum(w in STOP[lang] for w in words))
+
+
 def news(query: str, lang: str = "de", limit: int = 5) -> list[dict]:
-    """Swiss news articles for a query (Google News RSS, region CH, document language)."""
+    """Swiss news for a query (Google News RSS, CH edition; Italian restricted to Swiss outlets).
+    Falls back to shorter queries when the model's query is too specific."""
     cfg = prompts()["news"]
     if lang not in cfg["supported_lang"]:
         lang = cfg["fallback_lang"]
-    url = cfg["google_news_rss"].replace("{query}", quote_plus(query)).replace("{lang}", lang)
-    try:
-        r = httpx.get(url, headers=UA, timeout=20, follow_redirects=True)
-        r.raise_for_status()
-        root = ET.fromstring(r.content)
-    except Exception:
-        return []
-    items = []
-    for it in root.iter("item"):
-        title = (it.findtext("title") or "").strip()
-        source = (it.findtext("source") or "").strip()
-        if source and title.endswith(" - " + source):
-            title = title[: -len(source) - 3]
-        items.append({"title": title, "url": (it.findtext("link") or "").strip(), "source": source,
-                      "published": (it.findtext("pubDate") or "").strip()})
-        if len(items) >= limit:
-            break
-    return items
-
-
+    sites = (cfg.get("swiss_sites") or {}).get(lang)
+    words = [w for w in _WORD.findall(query) if len(w) >= 4]
+    queries = list(dict.fromkeys(q for q in (query, " ".join(words[:3]), " ".join(words[:2])) if q.strip()))
+    for q in queries:
+        full = f"{q} ({' OR '.join('site:' + x for x in sites)})" if sites else q
+        url = cfg["google_news_rss"].replace("{query}", quote_plus(full)).replace("{lang}", lang)
+        try:
+            r = httpx.get(url, headers=UA, timeout=20, follow_redirects=True)
+            r.raise_for_status()
+            root = ET.fromstring(r.content)
+        except Exception:
+            continue
+        items = []
+        for it in root.iter("item"):
+            title = (it.findtext("title") or "").strip()
+            source = (it.findtext("source") or "").strip()
+            if source and title.endswith(" - " + source):
+                title = title[: -len(source) - 3]
+            items.append({"title": title, "url": (it.findtext("link") or "").strip(), "source": source,
+                          "published": (it.findtext("pubDate") or "").strip(), "query": q})
+            if len(items) >= limit:
+                break
+        if items:
+            return items
+    return []

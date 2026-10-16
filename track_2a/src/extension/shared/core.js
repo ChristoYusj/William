@@ -323,3 +323,21 @@ export function highlightSegments(summary, topics) {
   segs.push({ text: summary.slice(pos) });
   return segs;
 }
+
+// Apertus sometimes returns a wrong language code (e.g. "ge" for German). Map aliases; else guess from stopwords.
+const LANG_ALIAS = { ge: "de", ger: "de", deu: "de", fre: "fr", fra: "fr", ita: "it", roh: "rm", rom: "rm", rum: "rm", eng: "en" };
+const STOP = { de: ["der", "die", "und", "das", "nicht", "mit", "für", "ist"], fr: ["le", "la", "les", "des", "et", "est", "pour", "une"],
+  it: ["il", "che", "della", "per", "non", "una", "sono", "del"], en: ["the", "and", "of", "to", "is", "for", "that", "with"],
+  rm: ["da", "la", "il", "e", "per", "cun", "ina", "ils"] };
+export function normLang(code, text) {
+  const c = String(code || "").trim().toLowerCase().slice(0, 3);
+  if (["de", "fr", "it", "rm", "en"].includes(c.slice(0, 2)) && !LANG_ALIAS[c]) return c.slice(0, 2);
+  if (LANG_ALIAS[c]) return LANG_ALIAS[c];
+  const words = String(text || "").toLowerCase().match(/\p{L}+/gu) || [];
+  let best = "de", n = -1;
+  for (const [l, sw] of Object.entries(STOP)) {
+    const k = words.filter((w) => sw.includes(w)).length;
+    if (k > n) { n = k; best = l; }
+  }
+  return best;
+}

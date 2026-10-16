@@ -64,11 +64,7 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
     pdf.set_margins(15, 12, 15)
     pdf.add_page()
     pdf.heading("Parliamentary affairs - summary report", 16)
-<<<<<<< Updated upstream
     pdf.para(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
-=======
-    pdf.p(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
->>>>>>> Stashed changes
           "[n] = normalised from a verified quote (date, vocabulary); [meta] = from OpenParlData metadata. "
           "Values whose quote could not be found in the document were removed.", 8.5, "I")
     pdf.ln(3)

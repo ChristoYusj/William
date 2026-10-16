@@ -24,6 +24,12 @@ make eval         # evaluation table from the stored run (no API calls)
 make sample       # live: re-extract the 14-document sample with Apertus
 ```
 
+Extension end-to-end test (headless Firefox + Selenium, live Apertus; last run 19/19, see `eval/e2e/`):
+
+```bash
+pip install selenium==4.35.0 && LLM_API_KEY=... python tests/e2e_firefox.py
+```
+
 API example:
 
 ```bash

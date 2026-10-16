@@ -132,10 +132,24 @@ not as the source. This is a well-founded *partial negative* result for the comm
   (the rest are shown as clickable chips).
 * The API has no authentication and spends the operator's Apertus credits. It refuses private/local addresses (SSRF
   guard), caps downloads at 25 MB and sends no CORS headers. Run it behind a gateway in production.
-* Tested: live API end to end in Docker (`/v1/extract` with summary + news, `/v1/report` PDF, error handling for bad and
-  local links), offline tests (`make test`, 8 tests), JS/Python parity (0 differences), Docker build, `web-ext lint`
-  (0 errors), and in-browser PDF generation. Not tested: a full Apertus-backed run inside Firefox. The extension was
-  loaded in Firefox, but no API key was entered in that profile.
+* Tested:
+  * **Extension end to end in real (headless) Firefox, live against Apertus: 19/19 checks** (`tests/e2e_firefox.py`,
+    results and screenshots in `eval/e2e/`). Covered: PDF auto-open in the viewer, rendering with a selectable text
+    layer, document and selection summaries in the document language, inline topic highlights → Swiss news,
+    extraction with p.N evidence jumps, JSON download, the batch page with 3 links incl. a dead one, JSON + PDF
+    report downloads, the popup, and the in-page panel on a live parlament.ch page.
+  * Live API in Docker (`/v1/extract` with summary + news, `/v1/report`, SSRF refusal, no CORS); offline tests
+    (`make test`, 10 tests); JS/Python parity (0 differences); `web-ext lint` (0 errors).
+  * Not covered by automation: the right-click menu itself (Selenium cannot open browser menus; the same code path
+    was driven directly).
+* The first Firefox run found 3 bugs, now fixed:
+  * one batch document failed on cut-off model JSON (now: one stricter retry with a larger output budget);
+  * Apertus returned the language code "ge" (now normalised, with a stopword fallback);
+  * an over-specific news query returned nothing (now: progressively shorter queries).
+* Google News has no Swiss edition for Italian: `it-CH` is silently redirected to the Italy edition. Italian news
+  queries are therefore restricted to Swiss outlets (RSI, laRegione, CdT, tio, swissinfo, ticinonews).
+* On PDFs whose text layer has no spaces, Apertus sometimes copies a topic phrase without spaces. Such a topic is
+  shown as a clickable chip instead of inline.
 
 ## 7. Reproducibility
 
