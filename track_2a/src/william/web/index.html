@@ -38,6 +38,16 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .opt input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px}
 .opt small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
 .opt.disabled{opacity:.55;cursor:not-allowed}
+.opt.sel{flex-direction:column;gap:4px;cursor:default}
+select{font:inherit;font-size:13.5px;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-width:200px}
+select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.sumhead{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.sumhead h4{margin:0}
+.badge{font-size:11.5px;padding:1px 8px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--ink)}
+.summary .orig-v{display:none}
+.summary.show-orig .orig-v{display:block}
+.summary.show-orig .tr-v{display:none}
+.trerr{font-size:12.5px;color:var(--bad);margin:0 0 6px}
 button{font:inherit;font-size:14px;border-radius:8px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 button:hover{background:var(--soft)}
 button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
@@ -119,6 +129,15 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:8px;paddin
         <span>Summary<small>4–8 sentences in the document's language</small></span></label>
       <label class="opt"><input type="checkbox" id="opt-news" checked>
         <span>Press articles<small>Swiss news on the issue (Google News, CH)</small></span></label>
+      <label class="opt sel"><span>Summary language<small>translated by Apertus before display</small></span>
+        <select id="opt-lang">
+          <option value="">Original (document's language)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="rm">Rumantsch</option>
+          <option value="en">English</option>
+        </select></label>
       <div class="grow"></div>
       <button type="button" class="linkbtn" id="examples">Load examples</button>
       <button type="submit" class="primary" id="run">Extract</button>
@@ -180,17 +199,25 @@ function F(f, group) {
     (f.quote ? `<span class="q">${esc(f.quote)}</span>` : "");
 }
 
-const opts = () => ({ summary: $("#opt-summary").checked || $("#opt-news").checked, news: $("#opt-news").checked });
+const LANGS = { de: "Deutsch", fr: "Français", it: "Italiano", rm: "Rumantsch", en: "English" };
+const opts = () => {
+  const lang = $("#opt-lang").value || null, news = $("#opt-news").checked;
+  return { summary: $("#opt-summary").checked || news || !!lang, news, translate_to: lang };
+};
 
-// press articles need the summary's topics, so ticking "Press articles" forces "Summary"
+// press articles and translation both work on the summary, so either one forces "Summary"
 function syncOpts() {
-  const news = $("#opt-news").checked;
-  if (news) $("#opt-summary").checked = true;
-  $("#opt-summary").disabled = news;
-  $("#opt-summary-wrap").classList.toggle("disabled", news);
-  $("#opt-summary-wrap").title = news ? "Needed for press articles" : "";
+  const news = $("#opt-news").checked, lang = $("#opt-lang").value;
+  const forced = news || !!lang;
+  if (forced) $("#opt-summary").checked = true;
+  $("#opt-summary").disabled = forced;
+  $("#opt-summary-wrap").classList.toggle("disabled", forced);
+  $("#opt-summary-wrap").title = forced ? `Needed for ${[news && "press articles", lang && "translation"].filter(Boolean).join(" and ")}` : "";
+  try { localStorage.setItem("william.lang", lang); } catch (e) {}
 }
+try { const saved = localStorage.getItem("william.lang"); if (saved && LANGS[saved]) $("#opt-lang").value = saved; } catch (e) {}
 $("#opt-news").addEventListener("change", syncOpts);
+$("#opt-lang").addEventListener("change", syncOpts);
 syncOpts();
 
 $("#examples").onclick = () => { $("#urls").value = EXAMPLES.join("\n"); updateCount(); $("#urls").focus(); };
@@ -253,7 +280,7 @@ async function runOne(card, i, o) {
   let it;
   try {
     const r = await fetch("/v1/extract", { method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify({ urls: [items[i].url], summary: o.summary, news: o.news }) });
+      body: JSON.stringify({ urls: [items[i].url], summary: o.summary, news: o.news, translate_to: o.translate_to }) });
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
     it = (await r.json()).items[0];
   } catch (err) {
@@ -290,19 +317,7 @@ function render(card, it, o) {
     chip("lang", r.language ? esc(String(r.language).toUpperCase()) : "") +
     `</div>`;
 
-  if (s && s.summary) {
-    // highlight the spans the API located (fuzzy, so paraphrased topic phrases are found too)
-    const spans = (s.topics || []).filter(tp => Array.isArray(tp.span)).map(tp => tp.span).sort((x, y) => x[0] - y[0]);
-    let sum = "", pos = 0;
-    for (const [a0, b0] of spans) {
-      if (a0 < pos) continue;
-      sum += esc(s.summary.slice(pos, a0)) + `<mark class="hl">${esc(s.summary.slice(a0, b0))}</mark>`;
-      pos = b0;
-    }
-    sum += esc(s.summary.slice(pos));
-    html += `<section class="blk summary"><h4>Summary</h4><p>${sum}</p>` +
-      ((s.key_points || []).length ? `<ul>${s.key_points.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : "") + `</section>`;
-  }
+  if (s && s.summary) html += summaryBlock(s);
 
   if (o.news) html += pressBlock(s);
 
@@ -326,6 +341,45 @@ function render(card, it, o) {
   html += `<details><summary>JSON record (opd-affair/0.1)</summary><pre>${esc(JSON.stringify(slim, null, 2))}</pre></details>`;
   card.body.innerHTML = html;
 }
+
+// original summary with the news topics highlighted (server-computed spans), plus the Apertus translation if asked
+function summaryBlock(s) {
+  const spans = (s.topics || []).map(t => t.span).filter(sp => Array.isArray(sp) && sp[1] > sp[0])
+    .sort((x, y) => x[0] - y[0]);
+  let sum = "", at = 0;
+  for (const [a, b] of spans) {
+    if (a < at) continue;
+    sum += esc(s.summary.slice(at, a)) + `<mark class="hl">${esc(s.summary.slice(a, b))}</mark>`;
+    at = b;
+  }
+  sum += esc(s.summary.slice(at));
+  const list = kp => (kp || []).length ? `<ul>${kp.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : "";
+  const src = String(s.language || "").toUpperCase();
+  const tr = s.translation;
+
+  if (!tr) return `<section class="blk summary"><div class="sumhead"><h4>Summary</h4></div><p>${sum}</p>${list(s.key_points)}</section>`;
+  const dst = String(tr.language || "").toUpperCase();
+  if (tr.error)
+    return `<section class="blk summary"><div class="sumhead"><h4>Summary</h4></div>` +
+      `<p class="trerr">Translation into ${esc(LANGS[tr.language] || dst)} failed (${esc(tr.error)}), showing the original.</p>` +
+      `<p>${sum}</p>${list(s.key_points)}</section>`;
+  if (tr.note)
+    return `<section class="blk summary"><div class="sumhead"><h4>Summary</h4>` +
+      `<span class="badge">already in ${esc(LANGS[tr.language] || dst)}</span></div><p>${sum}</p>${list(s.key_points)}</section>`;
+  return `<section class="blk summary"><div class="sumhead"><h4>Summary</h4>` +
+    `<span class="badge">${esc(src)} → ${esc(dst)} · translated by Apertus</span>` +
+    `<button type="button" class="linkbtn sw">Show original (${esc(src)})</button></div>` +
+    `<div class="tr-v" lang="${esc(tr.language)}"><p>${esc(tr.summary)}</p>${list(tr.key_points)}</div>` +
+    `<div class="orig-v" lang="${esc(s.language)}"><p>${sum}</p>${list(s.key_points)}</div></section>`;
+}
+
+$("#results").addEventListener("click", e => {
+  const b = e.target.closest(".sw");
+  if (!b) return;
+  const sec = b.closest(".summary"), orig = sec.classList.toggle("show-orig");
+  const tr = sec.querySelector(".tr-v").lang.toUpperCase(), src = sec.querySelector(".orig-v").lang.toUpperCase();
+  b.textContent = orig ? `Show translation (${tr})` : `Show original (${src})`;
+});
 
 function pressBlock(s) {
   const topics = ((s && s.topics) || []).filter(t => (t.articles || []).length);
