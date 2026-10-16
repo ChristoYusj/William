@@ -1,0 +1,15 @@
+# level	lang	url
+federal	fr	https://api.openparldata.ch/v1/docs/38803
+federal	de	https://api.openparldata.ch/v1/docs/316738
+cantonal	fr	https://api.openparldata.ch/v1/docs/448120
+cantonal	fr	https://api.openparldata.ch/v1/docs/444907
+cantonal	it	https://api.openparldata.ch/v1/docs/109935
+cantonal	de	https://api.openparldata.ch/v1/docs/901098
+communal	de	https://api.openparldata.ch/v1/docs/894215
+communal	de	https://api.openparldata.ch/v1/docs/929515
+communal	fr	https://api.openparldata.ch/v1/docs/650091
+communal	fr	https://api.openparldata.ch/v1/docs/555996
+communal	it	https://api.openparldata.ch/v1/docs/928925
+communal	it	https://api.openparldata.ch/v1/docs/928926
+federal	de	https://api.openparldata.ch/v1/docs/316740
+federal	it	https://api.openparldata.ch/v1/docs/485241

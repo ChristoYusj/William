@@ -1,0 +1,2081 @@
+{
+  "items": [
+    {
+      "url": "https://api.openparldata.ch/v1/docs/485241",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/CHE/6637737514c38a8ba35bcc45ca5953b16149e1ddaed979a96bb9e172399d7449",
+          "sha256": "4c05e9bb5d23a4e2fd920d1f885b78eaf007401c136bc930e4ba59eb958b4399",
+          "content_type": "application/octet-stream",
+          "pages": 1,
+          "opd_doc_id": 485241,
+          "opd_affair_id": 233408,
+          "retrieved_at": "2026-10-16T06:59:00+00:00"
+        },
+        "language": "it",
+        "body": {
+          "level": {
+            "value": "federal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "CHE",
+          "parliament": null,
+          "opd_body_type": "country"
+        },
+        "affair": {
+          "affair_number": null,
+          "title": null,
+          "type": null,
+          "type_original": null,
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "accessibility",
+            "javascript",
+            "browser",
+            "federal law website"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 0,
+            "normalised": 0,
+            "inferred": 0,
+            "rejected": 5,
+            "metadata": 1
+          },
+          "verified_share": 0.167,
+          "rejected_values": [
+            {
+              "path": "affair_type",
+              "value": "information_document",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "closed",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "title",
+              "value": "Fedlex - Accessibility Notice",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type_original",
+              "value": "information_document",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "addressed_to",
+              "value": "website visitors",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "2 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 1012,
+            "total_tokens": 1181,
+            "completion_tokens": 169,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/483276",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/CHE/c4524a6e700a0060d8b17b466350c1588338cd8491e6416711a08810154033b7",
+          "sha256": "c92e5e7ee1b8b1fc81d75fd3b3f1f46007450b6aadeee94472d9c3dcb52c60e7",
+          "content_type": "application/octet-stream",
+          "pages": 1,
+          "opd_doc_id": 483276,
+          "opd_affair_id": 233464,
+          "retrieved_at": "2026-10-16T06:59:01+00:00"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "federal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "CHE",
+          "parliament": null,
+          "opd_body_type": "country"
+        },
+        "affair": {
+          "affair_number": null,
+          "title": null,
+          "type": null,
+          "type_original": null,
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "accessibility",
+            "javascript",
+            "browser",
+            "federal law website"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 0,
+            "normalised": 0,
+            "inferred": 0,
+            "rejected": 5,
+            "metadata": 1
+          },
+          "verified_share": 0.167,
+          "rejected_values": [
+            {
+              "path": "affair_type",
+              "value": "information_document",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "closed",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "title",
+              "value": "Fedlex - Accessibility Notice",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type_original",
+              "value": "information_document",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "addressed_to",
+              "value": "website visitors",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "2 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 1012,
+            "total_tokens": 1181,
+            "completion_tokens": 169,
+            "prompt_tokens_details": {
+              "cached_tokens": 992,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/448120",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/GE/7ef98b02bb89f011d9a0b031d622599afc380bdee1a278e2330c2addbdcdc5cc",
+          "sha256": "626e699d5dc2a82f5b447cc40a7ac2b308486b694e01ab9d6973a09c789f4e57",
+          "content_type": "application/pdf",
+          "pages": 5,
+          "opd_doc_id": 448120,
+          "opd_affair_id": 198208,
+          "retrieved_at": "2026-10-16T06:59:05+00:00"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "cantonal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "GE",
+          "parliament": {
+            "value": "Grand Conseil genevois",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Grand Conseil genevois",
+            "char_start": 215,
+            "char_end": 237
+          },
+          "opd_body_type": "canton"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "R 687",
+            "status": "extracted",
+            "page": 1,
+            "quote": "R 687",
+            "char_start": 179,
+            "char_end": 184
+          },
+          "title": {
+            "value": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le droit d’initiative cantonal pour demander de soustraire les jeunes adultes de la compensation des risques LAMal",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Proposition de résolution \ndu Grand Conseil genevois à l’Assemblée fédérale exerçant le \ndroit d’initiative cantonal pour demander de soustraire les jeunes \nadultes de la compensation des risques LAMal",
+            "char_start": 185,
+            "char_end": 386
+          },
+          "type": null,
+          "type_original": {
+            "value": "Proposition de résolution",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Proposition de résolution",
+            "char_start": 185,
+            "char_end": 210
+          },
+          "submission_date": null,
+          "actors": [
+            {
+              "name": {
+                "value": "Eric Leyvraz",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Eric Leyvraz",
+                "char_start": 115,
+                "char_end": 127
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Patrick Lussi",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Patrick Lussi",
+                "char_start": 131,
+                "char_end": 144
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Assemblée fédérale",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Assemblée fédérale",
+            "char_start": 242,
+            "char_end": 260
+          },
+          "requests": [
+            {
+              "value": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’assurance-maladie des jeunes adultes à charge de leurs familles du régime de la compensation des risques",
+              "status": "extracted",
+              "page": 2,
+              "quote": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire \nles primes d’assurance-maladie des jeunes adultes à charge de leurs familles \ndu régime de la compensation des risques",
+              "char_start": 168,
+              "char_end": 361
+            }
+          ],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "assurance-maladie",
+            "compensation des risques",
+            "jeunes adultes",
+            "primes",
+            "LAMal",
+            "subsides"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 8,
+            "normalised": 0,
+            "inferred": 0,
+            "rejected": 7,
+            "metadata": 1
+          },
+          "verified_share": 0.562,
+          "rejected_values": [
+            {
+              "path": "actors[0].role",
+              "value": "submitter",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[0].kind",
+              "value": "person",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].role",
+              "value": "submitter",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].kind",
+              "value": "person",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type",
+              "value": "resolution",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2012-02-21",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "6 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 3505,
+            "total_tokens": 3854,
+            "completion_tokens": 349,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/444907",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/GE/e829e3d28e172e2ad7dc9a145e8a6cf71ce830eb8cfb4299aafa0c679800f6e3",
+          "sha256": "0c5c59d6590fe224801b2b5d68cf30a7cb37e835f891b3b4ccf845f31741ae84",
+          "content_type": "application/pdf",
+          "pages": 9,
+          "opd_doc_id": 444907,
+          "opd_affair_id": 195321,
+          "retrieved_at": "2026-10-16T06:59:08+00:00"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "cantonal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "GE",
+          "parliament": {
+            "value": "Grand Conseil de la République et canton de Genève",
+            "status": "extracted",
+            "page": 1,
+            "quote": "GRAND CONSEIL de la République et canton de Genève",
+            "char_start": 359,
+            "char_end": 409
+          },
+          "opd_body_type": "canton"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "PL 9957",
+            "status": "extracted",
+            "page": 1,
+            "quote": "PL 9957",
+            "char_start": 287,
+            "char_end": 294
+          },
+          "title": {
+            "value": "Projet de loi modifiant la loi sur les cimetières (K 1 65)",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Projet de loi \nmodifiant la loi sur les cimetières (K 1 65)",
+            "char_start": 295,
+            "char_end": 354
+          },
+          "type": null,
+          "type_original": {
+            "value": "Projet de loi",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Projet de loi",
+            "char_start": 295,
+            "char_end": 308
+          },
+          "submission_date": null,
+          "actors": [
+            {
+              "name": {
+                "value": "Olivier Jornot, Pierre Weiss, Christiane Favre, Beatrice de Candolle, Fabienne Gautier, Françis Walpen et Jean-Michel Gros",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Olivier Jornot, Pierre Weiss, \nChristiane Favre, Beatrice de Candolle, Fabienne \nGautier, Françis Walpen et Jean-Michel Gros",
+                "char_start": 114,
+                "char_end": 238
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Grand Conseil de la République et canton de Genève",
+            "status": "extracted",
+            "page": 1,
+            "quote": "GRAND CONSEIL de la République et canton de Genève",
+            "char_start": 359,
+            "char_end": 409
+          },
+          "requests": [
+            {
+              "value": "Donner une base légale au carré confessionnel du Petit-Saconnex et prévoir un nouveau au cimetière de Saint-Georges",
+              "status": "normalised",
+              "page": 5,
+              "quote": "donner une base légale au carré confessionnel du Petit-Saconnex \n(aujourd’hui plein), et de prévoir un carré confessionnel nouveau au \ncimetière de Saint-Georges",
+              "char_start": 1706,
+              "char_end": 1867
+            }
+          ],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "cimetières",
+            "carrés confessionnels",
+            "musulman",
+            "juif",
+            "Veyrier",
+            "Petit-Saconnex",
+            "Saint-Georges",
+            "neutralité confessionnelle"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 6,
+            "normalised": 1,
+            "inferred": 0,
+            "rejected": 11,
+            "metadata": 1
+          },
+          "verified_share": 0.421,
+          "rejected_values": [
+            {
+              "path": "actors[0].role",
+              "value": "submitter",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[0].kind",
+              "value": "person",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Projet déposé le 28 novembre 2006",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Modifier la loi sur les cimetières pour créer des carrés confessionnels pour les communautés musulmane et juive",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[2]",
+              "value": "Étendre la possibilité d'inhumation au cimetière israélite de Veyrier sur le territoire suisse",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[3]",
+              "value": "Assurer le respect de l'ordre public, l'accès libre aux visiteurs et les normes sanitaires dans les carrés confessionnels",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[4]",
+              "value": "Instaurer un régime d'autorisation pour l'exploitation du cimetière israélite de Veyrier par une personne morale",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type",
+              "value": "parliamentary_initiative",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2006-11-28",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "10 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 5955,
+            "total_tokens": 6431,
+            "completion_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/109935",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/TI/c126f47ae9867270cc2274f14079f6113d24745e0402a9a3b1efa0318d3b60d2",
+          "sha256": "f2606b4a73571ef5b1e2beccd3ae2d08d0d89b29387fc2f6b5fee6607e51eb71",
+          "content_type": "application/pdf",
+          "pages": 1,
+          "opd_doc_id": 109935,
+          "opd_affair_id": 83404,
+          "retrieved_at": "2026-10-16T06:59:28+00:00"
+        },
+        "language": "it",
+        "body": {
+          "level": {
+            "value": "cantonal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "TI",
+          "parliament": {
+            "value": "Gran Consiglio del Cantone Ticino",
+            "status": "inferred",
+            "page": 1,
+            "quote": "23 luglio 2019",
+            "char_start": 93,
+            "char_end": 107
+          },
+          "opd_body_type": "canton"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "126.19",
+            "status": "extracted",
+            "page": 1,
+            "quote": "126.19",
+            "char_start": 110,
+            "char_end": 116
+          },
+          "title": {
+            "value": "Interpellazione sul seguito alla mozione \"Non danneggiamo il clima con i soldi pubblici\" e sulla sostenibilità degli investimenti della Cassa pensione dello Stato",
+            "status": "normalised",
+            "page": 1,
+            "quote": "TESTO DELL'INTERROGAZIONE",
+            "char_start": 128,
+            "char_end": 153
+          },
+          "type": {
+            "value": "interpellation",
+            "status": "normalised",
+            "page": 1,
+            "quote": "TESTO DELL'INTERROGAZIONE",
+            "char_start": 128,
+            "char_end": 153,
+            "opd_type_harmonized_id": 8,
+            "wikidata": "Q1505023"
+          },
+          "type_original": {
+            "value": "interpellazione",
+            "status": "normalised",
+            "page": 1,
+            "quote": "TESTO DELL'INTERROGAZIONE",
+            "char_start": 128,
+            "char_end": 153
+          },
+          "submission_date": {
+            "value": "2019-07-23",
+            "status": "normalised",
+            "page": 1,
+            "quote": "23 luglio 2019",
+            "char_start": 93,
+            "char_end": 107
+          },
+          "actors": [
+            {
+              "name": {
+                "value": "Nicola Schoenenberger",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Nicola \nSchoenenberger",
+                "char_start": 471,
+                "char_end": 493
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Ay - Bourgoin - Crivelli Barella - Durisch - Gardenghi - Ghisletta - Merlo - Noi - Stephani - Storni",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Ay - Bourgoin - Crivelli Barella - \nDurisch - Gardenghi - Ghisletta - \nMerlo - Noi - Stephani - Storni",
+                "char_start": 2674,
+                "char_end": 2776
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Consiglio di Stato",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Chiediamo pertanto al Consiglio di Stato:",
+            "char_start": 649,
+            "char_end": 690
+          },
+          "requests": [
+            {
+              "value": "Valutare la sostenibilità sociale e ambientale degli investimenti del fondo Cassa pensione nell'ambito del messaggio sul risanamento della Cassa pensione.",
+              "status": "normalised",
+              "page": 1,
+              "quote": "Nell’ambito del preannunciato messaggio sul risanamento della Cassa pensione, intende \ncogliere l’occasione per valutare la sostenibilità sociale e ambientale degli investimenti del \nfondo Cassa pensione?",
+              "char_start": 695,
+              "char_end": 899
+            },
+            {
+              "value": "Indicare o imporre parametri di natura sociale e ambientale ai gestori del patrimonio della Cassa pensione.",
+              "status": "normalised",
+              "page": 1,
+              "quote": "Seppure la Cassa pensione non gestisca direttamente il fondo, quali parametri di natura sociale \ne ambientale indica o impone ai gestori del patrimonio?",
+              "char_start": 904,
+              "char_end": 1056
+            },
+            {
+              "value": "Valutare se investire in fondi sostenibili possa offrire rendimenti superiori e aumentare gli investimenti sostenibili del fondo, disinvestendo dalle energie fossili o altri investimenti problematici.",
+              "status": "normalised",
+              "page": 1,
+              "quote": "Chiediamo dunque se il Consiglio di Stato intende chiedere ai gestori della Cassa \npensione di aumentare in modo progressivo e importante gli investimenti sostenibili del \nfondo e di disinvestire dalle energie fossili o altri investimenti problematici dal punto di \nvista ambientale e sociale .",
+              "char_start": 2351,
+              "char_end": 2645
+            },
+            {
+              "value": "Fornire il rendimento medio del fondo Cassa pensione dello Stato nel periodo 2008-2017.",
+              "status": "normalised",
+              "page": 1,
+              "quote": "Qual è stato il rendimento medio del fondo Cassa pensione dello Stato in \nquesto periodo (decennio 2008-2017)?",
+              "char_start": 1766,
+              "char_end": 1876
+            }
+          ],
+          "questions": [],
+          "procedural_history": [],
+          "state": {
+            "value": "submitted",
+            "status": "normalised",
+            "page": 1,
+            "quote": "TESTO DELL'INTERROGAZIONE",
+            "char_start": 128,
+            "char_end": 153,
+            "opd_state_name_harmonized_id": 1
+          },
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "Cassa pensione",
+            "investimenti",
+            "sostenibilità",
+            "clima",
+            "energie fossili"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 4,
+            "normalised": 9,
+            "inferred": 1,
+            "rejected": 4,
+            "metadata": 1
+          },
+          "verified_share": 0.737,
+          "rejected_values": [
+            {
+              "path": "actors[0].role",
+              "value": "submitter",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[0].kind",
+              "value": "person",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].role",
+              "value": "co_signatory",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].kind",
+              "value": "parliamentary_group",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "4 model value(s) rejected: quote not found in the document"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 2038,
+            "total_tokens": 2956,
+            "completion_tokens": 918,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/901098",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/ZH/8e24a4f50ca737ebe7e3684e40b9cce5a26ef156f6e83542539a3845addd315b",
+          "sha256": "696cffabe1e7c5cf191ecf25b35043e863ebd60a53a9c9acbe6cc3983153e300",
+          "content_type": "application/pdf",
+          "pages": 1,
+          "opd_doc_id": 901098,
+          "opd_affair_id": 335625,
+          "retrieved_at": "2026-10-16T06:59:18+00:00"
+        },
+        "language": "de",
+        "body": {
+          "level": {
+            "value": "cantonal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "ZH",
+          "parliament": {
+            "value": "Kantonsrat",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Kantonsrat",
+            "char_start": 27,
+            "char_end": 37
+          },
+          "opd_body_type": "canton"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "31/2026",
+            "status": "extracted",
+            "page": 1,
+            "quote": "KR-Nr. 31/2026",
+            "char_start": 49,
+            "char_end": 63
+          },
+          "title": {
+            "value": "Wahl Mitglied Obergericht (100%) für den Rest der Amtsdauer 2025-2031 für Roland Schmid",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Wahl Mitglied \nObergericht (100%) \n \nfür den Rest der Amtsdauer 2025-2031 \nfür Roland Schmid",
+            "char_start": 75,
+            "char_end": 167
+          },
+          "type": {
+            "value": "election",
+            "status": "normalised",
+            "page": 1,
+            "quote": "(Geheime Wahl gemäss § 125 Kantonsratsgesetz)",
+            "char_start": 0,
+            "char_end": 45,
+            "opd_type_harmonized_id": 6,
+            "wikidata": "Q40231"
+          },
+          "type_original": {
+            "value": "Geheime Wahl",
+            "status": "extracted",
+            "page": 1,
+            "quote": "(Geheime Wahl gemäss § 125 Kantonsratsgesetz)",
+            "char_start": 0,
+            "char_end": 45
+          },
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": {
+            "value": "Obergericht",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Obergericht",
+            "char_start": 90,
+            "char_end": 101
+          },
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": {
+            "value": "decided",
+            "status": "normalised",
+            "page": 1,
+            "quote": "Wahlvorschlag der Interfraktionellen Konferenz",
+            "char_start": 174,
+            "char_end": 220,
+            "opd_state_name_harmonized_id": null
+          },
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "Wahl",
+            "Obergericht",
+            "Amtsdauer",
+            "Geheime Wahl"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 5,
+            "normalised": 2,
+            "inferred": 0,
+            "rejected": 2,
+            "metadata": 1
+          },
+          "verified_share": 0.8,
+          "rejected_values": [
+            {
+              "path": "actors[0].name",
+              "value": "Interfraktionelle Konferenz",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Wahl von Patrick Bischoff als Mitglied des Obergerichts für die Rest-Amtsdauer 2025-2031",
+              "page": 1,
+              "quote": "Wahl von Patrick Bischoff als Mitglied des Obergerichts für den Rest der Amtsdauer 2025-2031 für Roland Schmid"
+            }
+          ],
+          "flags": [
+            "2 model value(s) rejected: quote not found in the document"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 862,
+            "total_tokens": 1368,
+            "completion_tokens": 506,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/894215",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/351/a80250d0348bf3889a94ec8fc5a4b36826659b11ea09d67e099af1846365087c",
+          "sha256": "ec325483805ad90f4c495a29473651209852d7c0a36c290a46e1eb907092e837",
+          "content_type": "application/pdf",
+          "pages": 3,
+          "opd_doc_id": 894215,
+          "opd_affair_id": 329828,
+          "retrieved_at": "2026-10-16T06:59:21+00:00"
+        },
+        "language": "de",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "351",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "2026.PRD.0014",
+            "status": "extracted",
+            "page": 1,
+            "quote": "2026.PRD.0014",
+            "char_start": 266,
+            "char_end": 279
+          },
+          "title": {
+            "value": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte mit Verpflichtungskredit (Abstimmungsbotschaft) sowie Baurechtsabgabe",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte mit Verpflichtungs-\nkredit (Abstimmungsbotschaft) sowie Baurechtsabgabe",
+            "char_start": 103,
+            "char_end": 264
+          },
+          "type": null,
+          "type_original": {
+            "value": "Anträge",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Anträge",
+            "char_start": 0,
+            "char_end": 7
+          },
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": {
+            "value": "Gemeinderat",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Gemeinderat",
+            "char_start": 1211,
+            "char_end": 1222
+          },
+          "requests": [
+            {
+              "value": "Die Zwischennutzung soll nicht-kommerziell sein und wenn möglich eine Nutzung fürs Quartier haben (z.B. Kunst, Kultur, Soziale Nutzungen).",
+              "status": "normalised",
+              "page": 1,
+              "quote": "Die Zwischennutzung soll nicht-\nkommerziell sein und wenn möglich eine Nutzung fürs \nQuartier haben (z.B. Kunst, Kultur, Soziale Nutzungen).",
+              "char_start": 650,
+              "char_end": 790
+            }
+          ],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "Zwischennutzung",
+            "Leerstand",
+            "Band-Bestandesbau",
+            "Areal Ost",
+            "Biodiversität",
+            "naturnahe Lebensräume",
+            "Überbauungsordnung"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 4,
+            "normalised": 1,
+            "inferred": 0,
+            "rejected": 10,
+            "metadata": 1
+          },
+          "verified_share": 0.375,
+          "rejected_values": [
+            {
+              "path": "actors[0].name",
+              "value": "PVS",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].date",
+              "value": "11. Juni 2026",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Anträge und Synopse aus der Sitzung der PVS vom 11. Juni 2026",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Prüfung einer nicht-kommerziellen Zwischennutzung des Band-Bestandesbaus im Areal Ost für die Dauer zwischen Umzug und Baubeginn zur Weiterentwicklung des Areals",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[2]",
+              "value": "Aktives Vorgehen beim Organisieren der Zwischennutzung von Seite Fonds und der Band-Genossenschaft zur Minimierung des Risikos eines Leerstands",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type",
+              "value": "motion",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2026-06-11",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "parliament",
+              "value": "Parlamentsversammlung Stadt Zürich (PVS)",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "8 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 1502,
+            "total_tokens": 1982,
+            "completion_tokens": 480,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/929515",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/261/a0755ffb94c89fecc52f3f0a83052fb65c3977fbc45518d5015e1a26e63a07b8",
+          "sha256": "766cfe9d05325b3237a6ce8b683439d55d95c9041333c7fce7ab1a25cb1da39b",
+          "content_type": "application/octet-stream",
+          "pages": 1,
+          "opd_doc_id": 929515,
+          "opd_affair_id": 326683,
+          "retrieved_at": "2026-10-16T06:59:17+00:00"
+        },
+        "language": "de",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "261",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": null,
+          "title": null,
+          "type": null,
+          "type_original": null,
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": []
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 0,
+            "normalised": 0,
+            "inferred": 0,
+            "rejected": 1,
+            "metadata": 1
+          },
+          "verified_share": 0.5,
+          "rejected_values": [
+            {
+              "path": "state",
+              "value": "unknown",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "document longer than 28000 characters - only the beginning was read",
+            "1 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 24711,
+            "total_tokens": 24833,
+            "completion_tokens": 122,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/650091",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/5586/d15107af1603198d2410aa7a168c47072d7df02911c7d6411d5e3f7aa576de19",
+          "sha256": "746c512a94e01a825ff7eb69dbe98d1a01016e79b188f428486a6694bac76073",
+          "content_type": "application/pdf",
+          "pages": 5,
+          "opd_doc_id": 650091,
+          "opd_affair_id": 284951,
+          "retrieved_at": "2026-10-16T07:00:21+00:00"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "5586",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": null,
+          "title": null,
+          "type": null,
+          "type_original": {
+            "value": "interpellation",
+            "status": "extracted",
+            "page": 1,
+            "quote": "interpellation",
+            "char_start": 90,
+            "char_end": 104
+          },
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [
+            {
+              "number": null,
+              "question": {
+                "value": "Quelle est la genèse du projet, sous l'angle général et financier?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Quelle\nest\nla\ngenèse\ndu\nprojet,\nsous\nl’angle\ngénéral\net\nfinancier?",
+                "char_start": 2058,
+                "char_end": 2124
+              },
+              "answer": {
+                "value": "LEVAM a pris contact avec la Ville en juin 2022 concernant le projet de crèche à la route de Chavannes. En novembre 2022, un premier projet a été remis à la Ville. En février 2023, une séance entre 'EVAM et le Service de la petite enfance a permis de clarifier la mission de cette crèche. Du point de vue de la Ville, les besoins de place pour les Lausannoises et Lausannois étaient déjà couverts par deux structures de quartier du Réseau-L. Ils ne justifiaient pas un engagement financier pour créer des places à cet emplacement. Il a donc été convenu que la garderie de l'EVAM pourrait alors bénéficier du statut de crèche d'entreprise au sens de l'article 50 alinéa 2bis de la loi sur l'accueil de jour des enfants (LAJE).",
+                "status": "normalised",
+                "page": 2,
+                "quote": "LEVAM\na\npris\ncontact\navec\nla\nVille\nen\njuin\n2022\nune\npremière\nfois\nconcernant\nle\nprojet\nde\ncrèche\nà\nla\nroute\nde\nChavannes,\nEn\nnovembre\n2022,\nun\npremier\nprojeta\nété\nremis\nà\nla\nVille.\nEn\nfévrier\n2023,\nune\nséance\nentre\n‘EVAM\net\nle\nService\nde\nla\npetite\nenfance\na\npermis\nde\nclarifier\nla\nmission\nde\ncette\ncrèche.\nDu\npoint\nde\nvue\nde\nla\nVille,\nles\nbesoins\nde\nplace\npour\nles\nLausannoises\net\nLausannois\nétaient\ndéjà\ncouverts\npar\ndeux\nstructures\nde\nquartier\ndu\nRéseau-L.\nIls\nne\njustifiaient\npas\nun\nengagement\nfinancier\npour\ncréer\ndes\nplaces\nà\ncet\nemplacement.Ila\ndonc\nété\nconvenu\nque\nla\ngarderie\nde\nI’EVAM\npourrait\nalors\nbénéficier\ndu\nstatut\nde\ncrèche\nd’entreprise\nau\nsens\nde\nl’article\n50\nalinéa\n2bis\nde\nla\nloi\nsur\nl’accueil\nde\njour\ndes\nenfants\n(LAJE).",
+                "char_start": 2125,
+                "char_end": 2865
+              }
+            }
+          ],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "accueil de jour",
+            "crèche",
+            "places en crèche",
+            "taux d'occupation",
+            "budget 2026",
+            "demande",
+            "quartiers",
+            "Municipalité de Lausanne"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 2,
+            "normalised": 1,
+            "inferred": 0,
+            "rejected": 34,
+            "metadata": 1
+          },
+          "verified_share": 0.105,
+          "rejected_values": [
+            {
+              "path": "actors[0].name",
+              "value": "Mme Pauline Blanc et consorts",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].name",
+              "value": "Municipalité de Lausanne",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[0].number",
+              "value": "I",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[1].question",
+              "value": "Est-ce correct que la Municipalité a retiré le financement de la Ville car elle considérait que la crèche était «décentralisée»?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[2].question",
+              "value": "La Municipalité considère-t-elle que, malgré le besoin et la demande croissants en matière de places en crèche qu'elle évoque régulièrement, la «décentralisation» d'une crèche puisse penser qu'il n'y aura plus assez de demande?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[3].question",
+              "value": "La Municipalité ne considère-t-elle pas qu'il faut proposer des places en crèche sur l'ensemble du territoire communal, et pas uniquement au centre-ville?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[4].question",
+              "value": "Des études concrètes ont-elles été menées pour justifier l'hypothèse selon laquelle la demande est plus forte au centre-ville et faible en périphérie?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[5].question",
+              "value": "Quelle est l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 pour le préscolaire et parascolaire? Et quels sont les objectifs de taux, respectivement obligations contractuelles ou légales?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[6].question",
+              "value": "Un taux d'occupation inférieur à 100% signifie-t-il concrètement qu'il y a davantage de places offertes que demandées, autrement dit qu'il y a des places libres?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[7].question",
+              "value": "Quel coût représentent ces places vacantes?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[8].question",
+              "value": "Qu'en est-il de la situation liée aux listes d'attente pour les places? Les listes se raccourcissent-elles?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[9].question",
+              "value": "N'y a-t-il pas de demande de places en crèche en périphérie du centre-ville de Lausanne, autrement dit sur l'ensemble du territoire communal?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[10].question",
+              "value": "Le taux de fécondité suisse est historiquement bas (1.29 enfant par femme en 2024). Selon les statistiques vaudoises, cela fait une vingtaine d'années que le nombre de naissances n'a pas été aussi bas à Lausanne. Peut-on dire que l'évolution démographique implique une baisse de la demande en crèche?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[11].question",
+              "value": "Quelle est la vision de la Municipalité pour 2026 avec les places en préscolaire et parascolaires promises, en lien avec l'emplacement, la demande et le taux d'occupation?",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].date",
+              "value": "2025-11-18",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Interpellation déposée par Mme Pauline Blanc et consorts",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[1].date",
+              "value": "2025-11-27",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[1].state",
+              "value": "answered",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[1].description",
+              "value": "Réponse adoptée en séance de Municipalité",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Clarifier la position de la Municipalité concernant le retrait de financement à la création d'une nouvelle crèche en faveur de familles migrantes en partenariat avec le canton.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[1]",
+              "value": "Expliquer si la Municipalité considère qu'il n'y a plus assez de demande en périphérie pour justifier la création de places en crèche.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[2]",
+              "value": "Préciser si les places en crèche doivent être proposées sur l'ensemble du territoire communal ou uniquement au centre-ville.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[3]",
+              "value": "Expliquer l'évolution du taux d'occupation des places en préscolaire et parascolaire par rapport aux chiffres de 2024.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[4]",
+              "value": "Définir si un taux d'occupation inférieur à 100% signifie qu'il y a des places libres ou si cela correspond à des moments creux.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[5]",
+              "value": "Indiquer le coût des places vacantes et si la situation des listes d'attente s'améliore.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[6]",
+              "value": "Analyser l'impact de l'évolution démographique (taux de fécondité) sur la demande future en places en crèche.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[7]",
+              "value": "Préciser la vision de la Municipalité pour 2026 concernant les places en préscolaire et parascolaire promises, en lien avec l'emplacement, la demande et le taux d'occupation.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type",
+              "value": "interpellation",
+              "page": null,
+              "quote": "«Une place pour chaque enfant)): on reprend le même concept les yeux fermés?»"
+            },
+            {
+              "path": "state",
+              "value": "answered",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "title",
+              "value": "Réponse de la Municipalité à l'interpellation de Mme Pauline Blanc et consorts déposée le 18 novembre 2025 «Une place pour chaque enfant)): on reprend le même concept les yeux fermés?»",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2025-11-18",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "addressed_to",
+              "value": "Municipalité de Lausanne",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "parliament",
+              "value": "Municipalité de Lausanne",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "30 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 5699,
+            "total_tokens": 8480,
+            "completion_tokens": 2781,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/555996",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/5586/7f37e48d7dec6ba4961372bb0fe38e3ae5cca9064b03530fc495874fa695e083",
+          "sha256": "f679d26b973c807e517a2547cfcc29fa388d25affac50f3acc047ae044fef766",
+          "content_type": "application/pdf",
+          "pages": 2,
+          "opd_doc_id": 555996,
+          "opd_affair_id": 251898,
+          "retrieved_at": "2026-10-16T06:59:34+00:00"
+        },
+        "language": "fr",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "5586",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": null,
+          "title": {
+            "value": "Un rabais sur les abonnements Mobilis TL pour les bénéficiaires de l'assurance invalidité",
+            "status": "normalised",
+            "page": 1,
+            "quote": "Postulat:UnrabaissurlesabonnementsMobilisTLpourles\nbénéficiairesdel’assuranceinvalidité",
+            "char_start": 0,
+            "char_end": 87
+          },
+          "type": {
+            "value": "postulate",
+            "status": "normalised",
+            "page": 1,
+            "quote": "Postulat:",
+            "char_start": 0,
+            "char_end": 9,
+            "opd_type_harmonized_id": 3,
+            "wikidata": "Q2106323"
+          },
+          "type_original": {
+            "value": "Postulat",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Postulat",
+            "char_start": 0,
+            "char_end": 8
+          },
+          "submission_date": null,
+          "actors": [],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [],
+          "keywords": [
+            "rabais abonnement Mobilis",
+            "assurance invalidité",
+            "mobilité durable",
+            "Lausanne",
+            "transport public"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 1,
+            "normalised": 2,
+            "inferred": 0,
+            "rejected": 9,
+            "metadata": 1
+          },
+          "verified_share": 0.308,
+          "rejected_values": [
+            {
+              "path": "actors[0].name",
+              "value": "Ilias Panchard",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].name",
+              "value": "Prisca Morand",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[2].name",
+              "value": "Romane Benvenuti",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Étudier l'opportunité de mettre en place un rabais sur les abonnements de transport public lausannois pour les personnes bénéficiaires de l'assurance invalidité (AI), au même niveau que celui dont bénéficient les personnes à la retraite (AVS), soit une réduction de 50% sur le prix de l'abonnement annuel Mobilis zones 11-12",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[1]",
+              "value": "Remédier à l'inégalité de traitement entre les retraités (AVS) et les bénéficiaires de l'AI sans prestations complémentaires",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "submitted",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2025-04-29",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "addressed_to",
+              "value": "Municipalité de Lausanne",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "parliament",
+              "value": "Conseil communal de Lausanne",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "6 model value(s) rejected: quote not found in the document"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 1567,
+            "total_tokens": 2114,
+            "completion_tokens": 547,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/928925",
+      "error": "LLMError: unterminated JSON object in model output"
+    },
+    {
+      "url": "https://api.openparldata.ch/v1/docs/928926",
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/5192/592b1e53ea42d39cd74b6c66309cd362b91b0eb79393ee48b58137b3aaa9f283",
+          "sha256": "e818b58a474dbb660642d2021ebcbab7f1f8a0590e391bf68b24afdb40eb3eeb",
+          "content_type": "application/pdf",
+          "pages": 3,
+          "opd_doc_id": 928926,
+          "opd_affair_id": 341403,
+          "retrieved_at": "2026-10-16T07:00:08+00:00"
+        },
+        "language": "it",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "5192",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "1654",
+            "status": "extracted",
+            "page": 1,
+            "quote": "1654",
+            "char_start": 55,
+            "char_end": 59
+          },
+          "title": {
+            "value": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+            "char_start": 63,
+            "char_end": 113
+          },
+          "type": null,
+          "type_original": {
+            "value": "interrogazione",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Interrogazione",
+            "char_start": 36,
+            "char_end": 50
+          },
+          "submission_date": null,
+          "actors": [
+            {
+              "name": {
+                "value": "Demis Fumasoli",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Demis Fumasoli",
+                "char_start": 2690,
+                "char_end": 2704
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Città di Lugano",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Città di Lugano",
+                "char_start": 2425,
+                "char_end": 2440
+              },
+              "role": null,
+              "kind": null,
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": {
+            "value": "Onorevole Signor Demis Fumasoli",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Onorevole Signor\nDemis Fumasoli",
+            "char_start": 2673,
+            "char_end": 2704
+          },
+          "requests": [],
+          "questions": [
+            {
+              "number": null,
+              "question": {
+                "value": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già\nstate segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+                "char_start": 592,
+                "char_end": 760
+              },
+              "answer": {
+                "value": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazione dello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino e Moesano.",
+                "status": "normalised",
+                "page": 2,
+                "quote": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogaione\ndello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino\ne Moesano.",
+                "char_start": 761,
+                "char_end": 957
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all’associazione padronale di categoria suissetec Ticino e Moesano?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole\ndell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e\nregionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazione? Il Municipio ha mai richiesto o intende\nrichiedere un parere alla Commissione paritetica competente oppure all’associazione\npadronale di categoria suissetec Ticino e Moesano?",
+                "char_start": 963,
+                "char_end": 1524
+              },
+              "answer": {
+                "value": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne sono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità di informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di rivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e collaborazione.",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne\nsono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità\ndi informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di\nrivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e\ncollaborazione.",
+                "char_start": 1525,
+                "char_end": 1890
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato\nquanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che\ngli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona\napprossimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni\ncontrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+                "char_start": 1896,
+                "char_end": 2364
+              },
+              "answer": {
+                "value": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso anno: adeguamento della banca dati interna, verifica della presenza delle attestazioni relative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione coinvolti nel processo degli acquisti. Gli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di queste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione. Naturalmente nessun sistema amministrativo consente di escludere in termini assoluti la possibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte consentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e del rispetto dei contratti collettivi applicabili.",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso\nanno: adeguamento della banca dati interna, verifica della presenza delle attestazioni\nrelative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione\ncoinvolti nel processo degli acquisti.\nGli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di\nqueste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione.\nNaturalmente nessun sistema amministrativo consente di escludere in termini assoluti la\npossibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte\nconsentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e\ndel rispetto dei contratti collettivi applicabili.",
+                "char_start": 2365,
+                "char_end": 3160
+              }
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, inseguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+                "status": "extracted",
+                "page": 3,
+                "quote": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle\npersone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non\nconformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende\nprocedere il Municipio alla luce del fatto che una situazione analoga era già stata\noggetto di una precedente interpellanza e che, inseguito alla stessa, erano state\nfornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+                "char_start": 94,
+                "char_end": 599
+              },
+              "answer": null
+            },
+            {
+              "number": null,
+              "question": {
+                "value": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una “reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all’adozione di provvedimenti disciplinari?",
+                "status": "extracted",
+                "page": 3,
+                "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una\n“reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle\nresponsabilità e, se del caso, all’adozione di provvedimenti disciplinari?",
+                "char_start": 1236,
+                "char_end": 1635
+              },
+              "answer": {
+                "value": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è verificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di natura disciplinare.",
+                "status": "extracted",
+                "page": 3,
+                "quote": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è\nverificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di\nnatura disciplinare.",
+                "char_start": 1636,
+                "char_end": 1843
+              }
+            }
+          ],
+          "procedural_history": [],
+          "state": null,
+          "decisions": [],
+          "related_affairs": [
+            {
+              "reference": {
+                "value": "interrogazione no. 1531 del 25 settembre 2025",
+                "status": "extracted",
+                "page": 1,
+                "quote": "interrogazione\nno. 1531 del 25 settembre 2025",
+                "char_start": 586,
+                "char_end": 631
+              },
+              "relation": null
+            }
+          ],
+          "keywords": [
+            "commesse pubbliche",
+            "LCPubb",
+            "Suissetec Ticino e Moesano",
+            "contratti collettivi",
+            "CCL",
+            "idoneità fornitori",
+            "Lugano"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 15,
+            "normalised": 1,
+            "inferred": 0,
+            "rejected": 24,
+            "metadata": 1
+          },
+          "verified_share": 0.415,
+          "rejected_values": [
+            {
+              "path": "actors[0].role",
+              "value": "submitter",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[0].kind",
+              "value": "person",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].role",
+              "value": "respondent",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].kind",
+              "value": "executive",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[0].number",
+              "value": "1",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[1].number",
+              "value": "2",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[2].number",
+              "value": "3",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[3].number",
+              "value": "4",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[3].answer",
+              "value": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione della problematica successivamente all’adeguamento della procedura e non rende pertanto necessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò non significa evidentemente che le procedure siano considerate immutabili. Il Centro di competenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà ad aggiornare le proprie modalità operative qualora intervengano modifiche legislative, nuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento.",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "questions[4].number",
+              "value": "5",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].date",
+              "value": "2026-10-05",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].state",
+              "value": "answered",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Risposta municipale pubblicata",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "related_affairs[0].relation",
+              "value": "follow_up_of",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Confermare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec Ticino e Moesano come non in regola",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[1]",
+              "value": "Verificare se l'ufficio preposto è consapevole dell'obbligo di verificare il rispetto dei CCL applicabili e quali procedure interne sono previste in caso di dubbi",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[2]",
+              "value": "Indicare le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripetersi di simili situazioni",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[3]",
+              "value": "Spiegare se i provvedimenti attuali sono sufficienti per evitare aggiudicazioni contrarie alla LCPubb nel 2026",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[4]",
+              "value": "Indicare nuovi provvedimenti per migliorare le conoscenze dei verificatori e prevenire future irregolarità",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[5]",
+              "value": "Specificare i provvedimenti disciplinari in caso di reiterazione di errori da parte dei funzionari",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "affair_type",
+              "value": "interpellation",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "state",
+              "value": "answered",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2026-10-05",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "parliament",
+              "value": "Consiglio Comunale di Lugano",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "22 model value(s) rejected: quote not found in the document",
+            "affair type could not be verified"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.1",
+          "usage": {
+            "prompt_tokens": 2888,
+            "total_tokens": 4568,
+            "completion_tokens": 1680,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          }
+        }
+      }
+    }
+  ]
+}

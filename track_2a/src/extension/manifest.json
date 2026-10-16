@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "William — Swiss parliamentary affairs",
+  "version": "0.1.0",
+  "description": "Summarise Swiss parliamentary PDFs in their own language with Apertus, link the topics to Swiss news, and extract affairs into one OpenParlData-compatible JSON structure.",
+  "browser_specific_settings": {
+    "gecko": { "id": "william@hackapertus.local", "strict_min_version": "115.0" }
+  },
+  "icons": { "48": "icons/icon.svg", "96": "icons/icon.svg" },
+  "permissions": [
+    "storage",
+    "menus",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": { "page": "background.html" },
+  "browser_action": { "default_title": "William", "default_icon": "icons/icon.svg", "default_popup": "popup/popup.html" },
+  "options_ui": { "page": "options/options.html", "open_in_tab": true },
+  "web_accessible_resources": ["viewer/*", "lib/*", "shared/*"]
+}

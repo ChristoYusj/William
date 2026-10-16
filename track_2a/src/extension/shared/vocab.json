@@ -1,0 +1,459 @@
+{
+  "schema_version": "opd-affair/0.1",
+  "levels": {
+    "federal": {
+      "label": {
+        "de": "Bund",
+        "fr": "Confédération",
+        "it": "Confederazione",
+        "en": "Federal"
+      },
+      "opd_body_type": "country"
+    },
+    "cantonal": {
+      "label": {
+        "de": "Kanton",
+        "fr": "Canton",
+        "it": "Cantone",
+        "en": "Cantonal"
+      },
+      "opd_body_type": "canton"
+    },
+    "communal": {
+      "label": {
+        "de": "Gemeinde",
+        "fr": "Commune",
+        "it": "Comune",
+        "en": "Communal"
+      },
+      "opd_body_type": "municipality"
+    }
+  },
+  "affair_types": {
+    "motion": {
+      "opd_type_harmonized_id": 2,
+      "wikidata": "Q1949668",
+      "label": {
+        "de": "Motion",
+        "fr": "Motion",
+        "it": "Mozione",
+        "en": "Motion"
+      }
+    },
+    "postulate": {
+      "opd_type_harmonized_id": 3,
+      "wikidata": "Q2106323",
+      "label": {
+        "de": "Postulat",
+        "fr": "Postulat",
+        "it": "Postulato",
+        "en": "Postulate"
+      }
+    },
+    "parliamentary_initiative": {
+      "opd_type_harmonized_id": 4,
+      "wikidata": "Q2052859",
+      "label": {
+        "de": "Parlamentarische Initiative",
+        "fr": "Initiative parlementaire",
+        "it": "Iniziativa parlamentare",
+        "en": "Parliamentary initiative"
+      }
+    },
+    "consultation": {
+      "opd_type_harmonized_id": 5,
+      "wikidata": "Q1591788",
+      "label": {
+        "de": "Vernehmlassung",
+        "fr": "Consultation",
+        "it": "Consultazione",
+        "en": "Consultation"
+      }
+    },
+    "election": {
+      "opd_type_harmonized_id": 6,
+      "wikidata": "Q40231",
+      "label": {
+        "de": "Wahl",
+        "fr": "Élection",
+        "it": "Elezione",
+        "en": "Election"
+      }
+    },
+    "popular_initiative": {
+      "opd_type_harmonized_id": 7,
+      "wikidata": "Q335918",
+      "label": {
+        "de": "Volksinitiative",
+        "fr": "Initiative populaire",
+        "it": "Iniziativa popolare",
+        "en": "Popular initiative"
+      }
+    },
+    "interpellation": {
+      "opd_type_harmonized_id": 8,
+      "wikidata": "Q1505023",
+      "label": {
+        "de": "Interpellation",
+        "fr": "Interpellation",
+        "it": "Interpellanza",
+        "en": "Interpellation"
+      }
+    },
+    "government_affair": {
+      "opd_type_harmonized_id": 9,
+      "wikidata": null,
+      "label": {
+        "de": "Regierungsgeschäft",
+        "fr": "Affaire gouvernementale",
+        "it": "Affare governativo",
+        "en": "Government affair"
+      }
+    },
+    "question_time": {
+      "opd_type_harmonized_id": 10,
+      "wikidata": "Q1286157",
+      "label": {
+        "de": "Fragestunde",
+        "fr": "Heure des questions",
+        "it": "Ora delle domande",
+        "en": "Question time"
+      }
+    },
+    "petition": {
+      "opd_type_harmonized_id": 11,
+      "wikidata": "Q697279",
+      "label": {
+        "de": "Petition",
+        "fr": "Pétition",
+        "it": "Petizione",
+        "en": "Petition"
+      }
+    },
+    "question": {
+      "opd_type_harmonized_id": 12,
+      "wikidata": "Q2052854",
+      "label": {
+        "de": "Anfrage",
+        "fr": "Question",
+        "it": "Interrogazione",
+        "en": "Written question"
+      }
+    },
+    "amendment": {
+      "opd_type_harmonized_id": 13,
+      "wikidata": null,
+      "label": {
+        "de": "Ergänzungsantrag",
+        "fr": "Amendement",
+        "it": "Emendamento",
+        "en": "Amendment"
+      }
+    },
+    "naturalisation": {
+      "opd_type_harmonized_id": 14,
+      "wikidata": null,
+      "label": {
+        "de": "Einbürgerung",
+        "fr": "Naturalisation",
+        "it": "Naturalizzazione",
+        "en": "Naturalisation"
+      }
+    },
+    "information_document": {
+      "opd_type_harmonized_id": 15,
+      "wikidata": null,
+      "label": {
+        "de": "Informationsdokument",
+        "fr": "Document d'information",
+        "it": "Documento informativo",
+        "en": "Information document"
+      }
+    },
+    "report": {
+      "opd_type_harmonized_id": 16,
+      "wikidata": null,
+      "label": {
+        "de": "Bericht",
+        "fr": "Rapport",
+        "it": "Relazione",
+        "en": "Report"
+      }
+    },
+    "approval_decision": {
+      "opd_type_harmonized_id": 17,
+      "wikidata": null,
+      "label": {
+        "de": "Parlamentarischer Genehmigungsbeschluss",
+        "fr": "Décision d'approbation parlementaire",
+        "it": "Delibera di approvazione parlamentare",
+        "en": "Parliamentary approval decision"
+      }
+    },
+    "resolution": {
+      "opd_type_harmonized_id": null,
+      "wikidata": null,
+      "label": {
+        "de": "Resolution",
+        "fr": "Résolution",
+        "it": "Risoluzione",
+        "en": "Resolution"
+      },
+      "note": "not in OpenParlData's harmonized list; common in cantonal/communal parliaments"
+    },
+    "other": {
+      "opd_type_harmonized_id": 1,
+      "wikidata": null,
+      "label": {
+        "de": "Diverses",
+        "fr": "Divers",
+        "it": "Varie",
+        "en": "Miscellaneous"
+      }
+    }
+  },
+  "actor_roles": {
+    "submitter": "First author / Urheber·in / auteur·e of the affair",
+    "co_signatory": "Mitunterzeichner·in / cosignataire",
+    "addressee": "Body the affair is addressed to (e.g. Bundesrat, Regierungsrat, Conseil d'Etat, Gemeinderat, Municipalità)",
+    "respondent": "Body or person that answers (e.g. the executive's response)",
+    "committee": "Parliamentary committee handling the affair",
+    "rapporteur": "Rapporteur·in / relatore",
+    "other": "Any other role named in the text"
+  },
+  "actor_kinds": [
+    "person",
+    "parliamentary_group",
+    "party",
+    "committee",
+    "executive",
+    "parliament",
+    "administration",
+    "other"
+  ],
+  "procedural_states": {
+    "submitted": {
+      "opd_state_name_harmonized_id": 1,
+      "label": {
+        "de": "Eingereicht",
+        "fr": "Déposé",
+        "it": "Presentato",
+        "en": "Submitted"
+      }
+    },
+    "scheduled": {
+      "opd_state_name_harmonized_id": 2,
+      "label": {
+        "de": "Traktandiert",
+        "fr": "Inscrit à l'ordre du jour",
+        "it": "Iscritto all'ordine del giorno",
+        "en": "Scheduled"
+      }
+    },
+    "answered": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Beantwortet",
+        "fr": "Réponse donnée",
+        "it": "Risposto",
+        "en": "Answered"
+      }
+    },
+    "in_committee": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "In Kommission",
+        "fr": "En commission",
+        "it": "In commissione",
+        "en": "In committee"
+      }
+    },
+    "referred": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Überwiesen",
+        "fr": "Renvoyé / transmis",
+        "it": "Trasmesso",
+        "en": "Referred to executive"
+      }
+    },
+    "decided": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Erledigt / beschlossen",
+        "fr": "Décidé",
+        "it": "Deciso",
+        "en": "Decided"
+      }
+    },
+    "withdrawn": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Zurückgezogen",
+        "fr": "Retiré",
+        "it": "Ritirato",
+        "en": "Withdrawn"
+      }
+    },
+    "written_off": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Abgeschrieben",
+        "fr": "Classé",
+        "it": "Tolto dal ruolo",
+        "en": "Written off"
+      }
+    },
+    "closed": {
+      "opd_state_name_harmonized_id": 3,
+      "label": {
+        "de": "Abgeschlossen",
+        "fr": "Clôturé",
+        "it": "Concluso",
+        "en": "Closed"
+      }
+    },
+    "unknown": {
+      "opd_state_name_harmonized_id": null,
+      "label": {
+        "de": "Unbekannt",
+        "fr": "Inconnu",
+        "it": "Sconosciuto",
+        "en": "Unknown"
+      }
+    }
+  },
+  "decision_outcomes": {
+    "accepted": {
+      "de": "angenommen / überwiesen",
+      "fr": "accepté / adopté",
+      "it": "accolto / approvato",
+      "en": "accepted"
+    },
+    "rejected": {
+      "de": "abgelehnt",
+      "fr": "rejeté / refusé",
+      "it": "respinto",
+      "en": "rejected"
+    },
+    "partially_accepted": {
+      "de": "teilweise angenommen",
+      "fr": "partiellement accepté",
+      "it": "parzialmente accolto",
+      "en": "partially accepted"
+    },
+    "not_entered": {
+      "de": "nicht eingetreten",
+      "fr": "non-entrée en matière",
+      "it": "non entrata in materia",
+      "en": "not entered into"
+    },
+    "postponed": {
+      "de": "verschoben",
+      "fr": "reporté",
+      "it": "rinviato",
+      "en": "postponed"
+    },
+    "recommended_accept": {
+      "de": "Antrag auf Annahme",
+      "fr": "propose d'accepter",
+      "it": "propone di accogliere",
+      "en": "executive recommends accepting"
+    },
+    "recommended_reject": {
+      "de": "Antrag auf Ablehnung",
+      "fr": "propose de rejeter",
+      "it": "propone di respingere",
+      "en": "executive recommends rejecting"
+    },
+    "noted": {
+      "de": "Kenntnis genommen",
+      "fr": "pris acte",
+      "it": "preso atto",
+      "en": "noted"
+    },
+    "other": {
+      "de": "andere",
+      "fr": "autre",
+      "it": "altro",
+      "en": "other"
+    }
+  },
+  "relation_types": [
+    "replies_to",
+    "follow_up_of",
+    "same_subject",
+    "joint_treatment",
+    "replaced_by",
+    "cited"
+  ],
+  "value_status": {
+    "extracted": "value copied from the text; quote found verbatim on the cited page",
+    "normalised": "value derived from a verified quote by a deterministic mapping (date format, vocabulary term)",
+    "inferred": "value inferred by the model or from metadata (e.g. URL domain); NOT verified in the text",
+    "rejected": "model proposed a value but its quote could not be found in the document; value removed"
+  },
+  "type_terms": {
+    "_note": "Original type words (lowercase, as written) -> affair_type. Applied deterministically to a VERIFIED type_original; overrides the model. Longest match wins.",
+    "motion": "motion",
+    "mozione": "motion",
+    "motion populaire": "popular_initiative",
+    "postulat": "postulate",
+    "postulato": "postulate",
+    "interpellation": "interpellation",
+    "interpellation urgente": "interpellation",
+    "dringliche interpellation": "interpellation",
+    "interpellanza": "interpellation",
+    "interpellazione": "interpellation",
+    "anfrage": "question",
+    "kleine anfrage": "question",
+    "schriftliche anfrage": "question",
+    "einfache anfrage": "question",
+    "interrogazione": "question",
+    "question écrite": "question",
+    "question ecrite": "question",
+    "simple question": "question",
+    "question": "question",
+    "fragestunde": "question_time",
+    "heure des questions": "question_time",
+    "ora delle domande": "question_time",
+    "parlamentarische initiative": "parliamentary_initiative",
+    "initiative parlementaire": "parliamentary_initiative",
+    "iniziativa parlamentare": "parliamentary_initiative",
+    "projet de loi": "parliamentary_initiative",
+    "iniziativa parlamentare elaborata": "parliamentary_initiative",
+    "einzelinitiative": "parliamentary_initiative",
+    "volksinitiative": "popular_initiative",
+    "initiative populaire": "popular_initiative",
+    "iniziativa popolare": "popular_initiative",
+    "petition": "petition",
+    "pétition": "petition",
+    "petizione": "petition",
+    "resolution": "resolution",
+    "résolution": "resolution",
+    "proposition de résolution": "resolution",
+    "risoluzione": "resolution",
+    "vernehmlassung": "consultation",
+    "consultation": "consultation",
+    "consultazione": "consultation",
+    "bericht": "report",
+    "rapport": "report",
+    "rapporto": "report",
+    "relazione": "report",
+    "messaggio": "government_affair",
+    "botschaft": "government_affair",
+    "message": "government_affair",
+    "vorlage": "government_affair",
+    "préavis": "government_affair",
+    "wahl": "election",
+    "geheime wahl": "election",
+    "élection": "election",
+    "elezione": "election",
+    "einbürgerung": "naturalisation",
+    "naturalisation": "naturalisation",
+    "naturalizzazione": "naturalisation",
+    "ergänzungsantrag": "amendment",
+    "amendement": "amendment",
+    "emendamento": "amendment"
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../shared/ui.css">
+<style>
+  body{width:400px;padding:12px 14px;max-height:580px}
+  .row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  h1{font-size:16px;margin:0;color:var(--accent)}
+  #key{display:none;background:var(--hl);padding:8px;border-radius:8px;font-size:12px}
+</style>
+</head>
+<body>
+<h1>William</h1>
+<div class="small muted">Swiss parliamentary affairs · Apertus</div>
+<div id="key">No Apertus API key yet — <a href="#" id="optLink">open settings</a>.</div>
+<div class="row">
+  <button id="bPage" class="btn primary">Summarise this page</button>
+  <button id="bSel" class="btn">Summarise selection</button>
+  <button id="bPdf" class="btn" hidden>Open PDF in William</button>
+</div>
+<div class="row">
+  <button id="bBatch" class="btn">Batch extractor → JSON / PDF</button>
+  <button id="bOpt" class="btn ghost">Settings</button>
+</div>
+<div id="status" class="small muted"></div>
+<div id="out"></div>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

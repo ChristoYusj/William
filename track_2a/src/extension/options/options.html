@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William settings</title>
+<link rel="stylesheet" href="../shared/ui.css">
+<style>
+  main{max-width:640px;margin:24px auto;padding:0 16px}
+  label{display:block;margin:14px 0 4px;font-weight:600}
+  input[type=text],input[type=password],select{width:100%;font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
+  .note{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="bar"><span class="brand">William</span><span class="muted">Settings</span></header>
+<main>
+  <label for="apiKey">Apertus API key</label>
+  <input id="apiKey" type="password" autocomplete="off" placeholder="paste your key">
+  <div class="note">Stored only in this browser (extension storage). Sent only to the endpoint below.</div>
+  <label for="baseUrl">Endpoint (OpenAI-compatible)</label>
+  <input id="baseUrl" type="text">
+  <label for="model">Model</label>
+  <select id="model">
+    <option value="swiss-ai/Apertus-v1.5-70B">Apertus 1.5 70B (recommended)</option>
+    <option value="swiss-ai/Apertus-v1.5-8B">Apertus 1.5 8B (faster, self-hostable in ~20 GB)</option>
+  </select>
+  <label for="summaryLang">Summary language</label>
+  <select id="summaryLang">
+    <option value="doc">Same as the document</option>
+    <option value="German">Deutsch</option><option value="French">Français</option>
+    <option value="Italian">Italiano</option><option value="Romansh">Rumantsch</option><option value="English">English</option>
+  </select>
+  <label><input id="autoOpenPdf" type="checkbox"> Open PDFs in the William viewer automatically</label>
+  <p><button id="save" class="btn primary">Save</button> <span id="msg" class="small muted"></span></p>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

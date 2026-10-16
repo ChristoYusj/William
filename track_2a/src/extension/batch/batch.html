@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William batch extractor</title>
+<link rel="stylesheet" href="../shared/ui.css">
+<style>
+  main{max-width:960px;margin:0 auto;padding:16px}
+  textarea{width:100%;min-height:150px;font:13px ui-monospace,Consolas,monospace;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+  .opts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0}
+  .card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--bg)}
+  .card h3{margin:0 0 4px;font-size:15px}
+  .card .u{font-size:11px;color:var(--muted);word-break:break-all}
+  details summary{cursor:pointer;color:var(--muted);font-size:12px;margin-top:6px}
+  .lvl{font-size:11px;padding:1px 7px;border-radius:9px;background:var(--sunken);margin-right:6px}
+</style>
+</head>
+<body>
+<header class="bar"><span class="brand">William</span><span class="muted">Batch extractor — links → OpenParlData common structure (opd-affair/0.1)</span></header>
+<main>
+  <p class="small muted">Paste one link per line: direct PDF links, HTML pages, <code>https://api.openparldata.ch/v1/affairs/ID</code>,
+    <code>…/v1/docs/ID</code> or <code>https://files.openparldata.ch/doc/…</code>. Federal, cantonal and communal documents in DE/FR/IT.</p>
+  <textarea id="urls" placeholder="https://api.openparldata.ch/v1/docs/928925&#10;https://…/interpellation.pdf"></textarea>
+  <div class="opts">
+    <label><input type="checkbox" id="optSum" checked> Summary in the document's language</label>
+    <label><input type="checkbox" id="optNews" checked> Link topics to Swiss news</label>
+    <button id="run" class="btn primary">Extract</button>
+    <span class="grow"></span>
+    <button id="dlJson" class="btn" disabled>Download JSON</button>
+    <button id="dlPdf" class="btn" disabled>Download PDF report</button>
+  </div>
+  <div id="status" class="small muted"></div>
+  <div id="cards"></div>
+</main>
+<script type="module" src="batch.js"></script>
+</body>
+</html>

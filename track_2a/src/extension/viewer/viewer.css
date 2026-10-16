@@ -1,0 +1,13 @@
+body{margin:0;height:100vh;display:flex;flex-direction:column}
+main{flex:1;display:flex;min-height:0}
+#pages{flex:1;overflow:auto;background:var(--sunken);padding:16px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.page{position:relative;box-shadow:0 2px 10px rgba(0,0,0,.15);background:#fff}
+.page canvas{display:block}
+.page.flash{outline:3px solid var(--accent);outline-offset:2px;transition:outline-color .3s}
+.page .pno{position:absolute;top:-1px;left:-40px;font-size:11px;color:var(--muted)}
+#side{width:min(440px,45vw);border-left:1px solid var(--line);overflow:auto;padding:14px 16px;background:var(--bg)}
+.actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.textLayer{position:absolute;inset:0;overflow:hidden;line-height:1;text-align:initial;opacity:1}
+.textLayer span,.textLayer br{color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0 0}
+.textLayer ::selection{background:rgba(200,16,46,.25)}
+@media (max-width:760px){main{flex-direction:column}#side{width:auto;border-left:0;border-top:1px solid var(--line);max-height:50vh}}

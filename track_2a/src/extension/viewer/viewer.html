@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William viewer</title>
+<link rel="stylesheet" href="../shared/ui.css">
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<header class="bar">
+  <span class="brand">William</span>
+  <span id="docname" class="muted"></span>
+  <span class="grow"></span>
+  <a id="orig" class="btn ghost" target="_blank" rel="noopener">Original</a>
+</header>
+<main>
+  <section id="pages" aria-label="PDF pages"></section>
+  <aside id="side">
+    <div class="actions">
+      <button id="bSum" class="btn primary">Summarise document</button>
+      <button id="bSel" class="btn" disabled title="Select text in the PDF first">Summarise selection</button>
+      <button id="bExt" class="btn">Extract → OpenParlData JSON</button>
+    </div>
+    <div id="status" class="muted small"></div>
+    <div id="out"></div>
+  </aside>
+</main>
+<script type="module" src="viewer.js"></script>
+</body>
+</html>
