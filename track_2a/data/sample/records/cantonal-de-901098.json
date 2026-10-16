@@ -1,0 +1,203 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/ZH/8e24a4f50ca737ebe7e3684e40b9cce5a26ef156f6e83542539a3845addd315b",
+  "sha256": "696cffabe1e7c5cf191ecf25b35043e863ebd60a53a9c9acbe6cc3983153e300",
+  "content_type": "application/pdf",
+  "pages": 1,
+  "opd_doc_id": 901098,
+  "opd_affair_id": 335625,
+  "retrieved_at": "2026-10-16T09:15:54+00:00"
+ },
+ "language": "de",
+ "body": {
+  "level": {
+   "value": "cantonal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "ZH",
+  "parliament": {
+   "value": "Kantonsrat",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Kantonsrat",
+   "char_start": 27,
+   "char_end": 37
+  },
+  "opd_body_type": "canton"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "31/2026",
+   "status": "extracted",
+   "page": 1,
+   "quote": "KR-Nr. 31/2026",
+   "char_start": 49,
+   "char_end": 63
+  },
+  "title": {
+   "value": "Wahl Mitglied Obergericht (100%) für den Rest der Amtsdauer 2025-2031 für Roland Schmid",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Wahl Mitglied \nObergericht (100%) \n \nfür den Rest der Amtsdauer 2025-2031 \nfür Roland Schmid",
+   "char_start": 75,
+   "char_end": 167
+  },
+  "type": {
+   "page": 1,
+   "quote": "Geheime Wahl gemäss § 125 Kantonsratsgesetz",
+   "char_start": 1,
+   "char_end": 44,
+   "value": "election",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 6,
+   "wikidata": "Q40231"
+  },
+  "type_original": {
+   "value": "Geheime Wahl",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Geheime Wahl gemäss § 125 Kantonsratsgesetz",
+   "char_start": 1,
+   "char_end": 44
+  },
+  "submission_date": null,
+  "actors": [],
+  "addressed_to": {
+   "value": "Obergericht",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Obergericht",
+   "char_start": 90,
+   "char_end": 101
+  },
+  "requests": [],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "decided",
+   "status": "normalised",
+   "page": 1,
+   "quote": "Wahlvorschlag der Interfraktionellen Konferenz",
+   "char_start": 174,
+   "char_end": 220,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "Wahl",
+   "Obergericht",
+   "Amtsdauer",
+   "Geheime Wahl"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 5,
+   "normalised": 2,
+   "inferred": 0,
+   "rejected": 2,
+   "metadata": 1
+  },
+  "verified_share": 0.8,
+  "rejected_values": [
+   {
+    "path": "actors[0].name",
+    "value": "Interfraktionelle Konferenz",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[0]",
+    "value": "Wahl von Patrick Bischoff als Mitglied des Obergerichts für die Amtsdauer 2025-2031",
+    "page": 1,
+    "quote": "Wahl von Patrick Bischoff als Mitglied des Obergerichts (100%) für den Rest der Amtsdauer 2025-2031"
+   }
+  ],
+  "flags": [
+   "2 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 920,
+   "total_tokens": 1423,
+   "completion_tokens": 503,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "de",
+   "level": {
+    "v": "cantonal",
+    "p": "1",
+    "q": "cantonal"
+   },
+   "parliament": {
+    "v": "Kantonsrat",
+    "p": "1",
+    "q": "Kantonsrat"
+   },
+   "affair_number": {
+    "v": "31/2026",
+    "p": "1",
+    "q": "KR-Nr. 31/2026"
+   },
+   "title": {
+    "v": "Wahl Mitglied Obergericht (100%) für den Rest der Amtsdauer 2025-2031 für Roland Schmid",
+    "p": "1",
+    "q": "Wahl Mitglied Obergericht (100%) für den Rest der Amtsdauer 2025-2031 für Roland Schmid"
+   },
+   "affair_type": {
+    "v": "election",
+    "p": "1",
+    "q": "(Geheime Wahl gemäss § 125 Kantonsratsgesetz)"
+   },
+   "affair_type_original": {
+    "v": "Geheime Wahl",
+    "p": "1",
+    "q": "(Geheime Wahl gemäss § 125 Kantonsratsgesetz)"
+   },
+   "submission_date": null,
+   "actors": [
+    {
+     "name": "Interfraktionelle Konferenz",
+     "role": "submitter",
+     "kind": "other",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": "Obergericht",
+   "requests": [
+    {
+     "v": "Wahl von Patrick Bischoff als Mitglied des Obergerichts für die Amtsdauer 2025-2031",
+     "p": "1",
+     "q": "Wahl von Patrick Bischoff als Mitglied des Obergerichts (100%) für den Rest der Amtsdauer 2025-2031"
+    }
+   ],
+   "questions": [],
+   "procedural_history": [],
+   "state": {
+    "v": "decided",
+    "p": "1",
+    "q": "Wahlvorschlag der Interfraktionellen Konferenz"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "Wahl",
+    "Obergericht",
+    "Amtsdauer",
+    "Geheime Wahl"
+   ]
+  }
+ }
+}

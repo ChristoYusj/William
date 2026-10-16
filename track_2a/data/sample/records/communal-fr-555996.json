@@ -1,0 +1,297 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/5586/7f37e48d7dec6ba4961372bb0fe38e3ae5cca9064b03530fc495874fa695e083",
+  "sha256": "f679d26b973c807e517a2547cfcc29fa388d25affac50f3acc047ae044fef766",
+  "content_type": "application/pdf",
+  "pages": 2,
+  "opd_doc_id": 555996,
+  "opd_affair_id": 251898,
+  "retrieved_at": "2026-10-16T09:15:58+00:00"
+ },
+ "language": "fr",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "5586",
+  "parliament": null,
+  "opd_body_type": "municipality"
+ },
+ "affair": {
+  "affair_number": null,
+  "title": {
+   "value": "Un rabais sur les abonnements Mobilis TL pour les bénéficiaires de l'assurance invalidité",
+   "status": "extracted",
+   "page": 1,
+   "quote": "UnrabaissurlesabonnementsMobilisTLpourles\nbénéficiairesdel’assuranceinvalidité",
+   "char_start": 9,
+   "char_end": 87
+  },
+  "type": {
+   "page": 1,
+   "quote": "Postulat",
+   "char_start": 0,
+   "char_end": 8,
+   "value": "postulate",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 3,
+   "wikidata": "Q2106323"
+  },
+  "type_original": {
+   "value": "postulat",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Postulat",
+   "char_start": 0,
+   "char_end": 8
+  },
+  "submission_date": {
+   "value": "2025-04-29",
+   "status": "normalised",
+   "page": 2,
+   "quote": "Lausanne,le29avril2025",
+   "char_start": 734,
+   "char_end": 756
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Ilias Panchard",
+     "status": "extracted",
+     "page": 2,
+     "quote": "IliasPanchard",
+     "char_start": 757,
+     "char_end": 770
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Prisca Morand",
+     "status": "extracted",
+     "page": 2,
+     "quote": "PriscaMorand",
+     "char_start": 770,
+     "char_end": 782
+    },
+    "role": {
+     "value": "co_signatory",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Romane Benvenuti",
+     "status": "extracted",
+     "page": 2,
+     "quote": "RomaneBenvenuti",
+     "char_start": 782,
+     "char_end": 797
+    },
+    "role": {
+     "value": "co_signatory",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Municipalité de Lausanne",
+   "status": "extracted",
+   "page": 1,
+   "quote": "LaMunicipalitédeLausanneaélargisonsoutienàlamobilitédurableen",
+   "char_start": 88,
+   "char_end": 149
+  },
+  "requests": [
+   {
+    "value": "Étudier l'opportunité de mettre en place un rabais sur les abonnements de transport public lausannois pour les personnes bénéficiaires de l'assurance invalidité (AI), au même niveau que celui dont bénéficient les personnes à la retraite (AVS), soit une réduction de 50% sur le prix de l'abonnement annuel Mobilis zones 11-12.",
+    "status": "normalised",
+    "page": 2,
+    "quote": "LeConseilcommunaldemandedoncàlaMunicipalitéd’étudierl’opportunitéde\nmettreenplaceunrabaissurlesabonnementsdestransportspublicslausannois\npourlespersonnesbénéficiairesdel’assuranceinvalidité(AI)demêmeniveau\nqueceluidontbénéficielespersonnesàlaretraite(AVS),soituneréductionde\n50%surleprixdel’abonnementannuelMobiliszones11-12",
+    "char_start": 408,
+    "char_end": 732
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "normalised",
+   "page": 1,
+   "quote": "Postulat",
+   "char_start": 0,
+   "char_end": 8,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "rabais abonnement Mobilis",
+   "assurance invalidité",
+   "mobilité durable",
+   "Lausanne",
+   "transport public"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 6,
+   "normalised": 4,
+   "inferred": 6,
+   "rejected": 1,
+   "metadata": 1
+  },
+  "verified_share": 0.611,
+  "rejected_values": [
+   {
+    "path": "parliament",
+    "value": "Conseil communal de Lausanne",
+    "page": 1,
+    "quote": "Conseil communal de Lausanne"
+   }
+  ],
+  "flags": [],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 1625,
+   "total_tokens": 2335,
+   "completion_tokens": 710,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "fr",
+   "level": {
+    "v": "communal",
+    "p": "1",
+    "q": "communal"
+   },
+   "parliament": {
+    "v": "Conseil communal de Lausanne",
+    "p": "1",
+    "q": "Conseil communal de Lausanne"
+   },
+   "affair_number": null,
+   "title": {
+    "v": "Un rabais sur les abonnements Mobilis TL pour les bénéficiaires de l'assurance invalidité",
+    "p": "1",
+    "q": "Un rabais sur les abonnements Mobilis TL pour les bénéficiaires de l'assurance invalidité"
+   },
+   "affair_type": {
+    "v": "postulate",
+    "p": "1",
+    "q": "Postulat"
+   },
+   "affair_type_original": {
+    "v": "postulat",
+    "p": "1",
+    "q": "Postulat"
+   },
+   "submission_date": {
+    "v": "2025-04-29",
+    "p": "2",
+    "q": "Lausanne,le29avril2025"
+   },
+   "actors": [
+    {
+     "name": "Ilias Panchard",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": null
+    },
+    {
+     "name": "Prisca Morand",
+     "role": "co_signatory",
+     "kind": "person",
+     "party_or_group": null
+    },
+    {
+     "name": "Romane Benvenuti",
+     "role": "co_signatory",
+     "kind": "person",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": {
+    "v": "Municipalité de Lausanne",
+    "p": "1",
+    "q": "LaMunicipalitédeLausanneaélargissonsoutienàlamobilitédurableen"
+   },
+   "requests": [
+    {
+     "v": "Étudier l'opportunité de mettre en place un rabais sur les abonnements de transport public lausannois pour les personnes bénéficiaires de l'assurance invalidité (AI), au même niveau que celui dont bénéficient les personnes à la retraite (AVS), soit une réduction de 50% sur le prix de l'abonnement annuel Mobilis zones 11-12.",
+     "p": "2",
+     "q": "LeConseilcommunaldemandedoncàlaMunicipalitéd’étudierl’opportunitéde mettreenplaceunrabaissurlesabonnementsdestransportspublicslausannois pourlespersonnesbénéficiairesdel’assuranceinvalidité(AI)demêmeniveau queceluidontbénéficielespersonnesàlaretraite(AVS),soituneréductionde 50%surleprixdel’abonnementannuelMobiliszones11-12."
+    }
+   ],
+   "questions": [],
+   "procedural_history": [],
+   "state": {
+    "v": "submitted",
+    "p": "1",
+    "q": "Postulat"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "rabais abonnement Mobilis",
+    "assurance invalidité",
+    "mobilité durable",
+    "Lausanne",
+    "transport public"
+   ]
+  }
+ }
+}

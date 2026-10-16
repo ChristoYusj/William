@@ -1,0 +1,376 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/CHE/c1f2b079c5d4ec536497153b665d19fab89e63704aff8c486fac431efe21ca6a",
+  "sha256": "0c69a4f80d3c9b6e5b89e64cc2702eedcc0c265f48bfe80d61e3d455c2018b55",
+  "content_type": "application/pdf",
+  "pages": 14,
+  "opd_doc_id": 316738,
+  "opd_affair_id": 235785,
+  "retrieved_at": "2026-10-16T09:15:50+00:00"
+ },
+ "language": "de",
+ "body": {
+  "level": {
+   "value": "federal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "CHE",
+  "parliament": {
+   "value": "Staatspolitische Kommission des Ständerates",
+   "status": "extracted",
+   "page": 2,
+   "quote": "Staatspolitische Kommission des Ständerates (SPK-S",
+   "char_start": 81,
+   "char_end": 131
+  },
+  "opd_body_type": "country"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "23.4448",
+   "status": "extracted",
+   "page": 1,
+   "quote": "23.4448 Motion Chiesa «Schutz der Landesgrenzen",
+   "char_start": 259,
+   "char_end": 306
+  },
+  "title": {
+   "value": "Kurzbericht des Staatssekretariats für Migration SEM zuhanden der Staatspolitischen Kommission des Ständerates im Zusammenhang mit Motion 23.4448 Chiesa «Schutz der Landesgrenzen»",
+   "status": "normalised",
+   "page": 1,
+   "quote": "Kurzbericht des Staatssekretariats für Migration  \nzuhanden der \nStaatspolitischen Kommission des Ständerates \n \nim Zusammenhang mit \n23.4448 Motion Chiesa «Schutz der Landesgrenzen",
+   "char_start": 125,
+   "char_end": 306
+  },
+  "type": {
+   "page": 1,
+   "quote": "23.4448 Motion Chiesa «Schutz der Landesgrenzen",
+   "char_start": 259,
+   "char_end": 306,
+   "value": "motion",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 2,
+   "wikidata": "Q1949668"
+  },
+  "type_original": {
+   "value": "Motion",
+   "status": "extracted",
+   "page": 1,
+   "quote": "23.4448 Motion Chiesa «Schutz der Landesgrenzen",
+   "char_start": 259,
+   "char_end": 306
+  },
+  "submission_date": {
+   "value": "2024-09-19",
+   "status": "normalised",
+   "page": 1,
+   "quote": "19. September 2024",
+   "char_start": 100,
+   "char_end": 118
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Staatssekretariat für Migration SEM",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Staatssekretariat für Migration SEM",
+     "char_start": 59,
+     "char_end": 94
+    },
+    "role": {
+     "value": "respondent",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "administration",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Staatspolitische Kommission des Ständerates",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Staatspolitische Kommission des Ständerates",
+     "char_start": 81,
+     "char_end": 124
+    },
+    "role": {
+     "value": "addressee",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "committee",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Staatspolitische Kommission des Ständerates",
+   "status": "extracted",
+   "page": 2,
+   "quote": "Staatspolitische Kommission des Ständerates (SPK-S",
+   "char_start": 81,
+   "char_end": 131
+  },
+  "requests": [
+   {
+    "value": "Zahlen der Schweiz und von Schengen-Staaten, die Binnengrenzkontrollen wieder eingeführt haben, in Bezug auf irreguläre Migration (wie viele irreguläre Migrantinnen und Migranten, welcher Rückgang wurde durch die Wiedereinführung von Kontrollen festgestellt, wie viele Personen reichten ein Asylgesuch ein, wie viele Personen reisen weiter, Anzahl der Wegweisungen)",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Zahlen der Schweiz und von Schengen-Staaten, die Binnengrenzkontrollen wieder einge-\nführt haben, in Bezug auf irreguläre Migration (wie viele irreguläre Migrantinnen und Mig-\nranten, welcher Rückgang wurde durch die Wiedereinführung von Kontrollen festgestellt, \nwie viele Personen reichten ein Asylgesuch ein, wie viele Personen reisen weiter, Anzahl \nder Wegweisungen",
+    "char_start": 710,
+    "char_end": 1080
+   },
+   {
+    "value": "Welche Schengen-Staaten haben Binnengrenzkontrollen wieder eingeführt, in welchem Umfang, für wie lange, wie werden diese Kontrollen angewendet?",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Welche Schengen-Staaten haben Binnengrenzkontrollen wieder eingeführt, in welchem \nUmfang, für wie lange, wie werden diese Kontrollen angewendet",
+    "char_start": 1097,
+    "char_end": 1241
+   },
+   {
+    "value": "Wie wirkten sich die Wiedereinführungen der Binnengrenzkontrollen von Nachbarstaaten auf die Schweiz aus?",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Wie wirkten sich die Wiedereinführungen der Binnengrenzkontrollen von Nachbarstaaten \nauf die Schweiz aus",
+    "char_start": 1264,
+    "char_end": 1369
+   },
+   {
+    "value": "Wie hat die EU-Kommission auf die Wiedereinführung reagiert? Welche Massnahmen schlägt die EU als Ersatz für Binnengrenzkontrollen vor?",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Wie hat die EU-Kommission auf die Wiedereinführung reagiert? Welche Massnahmen \nschlägt die EU als Ersatz für Binnengrenzkontrollen vor",
+    "char_start": 1385,
+    "char_end": 1520
+   },
+   {
+    "value": "Was ist der Unterschied zwischen systematischen und risikobasierten Kontrollen? Ab wann geht es von der einen Kategorie in die andere über? Wie ist der rechtliche Rahmen?",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Was ist der Unterschied zwischen systematischen und risikobasierten Kontrollen? Ab \nwann geht es von der einen Kategorie in die andere über (Ziffer 6)? Wie ist der rechtliche \nRahmen",
+    "char_start": 1536,
+    "char_end": 1718
+   },
+   {
+    "value": "Welche Auswirkungen hätte die Einführung von Binnengrenzkontrollen auf irreguläre Grenzübertritte und Asylgesuche?",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Welche Auswirkungen hätte die Einführung von Binnengrenzkontrollen auf irreguläre \nGrenzübertritte und Asylgesuche",
+    "char_start": 1741,
+    "char_end": 1855
+   },
+   {
+    "value": "Zahlen zur Schwarzarbeit: Der Bericht soll lediglich auf die vom SECO zur Verfügung gestellten Informationen verweisen.",
+    "status": "extracted",
+    "page": 2,
+    "quote": "Zahlen zur Schwarzarbeit: Der Bericht soll lediglich auf die vom SECO zur Verfügung ge-\nstellten Informationen verweisen",
+    "char_start": 1871,
+    "char_end": 1991
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "answered",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "Binnengrenzkontrollen",
+   "Schengen-Raum",
+   "irreguläre Migration",
+   "Asylgesuche",
+   "Grenzkontrollen",
+   "Staatssekretariat für Migration SEM"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 12,
+   "normalised": 4,
+   "inferred": 6,
+   "rejected": 2,
+   "metadata": 1
+  },
+  "verified_share": 0.68,
+  "rejected_values": [
+   {
+    "path": "procedural_history[0].date",
+    "value": "2024-04-30",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Vorberatung der Motion 23.4448 in Anwesenheit von Vertreterinnen und Vertretern des SEM und des BAZG",
+    "page": null,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "2 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 9396,
+   "total_tokens": 10755,
+   "completion_tokens": 1359,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "de",
+   "level": {
+    "v": "federal",
+    "p": "1",
+    "q": "Eidgenössisches Justiz- und Polizeidepartement EJPD\nStaatssekretariat für Migration SEM"
+   },
+   "parliament": {
+    "v": "Staatspolitische Kommission des Ständerates",
+    "p": "2",
+    "q": "Staatspolitische Kommission des Ständerates (SPK-S)"
+   },
+   "affair_number": {
+    "v": "23.4448",
+    "p": "1",
+    "q": "23.4448 Motion Chiesa «Schutz der Landesgrenzen»"
+   },
+   "title": {
+    "v": "Kurzbericht des Staatssekretariats für Migration SEM zuhanden der Staatspolitischen Kommission des Ständerates im Zusammenhang mit Motion 23.4448 Chiesa «Schutz der Landesgrenzen»",
+    "p": "1",
+    "q": "Kurzbericht des Staatssekretariats für Migration SEM zuhanden der Staatspolitischen Kommission des Ständerates im Zusammenhang mit 23.4448 Motion Chiesa «Schutz der Landesgrenzen»"
+   },
+   "affair_type": {
+    "v": "motion",
+    "p": "1",
+    "q": "23.4448 Motion Chiesa «Schutz der Landesgrenzen»"
+   },
+   "affair_type_original": {
+    "v": "Motion",
+    "p": "1",
+    "q": "23.4448 Motion Chiesa «Schutz der Landesgrenzen»"
+   },
+   "submission_date": {
+    "v": "2024-09-19",
+    "p": "1",
+    "q": "19. September 2024"
+   },
+   "actors": [
+    {
+     "name": "Staatssekretariat für Migration SEM",
+     "role": "respondent",
+     "kind": "administration",
+     "party_or_group": null
+    },
+    {
+     "name": "Staatspolitische Kommission des Ständerates",
+     "role": "addressee",
+     "kind": "committee",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": {
+    "v": "Staatspolitische Kommission des Ständerates",
+    "p": "2",
+    "q": "Staatspolitische Kommission des Ständerates (SPK-S)"
+   },
+   "requests": [
+    {
+     "v": "Zahlen der Schweiz und von Schengen-Staaten, die Binnengrenzkontrollen wieder eingeführt haben, in Bezug auf irreguläre Migration (wie viele irreguläre Migrantinnen und Migranten, welcher Rückgang wurde durch die Wiedereinführung von Kontrollen festgestellt, wie viele Personen reichten ein Asylgesuch ein, wie viele Personen reisen weiter, Anzahl der Wegweisungen)",
+     "p": "2",
+     "q": "• Zahlen der Schweiz und von Schengen-Staaten, die Binnengrenzkontrollen wieder eingeführt haben, in Bezug auf irreguläre Migration (wie viele irreguläre Migrantinnen und Migranten, welcher Rückgang wurde durch die Wiedereinführung von Kontrollen festgestellt, wie viele Personen reichten ein Asylgesuch ein, wie viele Personen reisen weiter, Anzahl der Wegweisungen)"
+    },
+    {
+     "v": "Welche Schengen-Staaten haben Binnengrenzkontrollen wieder eingeführt, in welchem Umfang, für wie lange, wie werden diese Kontrollen angewendet?",
+     "p": "2",
+     "q": "• Welche Schengen-Staaten haben Binnengrenzkontrollen wieder eingeführt, in welchem Umfang, für wie lange, wie werden diese Kontrollen angewendet?"
+    },
+    {
+     "v": "Wie wirkten sich die Wiedereinführungen der Binnengrenzkontrollen von Nachbarstaaten auf die Schweiz aus?",
+     "p": "2",
+     "q": "• Wie wirkten sich die Wiedereinführungen der Binnengrenzkontrollen von Nachbarstaaten auf die Schweiz aus?"
+    },
+    {
+     "v": "Wie hat die EU-Kommission auf die Wiedereinführung reagiert? Welche Massnahmen schlägt die EU als Ersatz für Binnengrenzkontrollen vor?",
+     "p": "2",
+     "q": "• Wie hat die EU-Kommission auf die Wiedereinführung reagiert? Welche Massnahmen schlägt die EU als Ersatz für Binnengrenzkontrollen vor?"
+    },
+    {
+     "v": "Was ist der Unterschied zwischen systematischen und risikobasierten Kontrollen? Ab wann geht es von der einen Kategorie in die andere über? Wie ist der rechtliche Rahmen?",
+     "p": "2",
+     "q": "• Was ist der Unterschied zwischen systematischen und risikobasierten Kontrollen? Ab wann geht es von der einen Kategorie in die andere über (Ziffer 6)? Wie ist der rechtliche Rahmen?"
+    },
+    {
+     "v": "Welche Auswirkungen hätte die Einführung von Binnengrenzkontrollen auf irreguläre Grenzübertritte und Asylgesuche?",
+     "p": "2",
+     "q": "• Welche Auswirkungen hätte die Einführung von Binnengrenzkontrollen auf irreguläre Grenzübertritte und Asylgesuche?"
+    },
+    {
+     "v": "Zahlen zur Schwarzarbeit: Der Bericht soll lediglich auf die vom SECO zur Verfügung gestellten Informationen verweisen.",
+     "p": "2",
+     "q": "• Zahlen zur Schwarzarbeit: Der Bericht soll lediglich auf die vom SECO zur Verfügung gestellten Informationen verweisen."
+    }
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": "2024-04-30",
+     "state": "in_committee",
+     "description": "Vorberatung der Motion 23.4448 in Anwesenheit von Vertreterinnen und Vertretern des SEM und des BAZG"
+    }
+   ],
+   "state": {
+    "v": "answered",
+    "p": "14",
+    "q": ">>>"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "Binnengrenzkontrollen",
+    "Schengen-Raum",
+    "irreguläre Migration",
+    "Asylgesuche",
+    "Grenzkontrollen",
+    "Staatssekretariat für Migration SEM"
+   ]
+  }
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/CHE/de534f01560d4e8c09bc1e6bdaf866ad4052355ac70b5720c7190f74077728cc",
+  "sha256": "1677426b235fcefc617ad39426e6e2af4e50126abd2ff93535147c5fa9a86d17",
+  "content_type": "application/pdf",
+  "pages": 6,
+  "opd_doc_id": 38803,
+  "opd_affair_id": 59039,
+  "retrieved_at": "2026-10-16T09:15:49+00:00"
+ },
+ "language": "fr",
+ "body": {
+  "level": {
+   "value": "federal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "CHE",
+  "parliament": {
+   "value": "Conseil des Etats",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Conseil des Etats",
+   "char_start": 248,
+   "char_end": 265
+  },
+  "opd_body_type": "country"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "15.075 Loi sur les produits du tabac",
+   "status": "extracted",
+   "page": 1,
+   "quote": "15.075 Loi sur les produits du tabac",
+   "char_start": 101,
+   "char_end": 137
+  },
+  "title": {
+   "value": "Constitutionnalité de la version du projet de loi du Conseil des Etats en matière de restrictions de la publicité et du marketing",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Constitutionnalité de la version du projet de loi du Conseil des Etats en matière \nde restrictions de la publicité et du marketing",
+   "char_start": 195,
+   "char_end": 325
+  },
+  "type": {
+   "page": 1,
+   "quote": "Rapport",
+   "char_start": 181,
+   "char_end": 188,
+   "value": "report",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 16,
+   "wikidata": null
+  },
+  "type_original": {
+   "value": "Rapport",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Rapport",
+   "char_start": 181,
+   "char_end": 188
+  },
+  "submission_date": null,
+  "actors": [],
+  "addressed_to": null,
+  "requests": [],
+  "questions": [],
+  "procedural_history": [
+   {
+    "date": null,
+    "state": {
+     "value": "in_committee",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "description": {
+     "value": "Séance de la CSSS-N du 5 novembre 2020",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Séance de la CSSS-N du 5 novembre 2020",
+     "char_start": 139,
+     "char_end": 177
+    }
+   }
+  ],
+  "state": {
+   "value": "closed",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": 3
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "tabac",
+   "cigarettes électroniques",
+   "publicité",
+   "constitutionnalité",
+   "CCLAT",
+   "liberté économique",
+   "liberté d'opinion et d'information",
+   "liberté des médias"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 5,
+   "normalised": 0,
+   "inferred": 4,
+   "rejected": 3,
+   "metadata": 1
+  },
+  "verified_share": 0.462,
+  "rejected_values": [
+   {
+    "path": "procedural_history[1].description",
+    "value": "Rapport finalisé",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[0]",
+    "value": "Examen de la constitutionnalité des restrictions à la publicité, à la promotion et au parrainage des produits du tabac et des cigarettes électroniques",
+    "page": 1,
+    "quote": ""
+   },
+   {
+    "path": "addressed_to",
+    "value": "Commission de la sécurité sociale et de la santé du Conseil national (CSSS-N)",
+    "page": 1,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "affair_type 'report' disagrees with OpenParlData type_harmonized_id 9",
+   "2 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 5910,
+   "total_tokens": 6331,
+   "completion_tokens": 421,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "fr",
+   "level": {
+    "v": "federal",
+    "p": "1",
+    "q": "Département fédéral de l'intérieur DFI"
+   },
+   "parliament": {
+    "v": "Conseil des Etats",
+    "p": "1"
+   },
+   "affair_number": {
+    "v": "15.075 Loi sur les produits du tabac",
+    "p": "1"
+   },
+   "title": {
+    "v": "Constitutionnalité de la version du projet de loi du Conseil des Etats en matière de restrictions de la publicité et du marketing",
+    "p": "1"
+   },
+   "affair_type": {
+    "v": "report",
+    "p": "1"
+   },
+   "affair_type_original": {
+    "v": "Rapport",
+    "p": "1"
+   },
+   "submission_date": null,
+   "actors": [],
+   "addressed_to": {
+    "v": "Commission de la sécurité sociale et de la santé du Conseil national (CSSS-N)",
+    "p": "1"
+   },
+   "requests": [
+    {
+     "v": "Examen de la constitutionnalité des restrictions à la publicité, à la promotion et au parrainage des produits du tabac et des cigarettes électroniques",
+     "p": "1"
+    }
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": null,
+     "state": "in_committee",
+     "description": "Séance de la CSSS-N du 5 novembre 2020"
+    },
+    {
+     "date": null,
+     "state": "closed",
+     "description": "Rapport finalisé"
+    }
+   ],
+   "state": {
+    "v": "closed",
+    "p": "6"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "tabac",
+    "cigarettes électroniques",
+    "publicité",
+    "constitutionnalité",
+    "CCLAT",
+    "liberté économique",
+    "liberté d'opinion et d'information",
+    "liberté des médias"
+   ]
+  }
+ }
+}

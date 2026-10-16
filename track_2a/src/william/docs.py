@@ -198,7 +198,8 @@ def fetch(url: str) -> Document:
     r = _get(url)
     data = r.content
     ctype = r.headers.get("content-type", "").split(";")[0].strip().lower()
-    if data[:5] == b"%PDF-" or ctype == "application/pdf":
+    # readers accept bytes before the header (Zürich 261 files start with "\n%PDF-"), so look in the first 1 KB
+    if b"%PDF-" in data[:1024] or ctype == "application/pdf":
         pages = pdf_pages(data)
         ctype = "application/pdf"
         chars = sum(len(p.strip()) for p in pages)

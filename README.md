@@ -1,3 +1,5 @@
+<p align="center"><img src="track_2a/src/extension/icons/logo.png" alt="William logo" width="140"></p>
+
 # William — Hack Apertus 2026 · Track 2A · OpenParlData
 
 **Team RedPandas** — Christopher Yazigi, Giovanni Yazbeck, Alfredo Pio Yazbeck

@@ -1,0 +1,224 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/GE/e829e3d28e172e2ad7dc9a145e8a6cf71ce830eb8cfb4299aafa0c679800f6e3",
+  "sha256": "0c5c59d6590fe224801b2b5d68cf30a7cb37e835f891b3b4ccf845f31741ae84",
+  "content_type": "application/pdf",
+  "pages": 9,
+  "opd_doc_id": 444907,
+  "opd_affair_id": 195321,
+  "retrieved_at": "2026-10-16T09:15:52+00:00"
+ },
+ "language": "fr",
+ "body": {
+  "level": {
+   "value": "cantonal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "GE",
+  "parliament": {
+   "value": "Grand Conseil de la République et canton de Genève",
+   "status": "extracted",
+   "page": 1,
+   "quote": "GRAND CONSEIL de la République et canton de Genève",
+   "char_start": 359,
+   "char_end": 409
+  },
+  "opd_body_type": "canton"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "PL 9957",
+   "status": "extracted",
+   "page": 1,
+   "quote": "PL 9957",
+   "char_start": 287,
+   "char_end": 294
+  },
+  "title": {
+   "value": "Projet de loi modifiant la loi sur les cimetières (K 1 65)",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Projet de loi \nmodifiant la loi sur les cimetières (K 1 65",
+   "char_start": 295,
+   "char_end": 353
+  },
+  "type": {
+   "page": 1,
+   "quote": "Projet de loi",
+   "char_start": 295,
+   "char_end": 308,
+   "value": "parliamentary_initiative",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 4,
+   "wikidata": "Q2052859"
+  },
+  "type_original": {
+   "value": "Projet de loi",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Projet de loi",
+   "char_start": 295,
+   "char_end": 308
+  },
+  "submission_date": null,
+  "actors": [
+   {
+    "name": {
+     "value": "Olivier Jornot, Pierre Weiss, Christiane Favre, Beatrice de Candolle, Fabienne Gautier, Françis Walpen et Jean-Michel Gros",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Olivier Jornot, Pierre Weiss, \nChristiane Favre, Beatrice de Candolle, Fabienne \nGautier, Françis Walpen et Jean-Michel Gros",
+     "char_start": 114,
+     "char_end": 238
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Grand Conseil de la République et canton de Genève",
+   "status": "extracted",
+   "page": 1,
+   "quote": "GRAND CONSEIL de la République et canton de Genève",
+   "char_start": 359,
+   "char_end": 409
+  },
+  "requests": [],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "cimetières",
+   "carrés confessionnels",
+   "communauté musulmane",
+   "communauté juive",
+   "Veyrier",
+   "Petit-Saconnex",
+   "Saint-Georges"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 6,
+   "normalised": 0,
+   "inferred": 5,
+   "rejected": 3,
+   "metadata": 1
+  },
+  "verified_share": 0.467,
+  "rejected_values": [
+   {
+    "path": "procedural_history[0].description",
+    "value": "Projet présenté par les députés et déposé le 28 novembre 2006",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[0]",
+    "value": "Modifier la loi sur les cimetières pour créer des carrés confessionnels pour les communautés musulmane et juive et réguler l'exploitation du cimetière israélite de Veyrier",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "submission_date",
+    "value": "2006-11-28",
+    "page": 1,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "2 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 6013,
+   "total_tokens": 6433,
+   "completion_tokens": 420,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "fr",
+   "level": {
+    "v": "cantonal",
+    "p": "1",
+    "q": "Le GRAND CONSEIL de la République et canton de Genève"
+   },
+   "parliament": "Grand Conseil de la République et canton de Genève",
+   "affair_number": "PL 9957",
+   "title": "Projet de loi modifiant la loi sur les cimetières (K 1 65)",
+   "affair_type": "parliamentary_initiative",
+   "affair_type_original": "Projet de loi",
+   "submission_date": {
+    "v": "2006-11-28",
+    "p": "1"
+   },
+   "actors": [
+    {
+     "name": "Olivier Jornot, Pierre Weiss, Christiane Favre, Beatrice de Candolle, Fabienne Gautier, Françis Walpen et Jean-Michel Gros",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": "Grand Conseil de la République et canton de Genève",
+   "requests": [
+    "Modifier la loi sur les cimetières pour créer des carrés confessionnels pour les communautés musulmane et juive et réguler l'exploitation du cimetière israélite de Veyrier"
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": null,
+     "state": "submitted",
+     "description": "Projet présenté par les députés et déposé le 28 novembre 2006"
+    }
+   ],
+   "state": "submitted",
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "cimetières",
+    "carrés confessionnels",
+    "communauté musulmane",
+    "communauté juive",
+    "Veyrier",
+    "Petit-Saconnex",
+    "Saint-Georges"
+   ]
+  }
+ }
+}

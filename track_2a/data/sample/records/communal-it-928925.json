@@ -1,0 +1,384 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/5192/1d21ad6dd1aba9b8b5efad84641c5c493c7a70f150b7b4292417f13fc417a568",
+  "sha256": "7742622c2651bb9e19d80951833952d1afd35d62928285256db1d0ec304dc810",
+  "content_type": "application/pdf",
+  "pages": 3,
+  "opd_doc_id": 928925,
+  "opd_affair_id": 341403,
+  "retrieved_at": "2026-10-16T09:15:59+00:00"
+ },
+ "language": "it",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "5192",
+  "parliament": {
+   "value": "Municipio di Lugano",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Municipio di Lugano",
+   "char_start": 58,
+   "char_end": 77
+  },
+  "opd_body_type": "municipality"
+ },
+ "affair": {
+  "affair_number": null,
+  "title": {
+   "value": "Legge sulle Commesse Pubbliche, ce la facciamo … ?",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Legge sulle Commesse Pubbliche,  ce la facciamo",
+   "char_start": 190,
+   "char_end": 237
+  },
+  "type": {
+   "page": 1,
+   "quote": "Interpellanza",
+   "char_start": 157,
+   "char_end": 170,
+   "value": "interpellation",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 8,
+   "wikidata": "Q1505023"
+  },
+  "type_original": {
+   "value": "Interpellanza",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Interpellanza",
+   "char_start": 157,
+   "char_end": 170
+  },
+  "submission_date": {
+   "value": "2026-10-05",
+   "status": "normalised",
+   "page": 1,
+   "quote": "Cadro, 05 ottobre 2026",
+   "char_start": 134,
+   "char_end": 156
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Demis Fumasoli",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Demis Fumasoli",
+     "char_start": 0,
+     "char_end": 14
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": {
+     "value": "La Sinistra (ForumAlternativo)",
+     "status": "extracted",
+     "page": 1,
+     "quote": "La Sinistra (ForumAlternativo",
+     "char_start": 16,
+     "char_end": 45
+    }
+   },
+   {
+    "name": {
+     "value": "Angelo Petralli",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Angelo Petralli",
+     "char_start": 807,
+     "char_end": 822
+    },
+    "role": {
+     "value": "co_signatory",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": {
+     "value": "il Centro",
+     "status": "extracted",
+     "page": 3,
+     "quote": "il Centro",
+     "char_start": 824,
+     "char_end": 833
+    }
+   }
+  ],
+  "addressed_to": {
+   "value": "Onorevole Signor Sindaco, Onorevoli Signori Municipali",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Onorevole Signor Sindaco, Onorevoli Signori Municipali",
+   "char_start": 244,
+   "char_end": 298
+  },
+  "requests": [
+   {
+    "value": "Verificare se nel 2025 sono stati deliberati appalti a incarico diretto a ditte segnalate da suissetec Ticino e Moesano come non in regola o non idonee",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già\nstate segnalate da suissetec Ticino e Moesano come non in regola o non idonee",
+    "char_start": 1380,
+    "char_end": 1547
+   },
+   {
+    "value": "Chiarire se l'ufficio preposto al controllo dell'idoneità delle imprese è pienamente consapevole dell'obbligo di verificare il rispetto dei CCL applicabili e quali procedure interne prevede per chiarire dubbi interpretativi",
+    "status": "normalised",
+    "page": 2,
+    "quote": "L’ufficio preposto al controllo dell’idoneità delle imprese è pi enamente consapevole\ndell’obbligo di verificare il rispetto dei CCL applicabili, compre si quelli cantonali e\nregionali non dichiarati di obbligatorietà generale pertinent i al settore? Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazion e",
+    "char_start": 1552,
+    "char_end": 1941
+   },
+   {
+    "value": "Indicare quali misure concrete sono state adottate per evitare il ripetersi di simili situazioni e se il Municipio ritiene che i provvedimenti attuali siano sufficienti per evitare nuove aggiudicazioni contrarie alla LCPubb nel 2026",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Quali misure concrete sono state adottate  dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ri petersi di simili situazioni? Considerato\nquanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che\ngli eventuali nuovi provvedimenti siano su fficienti? Si può pensare con una buona\napprossimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni\ncontrarie alla Legge sulle commesse pubbliche (LCPubb",
+    "char_start": 2121,
+    "char_end": 2590
+   },
+   {
+    "value": "Spiegare quali nuovi provvedimenti, anche per migliorare le conoscenze delle persone preposte alle verifiche, sono previsti per evitare future delibere non conformi alla LCPubb, tenendo conto della precedente interpellanza e delle spiegazioni fornite",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Quali nuovi provvedimenti,  magari anche tesi a miglio rare le conoscenze delle\npersone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non\nconformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare come\nintende procedere il Municipio alla luce del fatto che una situazione analoga era già\nstata oggetto di una precedente interpellanza e che, inseguito alla stessa, erano state\nfornite indicazioni e spiegazioni in me rito alla corretta applicazione della\nLegislazione",
+    "char_start": 2596,
+    "char_end": 3102
+   },
+   {
+    "value": "Indicare quali provvedimenti disciplinari o di verifica delle responsabilità il Municipio intende adottare se dovesse emergere che funzionari o responsabili abbiano continuato ad agire in modo superficiale",
+    "status": "normalised",
+    "page": 3,
+    "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una\n“reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle\nresponsabilità e, se del caso, all’adozione di provvedimenti disciplinari",
+    "char_start": 39,
+    "char_end": 437
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [
+   {
+    "reference": {
+     "value": "interpellanza n. 4357 del 19 settembre 2025",
+     "status": "extracted",
+     "page": 1,
+     "quote": "interpellanza n. 4357 del 19 settembre 2025",
+     "char_start": 404,
+     "char_end": 447
+    },
+    "relation": {
+     "value": "follow_up_of",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    }
+   }
+  ],
+  "keywords": [
+   "commesse pubbliche",
+   "LCPubb",
+   "contratto collettivo di lavoro",
+   "suissetec Ticino e Moesano",
+   "idoneità imprese",
+   "incarico diretto"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 9,
+   "normalised": 7,
+   "inferred": 7,
+   "rejected": 3,
+   "metadata": 1
+  },
+  "verified_share": 0.63,
+  "rejected_values": [
+   {
+    "path": "procedural_history[0].date",
+    "value": "2026-10-05",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Interpellanza presentata da Demis Fumasoli e Angelo Petralli al Municipio di Lugano",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "affair_number",
+    "value": "Interpellanza no. 1654",
+    "page": 1,
+    "quote": "Interpellanza no. 1654"
+   }
+  ],
+  "flags": [
+   "affair_type 'interpellation' disagrees with OpenParlData type_harmonized_id 12",
+   "2 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 2566,
+   "total_tokens": 3973,
+   "completion_tokens": 1407,
+   "prompt_tokens_details": {
+    "cached_tokens": 2496,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "it",
+   "level": {
+    "v": "communal",
+    "p": "1",
+    "q": "comunale"
+   },
+   "parliament": {
+    "v": "Municipio di Lugano",
+    "p": "1",
+    "q": "Municipio di Lugano"
+   },
+   "affair_number": {
+    "v": "Interpellanza no. 1654",
+    "p": "1",
+    "q": "Interpellanza no. 1654"
+   },
+   "title": {
+    "v": "Legge sulle Commesse Pubbliche, ce la facciamo … ?",
+    "p": "1",
+    "q": "Legge sulle Commesse Pubbliche, ce la facciamo … ?"
+   },
+   "affair_type": {
+    "v": "interpellation",
+    "p": "1",
+    "q": "Interpellanza"
+   },
+   "affair_type_original": {
+    "v": "Interpellanza",
+    "p": "1",
+    "q": "Interpellanza"
+   },
+   "submission_date": {
+    "v": "2026-10-05",
+    "p": "1",
+    "q": "Cadro, 05 ottobre 2026"
+   },
+   "actors": [
+    {
+     "name": "Demis Fumasoli",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": "La Sinistra (ForumAlternativo)"
+    },
+    {
+     "name": "Angelo Petralli",
+     "role": "co_signatory",
+     "kind": "person",
+     "party_or_group": "il Centro"
+    }
+   ],
+   "addressed_to": {
+    "v": "Onorevole Signor Sindaco, Onorevoli Signori Municipali",
+    "p": "1",
+    "q": "Onorevole Signor Sindaco, Onorevoli Signori Municipali"
+   },
+   "requests": [
+    {
+     "v": "Verificare se nel 2025 sono stati deliberati appalti a incarico diretto a ditte segnalate da suissetec Ticino e Moesano come non in regola o non idonee",
+     "p": "2",
+     "q": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?"
+    },
+    {
+     "v": "Chiarire se l'ufficio preposto al controllo dell'idoneità delle imprese è pienamente consapevole dell'obbligo di verificare il rispetto dei CCL applicabili e quali procedure interne prevede per chiarire dubbi interpretativi",
+     "p": "2",
+     "q": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compre si quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinent i al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazion e?"
+    },
+    {
+     "v": "Indicare quali misure concrete sono state adottate per evitare il ripetersi di simili situazioni e se il Municipio ritiene che i provvedimenti attuali siano sufficienti per evitare nuove aggiudicazioni contrarie alla LCPubb nel 2026",
+     "p": "2",
+     "q": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ri petersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano su fficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?"
+    },
+    {
+     "v": "Spiegare quali nuovi provvedimenti, anche per migliorare le conoscenze delle persone preposte alle verifiche, sono previsti per evitare future delibere non conformi alla LCPubb, tenendo conto della precedente interpellanza e delle spiegazioni fornite",
+     "p": "2",
+     "q": "Quali nuovi provvedimenti, magari anche tesi a miglio rare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, inseguito alla stessa, erano state fornite indicazioni e spiegazioni in me rito alla corretta applicazione della Legislazione?"
+    },
+    {
+     "v": "Indicare quali provvedimenti disciplinari o di verifica delle responsabilità il Municipio intende adottare se dovesse emergere che funzionari o responsabili abbiano continuato ad agire in modo superficiale",
+     "p": "3",
+     "q": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una “reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all’adozione di provvedimenti disciplinari?"
+    }
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": "2026-10-05",
+     "state": "submitted",
+     "description": "Interpellanza presentata da Demis Fumasoli e Angelo Petralli al Municipio di Lugano"
+    }
+   ],
+   "state": "submitted",
+   "decisions": [],
+   "related_affairs": [
+    {
+     "reference": "interpellanza n. 4357 del 19 settembre 2025",
+     "relation": "follow_up_of"
+    }
+   ],
+   "keywords": [
+    "commesse pubbliche",
+    "LCPubb",
+    "contratto collettivo di lavoro",
+    "suissetec Ticino e Moesano",
+    "idoneità imprese",
+    "incarico diretto"
+   ]
+  }
+ }
+}

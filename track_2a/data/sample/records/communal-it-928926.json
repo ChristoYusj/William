@@ -1,0 +1,555 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/5192/592b1e53ea42d39cd74b6c66309cd362b91b0eb79393ee48b58137b3aaa9f283",
+  "sha256": "e818b58a474dbb660642d2021ebcbab7f1f8a0590e391bf68b24afdb40eb3eeb",
+  "content_type": "application/pdf",
+  "pages": 3,
+  "opd_doc_id": 928926,
+  "opd_affair_id": 341403,
+  "retrieved_at": "2026-10-16T09:16:00+00:00"
+ },
+ "language": "it",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "5192",
+  "parliament": {
+   "value": "Consiglio Comunale di Lugano",
+   "status": "inferred",
+   "page": 3,
+   "quote": "Consiglio Comunale",
+   "char_start": 2137,
+   "char_end": 2155
+  },
+  "opd_body_type": "municipality"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "1654",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Interrogazione no. 1654",
+   "char_start": 36,
+   "char_end": 59
+  },
+  "title": {
+   "value": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Legge sulle Commesse Pubbliche, ce la facciamo",
+   "char_start": 63,
+   "char_end": 109
+  },
+  "type": {
+   "page": 1,
+   "quote": "Interrogazione",
+   "char_start": 36,
+   "char_end": 50,
+   "value": "question",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 12,
+   "wikidata": "Q2052854"
+  },
+  "type_original": {
+   "value": "interrogazione",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Interrogazione",
+   "char_start": 36,
+   "char_end": 50
+  },
+  "submission_date": {
+   "value": "2026-10-05",
+   "status": "normalised",
+   "page": 1,
+   "quote": "5 ottobre 2026",
+   "char_start": 257,
+   "char_end": 271
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Demis Fumasoli",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Onorevole Signor\nDemis Fumasoli",
+     "char_start": 2673,
+     "char_end": 2704
+    },
+    "role": {
+     "value": "submitter",
+     "status": "normalised",
+     "page": 1,
+     "quote": "presentata unitamente ad un altro cofirmatario",
+     "char_start": 273,
+     "char_end": 319
+    },
+    "kind": {
+     "value": "person",
+     "status": "normalised",
+     "page": 1,
+     "quote": "Onorevole Signor",
+     "char_start": 115,
+     "char_end": 131
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Municipio di Lugano",
+     "status": "inferred",
+     "page": 1,
+     "quote": "il Municipio",
+     "char_start": 476,
+     "char_end": 488
+    },
+    "role": {
+     "value": "respondent",
+     "status": "normalised",
+     "page": 1,
+     "quote": "il Municipio",
+     "char_start": 476,
+     "char_end": 488
+    },
+    "kind": {
+     "value": "executive",
+     "status": "normalised",
+     "page": 1,
+     "quote": "Municipio",
+     "char_start": 479,
+     "char_end": 488
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Onorevole Signor Demis Fumasoli",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Onorevole Signor\nDemis Fumasoli",
+   "char_start": 2673,
+   "char_end": 2704
+  },
+  "requests": [
+   {
+    "value": "Spiegare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec come non idonee",
+    "status": "normalised",
+    "page": 1,
+    "quote": "rispondiamo di seguito puntualmente alle domande poste",
+    "char_start": 321,
+    "char_end": 375
+   },
+   {
+    "value": "Confermare se l'ufficio preposto è consapevole dell'obbligo di verificare i CCL applicabili e quali procedure interne sono previste in caso di dubbi",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazione",
+    "char_start": 1211,
+    "char_end": 1348
+   },
+   {
+    "value": "Descrivere le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripetersi di situazioni non conformi e valutare se siano sufficienti per il 2026",
+    "status": "normalised",
+    "page": 2,
+    "quote": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni",
+    "char_start": 1896,
+    "char_end": 2053
+   },
+   {
+    "value": "Specificare i provvedimenti disciplinari in caso di reiterazione di errori da parte dei funzionari nella verifica dell'idoneità",
+    "status": "normalised",
+    "page": 3,
+    "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio",
+    "char_start": 1236,
+    "char_end": 1450
+   }
+  ],
+  "questions": [
+   {
+    "number": null,
+    "question": {
+     "value": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già\nstate segnalate da suissetec Ticino e Moesano come non in regola o non idonee",
+     "char_start": 592,
+     "char_end": 759
+    },
+    "answer": {
+     "value": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazione dello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino e Moesano.",
+     "status": "normalised",
+     "page": 2,
+     "quote": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogaione\ndello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino\ne Moesano",
+     "char_start": 761,
+     "char_end": 956
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all’associazione padronale di categoria suissetec Ticino e Moesano?",
+     "status": "extracted",
+     "page": 2,
+     "quote": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole\ndell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e\nregionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi\nfossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste\ninternamente per chiarire la situazione? Il Municipio ha mai richiesto o intende\nrichiedere un parere alla Commissione paritetica competente oppure all’associazione\npadronale di categoria suissetec Ticino e Moesano",
+     "char_start": 963,
+     "char_end": 1523
+    },
+    "answer": {
+     "value": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne sono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità di informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di rivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e collaborazione.",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne\nsono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità\ndi informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di\nrivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e\ncollaborazione",
+     "char_start": 1525,
+     "char_end": 1889
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le\nspiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato\nquanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che\ngli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona\napprossimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni\ncontrarie alla Legge sulle commesse pubbliche (LCPubb",
+     "char_start": 1896,
+     "char_end": 2362
+    },
+    "answer": {
+     "value": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso anno: adeguamento della banca dati interna, verifica della presenza delle attestazioni relative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione coinvolti nel processo degli acquisti. Gli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di queste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione. Naturalmente nessun sistema amministrativo consente di escludere in termini assoluti la possibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte consentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e del rispetto dei contratti collettivi applicabili.",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso\nanno: adeguamento della banca dati interna, verifica della presenza delle attestazioni\nrelative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione\ncoinvolti nel processo degli acquisti.\nGli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di\nqueste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione.\nNaturalmente nessun sistema amministrativo consente di escludere in termini assoluti la\npossibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte\nconsentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e\ndel rispetto dei contratti collettivi applicabili",
+     "char_start": 2365,
+     "char_end": 3159
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, inseguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle\npersone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non\nconformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende\nprocedere il Municipio alla luce del fatto che una situazione analoga era già stata\noggetto di una precedente interpellanza e che, inseguito alla stessa, erano state\nfornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione",
+     "char_start": 94,
+     "char_end": 598
+    },
+    "answer": {
+     "value": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione della problematica successivamente all’adeguamento della procedura e non rende pertanto necessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò non significa evidentemente che le procedure siano considerate immutabili. Il Centro di competenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà ad aggiornare le proprie modalità operative qualora intervengano modifiche legislative, nuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento.",
+     "status": "extracted",
+     "page": 3,
+     "quote": "A lla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione\ndella problematica successivamente all’adeguamento della procedura e non rende pertanto\nnecessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò\nnon significa evidentemente che le procedure siano considerate immutabili. Il Centro di\ncompetenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà\nad aggiornare le proprie modalità operative qualora intervengano modifiche legislative,\nnuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento",
+     "char_start": 600,
+     "char_end": 1229
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una “reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all’adozione di provvedimenti disciplinari?",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica\ndell’idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali\nprovvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una\n“reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle\nresponsabilità e, se del caso, all’adozione di provvedimenti disciplinari",
+     "char_start": 1236,
+     "char_end": 1634
+    },
+    "answer": {
+     "value": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è verificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di natura disciplinare.",
+     "status": "extracted",
+     "page": 3,
+     "quote": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è\nverificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di\nnatura disciplinare",
+     "char_start": 1636,
+     "char_end": 1842
+    }
+   }
+  ],
+  "procedural_history": [],
+  "state": {
+   "value": "answered",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [
+   {
+    "reference": {
+     "value": "interrogazione no. 1531 del 25 settembre 2025",
+     "status": "extracted",
+     "page": 1,
+     "quote": "interrogazione\nno. 1531 del 25 settembre 2025",
+     "char_start": 586,
+     "char_end": 631
+    },
+    "relation": {
+     "value": "follow_up_of",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    }
+   }
+  ],
+  "keywords": [
+   "commesse pubbliche",
+   "LCPubb",
+   "Suissetec Ticino e Moesano",
+   "contratti collettivi",
+   "CCL",
+   "idoneità imprese",
+   "Lugano"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 15,
+   "normalised": 11,
+   "inferred": 5,
+   "rejected": 8,
+   "metadata": 1
+  },
+  "verified_share": 0.675,
+  "rejected_values": [
+   {
+    "path": "questions[0].number",
+    "value": "1",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[1].number",
+    "value": "2",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[2].number",
+    "value": "3",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[3].number",
+    "value": "4",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[4].number",
+    "value": "5",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].date",
+    "value": "2026-10-08",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Risoluzione municipale del 8 ottobre 2026",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[3]",
+    "value": "Indicare nuovi provvedimenti per evitare future delibere non conformi e spiegare come procedere alla luce della precedente interpellanza",
+    "page": null,
+    "quote": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla LCPubb?"
+   }
+  ],
+  "flags": [
+   "model type 'interpellation' replaced by 'question' from the original term 'interrogazione'",
+   "8 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 2946,
+   "total_tokens": 5242,
+   "completion_tokens": 2296,
+   "prompt_tokens_details": {
+    "cached_tokens": 2880,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "it",
+   "level": {
+    "v": "communal",
+    "p": "PAGE 1",
+    "q": "comunale"
+   },
+   "parliament": {
+    "v": "Consiglio Comunale di Lugano",
+    "p": "PAGE 1",
+    "q": "Consiglio Comunale"
+   },
+   "affair_number": {
+    "v": "1654",
+    "p": "PAGE 1",
+    "q": "Interrogazione no. 1654"
+   },
+   "title": {
+    "v": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+    "p": "PAGE 1",
+    "q": "\"Legge sulle Commesse Pubbliche, ce la facciamo...?\""
+   },
+   "affair_type": {
+    "v": "interpellation",
+    "p": "PAGE 1",
+    "q": "Interrogazione"
+   },
+   "affair_type_original": {
+    "v": "interrogazione",
+    "p": "PAGE 1",
+    "q": "interrogazione"
+   },
+   "submission_date": {
+    "v": "2026-10-05",
+    "p": "PAGE 1",
+    "q": "5 ottobre 2026"
+   },
+   "actors": [
+    {
+     "name": {
+      "v": "Demis Fumasoli",
+      "p": "PAGE 1",
+      "q": "Onorevole Signor Demis Fumasoli"
+     },
+     "role": {
+      "v": "submitter",
+      "p": "PAGE 1",
+      "q": "presentata unitamente ad un altro cofirmatario"
+     },
+     "kind": {
+      "v": "person",
+      "p": "PAGE 1",
+      "q": "Onorevole Signor"
+     },
+     "party_or_group": {
+      "v": null,
+      "p": "PAGE 1",
+      "q": null
+     }
+    },
+    {
+     "name": {
+      "v": "Municipio di Lugano",
+      "p": "PAGE 3",
+      "q": "Il Municipio"
+     },
+     "role": {
+      "v": "respondent",
+      "p": "PAGE 3",
+      "q": "Il Municipio"
+     },
+     "kind": {
+      "v": "executive",
+      "p": "PAGE 3",
+      "q": "Municipio"
+     },
+     "party_or_group": {
+      "v": null,
+      "p": "PAGE 3",
+      "q": null
+     }
+    }
+   ],
+   "addressed_to": {
+    "v": "Onorevole Signor Demis Fumasoli",
+    "p": "PAGE 1",
+    "q": "Onorevole Signor Demis Fumasoli"
+   },
+   "requests": [
+    {
+     "v": "Spiegare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec come non idonee",
+     "p": "PAGE 1",
+     "q": "rispondiamo di seguito puntualmente alle domande poste"
+    },
+    {
+     "v": "Confermare se l'ufficio preposto è consapevole dell'obbligo di verificare i CCL applicabili e quali procedure interne sono previste in caso di dubbi",
+     "p": "PAGE 2",
+     "q": "Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione?"
+    },
+    {
+     "v": "Descrivere le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripetersi di situazioni non conformi e valutare se siano sufficienti per il 2026",
+     "p": "PAGE 2",
+     "q": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni?"
+    },
+    {
+     "v": "Indicare nuovi provvedimenti per evitare future delibere non conformi e spiegare come procedere alla luce della precedente interpellanza",
+     "p": "PAGE 3",
+     "q": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla LCPubb?"
+    },
+    {
+     "v": "Specificare i provvedimenti disciplinari in caso di reiterazione di errori da parte dei funzionari nella verifica dell'idoneità",
+     "p": "PAGE 3",
+     "q": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio?"
+    }
+   ],
+   "questions": [
+    {
+     "number": "1",
+     "question": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già state segnalate da suissetec Ticino e Moesano come non in regola o non idonee?",
+     "answer": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazione dello scorso anno, non sono più stati conferiti mandati a ditte segnalate da Suissetec Ticino e Moesano."
+    },
+    {
+     "number": "2",
+     "question": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’obbligo di verificare il rispetto dei CCL applicabili, compresi quelli cantonali e regionali non dichiarati di obbligatorietà generale pertinenti al settore? Qualora vi fossero dubbi sull’interpretazione della normativa, quali procedure sarebbero previste internamente per chiarire la situazione? Il Municipio ha mai richiesto o intende richiedere un parere alla Commissione paritetica competente oppure all’associazione padronale di categoria suissetec Ticino e Moesano?",
+     "answer": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure interne sono state conseguentemente adeguate. In caso di ulteriori dubbi interpretativi o necessità di informazioni supplementari, sarà senz'altro valutata concretamente l'opportunità di rivolgersi a Suissetec Ticino e Moesano e richiedere informazioni necessarie e collaborazione."
+    },
+    {
+     "number": "3",
+     "question": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazioni ricevute nel 2025 per evitare il ripetersi di simili situazioni? Considerato quanto nuovamente segnalato da suissetec Ticino e Moesano il Municipio ritiene che gli eventuali nuovi provvedimenti siano sufficienti? Si può pensare con una buona approssimazione che nel 2026 non si verificheranno nuovamente aggiudicazioni contrarie alla Legge sulle commesse pubbliche (LCPubb)?",
+     "answer": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scorso anno: adeguamento della banca dati interna, verifica della presenza delle attestazioni relative ai diversi CCL applicabili e informazione ai collaboratori dell’amministrazione coinvolti nel processo degli acquisti. Gli elementi oggi segnalati da Suissetec non evidenziano carenze nell'applicazione di queste misure, poiché riguardano attribuzioni antecedenti alla loro introduzione. Naturalmente nessun sistema amministrativo consente di escludere in termini assoluti la possibilità di errori puntuali. Il Municipio ritiene tuttavia che le procedure introdotte consentano di assicurare un controllo adeguato e sistematico dell’idoneità dei fornitori e del rispetto dei contratti collettivi applicabili."
+    },
+    {
+     "number": "4",
+     "question": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone preposte alle verifiche, sarebbero previsti per evitare in futuro delibere non conformi alla Legge sulle commesse pubbliche (LCPubb)? In particolare, come intende procedere il Municipio alla luce del fatto che una situazione analoga era già stata oggetto di una precedente interpellanza e che, inseguito alla stessa, erano state fornite indicazioni e spiegazioni in merito alla corretta applicazione della Legislazione?",
+     "answer": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione della problematica successivamente all’adeguamento della procedura e non rende pertanto necessario introdurre, per questo specifico motivo, ulteriori provvedimenti correttivi. Ciò non significa evidentemente che le procedure siano considerate immutabili. Il Centro di competenza per le commesse pubbliche, unitamente agli altri servizi interessati, continuerà ad aggiornare le proprie modalità operative qualora intervengano modifiche legislative, nuove indicazioni delle autorità cantonali o emergano concrete necessità di miglioramento."
+    },
+    {
+     "number": "5",
+     "question": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idoneità dei concorrenti avessero continuato ad agire in modo superficiale, quali provvedimenti intenderebbe adottare il Municipio? Se dovesse emergere una “reiterazione dell’errore” il Municipio riterrebbe di procedere a una verifica delle responsabilità e, se del caso, all’adozione di provvedimenti disciplinari?",
+     "answer": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è verificato: non vi è pertanto alcuna ragione, allo stato attuale, per ipotizzare accertamenti di natura disciplinare."
+    }
+   ],
+   "procedural_history": [
+    {
+     "date": "2026-10-08",
+     "state": "answered",
+     "description": "Risoluzione municipale del 8 ottobre 2026"
+    }
+   ],
+   "state": "answered",
+   "decisions": [],
+   "related_affairs": [
+    {
+     "reference": "interrogazione no. 1531 del 25 settembre 2025",
+     "relation": "follow_up_of"
+    }
+   ],
+   "keywords": [
+    "commesse pubbliche",
+    "LCPubb",
+    "Suissetec Ticino e Moesano",
+    "contratti collettivi",
+    "CCL",
+    "idoneità imprese",
+    "Lugano"
+   ]
+  }
+ }
+}

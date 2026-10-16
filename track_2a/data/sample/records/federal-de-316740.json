@@ -1,0 +1,253 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/CHE/de49eb0b7581406f70b3a337aab3f13df901df4fe2b38c21c107a01f6b665dc4",
+  "sha256": "4cd4897fc0a1318aaa05cdc5e20fe797f67c31e055fcf2decd1b1e31ddc0417e",
+  "content_type": "application/octet-stream",
+  "pages": 1,
+  "opd_doc_id": 316740,
+  "opd_affair_id": 68517,
+  "retrieved_at": "2026-10-16T09:16:01+00:00"
+ },
+ "language": "de",
+ "body": {
+  "level": {
+   "value": "federal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "CHE",
+  "parliament": {
+   "value": "Nationalrat",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Nationalrat",
+   "char_start": 608,
+   "char_end": 619
+  },
+  "opd_body_type": "country"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "22.423",
+   "status": "extracted",
+   "page": 1,
+   "quote": "22.423",
+   "char_start": 16,
+   "char_end": 22
+  },
+  "title": {
+   "value": "Für eine unabhängige Presse sind die Beträge zur indirekten Förderung anzupassen",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Für eine unabhängige Presse sind die Beträge zur indirekten Förderung anzupassen",
+   "char_start": 23,
+   "char_end": 103
+  },
+  "type": {
+   "page": 1,
+   "quote": "Vernehmlassung",
+   "char_start": 0,
+   "char_end": 14,
+   "value": "consultation",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 5,
+   "wikidata": "Q1591788"
+  },
+  "type_original": {
+   "value": "Vernehmlassung",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Vernehmlassung",
+   "char_start": 0,
+   "char_end": 14
+  },
+  "submission_date": {
+   "value": "2023-11-20",
+   "status": "normalised",
+   "page": 1,
+   "quote": "20. November 2023",
+   "char_start": 445,
+   "char_end": 462
+  },
+  "actors": [],
+  "addressed_to": {
+   "value": "Vernehmlassungsadressaten",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Liste der Vernehmlassungsadressaten",
+   "char_start": 760,
+   "char_end": 795
+  },
+  "requests": [
+   {
+    "value": "Anpassung der Beträge zur indirekten Förderung für eine unabhängige Presse",
+    "status": "normalised",
+    "page": 1,
+    "quote": "die Beträge zur indirekten Förderung anzupassen",
+    "char_start": 56,
+    "char_end": 103
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "in_committee",
+   "status": "normalised",
+   "page": 1,
+   "quote": "VernehmlassungsERGEBNISSE",
+   "char_start": 925,
+   "char_end": 950,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "Presseförderung",
+   "indirekte Förderung",
+   "Unabhängigkeit",
+   "Vernehmlassung"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 5,
+   "normalised": 6,
+   "inferred": 0,
+   "rejected": 4,
+   "metadata": 1
+  },
+  "verified_share": 0.75,
+  "rejected_values": [
+   {
+    "path": "procedural_history[0].date",
+    "value": "2023-11-20",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Eröffnung der Vernehmlassung",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[1].date",
+    "value": "2024-03-01",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[1].description",
+    "value": "Frist für Stellungnahmen",
+    "page": null,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "source is listed as a PDF but the file is not a PDF (e.g. a Fedlex JavaScript wall) - nothing reliable to extract",
+   "affair_type 'consultation' disagrees with OpenParlData type_harmonized_id 4",
+   "4 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 1143,
+   "total_tokens": 1748,
+   "completion_tokens": 605,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "de",
+   "level": {
+    "v": "federal",
+    "p": "PAGE 1",
+    "q": "federal"
+   },
+   "parliament": {
+    "v": "Nationalrat",
+    "p": "PAGE 1",
+    "q": "Nationalrat"
+   },
+   "affair_number": {
+    "v": "22.423",
+    "p": "PAGE 1",
+    "q": "22.423"
+   },
+   "title": {
+    "v": "Für eine unabhängige Presse sind die Beträge zur indirekten Förderung anzupassen",
+    "p": "PAGE 1",
+    "q": "Für eine unabhängige Presse sind die Beträge zur indirekten Förderung anzupassen"
+   },
+   "affair_type": {
+    "v": "consultation",
+    "p": "PAGE 1",
+    "q": "Vernehmlassung"
+   },
+   "affair_type_original": {
+    "v": "Vernehmlassung",
+    "p": "PAGE 1",
+    "q": "Vernehmlassung"
+   },
+   "submission_date": {
+    "v": "2023-11-20",
+    "p": "PAGE 1",
+    "q": "20. November 2023"
+   },
+   "actors": [],
+   "addressed_to": {
+    "v": "Vernehmlassungsadressaten",
+    "p": "PAGE 1",
+    "q": "Liste der Vernehmlassungsadressaten"
+   },
+   "requests": [
+    {
+     "v": "Anpassung der Beträge zur indirekten Förderung für eine unabhängige Presse",
+     "p": "PAGE 1",
+     "q": "die Beträge zur indirekten Förderung anzupassen"
+    }
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": "2023-11-20",
+     "state": {
+      "v": "submitted",
+      "p": "PAGE 1",
+      "q": "Eröffnet am: 20. November 2023"
+     },
+     "description": "Eröffnung der Vernehmlassung"
+    },
+    {
+     "date": "2024-03-01",
+     "state": {
+      "v": "scheduled",
+      "p": "PAGE 1",
+      "q": "Frist zur Einreichung der Stellungnahmen: 1. März 2024"
+     },
+     "description": "Frist für Stellungnahmen"
+    }
+   ],
+   "state": {
+    "v": "in_committee",
+    "p": "PAGE 1",
+    "q": "VernehmlassungsERGEBNISSE"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "Presseförderung",
+    "indirekte Förderung",
+    "Unabhängigkeit",
+    "Vernehmlassung"
+   ]
+  }
+ }
+}

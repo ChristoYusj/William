@@ -1,4 +1,4 @@
-.PHONY: run build test sample eval extension schema report
+.PHONY: run build test sample eval validate extension schema prompts report
 
 IMAGE ?= william
 PORT ?= 8000
@@ -17,7 +17,7 @@ run: build
 test: build
 	docker run --rm $(IMAGE) python -m pytest -q tests
 
-# Live: extract the 14-document sample with Apertus (needs LLM_API_KEY)
+# Live: extract the sample documents with Apertus (needs LLM_API_KEY)
 sample: build
 	docker run --rm $(DOCKER_ENV) -v "$(CURDIR)/eval:/app/eval" $(IMAGE) sh -c \
 	  'python -m william extract --no-summary $$(grep -v "^#" data/sample/urls.txt | cut -f3) -o eval/sample_live.json && \
@@ -27,8 +27,17 @@ sample: build
 eval: build
 	docker run --rm $(IMAGE) python -m william.evaluate stats eval/sample_70b_reverified.json data/sample/urls.txt
 
+# Validate the sample records: schema, provenance, vocabulary (no API calls). FILES=… for your own records.
+FILES ?= data/sample/records/*.json
+validate: build
+	docker run --rm -v "$(CURDIR)/data:/app/data" $(IMAGE) sh -c 'python -m william validate $(FILES)'
+
 schema: build
 	docker run --rm $(IMAGE) python -m william schema
+
+# Regenerate the readable copy of the Apertus prompts
+prompts: build
+	docker run --rm $(IMAGE) python -m william prompts > docs/prompts.md
 
 # Zip the Firefox extension (load it via about:debugging -> This Firefox -> Load Temporary Add-on)
 extension:

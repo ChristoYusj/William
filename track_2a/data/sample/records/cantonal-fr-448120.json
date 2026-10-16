@@ -1,0 +1,237 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/GE/7ef98b02bb89f011d9a0b031d622599afc380bdee1a278e2330c2addbdcdc5cc",
+  "sha256": "626e699d5dc2a82f5b447cc40a7ac2b308486b694e01ab9d6973a09c789f4e57",
+  "content_type": "application/pdf",
+  "pages": 5,
+  "opd_doc_id": 448120,
+  "opd_affair_id": 198208,
+  "retrieved_at": "2026-10-16T09:15:51+00:00"
+ },
+ "language": "fr",
+ "body": {
+  "level": {
+   "value": "cantonal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "GE",
+  "parliament": {
+   "value": "Grand Conseil genevois",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Grand Conseil genevois",
+   "char_start": 215,
+   "char_end": 237
+  },
+  "opd_body_type": "canton"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "R 687",
+   "status": "extracted",
+   "page": 1,
+   "quote": "R 687",
+   "char_start": 179,
+   "char_end": 184
+  },
+  "title": {
+   "value": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le droit d’initiative cantonal pour demander de soustraire les jeunes adultes de la compensation des risques LAMal",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Proposition de résolution \ndu Grand Conseil genevois à l’Assemblée fédérale exerçant le \ndroit d’initiative cantonal pour demander de soustraire les jeunes \nadultes de la compensation des risques LAMal",
+   "char_start": 185,
+   "char_end": 386
+  },
+  "type": {
+   "page": 1,
+   "quote": "Proposition de résolution",
+   "char_start": 185,
+   "char_end": 210,
+   "value": "resolution",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": null,
+   "wikidata": null
+  },
+  "type_original": {
+   "value": "Proposition de résolution",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Proposition de résolution",
+   "char_start": 185,
+   "char_end": 210
+  },
+  "submission_date": null,
+  "actors": [
+   {
+    "name": {
+     "value": "Eric Leyvraz",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Eric Leyvraz",
+     "char_start": 115,
+     "char_end": 127
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Patrick Lussi",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Patrick Lussi",
+     "char_start": 131,
+     "char_end": 144
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Assemblée fédérale",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Assemblée fédérale",
+   "char_start": 242,
+   "char_end": 260
+  },
+  "requests": [
+   {
+    "value": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’assurance-maladie des jeunes adultes à charge de leurs familles du régime de la compensation des risques",
+    "status": "extracted",
+    "page": 2,
+    "quote": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire \nles primes d’assurance-maladie des jeunes adultes à charge de leurs familles \ndu régime de la compensation des risques",
+    "char_start": 168,
+    "char_end": 361
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "assurance-maladie",
+   "compensation des risques",
+   "jeunes adultes",
+   "primes",
+   "LAMal",
+   "subsides"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 8,
+   "normalised": 0,
+   "inferred": 6,
+   "rejected": 1,
+   "metadata": 1
+  },
+  "verified_share": 0.562,
+  "rejected_values": [
+   {
+    "path": "submission_date",
+    "value": "2012-02-21",
+    "page": null,
+    "quote": ""
+   }
+  ],
+  "flags": [],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 3563,
+   "total_tokens": 3912,
+   "completion_tokens": 349,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "fr",
+   "level": "cantonal",
+   "parliament": "Grand Conseil genevois",
+   "affair_number": "R 687",
+   "title": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le droit d’initiative cantonal pour demander de soustraire les jeunes adultes de la compensation des risques LAMal",
+   "affair_type": "resolution",
+   "affair_type_original": "Proposition de résolution",
+   "submission_date": "2012-02-21",
+   "actors": [
+    {
+     "name": "Eric Leyvraz",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": null
+    },
+    {
+     "name": "Patrick Lussi",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": "Assemblée fédérale",
+   "requests": [
+    "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’assurance-maladie des jeunes adultes à charge de leurs familles du régime de la compensation des risques"
+   ],
+   "questions": [],
+   "procedural_history": [],
+   "state": "submitted",
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "assurance-maladie",
+    "compensation des risques",
+    "jeunes adultes",
+    "primes",
+    "LAMal",
+    "subsides"
+   ]
+  }
+ }
+}

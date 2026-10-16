@@ -11,7 +11,7 @@
           "pages": 6,
           "opd_doc_id": 38803,
           "opd_affair_id": 59039,
-          "retrieved_at": "2026-10-16T07:20:02+00:00"
+          "retrieved_at": "2026-10-16T09:15:49+00:00"
         },
         "language": "fr",
         "body": {
@@ -251,7 +251,7 @@
           "pages": 14,
           "opd_doc_id": 316738,
           "opd_affair_id": 235785,
-          "retrieved_at": "2026-10-16T07:20:05+00:00"
+          "retrieved_at": "2026-10-16T09:15:50+00:00"
         },
         "language": "de",
         "body": {
@@ -636,7 +636,7 @@
           "pages": 5,
           "opd_doc_id": 448120,
           "opd_affair_id": 198208,
-          "retrieved_at": "2026-10-16T07:20:08+00:00"
+          "retrieved_at": "2026-10-16T09:15:51+00:00"
         },
         "language": "fr",
         "body": {
@@ -882,7 +882,7 @@
           "pages": 9,
           "opd_doc_id": 444907,
           "opd_affair_id": 195321,
-          "retrieved_at": "2026-10-16T07:20:10+00:00"
+          "retrieved_at": "2026-10-16T09:15:52+00:00"
         },
         "language": "fr",
         "body": {
@@ -1115,7 +1115,7 @@
           "pages": 1,
           "opd_doc_id": 109935,
           "opd_affair_id": 83404,
-          "retrieved_at": "2026-10-16T07:20:12+00:00"
+          "retrieved_at": "2026-10-16T09:15:53+00:00"
         },
         "language": "it",
         "body": {
@@ -1440,7 +1440,7 @@
           "pages": 1,
           "opd_doc_id": 901098,
           "opd_affair_id": 335625,
-          "retrieved_at": "2026-10-16T07:20:14+00:00"
+          "retrieved_at": "2026-10-16T09:15:54+00:00"
         },
         "language": "de",
         "body": {
@@ -1652,7 +1652,7 @@
           "pages": 3,
           "opd_doc_id": 894215,
           "opd_affair_id": 329828,
-          "retrieved_at": "2026-10-16T07:20:16+00:00"
+          "retrieved_at": "2026-10-16T09:15:55+00:00"
         },
         "language": "de",
         "body": {
@@ -1867,7 +1867,413 @@
     },
     {
       "url": "https://api.openparldata.ch/v1/docs/929515",
-      "error": "TypeError: category() argument must be a unicode character, not str"
+      "record": {
+        "schema_version": "opd-affair/0.1",
+        "source": {
+          "url": "https://files.openparldata.ch/doc/261/a0755ffb94c89fecc52f3f0a83052fb65c3977fbc45518d5015e1a26e63a07b8",
+          "sha256": "766cfe9d05325b3237a6ce8b683439d55d95c9041333c7fce7ab1a25cb1da39b",
+          "content_type": "application/pdf",
+          "pages": 2,
+          "opd_doc_id": 929515,
+          "opd_affair_id": 326683,
+          "retrieved_at": "2026-10-16T09:15:56+00:00"
+        },
+        "language": "de",
+        "body": {
+          "level": {
+            "value": "communal",
+            "status": "metadata",
+            "source": "OpenParlData body_key"
+          },
+          "body_key": "261",
+          "parliament": null,
+          "opd_body_type": "municipality"
+        },
+        "affair": {
+          "affair_number": {
+            "value": "2026/167",
+            "status": "extracted",
+            "page": 1,
+            "quote": "2026/167",
+            "char_start": 49,
+            "char_end": 57
+          },
+          "title": null,
+          "type": {
+            "value": "approval_decision",
+            "status": "inferred",
+            "page": null,
+            "quote": null,
+            "char_start": null,
+            "char_end": null,
+            "opd_type_harmonized_id": 17,
+            "wikidata": null
+          },
+          "type_original": {
+            "value": "Weisung",
+            "status": "extracted",
+            "page": 1,
+            "quote": "Weisung",
+            "char_start": 59,
+            "char_end": 66
+          },
+          "submission_date": null,
+          "actors": [
+            {
+              "name": {
+                "value": "Martina Zürcher (FDP)",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Martina Zürcher (FDP",
+                "char_start": 1497,
+                "char_end": 1517
+              },
+              "role": {
+                "value": "rapporteur",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Nina Eggenschwiler (SP)",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Nina Eggenschwiler (SP",
+                "char_start": 600,
+                "char_end": 622
+              },
+              "role": {
+                "value": "rapporteur",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Severin Meier (SP)",
+                "status": "extracted",
+                "page": 1,
+                "quote": "Severin Meier (SP",
+                "char_start": 1676,
+                "char_end": 1693
+              },
+              "role": {
+                "value": "other",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            },
+            {
+              "name": {
+                "value": "Dr. Sabrina Baumgartner",
+                "status": "extracted",
+                "page": 2,
+                "quote": "Dr. Sabrina Baumgartner",
+                "char_start": 546,
+                "char_end": 569
+              },
+              "role": {
+                "value": "other",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "kind": {
+                "value": "person",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "party_or_group": null
+            }
+          ],
+          "addressed_to": null,
+          "requests": [],
+          "questions": [],
+          "procedural_history": [],
+          "state": {
+            "value": "decided",
+            "status": "inferred",
+            "page": null,
+            "quote": null,
+            "char_start": null,
+            "char_end": null,
+            "opd_state_name_harmonized_id": null
+          },
+          "decisions": [
+            {
+              "date": null,
+              "body": null,
+              "outcome": {
+                "value": "recommended_accept",
+                "status": "inferred",
+                "page": null,
+                "quote": null,
+                "char_start": null,
+                "char_end": null
+              },
+              "votes_yes": null,
+              "votes_no": null,
+              "votes_abstain": null
+            }
+          ],
+          "related_affairs": [],
+          "keywords": [
+            "Strassenbau",
+            "Zähringerstrasse",
+            "Häringstrasse",
+            "Aufwertung",
+            "archäologische Begleitmassnahmen",
+            "Ausgabenbewilligung"
+          ]
+        },
+        "quality": {
+          "value_counts": {
+            "extracted": 6,
+            "normalised": 0,
+            "inferred": 13,
+            "rejected": 15,
+            "metadata": 1
+          },
+          "verified_share": 0.2,
+          "rejected_values": [
+            {
+              "path": "actors[0].name",
+              "value": "Stadtrat Zürich",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[1].party_or_group",
+              "value": "FDP",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[2].party_or_group",
+              "value": "SP",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "actors[3].party_or_group",
+              "value": "SP",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[0].description",
+              "value": "Beratung in der Stadtkommission für Sicherheit und Gesundheit (SK SID/V)",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "procedural_history[1].description",
+              "value": "Schlussabstimmung in der SK SID/V",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "decisions[0].body",
+              "value": "Stadtkommission für Sicherheit und Gesundheit (SK SID/V)",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "decisions[0].votes_yes",
+              "value": 6,
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "decisions[0].votes_no",
+              "value": 4,
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "decisions[0].votes_abstain",
+              "value": 0,
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "requests[0]",
+              "value": "Bewilligung neuer einmaliger Ausgaben von Fr. 8 567 000.– für Aufwertungsmassnahmen und archäologische Begleitmassnahmen im Strassenbauprojekt Zähringer- und Häringstrasse",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "title",
+              "value": "Weisung GR Nr. 2026/167: Strassenbauprojekt Zähringer- und Häringstrasse, Aufwertungsmassnahmen, archäologische Begleitmassnahmen",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "submission_date",
+              "value": "2026-04-15",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "addressed_to",
+              "value": "Stadtparlament Zürich",
+              "page": null,
+              "quote": ""
+            },
+            {
+              "path": "parliament",
+              "value": "Stadtparlament Zürich",
+              "page": null,
+              "quote": ""
+            }
+          ],
+          "flags": [
+            "affair_type 'approval_decision' disagrees with OpenParlData type_harmonized_id 9",
+            "11 model value(s) rejected: quote not found in the document"
+          ],
+          "needs_review": true
+        },
+        "extractor": {
+          "model": "swiss-ai/Apertus-v1.5-70B",
+          "prompt_version": "william-prompts/0.2",
+          "usage": {
+            "prompt_tokens": 1668,
+            "total_tokens": 2328,
+            "completion_tokens": 660,
+            "prompt_tokens_details": {
+              "cached_tokens": 128,
+              "multimodal_tokens": null
+            }
+          },
+          "raw_model_output": {
+            "language": "de",
+            "level": "communal",
+            "parliament": "Stadtparlament Zürich",
+            "affair_number": "2026/167",
+            "title": "Weisung GR Nr. 2026/167: Strassenbauprojekt Zähringer- und Häringstrasse, Aufwertungsmassnahmen, archäologische Begleitmassnahmen",
+            "affair_type": "approval_decision",
+            "affair_type_original": "Weisung",
+            "submission_date": "2026-04-15",
+            "actors": [
+              {
+                "name": "Stadtrat Zürich",
+                "role": "submitter",
+                "kind": "executive",
+                "party_or_group": null
+              },
+              {
+                "name": "Martina Zürcher (FDP)",
+                "role": "rapporteur",
+                "kind": "person",
+                "party_or_group": "FDP"
+              },
+              {
+                "name": "Nina Eggenschwiler (SP)",
+                "role": "rapporteur",
+                "kind": "person",
+                "party_or_group": "SP"
+              },
+              {
+                "name": "Severin Meier (SP)",
+                "role": "other",
+                "kind": "person",
+                "party_or_group": "SP"
+              },
+              {
+                "name": "Dr. Sabrina Baumgartner",
+                "role": "other",
+                "kind": "person",
+                "party_or_group": null
+              }
+            ],
+            "addressed_to": "Stadtparlament Zürich",
+            "requests": [
+              "Bewilligung neuer einmaliger Ausgaben von Fr. 8 567 000.– für Aufwertungsmassnahmen und archäologische Begleitmassnahmen im Strassenbauprojekt Zähringer- und Häringstrasse"
+            ],
+            "questions": [],
+            "procedural_history": [
+              {
+                "date": null,
+                "state": "in_committee",
+                "description": "Beratung in der Stadtkommission für Sicherheit und Gesundheit (SK SID/V)"
+              },
+              {
+                "date": null,
+                "state": "decided",
+                "description": "Schlussabstimmung in der SK SID/V"
+              }
+            ],
+            "state": "decided",
+            "decisions": [
+              {
+                "date": null,
+                "body": "Stadtkommission für Sicherheit und Gesundheit (SK SID/V)",
+                "outcome": "recommended_accept",
+                "votes_yes": 6,
+                "votes_no": 4,
+                "votes_abstain": 0
+              }
+            ],
+            "related_affairs": [],
+            "keywords": [
+              "Strassenbau",
+              "Zähringerstrasse",
+              "Häringstrasse",
+              "Aufwertung",
+              "archäologische Begleitmassnahmen",
+              "Ausgabenbewilligung"
+            ]
+          }
+        }
+      },
+      "opd_hints": {
+        "opd_type_harmonized_id": 9,
+        "opd_affair_number": "2026/167",
+        "opd_affair_id": 326683,
+        "body_key": "261"
+      }
     },
     {
       "url": "https://api.openparldata.ch/v1/docs/650091",
@@ -1880,7 +2286,7 @@
           "pages": 5,
           "opd_doc_id": 650091,
           "opd_affair_id": 284951,
-          "retrieved_at": "2026-10-16T07:20:19+00:00"
+          "retrieved_at": "2026-10-16T09:15:57+00:00"
         },
         "language": "fr",
         "body": {
@@ -2524,7 +2930,7 @@
           "pages": 2,
           "opd_doc_id": 555996,
           "opd_affair_id": 251898,
-          "retrieved_at": "2026-10-16T07:20:20+00:00"
+          "retrieved_at": "2026-10-16T09:15:58+00:00"
         },
         "language": "fr",
         "body": {
@@ -2830,7 +3236,7 @@
           "pages": 3,
           "opd_doc_id": 928925,
           "opd_affair_id": 341403,
-          "retrieved_at": "2026-10-16T07:20:23+00:00"
+          "retrieved_at": "2026-10-16T09:15:59+00:00"
         },
         "language": "it",
         "body": {
@@ -3223,7 +3629,7 @@
           "pages": 3,
           "opd_doc_id": 928926,
           "opd_affair_id": 341403,
-          "retrieved_at": "2026-10-16T07:20:25+00:00"
+          "retrieved_at": "2026-10-16T09:16:00+00:00"
         },
         "language": "it",
         "body": {
@@ -3787,7 +4193,7 @@
           "pages": 1,
           "opd_doc_id": 316740,
           "opd_affair_id": 68517,
-          "retrieved_at": "2026-10-16T07:20:27+00:00"
+          "retrieved_at": "2026-10-16T09:16:01+00:00"
         },
         "language": "de",
         "body": {
@@ -4049,7 +4455,7 @@
           "pages": 1,
           "opd_doc_id": 485241,
           "opd_affair_id": 233408,
-          "retrieved_at": "2026-10-16T07:20:29+00:00"
+          "retrieved_at": "2026-10-16T09:16:01+00:00"
         },
         "language": "it",
         "body": {

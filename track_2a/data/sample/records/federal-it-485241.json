@@ -1,0 +1,111 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/CHE/6637737514c38a8ba35bcc45ca5953b16149e1ddaed979a96bb9e172399d7449",
+  "sha256": "4c05e9bb5d23a4e2fd920d1f885b78eaf007401c136bc930e4ba59eb958b4399",
+  "content_type": "application/octet-stream",
+  "pages": 1,
+  "opd_doc_id": 485241,
+  "opd_affair_id": 233408,
+  "retrieved_at": "2026-10-16T09:16:01+00:00"
+ },
+ "language": "it",
+ "body": {
+  "level": {
+   "value": "federal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "CHE",
+  "parliament": null,
+  "opd_body_type": "country"
+ },
+ "affair": {
+  "affair_number": null,
+  "title": null,
+  "type": null,
+  "type_original": null,
+  "submission_date": null,
+  "actors": [],
+  "addressed_to": null,
+  "requests": [],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "unknown",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "website notice",
+   "javascript",
+   "browser compatibility"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 0,
+   "normalised": 0,
+   "inferred": 1,
+   "rejected": 0,
+   "metadata": 1
+  },
+  "verified_share": 0.5,
+  "rejected_values": [],
+  "flags": [
+   "source is listed as a PDF but the file is not a PDF (e.g. a Fedlex JavaScript wall) - nothing reliable to extract",
+   "affair type could not be verified"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 1070,
+   "total_tokens": 1274,
+   "completion_tokens": 204,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "EN",
+   "level": {
+    "v": "federal",
+    "p": "1",
+    "q": "Thank you for visiting the federal law website; it is only fully accessible if you are using a JavaScript-capable browser."
+   },
+   "parliament": null,
+   "affair_number": null,
+   "title": null,
+   "affair_type": null,
+   "affair_type_original": null,
+   "submission_date": null,
+   "actors": [],
+   "addressed_to": null,
+   "requests": [],
+   "questions": [],
+   "procedural_history": [],
+   "state": {
+    "v": "unknown",
+    "p": "1",
+    "q": "The document is a website notice, not a parliamentary affair with a defined procedural state."
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "website notice",
+    "javascript",
+    "browser compatibility"
+   ]
+  }
+ }
+}

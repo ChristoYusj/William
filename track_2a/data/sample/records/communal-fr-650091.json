@@ -1,0 +1,635 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/5586/d15107af1603198d2410aa7a168c47072d7df02911c7d6411d5e3f7aa576de19",
+  "sha256": "746c512a94e01a825ff7eb69dbe98d1a01016e79b188f428486a6694bac76073",
+  "content_type": "application/pdf",
+  "pages": 5,
+  "opd_doc_id": 650091,
+  "opd_affair_id": 284951,
+  "retrieved_at": "2026-10-16T09:15:57+00:00"
+ },
+ "language": "fr",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "5586",
+  "parliament": null,
+  "opd_body_type": "municipality"
+ },
+ "affair": {
+  "affair_number": null,
+  "title": null,
+  "type": {
+   "page": 1,
+   "quote": "interpellation",
+   "char_start": 90,
+   "char_end": 104,
+   "value": "interpellation",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 8,
+   "wikidata": "Q1505023"
+  },
+  "type_original": {
+   "value": "interpellation",
+   "status": "extracted",
+   "page": 1,
+   "quote": "interpellation",
+   "char_start": 90,
+   "char_end": 104
+  },
+  "submission_date": null,
+  "actors": [
+   {
+    "name": {
+     "value": "Mme Pauline Blanc et consorts",
+     "status": "extracted",
+     "page": 1,
+     "quote": "MmePaulineBlancetconsorts",
+     "char_start": 106,
+     "char_end": 131
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "other",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": null,
+  "requests": [],
+  "questions": [
+   {
+    "number": null,
+    "question": {
+     "value": "Quelle est la genèse du projet, sous l'angle général et financier?",
+     "status": "extracted",
+     "page": 2,
+     "quote": "Quelle\nest\nla\ngenèse\ndu\nprojet,\nsous\nl’angle\ngénéral\net\nfinancier",
+     "char_start": 2058,
+     "char_end": 2123
+    },
+    "answer": {
+     "value": "LEVAM a pris contact avec la Ville en juin 2022 une première fois concernant le projet de crèche à la route de Chavannes. En novembre 2022, un premier projet a été remis à la Ville. En février 2023, une séance entre 'EVAM et le Service de la petite enfance a permis de clarifier la mission de cette crèche. Du point de vue de la Ville, les besoins de place pour les Lausannoises et Lausannois étaient déjà couverts par deux structures de quartier du Réseau-L. Ils ne justifiaient pas un engagement financier pour créer des places à cet emplacement. Il a donc été convenu que la garderie de l'EVAM pourrait alors bénéficier du statut de crèche d'entreprise au sens de l'article 50 alinéa 2bis de la loi sur l'accueil de jour des enfants (LAJE). Ce statut permet à une entreprise de créer une structure d'accueil de jour et de bénéficier des financements cantonaux prévus par la LAJE. L'entreprise assume alors l'excédent de charges de la structure, sans engagement financier du réseau de la commune concernée.",
+     "status": "normalised",
+     "page": 2,
+     "quote": "LEVAM\na\npris\ncontact\navec\nla\nVille\nen\njuin\n2022\nune\npremière\nfois\nconcernant\nle\nprojet\nde\ncrèche\nà\nla\nroute\nde\nChavannes,\nEn\nnovembre\n2022,\nun\npremier\nprojeta\nété\nremis\nà\nla\nVille.\nEn\nfévrier\n2023,\nune\nséance\nentre\n‘EVAM\net\nle\nService\nde\nla\npetite\nenfance\na\npermis\nde\nclarifier\nla\nmission\nde\ncette\ncrèche.\nDu\npoint\nde\nvue\nde\nla\nVille,\nles\nbesoins\nde\nplace\npour\nles\nLausannoises\net\nLausannois\nétaient\ndéjà\ncouverts\npar\ndeux\nstructures\nde\nquartier\ndu\nRéseau-L.\nIls\nne\njustifiaient\npas\nun\nengagement\nfinancier\npour\ncréer\ndes\nplaces\nà\ncet\nemplacement.Ila\ndonc\nété\nconvenu\nque\nla\ngarderie\nde\nI’EVAM\npourrait\nalors\nbénéficier\ndu\nstatut\nde\ncrèche\nd’entreprise\nau\nsens\nde\nl’article\n50\nalinéa\n2bis\nde\nla\nloi\nsur\nl’accueil\nde\njour\ndes\nenfants\n(LAJE).\nCe\nstatut\npermet\nà\nune\nentreprise\nde\ncréer\nune\nstructure\nd’accueil\nde\njour\net\nde\nbénéficier\ndes\nfinancements\ncantonaux\nprévus\npar\nla\nLAJE.\nL’entreprise\nassume\nalors\nl’excédent\nde\ncharges\nde\nla\nstructure,\nsans\nengagement\nfinancier\ndu\nréseau\nde\nla\ncommune\nconcernée",
+     "char_start": 2125,
+     "char_end": 3129
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Est-ce correct que la Municipalité a retiré le financement de la Ville car elle considérait que la crèche était «décentralisée»?",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Est-cecorrectquelaMunicipalitéaretirélefinancementdelaVillecar\nelleconsidéraitquelacrècheétait«décentralisée",
+     "char_start": 385,
+     "char_end": 493
+    },
+    "answer": {
+     "value": "Non. La Ville a d'emblée exprimé ses réserves par rapport à cet emplacement, compte tenu des structures desservant déjà ce quartier",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Non.LaVillead’embléeexprimésesréservesparrapportàcetemplacement,comptetenu\ndesstructuresdesservantdéjàcequartier",
+     "char_start": 496,
+     "char_end": 608
+    }
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "La Municipalité ne considère-t-elle pas que les places en crèche doivent être proposées sur l'ensemble du territoire communal, et pas uniquement au centre-ville?",
+     "status": "extracted",
+     "page": 3,
+     "quote": "LaMunicipaliténeconsidère-t-ellepasquelesplacesencrèchedoivent\nêtreproposéessurl’ensembleduterritoirecommunal,etpasuniquementaucentre-\nville",
+     "char_start": 1538,
+     "char_end": 1678
+    },
+    "answer": null
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Des études concrètes ont-elles été menées pour justifier l'hypothèse selon laquelle la demande est plus forte au centre-ville et faible en périphérie?",
+     "status": "extracted",
+     "page": 3,
+     "quote": "Desétudesconcrètesont-ellesétémenéespourjustifierl’hypothèse\nselonlaquellelademandeestplusforteaucentre-villeetfaibleenpériphérie",
+     "char_start": 2238,
+     "char_end": 2367
+    },
+    "answer": null
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Quelle est l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 pour le préscolaire et parascolaire? Et quels sont les objectifs de taux, respectivement obligations contractuelles ou légales?",
+     "status": "extracted",
+     "page": 4,
+     "quote": "Quelleestl’évolutiondutauxd’occupationparrapportauxchiffres\nindiquéspour2024pourlepréscolaireetparascolaire?Etquelssontlesobjectifsde\ntaux,respectivementobligationscontractuellesoulégales",
+     "char_start": 122,
+     "char_end": 309
+    },
+    "answer": null
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Qu'en est-il de la situation liée aux listes d'attente pour les places? Les listes se raccourcissent-elles?",
+     "status": "extracted",
+     "page": 4,
+     "quote": "Qu’enest-ildelasituationliéeauxlistesd’attentepourlesplaces?Les\nlistesseraccourcissent-elles",
+     "char_start": 2324,
+     "char_end": 2416
+    },
+    "answer": null
+   },
+   {
+    "number": null,
+    "question": {
+     "value": "Quelle est la vision de la Municipalité pour 2026 avec les places en préscolaire et parascolaires promises, en lien avec l'emplacement, la demande et le taux d'occupation?",
+     "status": "extracted",
+     "page": 5,
+     "quote": "QuelleestlavisiondelaMunicipalitépour2026aveclesplacesen\npréscolaireetparascolairespromises,enlienavecl’emplacement,lademandeetle\ntauxd’occupation",
+     "char_start": 1436,
+     "char_end": 1582
+    },
+    "answer": {
+     "value": "Les structures sont planifiées dans les quartiers où la demande reste insatisfaite. En matière préscolaire, les créations de places prévues en 2026 concernent Grancy et Montchoisi.",
+     "status": "extracted",
+     "page": 5,
+     "quote": "Lesstructuressontplanifiéesdanslesquartiersoùlademanderesteinsatisfaite.En\nmatièrepréscolaire,lescréationsdeplacesprévuesen2026concernentGrancyet\nMontchoisi",
+     "char_start": 1584,
+     "char_end": 1740
+    }
+   }
+  ],
+  "procedural_history": [],
+  "state": {
+   "value": "answered",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": null
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "accueil de jour",
+   "crèche",
+   "places préscolaire",
+   "taux d'occupation",
+   "budget 2026",
+   "demande",
+   "quartiers",
+   "EVAM"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 11,
+   "normalised": 1,
+   "inferred": 6,
+   "rejected": 35,
+   "metadata": 1
+  },
+  "verified_share": 0.241,
+  "rejected_values": [
+   {
+    "path": "actors[1].name",
+    "value": "Municipalité de Lausanne",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[0].number",
+    "value": "1",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[1].number",
+    "value": "2",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[2].question",
+    "value": "La Municipalité considère-t-elle que, malgré le besoin et la demande croissants en matière de places en crèche qu'elle évoque régulièrement, la «décentralisation» d'une crèche puisse penser qu'il n'y aura plus assez de demande?",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[3].number",
+    "value": "4",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[3].answer",
+    "value": "Comme indiqué à la question précédente, le but n'est pas de concentrer les places au centre-ville, mais de les développer au plus près des quartiers où apparaît une demande insatisfaite. Il est vrai que les familles vivant dans les quartiers centraux ont tendance à recourir de manière accrue à l'offre du Réseau-L.",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[4].number",
+    "value": "5",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[4].answer",
+    "value": "La liste des enfants accueillis et en attente d'une place est régulièrement analysée pour ajuster l'offre. La Ville constate une demande des familles différentes selon les quartiers. Ces éléments sont corroborés, par exemple, par l'étude annexée au rapport-préavis N°2022/24 «Réponse au postulat Gaillard Objectif 100%». Celle-ci montre à sa page 25 un taux de couverture répondant aux besoins dans certains quartiers et inférieur de plus de 24 points dans d'autres.",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[5].number",
+    "value": "6",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[5].answer",
+    "value": "Il n'existe pas d'obligation légale en matière de taux d'occupation. Le Réseau-L fixe un objectif, souvent qualifié d'ambitieux, de 90% pour les structures ouvertes depuis plus de trois ans. Il est constaté une difficulté accrue à l'atteindre dans les quartiers où la liste d'attente est faible. Le taux moyen pour l'ensemble des structures s'élève actuellement à 84.6%. À titre de comparaison, le taux moyen 2024 pour le Canton était de 83.75% (source StatVD, enquête accueil de jour des enfants).",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[6].question",
+    "value": "Un taux d'occupation inférieur à 100% signifie-t-il concrètement que davantage de places sont offertes que demandées, autrement dit qu'il y a des places libres?",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[7].question",
+    "value": "Quel coût représentent ces places vacantes?",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[8].number",
+    "value": "9",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[8].answer",
+    "value": "Oui. L'indicateur le plus pertinent est la liste d'attente pour les demandes avec un motif de conciliation et une date d'accueil dépassée. Ce chiffre peut être interprété, comme le nombre de familles pour lesquelles une place n'a pas été proposée dans les délais souhaités, et dont les parents sont actifs professionnellement. Ce chiffre est passé de 328 en 2020 à 200 en 2024 et à 103 en 2025.",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[9].question",
+    "value": "N'y a-t-il pas de demande de places en crèche en périphérie du centre-ville de Lausanne, autrement dit sur l'ensemble du territoire communal?",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[10].question",
+    "value": "Le taux de fécondité suisse est historiquement bas (1.29 enfant par femme en 2024). Selon les statistiques vaudoises, cela fait une vingtaine d'années que le nombre de naissances n'a pas été aussi bas à Lausanne. Peut-on dire que l'évolution démographique implique une baisse de la demande en crèche?",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "questions[11].number",
+    "value": "12",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].date",
+    "value": "2025-11-18",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Interpellation déposée par Mme Pauline Blanc et consorts",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[1].date",
+    "value": "2025-11-27",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[1].description",
+    "value": "Réponse adoptée en séance de Municipalité",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[0]",
+    "value": "Clarifier si la Ville de Lausanne a retiré son financement à la création d'une nouvelle crèche en faveur de familles migrantes lausannoises en partenariat avec le canton et expliquer la situation actuelle des places en préscolaire et parascolaire à Lausanne, en lien avec le budget 2026",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[1]",
+    "value": "Comprendre si la position de la Municipalité reflète la réalité du terrain concernant la pérennisation et la création de nouvelles places en préscolaire et parascolaire",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[2]",
+    "value": "Savoir si la Municipalité considère que les places en crèche doivent être proposées sur l'ensemble du territoire communal et pas uniquement au centre-ville",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[3]",
+    "value": "Connaître l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 et les objectifs de taux",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[4]",
+    "value": "Comprendre ce que signifie concrètement un taux d'occupation inférieur à 100%",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[5]",
+    "value": "Savoir quel coût représentent les places vacantes",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[6]",
+    "value": "Connaître l'évolution des listes d'attente pour les places",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[7]",
+    "value": "Savoir s'il y a une demande de places en crèche en périphérie du centre-ville",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[8]",
+    "value": "Comprendre la vision de la Municipalité pour 2026 avec les places en préscolaire et parascolaire promises, en lien avec l'emplacement, la demande et le taux d'occupation",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[9]",
+    "value": "Savoir si l'évolution démographique implique une baisse de la demande en crèche",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "title",
+    "value": "Réponse de la Municipalité à l'interpellation de Mme Pauline Blanc et consorts déposée le 18 novembre 2025 «Une place pour chaque enfant)): on reprend le même concept, on recommence les yeux fermés?»",
+    "page": 1,
+    "quote": ""
+   },
+   {
+    "path": "submission_date",
+    "value": "2025-11-18",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "addressed_to",
+    "value": "Municipalité de Lausanne",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "parliament",
+    "value": "Municipalité de Lausanne",
+    "page": null,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "31 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 5757,
+   "total_tokens": 8869,
+   "completion_tokens": 3112,
+   "prompt_tokens_details": {
+    "cached_tokens": 5696,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "fr",
+   "level": {
+    "v": "communal"
+   },
+   "parliament": {
+    "v": "Municipalité de Lausanne"
+   },
+   "affair_number": null,
+   "title": {
+    "v": "Réponse de la Municipalité à l'interpellation de Mme Pauline Blanc et consorts déposée le 18 novembre 2025 «Une place pour chaque enfant)): on reprend le même concept, on recommence les yeux fermés?»",
+    "p": "1"
+   },
+   "affair_type": {
+    "v": "interpellation",
+    "p": "1",
+    "q": "«Une place pour chaque enfant)): on reprend le même concept, on recommence les yeux fermés?»"
+   },
+   "affair_type_original": {
+    "v": "interpellation",
+    "p": "1"
+   },
+   "submission_date": {
+    "v": "2025-11-18"
+   },
+   "actors": [
+    {
+     "name": {
+      "v": "Mme Pauline Blanc et consorts"
+     },
+     "role": {
+      "v": "submitter"
+     },
+     "kind": {
+      "v": "other"
+     },
+     "party_or_group": null
+    },
+    {
+     "name": {
+      "v": "Municipalité de Lausanne"
+     },
+     "role": {
+      "v": "respondent"
+     },
+     "kind": {
+      "v": "executive"
+     },
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": {
+    "v": "Municipalité de Lausanne"
+   },
+   "requests": [
+    {
+     "v": "Clarifier si la Ville de Lausanne a retiré son financement à la création d'une nouvelle crèche en faveur de familles migrantes lausannoises en partenariat avec le canton et expliquer la situation actuelle des places en préscolaire et parascolaire à Lausanne, en lien avec le budget 2026"
+    },
+    {
+     "v": "Comprendre si la position de la Municipalité reflète la réalité du terrain concernant la pérennisation et la création de nouvelles places en préscolaire et parascolaire"
+    },
+    {
+     "v": "Savoir si la Municipalité considère que les places en crèche doivent être proposées sur l'ensemble du territoire communal et pas uniquement au centre-ville"
+    },
+    {
+     "v": "Connaître l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 et les objectifs de taux"
+    },
+    {
+     "v": "Comprendre ce que signifie concrètement un taux d'occupation inférieur à 100%"
+    },
+    {
+     "v": "Savoir quel coût représentent les places vacantes"
+    },
+    {
+     "v": "Connaître l'évolution des listes d'attente pour les places"
+    },
+    {
+     "v": "Savoir s'il y a une demande de places en crèche en périphérie du centre-ville"
+    },
+    {
+     "v": "Comprendre la vision de la Municipalité pour 2026 avec les places en préscolaire et parascolaire promises, en lien avec l'emplacement, la demande et le taux d'occupation"
+    },
+    {
+     "v": "Savoir si l'évolution démographique implique une baisse de la demande en crèche"
+    }
+   ],
+   "questions": [
+    {
+     "number": "1",
+     "question": "Quelle est la genèse du projet, sous l'angle général et financier?",
+     "answer": "LEVAM a pris contact avec la Ville en juin 2022 une première fois concernant le projet de crèche à la route de Chavannes. En novembre 2022, un premier projet a été remis à la Ville. En février 2023, une séance entre 'EVAM et le Service de la petite enfance a permis de clarifier la mission de cette crèche. Du point de vue de la Ville, les besoins de place pour les Lausannoises et Lausannois étaient déjà couverts par deux structures de quartier du Réseau-L. Ils ne justifiaient pas un engagement financier pour créer des places à cet emplacement. Il a donc été convenu que la garderie de l'EVAM pourrait alors bénéficier du statut de crèche d'entreprise au sens de l'article 50 alinéa 2bis de la loi sur l'accueil de jour des enfants (LAJE). Ce statut permet à une entreprise de créer une structure d'accueil de jour et de bénéficier des financements cantonaux prévus par la LAJE. L'entreprise assume alors l'excédent de charges de la structure, sans engagement financier du réseau de la commune concernée."
+    },
+    {
+     "number": "2",
+     "question": "Est-ce correct que la Municipalité a retiré le financement de la Ville car elle considérait que la crèche était «décentralisée»?",
+     "answer": "Non. La Ville a d'emblée exprimé ses réserves par rapport à cet emplacement, compte tenu des structures desservant déjà ce quartier"
+    },
+    {
+     "number": "3",
+     "question": "La Municipalité considère-t-elle que, malgré le besoin et la demande croissants en matière de places en crèche qu'elle évoque régulièrement, la «décentralisation» d'une crèche puisse penser qu'il n'y aura plus assez de demande?",
+     "answer": "La Municipalité constate déjà aujourd'hui la réticence des familles à placer leurs enfants loin de leur domicile, a fortiori loin du trajet vers le lieu de travail. Du point de vue de l'intérêt des enfants, ajouter une heure ou plus de trajet aux 10 heures que peut durer une journée de crèche est aussi peu défendable. On peut supposer que cet argument pèse dans le choix des parents. La même logique prévaut d'ailleurs de longue date pour les lieux de scolarisation. Par ailleurs, le développement des structures d'accueil de jour réalisé par la Ville de Lausanne porte ses fruits. Plusieurs quartiers ont une liste d'attente sans demande de conciliation, voire de demande de socialisation. Schématiquement, les besoins se concentrent actuellement à l'est de la Ville, et la route de Chavannes 37 ne paraît pas répondre à ces besoins."
+    },
+    {
+     "number": "4",
+     "question": "La Municipalité ne considère-t-elle pas que les places en crèche doivent être proposées sur l'ensemble du territoire communal, et pas uniquement au centre-ville?",
+     "answer": "Comme indiqué à la question précédente, le but n'est pas de concentrer les places au centre-ville, mais de les développer au plus près des quartiers où apparaît une demande insatisfaite. Il est vrai que les familles vivant dans les quartiers centraux ont tendance à recourir de manière accrue à l'offre du Réseau-L."
+    },
+    {
+     "number": "5",
+     "question": "Des études concrètes ont-elles été menées pour justifier l'hypothèse selon laquelle la demande est plus forte au centre-ville et faible en périphérie?",
+     "answer": "La liste des enfants accueillis et en attente d'une place est régulièrement analysée pour ajuster l'offre. La Ville constate une demande des familles différentes selon les quartiers. Ces éléments sont corroborés, par exemple, par l'étude annexée au rapport-préavis N°2022/24 «Réponse au postulat Gaillard Objectif 100%». Celle-ci montre à sa page 25 un taux de couverture répondant aux besoins dans certains quartiers et inférieur de plus de 24 points dans d'autres."
+    },
+    {
+     "number": "6",
+     "question": "Quelle est l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 pour le préscolaire et parascolaire? Et quels sont les objectifs de taux, respectivement obligations contractuelles ou légales?",
+     "answer": "Il n'existe pas d'obligation légale en matière de taux d'occupation. Le Réseau-L fixe un objectif, souvent qualifié d'ambitieux, de 90% pour les structures ouvertes depuis plus de trois ans. Il est constaté une difficulté accrue à l'atteindre dans les quartiers où la liste d'attente est faible. Le taux moyen pour l'ensemble des structures s'élève actuellement à 84.6%. À titre de comparaison, le taux moyen 2024 pour le Canton était de 83.75% (source StatVD, enquête accueil de jour des enfants)."
+    },
+    {
+     "number": "7",
+     "question": "Un taux d'occupation inférieur à 100% signifie-t-il concrètement que davantage de places sont offertes que demandées, autrement dit qu'il y a des places libres?",
+     "answer": "Le taux d'occupation est calculé en comparant la durée durant laquelle une place est offerte et celle durant laquelle elle est occupée. Comme une part importante d'enfants est accueillie à temps partiel et que la demande est inégalement répartie dans la semaine, il y a des périodes de pointe et des moments creux. Certaines plages horaires sont aussi plus difficiles à attribuer, typiquement la plage de midi parce que les parents reprennent souvent leur enfant avant le repas de midi ou le mènent après la sieste. Un taux d'occupation inférieur à 100% ne correspond donc généralement pas à des places entièrement vides, mais à des moments de la semaine durant lesquels une ou plusieurs places sont inoccupées. Des places peuvent également être inoccupées lorsqu'un enfant quitte une structure, dans l'attente de l'arrivée de l'enfant suivant (période d'adaptation), ou parce que des enfants avec des besoins particuliers nécessitent une prise en charge renforcée reconnue."
+    },
+    {
+     "number": "8",
+     "question": "Quel coût représentent ces places vacantes?",
+     "answer": "Le coût moyen d'une place en préscolaire est actuellement de CHF 42'700.-. Ce coût est composé de coûts fixes et variables. Le plus important concerne 80% du coût et concerne les salaires du personnel. Le taux d'encadrement réglementaire selon les directives cantonales reste le même, donc les charges ne varient pas même s'il y a un enfant de moins par groupe. La diminution se porte donc sur la recette parents pour la structure. Dans le cas des places vacantes, les coûts variables peuvent parfois être évités ou limités. Le coût d'une place vacante se situe donc dans une fourchette entre 20% et 100% du coût moyen, soit entre CHF 8'340.- et CHF 42'700.-."
+    },
+    {
+     "number": "9",
+     "question": "Qu'en est-il de la situation liée aux listes d'attente pour les places? Les listes se raccourcissent-elles?",
+     "answer": "Oui. L'indicateur le plus pertinent est la liste d'attente pour les demandes avec un motif de conciliation et une date d'accueil dépassée. Ce chiffre peut être interprété, comme le nombre de familles pour lesquelles une place n'a pas été proposée dans les délais souhaités, et dont les parents sont actifs professionnellement. Ce chiffre est passé de 328 en 2020 à 200 en 2024 et à 103 en 2025."
+    },
+    {
+     "number": "10",
+     "question": "N'y a-t-il pas de demande de places en crèche en périphérie du centre-ville de Lausanne, autrement dit sur l'ensemble du territoire communal?",
+     "answer": "Il existe une demande, à laquelle l'offre répond particulièrement bien pour les quartiers ouest."
+    },
+    {
+     "number": "11",
+     "question": "Le taux de fécondité suisse est historiquement bas (1.29 enfant par femme en 2024). Selon les statistiques vaudoises, cela fait une vingtaine d'années que le nombre de naissances n'a pas été aussi bas à Lausanne. Peut-on dire que l'évolution démographique implique une baisse de la demande en crèche?",
+     "answer": "La demande de places est influencée par deux facteurs essentiels: la démographie des enfants à Lausanne et le taux de recours par enfant. Alors que la Ville prévoyait sur la base de l'étude diffusée en 2022 une hausse du taux de recours et de la population d'enfants, nous avons observé une augmentation du taux de recours et une diminution de la population d'enfants. Ces deux facteurs peuvent eux-mêmes être décomposés de manière plus précise du côté du taux de recours, le pourcentage d'enfants accueillis augmente de manière régulière et le nombre d'heures d'accueil par enfant est aussi en croissance. Du côté de la démographie, la natalité est en baisse et le solde migratoire varie de manière complexe, aussi bien à l'échelle internationale qu'intercommunale. En d'autres termes, l'accueil de jour a dû répondre ces dernières années à moins d'enfants, mais qui sollicitent proportionnellement davantage les places en crèche et APEMS. Des analyses sont en cours afin d'évaluer plus précisément l'impact de ces variations sur la demande d'accueil de jour lausannoise à long terme."
+    },
+    {
+     "number": "12",
+     "question": "Quelle est la vision de la Municipalité pour 2026 avec les places en préscolaire et parascolaires promises, en lien avec l'emplacement, la demande et le taux d'occupation?",
+     "answer": "Les structures sont planifiées dans les quartiers où la demande reste insatisfaite. En matière préscolaire, les créations de places prévues en 2026 concernent Grancy et Montchoisi."
+    }
+   ],
+   "procedural_history": [
+    {
+     "date": {
+      "v": "2025-11-18"
+     },
+     "state": {
+      "v": "submitted"
+     },
+     "description": {
+      "v": "Interpellation déposée par Mme Pauline Blanc et consorts"
+     }
+    },
+    {
+     "date": {
+      "v": "2025-11-27"
+     },
+     "state": {
+      "v": "answered"
+     },
+     "description": {
+      "v": "Réponse adoptée en séance de Municipalité"
+     }
+    }
+   ],
+   "state": {
+    "v": "answered"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "accueil de jour",
+    "crèche",
+    "places préscolaire",
+    "taux d'occupation",
+    "budget 2026",
+    "demande",
+    "quartiers",
+    "EVAM",
+    "Réseau-L"
+   ]
+  }
+ }
+}

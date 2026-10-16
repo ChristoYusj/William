@@ -1,4 +1,4 @@
-"""CLI: python -m william {serve|extract|report|schema} ..."""
+"""CLI: python -m william {serve|extract|report|schema|validate|prompts} ..."""
 from __future__ import annotations
 
 import argparse
@@ -24,7 +24,21 @@ def main(argv=None):
                        help="also translate the summary with Apertus into this language")
     sc = sub.add_parser("schema")
     sc.add_argument("-o", "--out")
+    v = sub.add_parser("validate", help="check opd-affair/0.1 records (schema, provenance, vocabulary)")
+    v.add_argument("files", nargs="+", help="a record, a list of records, or a William batch JSON")
+    v.add_argument("--source", action="store_true", help="fetch each source again and check every quote on its page")
+    pr = sub.add_parser("prompts", help="the Apertus prompts as Markdown")
+    pr.add_argument("-o", "--out")
     a = ap.parse_args(argv)
+
+    if a.cmd == "validate":
+        from .validate import main as validate_main
+        sys.exit(validate_main(a.files, source=a.source))
+    if a.cmd == "prompts":
+        from .shared import prompts_markdown
+        txt = prompts_markdown()
+        Path(a.out).write_text(txt, encoding="utf-8") if a.out else sys.stdout.write(txt)
+        return
 
     if a.cmd == "serve":
         import uvicorn

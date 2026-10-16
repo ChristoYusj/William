@@ -158,10 +158,11 @@ export async function fetchDoc(url) {
   const r = await fetch(url, { credentials: "omit", redirect: "follow" });
   if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
   const buf = await r.arrayBuffer();
-  const head = new TextDecoder().decode(buf.slice(0, 5));
+  // readers accept bytes before the header (Zürich 261 files start with "\n%PDF-"), so look in the first 1 KB
+  const head = new TextDecoder("latin1").decode(buf.slice(0, 1024));
   const ctype = (r.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
   let pages, contentType;
-  if (head === "%PDF-" || ctype === "application/pdf") {
+  if (head.includes("%PDF-") || ctype === "application/pdf") {
     pages = await pdfPagesFromData(new Uint8Array(buf.slice(0)));
     contentType = "application/pdf";
     const chars = pages.reduce((a, p) => a + p.trim().length, 0);

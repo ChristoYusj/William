@@ -1,0 +1,316 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/TI/c126f47ae9867270cc2274f14079f6113d24745e0402a9a3b1efa0318d3b60d2",
+  "sha256": "f2606b4a73571ef5b1e2beccd3ae2d08d0d89b29387fc2f6b5fee6607e51eb71",
+  "content_type": "application/pdf",
+  "pages": 1,
+  "opd_doc_id": 109935,
+  "opd_affair_id": 83404,
+  "retrieved_at": "2026-10-16T09:15:53+00:00"
+ },
+ "language": "it",
+ "body": {
+  "level": {
+   "value": "cantonal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "TI",
+  "parliament": {
+   "value": "Gran Consiglio del Cantone Ticino",
+   "status": "inferred",
+   "page": 1,
+   "quote": "TESTO DELL'INTERROGAZIONE",
+   "char_start": 128,
+   "char_end": 153
+  },
+  "opd_body_type": "canton"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "126.19",
+   "status": "extracted",
+   "page": 1,
+   "quote": "126.19",
+   "char_start": 110,
+   "char_end": 116
+  },
+  "title": {
+   "value": "Interpellazione sul seguito della mozione \"Non danneggiamo il clima con i soldi pubblici\" e sulla sostenibilità degli investimenti della Cassa pensione dello Stato",
+   "status": "normalised",
+   "page": 1,
+   "quote": "TESTO DELL'INTERROGAZIONE",
+   "char_start": 128,
+   "char_end": 153
+  },
+  "type": {
+   "page": 1,
+   "quote": "TESTO DELL'INTERROGAZIONE",
+   "char_start": 128,
+   "char_end": 153,
+   "value": "interpellation",
+   "status": "normalised",
+   "source": "type_terms lookup on type_original",
+   "opd_type_harmonized_id": 8,
+   "wikidata": "Q1505023"
+  },
+  "type_original": {
+   "value": "interpellazione",
+   "status": "normalised",
+   "page": 1,
+   "quote": "TESTO DELL'INTERROGAZIONE",
+   "char_start": 128,
+   "char_end": 153
+  },
+  "submission_date": {
+   "value": "2019-07-23",
+   "status": "normalised",
+   "page": 1,
+   "quote": "23 luglio 2019",
+   "char_start": 93,
+   "char_end": 107
+  },
+  "actors": [
+   {
+    "name": {
+     "value": "Nicola Schoenenberger",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Nicola \nSchoenenberger",
+     "char_start": 471,
+     "char_end": 493
+    },
+    "role": {
+     "value": "submitter",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "person",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   },
+   {
+    "name": {
+     "value": "Ay - Bourgoin - Crivelli Barella - Durisch - Gardenghi - Ghisletta - Merlo - Noi - Stephani - Storni",
+     "status": "extracted",
+     "page": 1,
+     "quote": "Ay - Bourgoin - Crivelli Barella - \nDurisch - Gardenghi - Ghisletta - \nMerlo - Noi - Stephani - Storni",
+     "char_start": 2674,
+     "char_end": 2776
+    },
+    "role": {
+     "value": "co_signatory",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "kind": {
+     "value": "parliamentary_group",
+     "status": "inferred",
+     "page": null,
+     "quote": null,
+     "char_start": null,
+     "char_end": null
+    },
+    "party_or_group": null
+   }
+  ],
+  "addressed_to": {
+   "value": "Consiglio di Stato",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Chiediamo pertanto al Consiglio di Stato",
+   "char_start": 649,
+   "char_end": 689
+  },
+  "requests": [
+   {
+    "value": "Valutare la sostenibilità sociale e ambientale degli investimenti del fondo Cassa pensione nell'ambito del messaggio sul risanamento della Cassa pensione",
+    "status": "normalised",
+    "page": 1,
+    "quote": "1. Nell’ambito del preannunciato messaggio sul risanamento della Cassa pensione, intende \ncogliere l’occasione per valutare la sostenibilità sociale e ambientale degli investimenti del \nfondo Cassa pensione",
+    "char_start": 692,
+    "char_end": 898
+   },
+   {
+    "value": "Indicare o imporre parametri di natura sociale e ambientale ai gestori del patrimonio della Cassa pensione",
+    "status": "normalised",
+    "page": 1,
+    "quote": "2. Seppure la Cassa pensione non gestisca direttamente il fondo, quali parametri di natura sociale \ne ambientale indica o impone ai gestori del patrimonio",
+    "char_start": 901,
+    "char_end": 1055
+   },
+   {
+    "value": "Chiedere ai gestori della Cassa pensione di aumentare progressivamente gli investimenti sostenibili e disinvestire dalle energie fossili o altri investimenti problematici dal punto di vista ambientale e sociale",
+    "status": "normalised",
+    "page": 1,
+    "quote": "chiedere ai gestori della Cassa \npensione di aumentare in modo progressivo e importante gli investimenti sostenibili del \nfondo e di disinvestire dalle energie fossili o altri investimenti problematici dal punto di \nvista ambientale e sociale",
+    "char_start": 2401,
+    "char_end": 2643
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "normalised",
+   "page": 1,
+   "quote": "TESTO DELL'INTERROGAZIONE",
+   "char_start": 128,
+   "char_end": 153,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "Cassa pensione",
+   "investimenti",
+   "sostenibilità",
+   "clima",
+   "energie fossili"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 4,
+   "normalised": 8,
+   "inferred": 5,
+   "rejected": 1,
+   "metadata": 1
+  },
+  "verified_share": 0.684,
+  "rejected_values": [
+   {
+    "path": "requests[2]",
+    "value": "Valutare se investire in fondi sostenibili possa offrire rendimenti superiori rispetto ai criteri economici finora utilizzati e fornire il rendimento medio del fondo Cassa pensione dello Stato nel decennio 2008-2017",
+    "page": 1,
+    "quote": "3. Come valuta questi dati il Consiglio di Stato? Qual è stato il rendimento medio del fondo Cassa pensione dello Stato in questo periodo (decennio 2008-2017)?"
+   }
+  ],
+  "flags": [
+   "affair_type 'interpellation' disagrees with OpenParlData type_harmonized_id 12",
+   "1 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 2096,
+   "total_tokens": 3062,
+   "completion_tokens": 966,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "it",
+   "level": {
+    "v": "cantonal",
+    "p": "1",
+    "q": "cantonal"
+   },
+   "parliament": {
+    "v": "Gran Consiglio del Cantone Ticino",
+    "p": "1",
+    "q": "TESTO DELL'INTERROGAZIONE"
+   },
+   "affair_number": {
+    "v": "126.19",
+    "p": "1",
+    "q": "126.19"
+   },
+   "title": {
+    "v": "Interpellazione sul seguito della mozione \"Non danneggiamo il clima con i soldi pubblici\" e sulla sostenibilità degli investimenti della Cassa pensione dello Stato",
+    "p": "1",
+    "q": "TESTO DELL'INTERROGAZIONE"
+   },
+   "affair_type": {
+    "v": "interpellation",
+    "p": "1",
+    "q": "TESTO DELL'INTERROGAZIONE"
+   },
+   "affair_type_original": {
+    "v": "interpellazione",
+    "p": "1",
+    "q": "TESTO DELL'INTERROGAZIONE"
+   },
+   "submission_date": {
+    "v": "2019-07-23",
+    "p": "1",
+    "q": "23 luglio 2019"
+   },
+   "actors": [
+    {
+     "name": "Nicola Schoenenberger",
+     "role": "submitter",
+     "kind": "person",
+     "party_or_group": null
+    },
+    {
+     "name": "Ay - Bourgoin - Crivelli Barella - Durisch - Gardenghi - Ghisletta - Merlo - Noi - Stephani - Storni",
+     "role": "co_signatory",
+     "kind": "parliamentary_group",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": {
+    "v": "Consiglio di Stato",
+    "p": "1",
+    "q": "Chiediamo pertanto al Consiglio di Stato:"
+   },
+   "requests": [
+    {
+     "v": "Valutare la sostenibilità sociale e ambientale degli investimenti del fondo Cassa pensione nell'ambito del messaggio sul risanamento della Cassa pensione",
+     "p": "1",
+     "q": "1. Nell'ambito del preannunciato messaggio sul risanamento della Cassa pensione, intende cogliere l'occasione per valutare la sostenibilità sociale e ambientale degli investimenti del fondo Cassa pensione?"
+    },
+    {
+     "v": "Indicare o imporre parametri di natura sociale e ambientale ai gestori del patrimonio della Cassa pensione",
+     "p": "1",
+     "q": "2. Seppure la Cassa pensione non gestisca direttamente il fondo, quali parametri di natura sociale e ambientale indica o impone ai gestori del patrimonio?"
+    },
+    {
+     "v": "Valutare se investire in fondi sostenibili possa offrire rendimenti superiori rispetto ai criteri economici finora utilizzati e fornire il rendimento medio del fondo Cassa pensione dello Stato nel decennio 2008-2017",
+     "p": "1",
+     "q": "3. Come valuta questi dati il Consiglio di Stato? Qual è stato il rendimento medio del fondo Cassa pensione dello Stato in questo periodo (decennio 2008-2017)?"
+    },
+    {
+     "v": "Chiedere ai gestori della Cassa pensione di aumentare progressivamente gli investimenti sostenibili e disinvestire dalle energie fossili o altri investimenti problematici dal punto di vista ambientale e sociale",
+     "p": "1",
+     "q": "4. Chiediamo dunque se il Consiglio di Stato intende chiedere ai gestori della Cassa pensione di aumentare in modo progressivo e importante gli investimenti sostenibili del fondo e di disinvestire dalle energie fossili o altri investimenti problematici dal punto di vista ambientale e sociale ."
+    }
+   ],
+   "questions": [],
+   "procedural_history": [],
+   "state": {
+    "v": "submitted",
+    "p": "1",
+    "q": "TESTO DELL'INTERROGAZIONE"
+   },
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "Cassa pensione",
+    "investimenti",
+    "sostenibilità",
+    "clima",
+    "energie fossili"
+   ]
+  }
+ }
+}

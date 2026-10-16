@@ -15,19 +15,20 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, Response
 from pydantic import BaseModel, Field
 
-from . import docs, llm, report
+from . import docs, llm, report, webext
 from .extract import extract
 from .schema import json_schema
 from .shared import SCHEMA_VERSION, vocab
 from .summarize import summarize, summarize_pages, translate, translate_languages
 
 app = FastAPI(title="William — OpenParlData affair extractor (Apertus)", version="0.1.0")
+app.include_router(webext.router)  # the extension's batch page + PDF viewer as web pages (/ext, /viewer)
 # No CORS: the API has no auth and spends the operator's Apertus credits, so browsers on other sites must not call it.
 
 MAX_URLS = 20
@@ -97,6 +98,21 @@ def schema():
 @app.get("/v1/vocab")
 def get_vocab():
     return vocab()
+
+
+@app.post("/v1/validate")
+def post_validate(body: Any = Body(...), source: bool = False):
+    """Validate opd-affair/0.1 records (one, a list, or a William batch). ?source=true re-checks quotes on the source."""
+    from .validate import check, check_source, records_in
+    recs = records_in(body)
+    if not 1 <= len(recs) <= MAX_URLS:
+        raise HTTPException(400, f"send 1 to {MAX_URLS} records")
+    results = []
+    for rec in recs:
+        issues = check_source(rec) if source else check(rec)
+        results.append({"url": (rec.get("source") or {}).get("url") if isinstance(rec.get("source"), dict) else None,
+                        "valid": not any(i["level"] == "error" for i in issues), "issues": issues})
+    return {"schema_version": SCHEMA_VERSION, "valid": all(r["valid"] for r in results), "results": results}
 
 
 @app.post("/v1/extract")

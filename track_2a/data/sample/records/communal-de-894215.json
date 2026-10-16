@@ -1,0 +1,215 @@
+{
+ "schema_version": "opd-affair/0.1",
+ "source": {
+  "url": "https://files.openparldata.ch/doc/351/a80250d0348bf3889a94ec8fc5a4b36826659b11ea09d67e099af1846365087c",
+  "sha256": "ec325483805ad90f4c495a29473651209852d7c0a36c290a46e1eb907092e837",
+  "content_type": "application/pdf",
+  "pages": 3,
+  "opd_doc_id": 894215,
+  "opd_affair_id": 329828,
+  "retrieved_at": "2026-10-16T09:15:55+00:00"
+ },
+ "language": "de",
+ "body": {
+  "level": {
+   "value": "communal",
+   "status": "metadata",
+   "source": "OpenParlData body_key"
+  },
+  "body_key": "351",
+  "parliament": null,
+  "opd_body_type": "municipality"
+ },
+ "affair": {
+  "affair_number": {
+   "value": "2026.PRD.0014",
+   "status": "extracted",
+   "page": 1,
+   "quote": "2026.PRD.0014",
+   "char_start": 266,
+   "char_end": 279
+  },
+  "title": {
+   "value": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte mit Verpflichtungskredit (Abstimmungsbotschaft) sowie Baurechtsabgabe",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte mit Verpflichtungs-\nkredit (Abstimmungsbotschaft) sowie Baurechtsabgabe",
+   "char_start": 103,
+   "char_end": 264
+  },
+  "type": {
+   "value": "motion",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_type_harmonized_id": 2,
+   "wikidata": "Q1949668"
+  },
+  "type_original": {
+   "value": "Anträge",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Anträge",
+   "char_start": 0,
+   "char_end": 7
+  },
+  "submission_date": null,
+  "actors": [],
+  "addressed_to": {
+   "value": "Gemeinderat",
+   "status": "extracted",
+   "page": 1,
+   "quote": "Gemeinderat",
+   "char_start": 1211,
+   "char_end": 1222
+  },
+  "requests": [
+   {
+    "value": "Die Zwischennutzung soll nicht-kommerziell sein und wenn möglich eine Nutzung fürs Quartier haben (z.B. Kunst, Kultur, Soziale Nutzungen).",
+    "status": "extracted",
+    "page": 1,
+    "quote": "Die Zwischennutzung soll nicht-\nkommerziell sein und wenn möglich eine Nutzung fürs \nQuartier haben (z.B. Kunst, Kultur, Soziale Nutzungen",
+    "char_start": 650,
+    "char_end": 788
+   }
+  ],
+  "questions": [],
+  "procedural_history": [],
+  "state": {
+   "value": "submitted",
+   "status": "inferred",
+   "page": null,
+   "quote": null,
+   "char_start": null,
+   "char_end": null,
+   "opd_state_name_harmonized_id": 1
+  },
+  "decisions": [],
+  "related_affairs": [],
+  "keywords": [
+   "Zwischennutzung",
+   "Leerstand",
+   "Band-Bestandesbau",
+   "Areal Ost",
+   "Biodiversität",
+   "naturnahe Lebensräume"
+  ]
+ },
+ "quality": {
+  "value_counts": {
+   "extracted": 5,
+   "normalised": 0,
+   "inferred": 3,
+   "rejected": 7,
+   "metadata": 1
+  },
+  "verified_share": 0.375,
+  "rejected_values": [
+   {
+    "path": "actors[0].name",
+    "value": "PVS",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].date",
+    "value": "2026-06-11",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "procedural_history[0].description",
+    "value": "Anträge und Synopse aus der Sitzung der PVS vom 11. Juni 2026",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[0]",
+    "value": "Prüfung einer nicht-kommerziellen Zwischennutzung des Band-Bestandesbaus im Areal Ost für die Dauer zwischen dem Umzug und den Bauarbeiten zur Weiterentwicklung des Areals.",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "requests[2]",
+    "value": "Aktives Vorgehen beim Organisieren der Zwischennutzung von Seite Fonds und der Band-Genossenschaft zur Minimierung des Risikos eines Leerstands.",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "submission_date",
+    "value": "2026-06-11",
+    "page": null,
+    "quote": ""
+   },
+   {
+    "path": "parliament",
+    "value": "Parlamentsversammlung Stadt Zürich (PVS)",
+    "page": null,
+    "quote": ""
+   }
+  ],
+  "flags": [
+   "affair_type 'motion' disagrees with OpenParlData type_harmonized_id 9",
+   "5 model value(s) rejected: quote not found in the document"
+  ],
+  "needs_review": true
+ },
+ "extractor": {
+  "model": "swiss-ai/Apertus-v1.5-70B",
+  "prompt_version": "william-prompts/0.2",
+  "usage": {
+   "prompt_tokens": 1560,
+   "total_tokens": 2035,
+   "completion_tokens": 475,
+   "prompt_tokens_details": {
+    "cached_tokens": 128,
+    "multimodal_tokens": null
+   }
+  },
+  "raw_model_output": {
+   "language": "de",
+   "level": "communal",
+   "parliament": "Parlamentsversammlung Stadt Zürich (PVS)",
+   "affair_number": "2026.PRD.0014",
+   "title": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte mit Verpflichtungskredit (Abstimmungsbotschaft) sowie Baurechtsabgabe",
+   "affair_type": "motion",
+   "affair_type_original": "Anträge",
+   "submission_date": "2026-06-11",
+   "actors": [
+    {
+     "name": "PVS",
+     "role": "submitter",
+     "kind": "parliament",
+     "party_or_group": null
+    }
+   ],
+   "addressed_to": "Gemeinderat",
+   "requests": [
+    "Prüfung einer nicht-kommerziellen Zwischennutzung des Band-Bestandesbaus im Areal Ost für die Dauer zwischen dem Umzug und den Bauarbeiten zur Weiterentwicklung des Areals.",
+    "Die Zwischennutzung soll nicht-kommerziell sein und wenn möglich eine Nutzung fürs Quartier haben (z.B. Kunst, Kultur, Soziale Nutzungen).",
+    "Aktives Vorgehen beim Organisieren der Zwischennutzung von Seite Fonds und der Band-Genossenschaft zur Minimierung des Risikos eines Leerstands."
+   ],
+   "questions": [],
+   "procedural_history": [
+    {
+     "date": "2026-06-11",
+     "state": "submitted",
+     "description": "Anträge und Synopse aus der Sitzung der PVS vom 11. Juni 2026"
+    }
+   ],
+   "state": "submitted",
+   "decisions": [],
+   "related_affairs": [],
+   "keywords": [
+    "Zwischennutzung",
+    "Leerstand",
+    "Band-Bestandesbau",
+    "Areal Ost",
+    "Biodiversität",
+    "naturnahe Lebensräume"
+   ]
+  }
+ }
+}

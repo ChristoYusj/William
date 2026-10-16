@@ -1,0 +1,249 @@
+<!doctype html>
+<!-- Source of RedPandas_William_Report.pdf. Rebuild (Edge or Chrome, from track_2a/):
+     msedge --headless --no-pdf-header-footer --print-to-pdf=RedPandas_William_Report.pdf tools/report.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Technical report: William</title>
+<style>
+  @page { size: A4; margin: 16mm 17mm 16mm 17mm; }
+  :root { --red: #b5121b; --rule: #d0d0d0; --code-bg: #f3f3f3; --head-bg: #eeeeee; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Segoe UI", "Open Sans", Arial, sans-serif; font-size: 10.2pt; line-height: 1.42; color: #1a1a1a; margin: 0; }
+  h1 { color: var(--red); font-size: 21pt; margin: 0 0 8px; }
+  h1.title { display: flex; align-items: center; gap: 12px; }
+  h1.title img { width: 52px; height: 52px; }
+  h2 { font-size: 13pt; margin: 16px 0 7px; padding-bottom: 3px; border-bottom: 1px solid var(--rule); break-after: avoid; }
+  p { margin: 5px 0; }
+  ul, ol { margin: 4px 0 6px; padding-left: 22px; }
+  li { margin: 2px 0; }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.8pt; background: var(--code-bg); padding: 0 3px; border-radius: 2px; }
+  pre { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.4pt; line-height: 1.3; background: var(--code-bg);
+        padding: 9px 12px; margin: 8px 0; white-space: pre; break-inside: avoid; }
+  table { border-collapse: collapse; width: 100%; margin: 7px 0 9px; font-size: 9.3pt; break-inside: avoid; }
+  th, td { border: 1px solid var(--rule); padding: 4px 7px; vertical-align: top; text-align: left; }
+  th { background: var(--head-bg); font-weight: 600; text-align: center; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.total td { font-weight: 700; }
+  table.shots td { text-align: center; padding: 6px; width: 50%; }
+  table.shots img { max-width: 100%; max-height: 190px; border: 1px solid #e3e3e3; }
+  .meta li { margin: 1px 0; }
+  .small { font-size: 8.8pt; color: #444; }
+  .keep { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1 class="title"><img src="../src/extension/icons/logo.png" alt="">Technical report: William</h1>
+<ul class="meta">
+  <li><b>Track:</b> Track 2A, OpenParlData: Extracting Parliamentary Affairs from PDFs into One Common Structure</li>
+  <li><b>Event:</b> Online</li>
+  <li><b>Team:</b> RedPandas: Christopher Yazigi, Giovanni Yazbeck, Alfredo Pio Yazbeck</li>
+  <li><b>Demo:</b> Firefox extension in <code>src/extension</code> (<code>make extension</code> → <code>william-firefox.zip</code>); API and web page via <code>make run</code>; screenshots in <code>eval/e2e/</code></li>
+</ul>
+
+<h2>1. Summary</h2>
+<p>Swiss parliaments publish their affairs (motions, postulates, interpellations, questions, reports) as PDFs, in
+German, French or Italian, at three levels (federal, 26 cantons, communes), each with its own layout and vocabulary.
+William turns such a document into one common, versioned structure, <code>opd-affair/0.1</code>, with
+<b>Apertus-v1.5-70B</b>. Every value carries the page and a verbatim quote it was read from. A value whose quote cannot
+be found in the document is removed. A classification without a quote is kept, but marked <code>inferred</code>.</p>
+<p>The same pipeline ships in three forms: a <b>Firefox extension</b> that opens parliamentary PDFs in its own viewer,
+summarises the document or a selection <i>in the document's language</i> and links its political topics to Swiss news;
+a <b>batch page</b> (many links → JSON + PDF report); and an <b>HTTP API</b> with a web page for production use.</p>
+<p><b>News about the affair.</b> Next to the document, William shows the Swiss press coverage of the affair: the
+motion, question, vote or decision the document is about. Apertus names the political subjects of the document and writes
+a news query for each in the document's language. The subjects are highlighted in the summary, and clicking one lists the
+matching Swiss articles. For example, on a Lugano council answer to a parliamentary question, the reader gets the
+article “A Lugano ci sono volute 75 ore per rispondere a un'interrogazione”, about that same question.</p>
+<p>On 14 OpenParlData documents (3 levels × DE/FR/IT, <b>14/14 processed</b>), <b>154 values were verified</b> against the
+source text, <b>85 proposed values were rejected</b> (80 of them had no quote at all) and 67 classifications were kept as
+<code>inferred</code>. <b>Headline insight:</b> a common schema works for <i>identity</i> fields (number, title, original
+type term, addressee, authors; core-field coverage 0.76). It does <b>not</b> work, from the PDF alone, for
+<i>procedure</i>: 10 of 14 procedural states had no supporting quote, and <b>no decision</b> was verified in any document.</p>
+
+<h2>2. Architecture</h2>
+<pre>link (PDF · HTML · api.openparldata.ch/v1/docs|affairs/ID · files.openparldata.ch/doc/…)
+  ──► fetch + text per page (pdf.js in the extension, pypdf in the API)
+  ──► OPD hints: body_key → level (CHE / canton / BFS no.), OPD type and number of the parent affair
+  ──► Apertus 70B (shared/prompts.json, william-prompts/0.2) ──► JSON, one {v, p, q} per field
+  ──► verifier: quote search on page p (normalised; space-insensitive fallback) ──► char span
+        dates: day + month + year must be in the quote · numbers must be in the quote
+        vocabulary fields: legal term or removed; no quote ──► status "inferred"
+        type_original ──► fixed DE/FR/IT term lookup overrides the model's type
+  ──► opd-affair/0.1 record + quality block (raw model output kept for offline re-verification)
+  ──► summary in the document's language + topics ──► Google News RSS (CH edition) ──► inline highlights</pre>
+<ul>
+  <li><b>One source of prompts and vocabularies</b> (<code>src/extension/shared/{prompts,vocab}.json</code>), read by
+    both the extension and the API.</li>
+  <li><b>Verifier written twice, checked identical:</b> <code>shared/core.js</code> (extension) and
+    <code>src/william/{verify,extract}.py</code> (API). <code>tests/parity.mjs</code> rebuilds the records of all 14
+    stored documents in both and finds <b>0 differences</b>.</li>
+  <li><b>Extension</b> (Manifest V2, Firefox ≥ 115): a blocking <code>webRequest</code> listener redirects PDF
+    responses into the viewer (pdf.js with a selectable text layer; <code>p.N</code> evidence links jump to the page).
+    Right-click menus summarise any selection or page on any website in a floating panel.</li>
+  <li><b>Batch page:</b> three parallel workers; JSON download, or a PDF report written in the browser by a 150-line
+    dependency-free PDF writer (<code>shared/minipdf.js</code>, checked by parsing it back with pypdf in strict mode).</li>
+  <li><b>API</b> (<code>src/william/api.py</code>, FastAPI): <code>/v1/extract</code>, <code>/v1/report</code>,
+    <code>/v1/summarize</code>, <code>/v1/translate</code>, <code>/v1/schema</code>, <code>/v1/vocab</code>, plus a CLI.
+    It also serves the extension's batch page and viewer as plain web pages (<code>/ext</code>, <code>/viewer</code>),
+    with a fetch proxy and an Apertus proxy so the browser never sees the key.</li>
+  <li><b>News for the affair:</b> for each topic, Google News RSS (Swiss edition, document language; Italian restricted
+    to Swiss outlets) is searched with progressively shorter queries. Articles are re-ranked by the content words they
+    share with the topic, unrelated ones are dropped, and up to 5 are shown, with source and date, in the viewer, the
+    in-page panel, the batch page and the PDF report (“In the Swiss news”).</li>
+  <li><b>Validator</b> (<code>python -m william validate</code>, <code>POST /v1/validate</code>): checks any finished
+    record against the schema, the provenance rules (page + quote for every extracted value) and the controlled
+    vocabularies; <code>--source</code> fetches the document again and re-checks every quote on its page. All 14 sample
+    records in <code>data/sample/records/</code> pass.</li>
+  <li><b>Optional translation:</b> Apertus translates the summary and key points into DE / FR / IT / RM / EN; the
+    original-language summary is always kept next to it.</li>
+  <li><b>Key handling:</b> in the extension the key stays in <code>browser.storage.local</code>; the API reads
+    <code>LLM_API_KEY</code> from its environment and sends no CORS headers.</li>
+</ul>
+
+<table class="shots">
+  <tr><th>Viewer: summary in the document's language, topics → Swiss news</th><th>Viewer: extracted record with p.N evidence</th></tr>
+  <tr><td><img src="../eval/e2e/viewer_summary.png" alt="William viewer with summary"></td>
+      <td><img src="../eval/e2e/viewer_extract.png" alt="William viewer with extraction table"></td></tr>
+  <tr><th>Batch page: many links → JSON + PDF report</th><th>In-page panel on a live parlament.ch page</th></tr>
+  <tr><td><img src="../eval/e2e/batch.png" alt="William batch page"></td>
+      <td><img src="../eval/e2e/panel.png" alt="William in-page summary panel"></td></tr>
+</table>
+
+<h2>3. Use of Apertus</h2>
+<ul>
+  <li><b>Model:</b> <code>swiss-ai/Apertus-v1.5-70B</code> through the CSCS OpenAI-compatible endpoint;
+    <code>Apertus-v1.5-8B</code> can be selected in the extension settings. <code>LLM_NAME</code> /
+    <code>LLM_BASE_URL</code> / <code>LLM_API_KEY</code> follow the judges' convention.</li>
+  <li><b>How it is used:</b> prompting-only inference at temperature 0, with JSON output and one stricter retry when the
+    JSON is invalid or cut off. Apertus is used for:
+    <ol>
+      <li>structured extraction, with a page and a verbatim quote for every field;</li>
+      <li>the summary and key points in the document's language, plus 2–5 political topics with a news query each;</li>
+      <li>optional translation of the summary (DE / FR / IT / RM / EN).</li>
+    </ol></li>
+  <li><b>Prompts:</b> <code>src/extension/shared/prompts.json</code> (<code>william-prompts/0.2</code>). The extraction
+    prompt lists the controlled vocabularies (affair types, actor roles, procedural states, decision outcomes,
+    relation types) and states that a quote is <i>required</i> for every value.</li>
+  <li><b>Cost:</b> the 14-document extraction run used 46.2k input and 13.5k output tokens.</li>
+  <li><b>No other model is used</b> anywhere in the pipeline or for evaluation.</li>
+</ul>
+
+<h2>4. Data</h2>
+<ul>
+  <li><code>data/sample/urls.txt</code> lists <b>14 OpenParlData documents</b>: federal (CHE ×4), cantonal (GE ×2, TI,
+    ZH) and communal (Bern 351, Zürich 261, Lausanne 5586 ×2, Lugano 5192 ×2), in German, French and Italian.</li>
+  <li>They are public parliamentary documents fetched at run time. Page texts are stored in <code>tests/fixtures/</code>
+    only for the offline tests; the stored Apertus outputs are in <code>eval/</code>.</li>
+  <li>There is no personal data beyond the names of elected officials as published by the parliaments. The extension
+    and the API store nothing beyond the user's settings.</li>
+</ul>
+
+<h2>5. Evaluation</h2>
+<p><b>There is no manually checked gold set</b> (a single-day build). We report three measurements that need no gold
+labels.</p>
+
+<p class="keep"><b>(a) Evidence verification</b> (<code>make eval</code>, verifier v2, prompt v0.2):</p>
+<table>
+  <tr><th>Level</th><th>Docs</th><th>Verified values</th><th>Inferred</th><th>Rejected</th><th>Verified share</th><th>Core-field coverage*</th></tr>
+  <tr><td>federal</td><td class="n">4</td><td class="n">36</td><td class="n">11</td><td class="n">9</td><td class="n">0.64</td><td class="n">0.71</td></tr>
+  <tr><td>cantonal</td><td class="n">4</td><td class="n">37</td><td class="n">16</td><td class="n">7</td><td class="n">0.62</td><td class="n">0.88</td></tr>
+  <tr><td>communal</td><td class="n">6</td><td class="n">81</td><td class="n">40</td><td class="n">69</td><td class="n">0.43</td><td class="n">0.72</td></tr>
+  <tr class="total"><td>all</td><td class="n">14 (14 processed)</td><td class="n">154</td><td class="n">67</td><td class="n">85</td><td class="n">0.50</td><td class="n">0.76</td></tr>
+</table>
+<p class="small">* share of {number, title, type, submission date, addressee, state} that are present. The weakest cell
+is communal FR (36 rejections), from one Lausanne PDF whose text layer has <b>no space characters</b>
+(“RéponsedelaMunicipalité…”).</p>
+
+<p class="keep"><b>(b) Ablations.</b> “Verified” counts include OPD metadata values.</p>
+<table>
+  <tr><th>Run</th><th>Verified</th><th>Rejected</th></tr>
+  <tr><td>prompt v0.1 + verifier v1 (12 docs; 2 were Fedlex-wall files, swapped out afterwards)</td><td class="n">73</td><td class="n">112</td></tr>
+  <tr><td>prompt v0.2 (“q is REQUIRED…”) + punctuation-insensitive matching + vocabulary without quote → <code>inferred</code> (13 docs)</td><td class="n">132</td><td class="n">72</td></tr>
+  <tr><td>+ space-insensitive fallback for broken text layers (same model output, re-verified offline; 13 docs)</td><td class="n">147</td><td class="n">70</td></tr>
+  <tr class="total"><td>+ PDF header found after leading bytes: the Zürich 261 file has a newline before <code>%PDF-</code> and is now read (14 docs; one new live Apertus call)</td><td class="n">154</td><td class="n">85</td></tr>
+</table>
+<p>The first two rows differ in documents as well as in prompt, so they show the direction of the change, not a
+controlled comparison. The third row is controlled: identical model output, verifier change only. The last row adds the Zürich 261 document; the other 13 records are unchanged.</p>
+
+<p><b>(c) Agreement with OpenParlData's own harmonized type</b> (<code>python -m william.evaluate crosscheck</code>):
+<b>5/11</b> where both exist. The disagreements are informative:</p>
+<ul>
+  <li><b>Italian vocabulary trap.</b> Ticino's <i>interrogazione</i> is a written question (OPD id 12); Apertus labelled
+    it <i>interpellation</i>. A fixed term lookup on the verified original word now fixes this (+1, flagged in the record).</li>
+  <li><b>Document vs affair.</b> A consultation report inside a parliamentary initiative, a committee report inside a
+    government affair and a list of proposals are correct <i>for the document</i> but not for the affair → schema
+    proposal <code>document.type</code> (<code>docs/schema.md</code>, Known gaps).</li>
+  <li><b>Possible OPD labelling inconsistency:</b> a Ticino item <code>I126.19</code> with the original term
+    <i>Interpellazione</i> is harmonized by OPD as <i>question</i>.</li>
+</ul>
+
+<p><b>Data-quality findings in OpenParlData itself.</b> For at least two federal documents (e.g. doc 485241,
+“FF 2013 1073”), the stored file and <code>text</code> are the Fedlex <i>“please enable JavaScript”</i> page, not the PDF;
+William flags <i>“source is listed as a PDF but the file is not a PDF”</i> instead of extracting from it. OPD's
+<code>state_name_harmonized_id</code> is filled for <b>278 of 326,334 affairs (0.09 %)</b>
+(<code>/v1/affairs/group_by/states_harmonized</code>, 16 Oct 2026).</p>
+
+<p><b>Cross-parliamentary question: can the procedural state of an affair be read from its documents?</b> OPD cannot
+answer this today (0.09 % coverage), and our answer is <b>mostly no</b>: William proposed a state for 14/14 documents,
+but 10 have no supporting quote (<code>inferred</code>) and the other 4 rest on weak quotes (a heading such as
+“Postulat”). Only one document (Zürich 261, a committee motion) yielded a decision, “recommended accept”, and it too
+had no verbatim basis. State and outcome should come from structured event data (OPD <code>events</code> /
+<code>votings</code>), with documents as evidence, not as the source.</p>
+
+<p class="keep"><b>Extension checks.</b> These ran end to end in real (headless) Firefox with Selenium
+(<code>tests/e2e_firefox.py</code>) on the packaged extension, live against Apertus-70B: <b>19/19 checks passed</b>.
+Results and screenshots are in <code>eval/e2e/</code>.</p>
+<table>
+  <tr><th>Case</th><th>Result</th></tr>
+  <tr><td>OpenParlData PDF link (Lugano, IT)</td><td>Auto-opened in the William viewer; pages rendered with a selectable text layer</td></tr>
+  <tr><td>Document summary</td><td>Written in Italian (“Il Municipio di Lugano ha risposto all'interrogazione parlamentare no. 1654…”)</td></tr>
+  <tr><td>Topic highlight → news</td><td>5 Swiss articles listed, e.g. “A Lugano ci sono volute 75 ore per rispondere a un'interrogazione”</td></tr>
+  <tr><td>Selection summary</td><td>Button enables after a selection; summary in the document's language</td></tr>
+  <tr><td>Extraction</td><td>20 rows, type <code>question</code>, verified share 0.579; <code>p.N</code> jumps to the page; JSON downloaded</td></tr>
+  <tr><td>Batch page</td><td>Links processed in parallel into records; JSON and PDF report downloaded</td></tr>
+  <tr><td>Popup and in-page panel on a live parlament.ch page</td><td>Summary panel shown with topic links</td></tr>
+</table>
+<p>Also checked: the live API in Docker (<code>/v1/extract</code> with summary + news, <code>/v1/report</code>, SSRF
+refusal, no CORS); the offline suite (<code>make test</code>, <b>16 tests</b>); JS/Python parity (0 differences);
+<code>web-ext lint</code> (0 errors). The right-click menu itself is not covered by automation (Selenium cannot open
+browser menus; the same code path was driven directly). Robustness built in: one stricter retry when the model's
+JSON is cut off, normalised language codes with a stopword fallback, and progressively shorter news queries.</p>
+
+<h2>6. Limitations</h2>
+<ul>
+  <li><b>Long and scanned documents.</b> Only the first 28k characters are read; longer documents are truncated and
+    flagged. There is no OCR: scanned PDFs are flagged (“little or no text layer”), not processed.</li>
+  <li><b>One PDF = one affair.</b> Bundles of several affairs per PDF are not split.</li>
+  <li><b>Packaging:</b> the extension is unsigned (temporary add-on) and uses Manifest V2 for blocking
+    <code>webRequest</code> (PDF interception).</li>
+</ul>
+
+<h2>7. Reproducibility</h2>
+<ul>
+  <li><code>make test</code> and <code>make eval</code> (Docker, no GPU, no API key) reproduce every number in §5 from
+    the stored Apertus outputs in <code>eval/sample_70b*.json</code> and the page texts in <code>tests/fixtures/</code>.</li>
+  <li><code>make sample</code> re-runs the sample extraction live (needs <code>LLM_API_KEY</code>);
+    <code>make validate</code> checks the 14 sample records; <code>make run</code> starts the API and web page on port 8000; <code>make extension</code> zips the extension.</li>
+  <li>Apertus at temperature 0 is not perfectly deterministic on the hosted endpoint, so expect small differences in a
+    live re-run. That is why the raw responses are shipped and all scores are recomputed from them.</li>
+</ul>
+
+<h2>8. Next steps</h2>
+<ul>
+  <li><b>Schema 0.2:</b> <code>document.type</code>, <code>affairs[]</code> per document, and state / decisions taken
+    from OPD events.</li>
+  <li><b>Chunked reading</b> for long documents; <b>OCR</b> for scanned PDFs with an open model, on-prem.</li>
+  <li><b>Ship a signed MV3 build</b> (<code>declarativeNetRequest</code> for PDFs).</li>
+</ul>
+
+<h2>License</h2>
+<p>Apache-2.0 (see the repository root). pdf.js (Apache-2.0) is bundled in <code>src/extension/lib/</code> with its licence.</p>
+
+<h2>References</h2>
+<p>[1] OpenParlData.ch: open data from Swiss parliaments. API: https://api.openparldata.ch/v1 · documents: https://files.openparldata.ch</p>
+<p>[2] Swiss AI Initiative. <i>Apertus: a fully open, multilingual Swiss LLM.</i> https://huggingface.co/swiss-ai</p>
+
+</body>
+</html>

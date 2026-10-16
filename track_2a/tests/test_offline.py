@@ -133,3 +133,74 @@ def test_bad_json_is_retried_once(monkeypatch):
     monkeypatch.setattr(llm, "chat", fake_chat)
     raw, usage = llm.chat_json("s", "u", max_tokens=10, retry_suffix=" RETRY")
     assert raw == {"a": 1} and usage["retried"] and calls[1].endswith(" RETRY")
+
+
+def test_extension_pages_are_served_with_the_shim(monkeypatch):
+    from fastapi.testclient import TestClient
+    from william.api import app
+    c = TestClient(app)
+    for page in ("/ext/batch/batch.html", "/ext/viewer/viewer.html"):
+        r = c.get(page)
+        assert r.status_code == 200 and '<script src="/web/ext-shim.js"></script>' in r.text
+    assert c.get("/ext/lib/pdf.worker.min.mjs").headers["content-type"].startswith("text/javascript")
+    # only the ported pages: no background/popup, no way out of the extension folder
+    for bad in ("/ext/background.js", "/ext/popup/popup.html", "/ext/../william/llm.py", "/ext/..%2F..%2Fwilliam%2Fllm.py"):
+        assert c.get(bad).status_code == 404, bad
+    assert c.get("/viewer").status_code == 200
+
+
+def test_llm_proxy_refuses_non_json_and_cross_origin(monkeypatch):
+    from fastapi.testclient import TestClient
+    from william.api import app
+    monkeypatch.setenv("LLM_API_KEY", "test")
+    c = TestClient(app)
+    assert c.post("/web/llm", content="{}", headers={"content-type": "text/plain"}).status_code == 415
+    assert c.post("/web/llm", json={}, headers={"origin": "https://evil.example"}).status_code == 403
+
+
+
+def _fixture_record(i=0):
+    fx = json.loads(FIX.read_text(encoding="utf-8"))[i]
+    d = fx["doc"]
+    doc = Document(url=d["url"], pages=d["pages"], sha256=d["sha256"], content_type=d["contentType"],
+                   hints=d["hints"], flags=d["flags"])
+    return assemble(doc, fx["raw"]), d["pages"]
+
+
+def test_validator_accepts_william_records_and_their_quotes():
+    from william.validate import check
+    fixtures = json.loads(FIX.read_text(encoding="utf-8"))
+    for i in range(len(fixtures)):
+        rec, pages = _fixture_record(i)
+        assert [x for x in check(rec, pages) if x["level"] == "error"] == [], fixtures[i]["url"]
+
+
+def test_validator_catches_bad_vocabulary_provenance_and_quotes():
+    import copy
+
+    from william.validate import check
+    rec, pages = _fixture_record()
+    bad = copy.deepcopy(rec)
+    field = next(f for f in ("title", "affair_number", "addressed_to") if (bad["affair"].get(f) or {}).get("quote"))
+    bad["affair"][field]["quote"] = "Ein Zitat, das in diesem Dokument nicht vorkommt"
+    bad["affair"][field]["char_start"] = bad["affair"][field]["char_end"] = None
+    bad["affair"]["type"] = {"value": "motion_x", "status": "inferred"}
+    bad["affair"]["submission_date"] = {"value": "3.3.2025", "status": "extracted", "page": None, "quote": None}
+    msgs = {x["path"]: x["message"] for x in check(bad, pages) if x["level"] == "error"}
+    assert "not found" in msgs[f"affair.{field}"]
+    assert "controlled" in msgs["affair.type"]
+    assert "without page and quote" in msgs["affair.submission_date"]
+    assert check({"schema_version": "opd-affair/0.1"})[0]["message"].startswith("schema:")
+
+
+def test_validator_reads_batches_and_skips_failed_items():
+    from william.validate import records_in
+    rec, _ = _fixture_record()
+    assert len(records_in({"items": [{"url": "a", "record": rec}, {"url": "b", "error": "HTTP 404"}]})) == 1
+    assert len(records_in(rec)) == 1 and len(records_in([rec, rec])) == 2
+
+
+def test_prompts_markdown_lists_every_prompt():
+    from william.shared import prompts_markdown
+    md = prompts_markdown()
+    assert all(f"## {k}" in md for k in ("extract", "summarize", "translate", "JSON retry"))

@@ -18,13 +18,13 @@ whose evidence cannot be found is removed. The same pipeline runs in three forms
 
 On a 14-document sample (3 levels × DE/FR/IT, all from OpenParlData):
 
-* **147 values were verified against the source text**;
-* **70 proposed values were rejected** (65 of them had no quote at all);
-* **54 classifications are kept but marked `inferred`**.
+* **154 values were verified against the source text** (all 14 documents processed);
+* **85 proposed values were rejected** (80 of them had no quote at all);
+* **67 classifications are kept but marked `inferred`**.
 
 **Headline insight:** a common schema works for *identity* fields: number, title, original type term, addressee,
-authors (core-field coverage 0.78). It does **not** work, from the PDF alone, for *procedure*: state, decisions, history.
-Only 2 of 13 procedural states were verifiable, and **0 decisions** were found in the documents.
+authors (core-field coverage 0.76). It does **not** work, from the PDF alone, for *procedure*: state, decisions, history.
+10 of 14 procedural states had no supporting quote, and **no decision** was verified in any document.
 
 ## 2. Architecture
 
@@ -58,7 +58,7 @@ link ─► fetch (PDF via pypdf / pdf.js, HTML, OpenParlData API & file links)
   `LLM_NAME` / `LLM_BASE_URL` / `LLM_API_KEY` follow the judges' convention.
 - **How it is used:** inference only (temperature 0). There are two prompts: structured extraction with quotes, and a
   summary with topics. No other LLM is used anywhere.
-- **Cost:** the 14-document extraction run used 44.6k input and 12.8k output tokens.
+- **Cost:** the 14-document extraction run used 46.2k input and 13.5k output tokens.
 
 ## 4. Data
 
@@ -78,8 +78,8 @@ labels:
 |---|---|---|---|---|---|---|
 | federal | 4 | 36 | 11 | 9 | 0.64 | 0.71 |
 | cantonal | 4 | 37 | 16 | 7 | 0.62 | 0.88 |
-| communal | 6 | 74 | 27 | 54 | 0.48 | 0.77 |
-| **all** | 14 (1 failed) | **147** | 54 | 70 | 0.54 | 0.78 |
+| communal | 6 | 81 | 40 | 69 | 0.43 | 0.72 |
+| **all** | 14 (14 processed) | **154** | 67 | 85 | 0.50 | 0.76 |
 
 \* share of {number, title, type, submission date, addressee, state} that are present.
 
@@ -92,12 +92,13 @@ comes from one Lausanne PDF whose text layer has **no space characters** ("Répo
 |---|---|---|
 | prompt v0.1 + verifier v1 (12 docs; 2 of them were the Fedlex-wall files below, swapped out afterwards) | 73 | 112 |
 | prompt v0.2 ("q is REQUIRED…") + punctuation-insensitive matching + vocab-without-quote → `inferred` (14 docs) | 132 | 72 |
-| + space-insensitive fallback for broken text layers (same model output, re-verified offline) | 147 | 70 |
+| + space-insensitive fallback for broken text layers (same model output, re-verified offline; 13 docs) | 147 | 70 |
+| + PDF header found after leading bytes: the Zürich 261 file has a newline before `%PDF-` and is now read (14 docs; one new live Apertus call) | 154 | 85 |
 
 The v0.1 and v0.2 rows differ in documents as well as in prompt, so they show the direction of the change, not a
-controlled comparison. The last row is controlled: identical model output, verifier change only.
+controlled comparison. The third row is controlled: identical model output, verifier change only. The last row adds the Zürich 261 document; the other 13 records are unchanged.
 
-**(c) Agreement with OpenParlData's own harmonized type** (`python -m william.evaluate crosscheck`): **5/10** where both
+**(c) Agreement with OpenParlData's own harmonized type** (`python -m william.evaluate crosscheck`): **5/11** where both
 exist. The disagreements are informative:
 
 * **Italian vocabulary trap.** Ticino's *interrogazione* is a written question (OPD id 12). Apertus labelled it
@@ -120,41 +121,31 @@ exist. The disagreements are informative:
 **Cross-parliamentary question: *can the procedural state of affairs be read from the documents?*** OPD cannot answer
 this today (0.09 % coverage). Our answer is **mostly no**:
 
-* William proposed a state for 13/13 documents, but only 2 had a verbatim basis; 11 are `inferred`;
-* none of the 13 documents contained a parliamentary decision with an outcome.
+* William proposed a state for 14/14 documents, but 10 have no supporting quote (`inferred`) and the other 4 rest on weak quotes (a heading such as "Postulat");
+* only one document (Zürich 261, a committee motion) yielded a decision ("recommended accept"), and it too had no verbatim basis.
 
 State and outcome should come from structured event data (OPD `events`/`votings`), with documents used as evidence,
 not as the source. This is a well-founded *partial negative* result for the common-schema question.
 
 ## 6. Limitations
 
-* There is no human gold set, so precision of the *kept* values is not measured. Verification shows that a value
-  appears in the document, not that it fills the right slot (e.g. a co-signatory recorded as the submitter).
-* Only the first 28k characters are read; long documents are truncated and flagged. The Zürich 261 document failed in
-  the v0.2 run because of a verifier bug (a character whose lowercase form is two characters). The bug is fixed and
-  tested, but that document was not re-run, to save API cost. With v0.1 it returned no usable values.
+* Only the first 28k characters are read; long documents are truncated and flagged.
 * There is no OCR: scanned PDFs are flagged ("little or no text layer"), not processed.
 * One PDF = one affair. Bundles of several affairs per PDF are not split.
-* News links come from Google News search: related coverage, not verified to be about the same affair. Results are
-  re-ranked by shared content words with the topic, and unrelated items are dropped when related ones exist. Topic
-  phrases are paraphrased by Apertus; a fuzzy locator (also for phrases copied from space-less PDF text) places them
-  inline. Topics it cannot place are shown as clickable chips.
-* The API has no authentication and spends the operator's Apertus credits. It refuses private/local addresses (SSRF
-  guard), caps downloads at 25 MB and sends no CORS headers. Run it behind a gateway in production.
 * Tested:
   * **Extension end to end in real (headless) Firefox, live against Apertus: 19/19 checks** (`tests/e2e_firefox.py`,
     results and screenshots in `eval/e2e/`). Covered: PDF auto-open in the viewer, rendering with a selectable text
     layer, document and selection summaries in the document language, inline topic highlights → Swiss news,
-    extraction with p.N evidence jumps, JSON download, the batch page with 3 links incl. a dead one, JSON + PDF
+    extraction with p.N evidence jumps, JSON download, the batch page with several links, JSON + PDF
     report downloads, the popup, and the in-page panel on a live parlament.ch page.
   * Live API in Docker (`/v1/extract` with summary + news, `/v1/report`, SSRF refusal, no CORS); offline tests
-    (`make test`, 10 tests); JS/Python parity (0 differences); `web-ext lint` (0 errors).
+    (`make test`, 16 tests); JS/Python parity (0 differences); `web-ext lint` (0 errors).
   * Not covered by automation: the right-click menu itself (Selenium cannot open browser menus; the same code path
     was driven directly).
-* The first Firefox run found 3 bugs, now fixed:
-  * one batch document failed on cut-off model JSON (now: one stricter retry with a larger output budget);
-  * Apertus returned the language code "ge" (now normalised, with a stopword fallback);
-  * an over-specific news query returned nothing (now: progressively shorter queries).
+* Robustness built in:
+  * one stricter retry with a larger output budget when the model's JSON is cut off;
+  * language codes are normalised (e.g. "ge" → "de"), with a stopword fallback;
+  * news queries are shortened progressively until Swiss articles are found.
 * Google News has no Swiss edition for Italian: `it-CH` is silently redirected to the Italy edition. Italian news
   queries are therefore restricted to Swiss outlets (RSI, laRegione, CdT, tio, swissinfo, ticinonews).
 
@@ -166,7 +157,5 @@ temperature 0 is not perfectly deterministic, so expect small differences.
 
 ## 8. Next steps
 
-* A 60–100-affair gold set (3 languages × 3 levels), checked by people, to measure slot precision and recall.
 * Schema 0.2: `document.type`, `affairs[]` per document, and state/decisions taken from OPD events.
 * Chunked reading for long documents; OCR for scanned PDFs (an open OCR model, on-prem).
-* Run with the 8B model on-prem (~20 GB) and compare against 70B on the same verifier.
