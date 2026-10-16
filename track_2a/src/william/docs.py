@@ -11,7 +11,10 @@ from __future__ import annotations
 
 import hashlib
 import io
+import ipaddress
+import os
 import re
+import socket
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from urllib.parse import urlparse
@@ -98,12 +101,44 @@ def pdf_pages(data: bytes) -> list[str]:
     return [(pg.extract_text() or "") for pg in reader.pages]
 
 
+MAX_BYTES = int(os.environ.get("WILLIAM_MAX_BYTES", 25 * 1024 * 1024))
+
+
+def _check_host(url: str) -> None:
+    """Refuse non-http(s) URLs and hosts that resolve to private/loopback/link-local addresses (SSRF guard).
+    Set WILLIAM_ALLOW_PRIVATE=1 to allow them (e.g. an intranet document server)."""
+    u = urlparse(url)
+    if u.scheme not in ("http", "https") or not u.hostname:
+        raise ValueError(f"only http(s) links are supported: {url}")
+    if os.environ.get("WILLIAM_ALLOW_PRIVATE") == "1":
+        return
+    try:
+        infos = socket.getaddrinfo(u.hostname, None)
+    except socket.gaierror as e:
+        raise ValueError(f"cannot resolve host {u.hostname}") from e
+    for info in infos:
+        ip = ipaddress.ip_address(info[4][0])
+        if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved or ip.is_multicast:
+            raise ValueError(f"refusing to fetch {u.hostname}: private or local address")
+
+
 def _get(url: str, attempts: int = 3) -> httpx.Response:
     for i in range(attempts):
         try:
-            r = httpx.get(url, headers=UA, timeout=60, follow_redirects=True)
-            r.raise_for_status()
-            return r
+            _check_host(url)
+            with httpx.Client(headers=UA, timeout=60, follow_redirects=True,
+                              event_hooks={"request": [lambda req: _check_host(str(req.url))]}) as c:
+                with c.stream("GET", url) as r:
+                    r.raise_for_status()
+                    if int(r.headers.get("content-length") or 0) > MAX_BYTES:
+                        raise ValueError(f"file larger than {MAX_BYTES // 1048576} MB")
+                    buf = bytearray()
+                    for chunk in r.iter_bytes():
+                        buf += chunk
+                        if len(buf) > MAX_BYTES:
+                            raise ValueError(f"file larger than {MAX_BYTES // 1048576} MB")
+                    r._content = bytes(buf)
+                    return r
         except (httpx.TimeoutException, httpx.TransportError):
             if i == attempts - 1:
                 raise

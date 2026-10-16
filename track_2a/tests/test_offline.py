@@ -87,3 +87,29 @@ def _fields(o):
     elif isinstance(o, list):
         for v in o:
             yield from _fields(v)
+
+
+def test_pdf_report_builds_offline():
+    from io import BytesIO
+
+    from pypdf import PdfReader
+
+    from william.report import build
+    fixtures = json.loads(FIX.read_text(encoding="utf-8"))[:3]
+    items = [{"url": fx["url"], "record": {**fx["expected"], "extractor": {"raw_model_output": {}}},
+              "summary": {"summary": "Résumé – «test» “quotes” …", "key_points": ["ä ö ü"],
+                          "topics": [{"phrase": "x", "articles": [{"title": "t", "source": "s", "url": "https://x.ch"}]}]}}
+             for fx in fixtures] + [{"url": "https://bad", "error": "ConnectError"}]
+    pdf = build(items)
+    assert pdf[:5] == b"%PDF-"
+    assert len(PdfReader(BytesIO(pdf)).pages) >= 4
+
+
+def test_ssrf_guard_blocks_local_and_non_http():
+    import pytest
+
+    from william.docs import _check_host
+    for bad in ("http://127.0.0.1:8000/health", "http://localhost/x.pdf", "http://169.254.169.254/latest",
+                "http://10.0.0.5/a.pdf", "file:///etc/passwd", "ftp://example.org/a.pdf"):
+        with pytest.raises(ValueError):
+            _check_host(bad)

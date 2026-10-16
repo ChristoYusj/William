@@ -1,6 +1,8 @@
 """Summary in the document's language + topics linked to Swiss news."""
 from __future__ import annotations
 
+import re
+import unicodedata
 import xml.etree.ElementTree as ET
 from urllib.parse import quote_plus
 
@@ -24,13 +26,45 @@ def summarize(text: str, *, model: str | None = None, with_news: bool = True) ->
         if not isinstance(t, dict) or not t.get("phrase"):
             continue
         phrase = str(t["phrase"])
-        topic = {"phrase": phrase, "query": str(t.get("query") or phrase),
-                 "in_summary": phrase.lower() in summary.lower()}
+        span = locate_phrase(summary, phrase)
+        topic = {"phrase": phrase, "query": str(t.get("query") or phrase), "span": span, "in_summary": span is not None}
         if with_news:
             topic["articles"] = news(topic["query"], lang)
         topics.append(topic)
     return {"language": lang, "summary": summary, "key_points": data.get("key_points") or [],
             "topics": topics, "truncated": truncated, "usage": usage}
+
+
+def _stem(w: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", w) if not unicodedata.combining(c)).lower()[:5]
+
+
+_WORD = re.compile(r"[^\W_]+")
+
+
+def locate_phrase(summary: str, phrase: str) -> list[int] | None:
+    """Same algorithm as core.js locatePhrase: exact match, else shortest window covering most content-word stems."""
+    k = summary.lower().find(phrase.lower())
+    if k >= 0 and phrase:
+        return [k, k + len(phrase)]
+    want = list(dict.fromkeys(_stem(w) for w in _WORD.findall(phrase) if len(w) >= 4))
+    if not want:
+        return None
+    toks = [(m.start(), m.end(), _stem(m.group())) for m in _WORD.finditer(summary)]
+    need = max(2, -(-len(want) // 2)) if len(want) >= 2 else 1
+    best = None
+    for i in range(len(toks)):
+        if toks[i][2] not in want:
+            continue
+        seen = set()
+        for j in range(i, min(len(toks), i + len(want) + 4)):
+            if toks[j][2] in want:
+                seen.add(toks[j][2])
+                if len(seen) >= need:
+                    cand = (len(seen), -(j - i), [toks[i][0], toks[j][1]])
+                    if best is None or cand[:2] > best[:2]:
+                        best = cand
+    return best[2] if best else None
 
 
 def summarize_pages(pages: list[str], **kw) -> dict:

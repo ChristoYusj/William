@@ -41,20 +41,20 @@ class Report(FPDF):
         self.set_text_color(120)
         self.cell(0, 6, f"{self.page_no()}", align="C")
 
-    def h(self, text, size=13):
+    def heading(self, text, size=13):
         self.set_font("Helvetica", "B", size)
-        self.multi_cell(0, 6, _t(text))
+        self.multi_cell(0, 6, _t(text), new_x="LMARGIN", new_y="NEXT")
         self.ln(1)
 
-    def p(self, text, size=9.5, style=""):
+    def para(self, text, size=9.5, style=""):
         self.set_font("Helvetica", style, size)
-        self.multi_cell(0, 4.8, _t(text))
+        self.multi_cell(0, 4.8, _t(text), new_x="LMARGIN", new_y="NEXT")
 
     def kv(self, k, v):
         self.set_font("Helvetica", "B", 9)
         self.cell(38, 5, _t(k))
         self.set_font("Helvetica", "", 9)
-        self.multi_cell(0, 5, _t(v))
+        self.multi_cell(0, 5, _t(v), new_x="LMARGIN", new_y="NEXT")
 
 
 def build(items: list[dict], *, include_json: bool = True) -> bytes:
@@ -63,8 +63,8 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
     pdf.set_auto_page_break(True, 15)
     pdf.set_margins(15, 12, 15)
     pdf.add_page()
-    pdf.h("Parliamentary affairs - summary report", 16)
-    pdf.p(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
+    pdf.heading("Parliamentary affairs - summary report", 16)
+    pdf.para(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
           "[n] = normalised from a verified quote (date, vocabulary); [meta] = from OpenParlData metadata. "
           "Values whose quote could not be found in the document were removed.", 8.5, "I")
     pdf.ln(3)
@@ -72,20 +72,20 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
     for n, it in enumerate(items, 1):
         if n > 1:
             pdf.add_page()
-        pdf.h(f"{n}. {it.get('url')}", 10)
+        pdf.heading(f"{n}. {it.get('url')}", 10)
         if it.get("error"):
-            pdf.p(f"Error: {it['error']}", 9.5, "B")
+            pdf.para(f"Error: {it['error']}", 9.5, "B")
             continue
         rec = it.get("record") or {}
         a = rec.get("affair") or {}
         b = rec.get("body") or {}
         title = (a.get("title") or {}).get("value") or "(no verified title)"
-        pdf.h(title, 12)
+        pdf.heading(title, 12)
         s = it.get("summary") or {}
         if s.get("summary"):
-            pdf.p(s["summary"])
+            pdf.para(s["summary"])
             for kp in s.get("key_points") or []:
-                pdf.p(f"  - {kp}", 9)
+                pdf.para(f"  - {kp}", 9)
             pdf.ln(2)
         t = a.get("type")
         tlabel = types.get(t["value"], {}).get("label", {}).get("en") if t else None
@@ -112,24 +112,24 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
             pdf.kv("Related", f"{_v(r.get('reference'))} ({(r.get('relation') or {}).get('value', '?')})")
         if s.get("topics"):
             pdf.ln(1)
-            pdf.h("In the news", 10)
+            pdf.heading("In the news", 10)
             for tp in s["topics"]:
                 for art in (tp.get("articles") or [])[:2]:
                     pdf.set_font("Helvetica", "U", 8.5)
                     pdf.set_text_color(20, 70, 160)
                     pdf.multi_cell(0, 4.5, _t(f"[{tp['phrase']}] {art['title']} - {art.get('source', '')}"),
-                                   link=art.get("url") or "")
+                                   link=art.get("url") or "", new_x="LMARGIN", new_y="NEXT")
                     pdf.set_text_color(0)
         q = rec.get("quality") or {}
         pdf.ln(1)
-        pdf.p(f"Quality: verified share {q.get('verified_share')}, counts {q.get('value_counts')}", 8.5, "I")
+        pdf.para(f"Quality: verified share {q.get('verified_share')}, counts {q.get('value_counts')}", 8.5, "I")
         for fl in q.get("flags") or []:
-            pdf.p(f"! {fl}", 8.5, "I")
+            pdf.para(f"! {fl}", 8.5, "I")
         if include_json and rec:
             pdf.ln(2)
-            pdf.h("JSON (opd-affair/0.1)", 9)
+            pdf.heading("JSON (opd-affair/0.1)", 9)
             rec = {**rec, "extractor": {k: v for k, v in rec.get("extractor", {}).items() if k != "raw_model_output"}}
             slim = json.dumps(rec, ensure_ascii=False, indent=1)
             pdf.set_font("Courier", "", 6.5)
-            pdf.multi_cell(0, 3, _t(slim))
+            pdf.multi_cell(0, 3, _t(slim), new_x="LMARGIN", new_y="NEXT")
     return bytes(pdf.output())

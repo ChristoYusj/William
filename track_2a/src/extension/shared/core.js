@@ -283,3 +283,43 @@ export function assemble(doc, raw, { usage = {}, truncated = false, model, vocab
   };
 }
 
+
+// Where in the summary does a topic phrase sit? Apertus often paraphrases the phrase, so after an exact match
+// we look for the shortest run of summary words that covers most of the phrase's content words (5-letter stems).
+const stem = (w) => w.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().slice(0, 5);
+export function locatePhrase(summary, phrase) {
+  const k = summary.toLowerCase().indexOf(String(phrase).toLowerCase());
+  if (k >= 0 && phrase) return [k, k + phrase.length];
+  const want = [...new Set((String(phrase).match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 4).map(stem))];
+  if (!want.length) return null;
+  const toks = [...summary.matchAll(/[\p{L}\p{N}]+/gu)].map((m) => ({ s: m.index, e: m.index + m[0].length, st: stem(m[0]) }));
+  const need = want.length >= 2 ? Math.max(2, Math.ceil(want.length / 2)) : 1;
+  let best = null;
+  for (let i = 0; i < toks.length; i++) {
+    if (!want.includes(toks[i].st)) continue;
+    const seen = new Set();
+    for (let j = i; j < Math.min(toks.length, i + want.length + 4); j++) {
+      if (want.includes(toks[j].st)) seen.add(toks[j].st);
+      if (seen.size >= need && want.includes(toks[j].st)) {
+        const cand = { n: seen.size, len: j - i, span: [toks[i].s, toks[j].e] };
+        if (!best || cand.n > best.n || (cand.n === best.n && cand.len < best.len)) best = cand;
+      }
+    }
+  }
+  return best ? best.span : null;
+}
+
+// Summary text split into plain / highlighted segments (non-overlapping, in order).
+export function highlightSegments(summary, topics) {
+  const spans = topics.map((t, i) => (t.span ? { s: t.span[0], e: t.span[1], i } : null)).filter(Boolean).sort((a, b) => a.s - b.s);
+  const segs = [];
+  let pos = 0;
+  for (const sp of spans) {
+    if (sp.s < pos) continue; // overlapping: keep the first
+    if (sp.s > pos) segs.push({ text: summary.slice(pos, sp.s) });
+    segs.push({ text: summary.slice(sp.s, sp.e), topic: sp.i });
+    pos = sp.e;
+  }
+  segs.push({ text: summary.slice(pos) });
+  return segs;
+}

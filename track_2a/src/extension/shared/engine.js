@@ -1,7 +1,7 @@
 // William engine — the same pipeline as src/william (Python), for the Firefox extension.
 // Prompts and vocabularies come from shared/prompts.json and shared/vocab.json (single source).
 import * as pdfjsLib from "../lib/pdf.min.mjs";
-import { parseJson, buildText, assemble, SCHEMA_VERSION } from "./core.js";
+import { parseJson, buildText, assemble, SCHEMA_VERSION, locatePhrase, highlightSegments } from "./core.js";
 export { parseJson, buildText, assemble, SCHEMA_VERSION };
 export { PageIndex, normalise, dateSupported } from "./core.js";
 
@@ -202,7 +202,8 @@ export async function summarize(text, { withNews = true } = {}) {
   for (const t of d.topics || []) {
     if (!t || !t.phrase) continue;
     const topic = { phrase: String(t.phrase), query: String(t.query || t.phrase) };
-    topic.in_summary = summary.toLowerCase().includes(topic.phrase.toLowerCase());
+    topic.span = locatePhrase(summary, topic.phrase);
+    topic.in_summary = !!topic.span;
     if (withNews) topic.articles = await news(topic.query, lang);
     topics.push(topic);
   }
@@ -236,15 +237,9 @@ export function esc(s) {
 
 // Summary HTML with topic phrases turned into news links (phrases not found verbatim become chips).
 export function summaryHtml(res) {
-  let html = esc(res.summary);
-  const chips = [];
-  res.topics.forEach((t, i) => {
-    const e = esc(t.phrase);
-    const k = html.toLowerCase().indexOf(e.toLowerCase());
-    const tag = `<a class="w-topic" data-topic="${i}" href="#" title="Swiss news: ${esc(t.query)}">`;
-    if (k >= 0) html = html.slice(0, k) + tag + html.slice(k, k + e.length) + "</a>" + html.slice(k + e.length);
-    else chips.push(`${tag}${e}</a>`);
-  });
+  const html = highlightSegments(res.summary, res.topics).map((sg) => sg.topic == null ? esc(sg.text)
+    : `<a class="w-topic" data-topic="${sg.topic}" href="#" title="Swiss news: ${esc(res.topics[sg.topic].query)}">${esc(sg.text)}</a>`).join("");
+  const chips = res.topics.map((t, i) => (t.span ? "" : `<a class="w-topic" data-topic="${i}" href="#" title="Swiss news: ${esc(t.query)}">${esc(t.phrase)}</a>`)).filter(Boolean);
   const kp = (res.key_points || []).map((p) => `<li>${esc(p)}</li>`).join("");
   return `<p class="w-summary">${html}</p>${kp ? `<ul class="w-kp">${kp}</ul>` : ""}` +
     (chips.length ? `<div class="w-chips">${chips.join(" ")}</div>` : "");

@@ -15,15 +15,16 @@
   }
 
   function render(res, selection) {
-    let html = esc(res.summary);
-    const chips = [];
-    res.topics.forEach((t, i) => {
-      const e = esc(t.phrase);
-      const k = html.toLowerCase().indexOf(e.toLowerCase());
-      const tag = `<a class="wp-topic" data-i="${i}" href="#">`;
-      if (k >= 0) html = html.slice(0, k) + tag + html.slice(k, k + e.length) + "</a>" + html.slice(k + e.length);
-      else chips.push(tag + e + "</a>");
-    });
+    // spans are computed by the engine (core.js locatePhrase); rebuild the text around them
+    const spans = res.topics.map((t, i) => (t.span ? [t.span[0], t.span[1], i] : null)).filter(Boolean).sort((x, y) => x[0] - y[0]);
+    let html = "", pos = 0;
+    for (const [s0, e0, i] of spans) {
+      if (s0 < pos) continue;
+      html += esc(res.summary.slice(pos, s0)) + `<a class="wp-topic" data-i="${i}" href="#">${esc(res.summary.slice(s0, e0))}</a>`;
+      pos = e0;
+    }
+    html += esc(res.summary.slice(pos));
+    const chips = res.topics.map((t, i) => (t.span ? "" : `<a class="wp-topic" data-i="${i}" href="#">${esc(t.phrase)}</a>`)).filter(Boolean);
     const kp = (res.key_points || []).map((x) => `<li>${esc(x)}</li>`).join("");
     const p = panel();
     p.innerHTML = `<header><b>William</b><span>${selection ? "selection" : "page"} · ${esc(res.language)}</span><button class="wp-x" title="Close">×</button></header>

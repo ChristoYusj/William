@@ -11,7 +11,6 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor
 
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, Response
 from pydantic import BaseModel, Field
 
@@ -22,7 +21,7 @@ from .shared import SCHEMA_VERSION, vocab
 from .summarize import summarize, summarize_pages
 
 app = FastAPI(title="William — OpenParlData affair extractor (Apertus)", version="0.1.0")
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+# No CORS: the API has no auth and spends the operator's Apertus credits, so browsers on other sites must not call it.
 
 MAX_URLS = 20
 

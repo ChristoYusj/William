@@ -127,8 +127,13 @@ not as the source. This is a well-founded *partial negative* result for the comm
   tested, but that document was not re-run, to save API cost. With v0.1 it returned no usable values.
 * There is no OCR: scanned PDFs are flagged ("little or no text layer"), not processed.
 * One PDF = one affair. Bundles of several affairs per PDF are not split.
-* News links come from Google News search. They are related coverage, not verified to be about the same affair.
-* Tested: offline tests (`make test`, 6 tests), JS/Python parity (0 differences), Docker build, `web-ext lint`
+* News links come from Google News search. They are related coverage, not verified to be about the same affair; in the
+  live test some results were off-topic. Topic phrases are paraphrased by Apertus; a fuzzy locator places 4 of 6 inline
+  (the rest are shown as clickable chips).
+* The API has no authentication and spends the operator's Apertus credits. It refuses private/local addresses (SSRF
+  guard), caps downloads at 25 MB and sends no CORS headers. Run it behind a gateway in production.
+* Tested: live API end to end in Docker (`/v1/extract` with summary + news, `/v1/report` PDF, error handling for bad and
+  local links), offline tests (`make test`, 8 tests), JS/Python parity (0 differences), Docker build, `web-ext lint`
   (0 errors), and in-browser PDF generation. Not tested: a full Apertus-backed run inside Firefox. The extension was
   loaded in Firefox, but no API key was entered in that profile.
 
