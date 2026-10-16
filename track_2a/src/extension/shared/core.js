@@ -290,6 +290,16 @@ const stem = (w) => w.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().slic
 export function locatePhrase(summary, phrase) {
   const k = summary.toLowerCase().indexOf(String(phrase).toLowerCase());
   if (k >= 0 && phrase) return [k, k + phrase.length];
+  // phrase copied from a space-less PDF text layer ("rabaissurlesabonnements"): compare without spaces
+  if (/[\p{L}]{20,}/u.test(String(phrase))) {
+    const keep = [...summary].map((c, i) => (/[\p{L}\p{N}]/u.test(c) ? i : -1)).filter((i) => i >= 0);
+    const flat = keep.map((i) => summary[i]).join("").toLowerCase();
+    const q = (String(phrase).match(/[\p{L}\p{N}]+/gu) || []).join("").toLowerCase();
+    for (let n = q.length; n >= 12; n -= 4) {
+      const k2 = flat.indexOf(q.slice(0, n));
+      if (k2 >= 0) return [keep[k2], keep[k2 + n - 1] + 1];
+    }
+  }
   const want = [...new Set((String(phrase).match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 4).map(stem))];
   if (!want.length) return null;
   const toks = [...summary.matchAll(/[\p{L}\p{N}]+/gu)].map((m) => ({ s: m.index, e: m.index + m[0].length, st: stem(m[0]) }));
@@ -340,4 +350,14 @@ export function normLang(code, text) {
     if (k > n) { n = k; best = l; }
   }
   return best;
+}
+
+// Rank news items by how many of the query's content words (5-letter stems) their title shares; drop unrelated
+// items when at least two related ones exist. Google's search is broad; this keeps the list on-topic.
+export function rankNews(items, query, limit = 5) {
+  const want = new Set((String(query).match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 4).map(stem));
+  const scored = items.map((it, i) => ({ it, i, n: new Set((it.title.match(/[\p{L}\p{N}]+/gu) || []).map(stem).filter((t) => want.has(t))).size }));
+  scored.sort((a, b) => b.n - a.n || a.i - b.i);
+  const related = scored.filter((x) => x.n > 0);
+  return (related.length >= 2 ? related : scored).slice(0, limit).map((x) => x.it);
 }

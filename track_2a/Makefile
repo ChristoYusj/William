@@ -1,4 +1,4 @@
-.PHONY: run build test sample eval extension schema
+.PHONY: run build test sample eval extension schema report
 
 IMAGE ?= william
 PORT ?= 8000
@@ -33,3 +33,8 @@ schema: build
 # Zip the Firefox extension (load it via about:debugging -> This Firefox -> Load Temporary Add-on)
 extension:
 	cd src/extension && zip -r ../../william-firefox.zip . -x "*.DS_Store"
+
+# Team only (needs pandoc + xelatex locally): the submission PDF from technical_report.md
+report:
+	pandoc technical_report.md -o RedPandas_Report.pdf --pdf-engine=xelatex -H tools/report_header.tex \
+	  -V geometry:margin=1.8cm -V fontsize=10pt -V mainfont=Calibri -V monofont=Consolas -V colorlinks=true

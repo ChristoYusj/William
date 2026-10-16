@@ -7,7 +7,11 @@ const out = $("out"), status = $("status");
 let docPromise; // fetchDoc result (pages text + OPD hints)
 
 $("orig").href = file;
-$("docname").textContent = decodeURIComponent((file || "").split("/").pop().split("?")[0]).slice(0, 80);
+{
+  const last = decodeURIComponent((file || "").split("/").pop().split("?")[0]);
+  const opd = (file || "").match(/files\.openparldata\.ch\/doc\/([^/]+)\//);
+  $("docname").textContent = opd && /^[0-9a-f]{40,}$/i.test(last) ? `OpenParlData document · ${opd[1]} · ${last.slice(0, 8)}` : last.slice(0, 80);
+}
 document.title = "William — " + $("docname").textContent;
 
 function busy(msg) { status.textContent = msg; out.innerHTML = '<div class="spin"></div>'; }
@@ -82,7 +86,7 @@ $("bExt").onclick = async () => {
     out.querySelector("pre").textContent = JSON.stringify(rec, null, 1);
     out.querySelectorAll(".pg").forEach((a) => (a.onclick = () => goPage(+a.dataset.page)));
     out.querySelector("#dl").onclick = () => downloadBlob(new Blob([JSON.stringify(rec, null, 2)], { type: "application/json" }),
-      ($("docname").textContent.replace(/\.pdf$/i, "") || "affair") + ".opd-affair.json");
+      ($("docname").textContent.replace(/\.pdf$/i, "").replace(/[^\w.-]+/g, "_") || "affair") + ".opd-affair.json");
   } catch (e) { fail(e); }
 };
 

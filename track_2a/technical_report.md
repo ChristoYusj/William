@@ -10,12 +10,14 @@
 William converts parliamentary documents from federal, cantonal and communal parliaments into one common, versioned
 structure (`opd-affair/0.1`) with Apertus 1.5 70B. Every value is tied to a page and a verbatim text span, and a value
 whose evidence cannot be found is removed. The same pipeline runs in three forms:
+
 * a **Firefox extension**: summarises a PDF or a selection in the document's language and links its topics to
   Swiss news;
 * an in-extension **batch page**: many links → JSON + PDF report;
 * an **HTTP API** for production use.
 
 On a 14-document sample (3 levels × DE/FR/IT, all from OpenParlData):
+
 * **147 values were verified against the source text**;
 * **70 proposed values were rejected** (65 of them had no quote at all);
 * **54 classifications are kept but marked `inferred`**.
@@ -94,6 +96,7 @@ controlled comparison. The last row is controlled: identical model output, verif
 
 **(c) Agreement with OpenParlData's own harmonized type** (`python -m william.evaluate crosscheck`): **5/10** where both
 exist. The disagreements are informative:
+
 * **Italian vocabulary trap.** Ticino's *interrogazione* is a written question (OPD id 12). Apertus labelled it
   *interpellation*. A fixed term lookup on the verified original word now fixes this. That is +1, and the case is
   flagged in the record.
@@ -104,6 +107,7 @@ exist. The disagreements are informative:
   is harmonized by OPD as *question*.
 
 **Data-quality findings in OpenParlData itself.**
+
 * For at least two federal documents (e.g. doc 485241, "FF 2013 1073"), OPD's stored file and `text` are the Fedlex
   *"please enable JavaScript"* page, not the PDF. William detects this and flags *"source is listed as a PDF but the
   file is not a PDF"* instead of extracting from it.
@@ -112,6 +116,7 @@ exist. The disagreements are informative:
 
 **Cross-parliamentary question: *can the procedural state of affairs be read from the documents?*** OPD cannot answer
 this today (0.09 % coverage). Our answer is **mostly no**:
+
 * William proposed a state for 13/13 documents, but only 2 had a verbatim basis; 11 are `inferred`;
 * none of the 13 documents contained a parliamentary decision with an outcome.
 
@@ -127,9 +132,10 @@ not as the source. This is a well-founded *partial negative* result for the comm
   tested, but that document was not re-run, to save API cost. With v0.1 it returned no usable values.
 * There is no OCR: scanned PDFs are flagged ("little or no text layer"), not processed.
 * One PDF = one affair. Bundles of several affairs per PDF are not split.
-* News links come from Google News search. They are related coverage, not verified to be about the same affair; in the
-  live test some results were off-topic. Topic phrases are paraphrased by Apertus; a fuzzy locator places 4 of 6 inline
-  (the rest are shown as clickable chips).
+* News links come from Google News search: related coverage, not verified to be about the same affair. Results are
+  re-ranked by shared content words with the topic, and unrelated items are dropped when related ones exist. Topic
+  phrases are paraphrased by Apertus; a fuzzy locator (also for phrases copied from space-less PDF text) places them
+  inline. Topics it cannot place are shown as clickable chips.
 * The API has no authentication and spends the operator's Apertus credits. It refuses private/local addresses (SSRF
   guard), caps downloads at 25 MB and sends no CORS headers. Run it behind a gateway in production.
 * Tested:
@@ -148,8 +154,6 @@ not as the source. This is a well-founded *partial negative* result for the comm
   * an over-specific news query returned nothing (now: progressively shorter queries).
 * Google News has no Swiss edition for Italian: `it-CH` is silently redirected to the Italy edition. Italian news
   queries are therefore restricted to Swiss outlets (RSI, laRegione, CdT, tio, swissinfo, ticinonews).
-* On PDFs whose text layer has no spaces, Apertus sometimes copies a topic phrase without spaces. Such a topic is
-  shown as a clickable chip instead of inline.
 
 ## 7. Reproducibility
 

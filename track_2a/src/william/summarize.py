@@ -56,6 +56,14 @@ def locate_phrase(summary: str, phrase: str) -> list[int] | None:
     k = summary.lower().find(phrase.lower())
     if k >= 0 and phrase:
         return [k, k + len(phrase)]
+    if re.search(r"[^\W\d_]{20,}", phrase):  # copied from a space-less PDF text layer
+        keep = [i for i, c in enumerate(summary) if c.isalnum()]
+        flat = "".join(summary[i] for i in keep).lower()
+        q = "".join(_WORD.findall(phrase)).lower()
+        for n in range(len(q), 11, -4):
+            k2 = flat.find(q[:n])
+            if k2 >= 0:
+                return [keep[k2], keep[k2 + n - 1] + 1]
     want = list(dict.fromkeys(_stem(w) for w in _WORD.findall(phrase) if len(w) >= 4))
     if not want:
         return None
@@ -122,6 +130,16 @@ def norm_lang(code, text: str) -> str:
     return max(STOP, key=lambda lang: sum(w in STOP[lang] for w in words))
 
 
+def rank_news(items: list[dict], query: str, limit: int = 5) -> list[dict]:
+    """Same as core.js rankNews: order by shared content-word stems with the query; drop unrelated ones
+    when at least two related items exist."""
+    want = {_stem(w) for w in _WORD.findall(query) if len(w) >= 4}
+    scored = [(len({_stem(t) for t in _WORD.findall(it["title"])} & want), i, it) for i, it in enumerate(items)]
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    related = [x for x in scored if x[0] > 0]
+    return [x[2] for x in (related if len(related) >= 2 else scored)[:limit]]
+
+
 def news(query: str, lang: str = "de", limit: int = 5) -> list[dict]:
     """Swiss news for a query (Google News RSS, CH edition; Italian restricted to Swiss outlets).
     Falls back to shorter queries when the model's query is too specific."""
@@ -141,15 +159,14 @@ def news(query: str, lang: str = "de", limit: int = 5) -> list[dict]:
         except Exception:
             continue
         items = []
-        for it in root.iter("item"):
+        for it in list(root.iter("item"))[:20]:
             title = (it.findtext("title") or "").strip()
             source = (it.findtext("source") or "").strip()
             if source and title.endswith(" - " + source):
                 title = title[: -len(source) - 3]
             items.append({"title": title, "url": (it.findtext("link") or "").strip(), "source": source,
                           "published": (it.findtext("pubDate") or "").strip(), "query": q})
-            if len(items) >= limit:
-                break
+        items = rank_news(items, query, limit)
         if items:
             return items
     return []
