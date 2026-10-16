@@ -1,0 +1,1607 @@
+{
+ "protocol": "AI check (Claude, single pass) of every value kept by William on the 14-doc sample (metadata values excluded). NOT a human gold set. verdict: correct = right value in the right field; wrong = wrong value or wrong field; unsure = not decidable from the document.",
+ "items": [
+  {
+   "id": 1,
+   "doc": "38803",
+   "field": "body.parliament",
+   "value": "Conseil des Etats",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "slot: Conseil des Etats is the author of the bill version, not the parliament handling this committee note"
+  },
+  {
+   "id": 2,
+   "doc": "38803",
+   "field": "affair.affair_number",
+   "value": "15.075 Loi sur les produits du tabac",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "value includes the bill title, not just the number"
+  },
+  {
+   "id": 3,
+   "doc": "38803",
+   "field": "affair.title",
+   "value": "Constitutionnalité de la version du projet de loi du Conseil des Etats en matière de restr",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 4,
+   "doc": "38803",
+   "field": "affair.type",
+   "value": "report",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 5,
+   "doc": "38803",
+   "field": "affair.type_original",
+   "value": "Rapport",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 6,
+   "doc": "38803",
+   "field": "affair.procedural_history[0].state",
+   "value": "in_committee",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 7,
+   "doc": "38803",
+   "field": "affair.procedural_history[0].description",
+   "value": "Séance de la CSSS-N du 5 novembre 2020",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 8,
+   "doc": "38803",
+   "field": "affair.state",
+   "value": "closed",
+   "status": "inferred",
+   "verdict": "unsure",
+   "note": "state 'closed' not checkable from the document"
+  },
+  {
+   "id": 9,
+   "doc": "316738",
+   "field": "body.parliament",
+   "value": "Staatspolitische Kommission des Ständerates",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "slot: a committee (SPK-S), not a parliament"
+  },
+  {
+   "id": 10,
+   "doc": "316738",
+   "field": "affair.affair_number",
+   "value": "23.4448",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 11,
+   "doc": "316738",
+   "field": "affair.title",
+   "value": "Kurzbericht des Staatssekretariats für Migration SEM zuhanden der Staatspolitischen Kommis",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 12,
+   "doc": "316738",
+   "field": "affair.type",
+   "value": "motion",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 13,
+   "doc": "316738",
+   "field": "affair.type_original",
+   "value": "Motion",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 14,
+   "doc": "316738",
+   "field": "affair.submission_date",
+   "value": "2024-09-19",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "date of the report, not of the affair's submission"
+  },
+  {
+   "id": 15,
+   "doc": "316738",
+   "field": "affair.actors[0].name",
+   "value": "Staatssekretariat für Migration SEM",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 16,
+   "doc": "316738",
+   "field": "affair.actors[0].role",
+   "value": "respondent",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 17,
+   "doc": "316738",
+   "field": "affair.actors[0].kind",
+   "value": "administration",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 18,
+   "doc": "316738",
+   "field": "affair.actors[1].name",
+   "value": "Staatspolitische Kommission des Ständerates",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 19,
+   "doc": "316738",
+   "field": "affair.actors[1].role",
+   "value": "addressee",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 20,
+   "doc": "316738",
+   "field": "affair.actors[1].kind",
+   "value": "committee",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 21,
+   "doc": "316738",
+   "field": "affair.addressed_to",
+   "value": "Staatspolitische Kommission des Ständerates",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 22,
+   "doc": "316738",
+   "field": "affair.requests[0]",
+   "value": "Zahlen der Schweiz und von Schengen-Staaten, die Binnengrenzkontrollen wieder eingeführt h",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 23,
+   "doc": "316738",
+   "field": "affair.requests[1]",
+   "value": "Welche Schengen-Staaten haben Binnengrenzkontrollen wieder eingeführt, in welchem Umfang, ",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 24,
+   "doc": "316738",
+   "field": "affair.requests[2]",
+   "value": "Wie wirkten sich die Wiedereinführungen der Binnengrenzkontrollen von Nachbarstaaten auf d",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 25,
+   "doc": "316738",
+   "field": "affair.requests[3]",
+   "value": "Wie hat die EU-Kommission auf die Wiedereinführung reagiert? Welche Massnahmen schlägt die",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 26,
+   "doc": "316738",
+   "field": "affair.requests[4]",
+   "value": "Was ist der Unterschied zwischen systematischen und risikobasierten Kontrollen? Ab wann ge",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 27,
+   "doc": "316738",
+   "field": "affair.requests[5]",
+   "value": "Welche Auswirkungen hätte die Einführung von Binnengrenzkontrollen auf irreguläre Grenzübe",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 28,
+   "doc": "316738",
+   "field": "affair.requests[6]",
+   "value": "Zahlen zur Schwarzarbeit: Der Bericht soll lediglich auf die vom SECO zur Verfügung gestel",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 29,
+   "doc": "316738",
+   "field": "affair.state",
+   "value": "answered",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 30,
+   "doc": "448120",
+   "field": "body.parliament",
+   "value": "Grand Conseil genevois",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 31,
+   "doc": "448120",
+   "field": "affair.affair_number",
+   "value": "R 687",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 32,
+   "doc": "448120",
+   "field": "affair.title",
+   "value": "Proposition de résolution du Grand Conseil genevois à l’Assemblée fédérale exerçant le dro",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 33,
+   "doc": "448120",
+   "field": "affair.type",
+   "value": "resolution",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 34,
+   "doc": "448120",
+   "field": "affair.type_original",
+   "value": "Proposition de résolution",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 35,
+   "doc": "448120",
+   "field": "affair.actors[0].name",
+   "value": "Eric Leyvraz",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 36,
+   "doc": "448120",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 37,
+   "doc": "448120",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 38,
+   "doc": "448120",
+   "field": "affair.actors[1].name",
+   "value": "Patrick Lussi",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 39,
+   "doc": "448120",
+   "field": "affair.actors[1].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 40,
+   "doc": "448120",
+   "field": "affair.actors[1].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 41,
+   "doc": "448120",
+   "field": "affair.addressed_to",
+   "value": "Assemblée fédérale",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 42,
+   "doc": "448120",
+   "field": "affair.requests[0]",
+   "value": "revoir la loi fédérale sur l’assurance maladie (LAMal) afin de soustraire les primes d’ass",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 43,
+   "doc": "448120",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 44,
+   "doc": "444907",
+   "field": "body.parliament",
+   "value": "Grand Conseil de la République et canton de Genève",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 45,
+   "doc": "444907",
+   "field": "affair.affair_number",
+   "value": "PL 9957",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 46,
+   "doc": "444907",
+   "field": "affair.title",
+   "value": "Projet de loi modifiant la loi sur les cimetières (K 1 65)",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 47,
+   "doc": "444907",
+   "field": "affair.type",
+   "value": "parliamentary_initiative",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 48,
+   "doc": "444907",
+   "field": "affair.type_original",
+   "value": "Projet de loi",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 49,
+   "doc": "444907",
+   "field": "affair.actors[0].name",
+   "value": "Olivier Jornot, Pierre Weiss, Christiane Favre, Beatrice de Candolle, Fabienne Gautier, Fr",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "7 people merged into one actor"
+  },
+  {
+   "id": 50,
+   "doc": "444907",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 51,
+   "doc": "444907",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 52,
+   "doc": "444907",
+   "field": "affair.addressed_to",
+   "value": "Grand Conseil de la République et canton de Genève",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 53,
+   "doc": "444907",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 54,
+   "doc": "109935",
+   "field": "body.parliament",
+   "value": "Gran Consiglio del Cantone Ticino",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 55,
+   "doc": "109935",
+   "field": "affair.affair_number",
+   "value": "126.19",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 56,
+   "doc": "109935",
+   "field": "affair.title",
+   "value": "Interpellazione sul seguito della mozione \"Non danneggiamo il clima con i soldi pubblici\" ",
+   "status": "normalised",
+   "verdict": "unsure",
+   "note": "title begins 'Interpellazione' while the header says interrogazione"
+  },
+  {
+   "id": 57,
+   "doc": "109935",
+   "field": "affair.type",
+   "value": "interpellation",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "type: header says INTERROGAZIONE (OPD: question), model said interpellation"
+  },
+  {
+   "id": 58,
+   "doc": "109935",
+   "field": "affair.type_original",
+   "value": "interpellazione",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "type_original 'interpellazione' contradicts its own quote 'TESTO DELL'INTERROGAZIONE'"
+  },
+  {
+   "id": 59,
+   "doc": "109935",
+   "field": "affair.submission_date",
+   "value": "2019-07-23",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 60,
+   "doc": "109935",
+   "field": "affair.actors[0].name",
+   "value": "Nicola Schoenenberger",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 61,
+   "doc": "109935",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 62,
+   "doc": "109935",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 63,
+   "doc": "109935",
+   "field": "affair.actors[1].name",
+   "value": "Ay - Bourgoin - Crivelli Barella - Durisch - Gardenghi - Ghisletta - Merlo - Noi - Stephan",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "10 co-signatories merged into one actor"
+  },
+  {
+   "id": 64,
+   "doc": "109935",
+   "field": "affair.actors[1].role",
+   "value": "co_signatory",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 65,
+   "doc": "109935",
+   "field": "affair.actors[1].kind",
+   "value": "parliamentary_group",
+   "status": "inferred",
+   "verdict": "wrong",
+   "note": "kind: co-signatories are persons, not a parliamentary group"
+  },
+  {
+   "id": 66,
+   "doc": "109935",
+   "field": "affair.addressed_to",
+   "value": "Consiglio di Stato",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 67,
+   "doc": "109935",
+   "field": "affair.requests[0]",
+   "value": "Valutare la sostenibilità sociale e ambientale degli investimenti del fondo Cassa pensione",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 68,
+   "doc": "109935",
+   "field": "affair.requests[1]",
+   "value": "Indicare o imporre parametri di natura sociale e ambientale ai gestori del patrimonio dell",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 69,
+   "doc": "109935",
+   "field": "affair.requests[2]",
+   "value": "Chiedere ai gestori della Cassa pensione di aumentare progressivamente gli investimenti so",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 70,
+   "doc": "109935",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 71,
+   "doc": "901098",
+   "field": "body.parliament",
+   "value": "Kantonsrat",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 72,
+   "doc": "901098",
+   "field": "affair.affair_number",
+   "value": "31/2026",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 73,
+   "doc": "901098",
+   "field": "affair.title",
+   "value": "Wahl Mitglied Obergericht (100%) für den Rest der Amtsdauer 2025-2031 für Roland Schmid",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 74,
+   "doc": "901098",
+   "field": "affair.type",
+   "value": "election",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 75,
+   "doc": "901098",
+   "field": "affair.type_original",
+   "value": "Geheime Wahl",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 76,
+   "doc": "901098",
+   "field": "affair.addressed_to",
+   "value": "Obergericht",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "addressed_to: Obergericht is the court the election is for, not the addressee"
+  },
+  {
+   "id": 77,
+   "doc": "901098",
+   "field": "affair.state",
+   "value": "decided",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "state 'decided' but the quote is a nomination proposal"
+  },
+  {
+   "id": 78,
+   "doc": "894215",
+   "field": "affair.affair_number",
+   "value": "2026.PRD.0014",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 79,
+   "doc": "894215",
+   "field": "affair.title",
+   "value": "Riedbachstrasse 8, 9, 10 und 12 (Zentrum Bethlehem): Überbauungsordnung und Landgeschäfte ",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 80,
+   "doc": "894215",
+   "field": "affair.type",
+   "value": "motion",
+   "status": "inferred",
+   "verdict": "wrong",
+   "note": "type 'motion' for a list of proposals in a government affair"
+  },
+  {
+   "id": 81,
+   "doc": "894215",
+   "field": "affair.type_original",
+   "value": "Anträge",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 82,
+   "doc": "894215",
+   "field": "affair.addressed_to",
+   "value": "Gemeinderat",
+   "status": "extracted",
+   "verdict": "unsure",
+   "note": "addressee unclear (Gemeinderat = executive in Bern)"
+  },
+  {
+   "id": 83,
+   "doc": "894215",
+   "field": "affair.requests[0]",
+   "value": "Die Zwischennutzung soll nicht-kommerziell sein und wenn möglich eine Nutzung fürs Quartie",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 84,
+   "doc": "894215",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "inferred",
+   "verdict": "unsure",
+   "note": "state not checkable"
+  },
+  {
+   "id": 85,
+   "doc": "650091",
+   "field": "affair.type",
+   "value": "interpellation",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 86,
+   "doc": "650091",
+   "field": "affair.type_original",
+   "value": "interpellation",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 87,
+   "doc": "650091",
+   "field": "affair.actors[0].name",
+   "value": "Mme Pauline Blanc et consorts",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 88,
+   "doc": "650091",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 89,
+   "doc": "650091",
+   "field": "affair.actors[0].kind",
+   "value": "other",
+   "status": "inferred",
+   "verdict": "wrong",
+   "note": "kind 'other' for a named person and co-signers"
+  },
+  {
+   "id": 90,
+   "doc": "650091",
+   "field": "affair.questions[0].question",
+   "value": "Quelle est la genèse du projet, sous l'angle général et financier?",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 91,
+   "doc": "650091",
+   "field": "affair.questions[0].answer",
+   "value": "LEVAM a pris contact avec la Ville en juin 2022 une première fois concernant le projet de ",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 92,
+   "doc": "650091",
+   "field": "affair.questions[1].question",
+   "value": "Est-ce correct que la Municipalité a retiré le financement de la Ville car elle considérai",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 93,
+   "doc": "650091",
+   "field": "affair.questions[1].answer",
+   "value": "Non. La Ville a d'emblée exprimé ses réserves par rapport à cet emplacement, compte tenu d",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 94,
+   "doc": "650091",
+   "field": "affair.questions[2].question",
+   "value": "La Municipalité ne considère-t-elle pas que les places en crèche doivent être proposées su",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 95,
+   "doc": "650091",
+   "field": "affair.questions[3].question",
+   "value": "Des études concrètes ont-elles été menées pour justifier l'hypothèse selon laquelle la dem",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 96,
+   "doc": "650091",
+   "field": "affair.questions[4].question",
+   "value": "Quelle est l'évolution du taux d'occupation par rapport aux chiffres indiqués pour 2024 po",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 97,
+   "doc": "650091",
+   "field": "affair.questions[5].question",
+   "value": "Qu'en est-il de la situation liée aux listes d'attente pour les places? Les listes se racc",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 98,
+   "doc": "650091",
+   "field": "affair.questions[6].question",
+   "value": "Quelle est la vision de la Municipalité pour 2026 avec les places en préscolaire et parasc",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 99,
+   "doc": "650091",
+   "field": "affair.questions[6].answer",
+   "value": "Les structures sont planifiées dans les quartiers où la demande reste insatisfaite. En mat",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 100,
+   "doc": "650091",
+   "field": "affair.state",
+   "value": "answered",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 101,
+   "doc": "555996",
+   "field": "affair.title",
+   "value": "Un rabais sur les abonnements Mobilis TL pour les bénéficiaires de l'assurance invalidité",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 102,
+   "doc": "555996",
+   "field": "affair.type",
+   "value": "postulate",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 103,
+   "doc": "555996",
+   "field": "affair.type_original",
+   "value": "postulat",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 104,
+   "doc": "555996",
+   "field": "affair.submission_date",
+   "value": "2025-04-29",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 105,
+   "doc": "555996",
+   "field": "affair.actors[0].name",
+   "value": "Ilias Panchard",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 106,
+   "doc": "555996",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 107,
+   "doc": "555996",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 108,
+   "doc": "555996",
+   "field": "affair.actors[1].name",
+   "value": "Prisca Morand",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 109,
+   "doc": "555996",
+   "field": "affair.actors[1].role",
+   "value": "co_signatory",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 110,
+   "doc": "555996",
+   "field": "affair.actors[1].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 111,
+   "doc": "555996",
+   "field": "affair.actors[2].name",
+   "value": "Romane Benvenuti",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 112,
+   "doc": "555996",
+   "field": "affair.actors[2].role",
+   "value": "co_signatory",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 113,
+   "doc": "555996",
+   "field": "affair.actors[2].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 114,
+   "doc": "555996",
+   "field": "affair.addressed_to",
+   "value": "Municipalité de Lausanne",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 115,
+   "doc": "555996",
+   "field": "affair.requests[0]",
+   "value": "Étudier l'opportunité de mettre en place un rabais sur les abonnements de transport public",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 116,
+   "doc": "555996",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 117,
+   "doc": "928925",
+   "field": "body.parliament",
+   "value": "Municipio di Lugano",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "slot: Municipio is the executive, not the parliament"
+  },
+  {
+   "id": 118,
+   "doc": "928925",
+   "field": "affair.title",
+   "value": "Legge sulle Commesse Pubbliche, ce la facciamo … ?",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 119,
+   "doc": "928925",
+   "field": "affair.type",
+   "value": "interpellation",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 120,
+   "doc": "928925",
+   "field": "affair.type_original",
+   "value": "Interpellanza",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 121,
+   "doc": "928925",
+   "field": "affair.submission_date",
+   "value": "2026-10-05",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 122,
+   "doc": "928925",
+   "field": "affair.actors[0].name",
+   "value": "Demis Fumasoli",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 123,
+   "doc": "928925",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 124,
+   "doc": "928925",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 125,
+   "doc": "928925",
+   "field": "affair.actors[0].party_or_group",
+   "value": "La Sinistra (ForumAlternativo)",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 126,
+   "doc": "928925",
+   "field": "affair.actors[1].name",
+   "value": "Angelo Petralli",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 127,
+   "doc": "928925",
+   "field": "affair.actors[1].role",
+   "value": "co_signatory",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 128,
+   "doc": "928925",
+   "field": "affair.actors[1].kind",
+   "value": "person",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 129,
+   "doc": "928925",
+   "field": "affair.actors[1].party_or_group",
+   "value": "il Centro",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 130,
+   "doc": "928925",
+   "field": "affair.addressed_to",
+   "value": "Onorevole Signor Sindaco, Onorevoli Signori Municipali",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 131,
+   "doc": "928925",
+   "field": "affair.requests[0]",
+   "value": "Verificare se nel 2025 sono stati deliberati appalti a incarico diretto a ditte segnalate ",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 132,
+   "doc": "928925",
+   "field": "affair.requests[1]",
+   "value": "Chiarire se l'ufficio preposto al controllo dell'idoneità delle imprese è pienamente consa",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 133,
+   "doc": "928925",
+   "field": "affair.requests[2]",
+   "value": "Indicare quali misure concrete sono state adottate per evitare il ripetersi di simili situ",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 134,
+   "doc": "928925",
+   "field": "affair.requests[3]",
+   "value": "Spiegare quali nuovi provvedimenti, anche per migliorare le conoscenze delle persone prepo",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 135,
+   "doc": "928925",
+   "field": "affair.requests[4]",
+   "value": "Indicare quali provvedimenti disciplinari o di verifica delle responsabilità il Municipio ",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 136,
+   "doc": "928925",
+   "field": "affair.state",
+   "value": "submitted",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 137,
+   "doc": "928925",
+   "field": "affair.related_affairs[0].reference",
+   "value": "interpellanza n. 4357 del 19 settembre 2025",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 138,
+   "doc": "928925",
+   "field": "affair.related_affairs[0].relation",
+   "value": "follow_up_of",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 139,
+   "doc": "928926",
+   "field": "body.parliament",
+   "value": "Consiglio Comunale di Lugano",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 140,
+   "doc": "928926",
+   "field": "affair.affair_number",
+   "value": "1654",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 141,
+   "doc": "928926",
+   "field": "affair.title",
+   "value": "Legge sulle Commesse Pubbliche, ce la facciamo...?",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 142,
+   "doc": "928926",
+   "field": "affair.type",
+   "value": "question",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 143,
+   "doc": "928926",
+   "field": "affair.type_original",
+   "value": "interrogazione",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 144,
+   "doc": "928926",
+   "field": "affair.submission_date",
+   "value": "2026-10-05",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 145,
+   "doc": "928926",
+   "field": "affair.actors[0].name",
+   "value": "Demis Fumasoli",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 146,
+   "doc": "928926",
+   "field": "affair.actors[0].role",
+   "value": "submitter",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 147,
+   "doc": "928926",
+   "field": "affair.actors[0].kind",
+   "value": "person",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 148,
+   "doc": "928926",
+   "field": "affair.actors[1].name",
+   "value": "Municipio di Lugano",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 149,
+   "doc": "928926",
+   "field": "affair.actors[1].role",
+   "value": "respondent",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 150,
+   "doc": "928926",
+   "field": "affair.actors[1].kind",
+   "value": "executive",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 151,
+   "doc": "928926",
+   "field": "affair.addressed_to",
+   "value": "Onorevole Signor Demis Fumasoli",
+   "status": "extracted",
+   "verdict": "wrong",
+   "note": "addressed_to is the addressee of the answer letter, not of the affair"
+  },
+  {
+   "id": 152,
+   "doc": "928926",
+   "field": "affair.requests[0]",
+   "value": "Spiegare se nel 2025 sono stati deliberati appalti a ditte segnalate da Suissetec come non",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "request paraphrase; quote does not support it"
+  },
+  {
+   "id": 153,
+   "doc": "928926",
+   "field": "affair.requests[1]",
+   "value": "Confermare se l'ufficio preposto è consapevole dell'obbligo di verificare i CCL applicabil",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "request paraphrase; quote is a different question"
+  },
+  {
+   "id": 154,
+   "doc": "928926",
+   "field": "affair.requests[2]",
+   "value": "Descrivere le misure concrete adottate dopo le segnalazioni del 2025 per evitare il ripete",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 155,
+   "doc": "928926",
+   "field": "affair.requests[3]",
+   "value": "Specificare i provvedimenti disciplinari in caso di reiterazione di errori da parte dei fu",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 156,
+   "doc": "928926",
+   "field": "affair.questions[0].question",
+   "value": "Nel corso del 2025 sono stati deliberati appalti a incarico diretto a ditte che erano già ",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 157,
+   "doc": "928926",
+   "field": "affair.questions[0].answer",
+   "value": "No, dopo aver implementato le misure di controllo indicate nella risposta all'interrogazio",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 158,
+   "doc": "928926",
+   "field": "affair.questions[1].question",
+   "value": "L’ufficio preposto al controllo dell’idoneità delle imprese è pienamente consapevole dell’",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 159,
+   "doc": "928926",
+   "field": "affair.questions[1].answer",
+   "value": "Sì. La questione è stata definitivamente chiarita nel settembre 2025 e le procedure intern",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 160,
+   "doc": "928926",
+   "field": "affair.questions[2].question",
+   "value": "Quali misure concrete sono state adottate dal Municipio dopo le segnalazioni e le spiegazi",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 161,
+   "doc": "928926",
+   "field": "affair.questions[2].answer",
+   "value": "Le misure adottate sono già state spiegate anche in risposta all'interrogazione dello scor",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 162,
+   "doc": "928926",
+   "field": "affair.questions[3].question",
+   "value": "Quali nuovi provvedimenti, magari anche tesi a migliorare le conoscenze delle persone prep",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 163,
+   "doc": "928926",
+   "field": "affair.questions[3].answer",
+   "value": "Alla luce delle verifiche effettuate, la nuova segnalazione non evidenzia una reiterazione",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 164,
+   "doc": "928926",
+   "field": "affair.questions[4].question",
+   "value": "Qualora venisse confermato che alcuni funzionari o responsabili della verifica dell'idonei",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 165,
+   "doc": "928926",
+   "field": "affair.questions[4].answer",
+   "value": "La domanda muove da un presupposto che, alla luce degli accertamenti effettuati, non si è ",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 166,
+   "doc": "928926",
+   "field": "affair.state",
+   "value": "answered",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 167,
+   "doc": "928926",
+   "field": "affair.related_affairs[0].reference",
+   "value": "interrogazione no. 1531 del 25 settembre 2025",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 168,
+   "doc": "928926",
+   "field": "affair.related_affairs[0].relation",
+   "value": "follow_up_of",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 169,
+   "doc": "316740",
+   "field": "body.parliament",
+   "value": "Nationalrat",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 170,
+   "doc": "316740",
+   "field": "affair.affair_number",
+   "value": "22.423",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 171,
+   "doc": "316740",
+   "field": "affair.title",
+   "value": "Für eine unabhängige Presse sind die Beträge zur indirekten Förderung anzupassen",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 172,
+   "doc": "316740",
+   "field": "affair.type",
+   "value": "consultation",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 173,
+   "doc": "316740",
+   "field": "affair.type_original",
+   "value": "Vernehmlassung",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 174,
+   "doc": "316740",
+   "field": "affair.submission_date",
+   "value": "2023-11-20",
+   "status": "normalised",
+   "verdict": "wrong",
+   "note": "date of the consultation, not of the affair's submission"
+  },
+  {
+   "id": 175,
+   "doc": "316740",
+   "field": "affair.addressed_to",
+   "value": "Vernehmlassungsadressaten",
+   "status": "extracted",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 176,
+   "doc": "316740",
+   "field": "affair.requests[0]",
+   "value": "Anpassung der Beträge zur indirekten Förderung für eine unabhängige Presse",
+   "status": "normalised",
+   "verdict": "correct",
+   "note": ""
+  },
+  {
+   "id": 177,
+   "doc": "316740",
+   "field": "affair.state",
+   "value": "in_committee",
+   "status": "normalised",
+   "verdict": "unsure",
+   "note": "state not checkable"
+  },
+  {
+   "id": 178,
+   "doc": "485241",
+   "field": "affair.state",
+   "value": "unknown",
+   "status": "inferred",
+   "verdict": "correct",
+   "note": ""
+  }
+ ]
+}

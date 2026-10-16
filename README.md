@@ -13,4 +13,4 @@ HTTP API.
 cd track_2a && make run      # needs LLM_API_KEY (and optionally LLM_BASE_URL / LLM_NAME)
 ```
 
-Licence: Apache-2.0 (see [LICENSE](LICENSE)).
+Licences: code Apache-2.0 ([LICENSE](LICENSE)); report/docs CC-BY-4.0; data CDLA-Permissive-2.0.

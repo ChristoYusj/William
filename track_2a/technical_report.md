@@ -58,7 +58,12 @@ link ─► fetch (PDF via pypdf / pdf.js, HTML, OpenParlData API & file links)
   `LLM_NAME` / `LLM_BASE_URL` / `LLM_API_KEY` follow the judges' convention.
 - **How it is used:** inference only (temperature 0). There are two prompts: structured extraction with quotes, and a
   summary with topics. No other LLM is used anywhere.
+- **Where it runs:** hosted endpoint (CSCS inference API). Any OpenAI-compatible endpoint serving Apertus works,
+  e.g. a self-hosted 8B (~20 GB) for on-prem use; nothing else in the pipeline needs a GPU.
 - **Cost:** the 14-document extraction run used 44.6k input and 12.8k output tokens.
+- **Other models:** none in the pipeline: every summary, extraction and translation is done by Apertus. During
+  development, Claude (Anthropic) was used as a coding assistant and as the **AI checker** in §5(d). It is not an
+  open-weights model and is not part of the submitted system.
 
 ## 4. Data
 
@@ -69,8 +74,13 @@ personal data beyond the names of elected officials as published by the parliame
 
 ## 5. Evaluation
 
-**We have no manually checked gold set** (a single-day build). Instead we report three measurements that need no gold
-labels:
+**We have no manually checked gold set** (a single-day build). We report four measurements instead: three need no
+gold labels, and one is an AI check of every kept value, labelled as such.
+
+| Setup | Metric (14 docs) | Result |
+|---|---|---|
+| Baseline: Apertus 70B output taken as is (no verification) | values whose evidence cannot be found in the document | 70 of 248 proposed values (28 %), all shown as facts |
+| Ours: + quote verification, type lookup, inferred flags | values kept that are correct (AI check, §5d) | 155 of 178 (87 %); 0 values without evidence presented as extracted |
 
 **(a) Evidence verification** (`make eval`, verifier v2, prompt v0.2).
 
@@ -109,13 +119,37 @@ exist. The disagreements are informative:
 * **Possible OPD labelling inconsistency.** A Ticino item numbered `I126.19` with the original term *Interpellazione*
   is harmonized by OPD as *question*.
 
+**(d) AI check of every kept value** ([`eval/ai_check_kept_values.json`](eval/ai_check_kept_values.json)). One
+Claude pass judged each of the 178 values William kept (OPD metadata excluded) against its quote and the document:
+right value in the right field? **This is not a human gold set.**
+
+| status | values | correct | wrong | unsure | precision |
+|---|---|---|---|---|---|
+| extracted | 91 | 82 | 8 | 1 | 0.90 |
+| normalised | 45 | 36 | 7 | 2 | 0.80 |
+| inferred | 42 | 37 | 3 | 2 | 0.88 |
+| **all** | **178** | **155** | **18** | **5** | **0.87** (0.90 if unsure = right) |
+
+The 18 errors are mostly the *wrong field*, not invented values:
+
+* a committee or executive recorded as the parliament (3);
+* the addressee of the answer letter, or the court an election is for, recorded as the affair's addressee (2);
+* several people merged into one actor (2);
+* a report or consultation date taken as the submission date (2);
+* type and state errors (5);
+* a paraphrased request whose quote does not support it (3).
+
+`normalised` is the weakest status: a paraphrase only needs *some* quote on the page. The fix for v0.2 is to require
+word overlap between a paraphrase and its quote. One case is worth noting: `type_original` "interpellazione"
+contradicts its own quote "TESTO DELL'INTERROGAZIONE".
+
 **Data-quality findings in OpenParlData itself.**
 
 * For at least two federal documents (e.g. doc 485241, "FF 2013 1073"), OPD's stored file and `text` are the Fedlex
   *"please enable JavaScript"* page, not the PDF. William detects this and flags *"source is listed as a PDF but the
   file is not a PDF"* instead of extracting from it.
-* OPD's `state_name_harmonized_id` is filled for **278 of 326,334 affairs (0.09 %)**, measured via
-  `/v1/affairs/group_by/states_harmonized` on 16 Oct 2026.
+* OPD's `state_name_harmonized_id` is filled for **278 of 326,334 affairs (0.09 %)**, measured on 16 Oct 2026 via the OPD endpoint
+  `group_by/states_harmonized`.
 
 **Cross-parliamentary question: *can the procedural state of affairs be read from the documents?*** OPD cannot answer
 this today (0.09 % coverage). Our answer is **mostly no**:
@@ -128,8 +162,8 @@ not as the source. This is a well-founded *partial negative* result for the comm
 
 ## 6. Limitations
 
-* There is no human gold set, so precision of the *kept* values is not measured. Verification shows that a value
-  appears in the document, not that it fills the right slot (e.g. a co-signatory recorded as the submitter).
+* There is no human gold set. Precision of the kept values (0.87) comes from a single AI check (§5d), not from
+  people; recall (values the model missed) is not measured.
 * Only the first 28k characters are read; long documents are truncated and flagged. The Zürich 261 document failed in
   the v0.2 run because of a verifier bug (a character whose lowercase form is two characters). The bug is fixed and
   tested, but that document was not re-run, to save API cost. With v0.1 it returned no usable values.
@@ -160,7 +194,8 @@ not as the source. This is a well-founded *partial negative* result for the comm
 
 ## 7. Reproducibility
 
-`make test` and `make eval` reproduce every number in §5 without an API key. They use the stored Apertus outputs in
+Submitted state: git tag **`submission`** on `main` of github.com/ChristoYusj/william. `make test` and `make eval`
+reproduce every number in §5 without an API key. They use the stored Apertus outputs in
 `eval/sample_70b.json` and the page texts in `tests/fixtures/`. `make sample` re-runs the extraction live. Apertus at
 temperature 0 is not perfectly deterministic, so expect small differences.
 
@@ -170,3 +205,21 @@ temperature 0 is not perfectly deterministic, so expect small differences.
 * Schema 0.2: `document.type`, `affairs[]` per document, and state/decisions taken from OPD events.
 * Chunked reading for long documents; OCR for scanned PDFs (an open OCR model, on-prem).
 * Run with the 8B model on-prem (~20 GB) and compare against 70B on the same verifier.
+
+## License
+
+* **Code** (`src/`, `tests/`, Makefile, Dockerfile): Apache License 2.0 (repository `LICENSE`).
+* **Report and documentation** (this report, `docs/`, READMEs): Creative Commons Attribution 4.0 (CC-BY-4.0).
+* **Data produced by us** (`data/sample/`, `eval/`, `tests/fixtures/`): CDLA-Permissive-2.0. The page texts in
+  `tests/fixtures/` come from official parliamentary documents published by Swiss parliaments, via OpenParlData.
+* **Third party:** pdf.js (Apache-2.0, Mozilla) is included in `src/extension/lib/`.
+
+## References
+
+* OpenParlData API and harmonized vocabularies: https://api.openparldata.ch/v1 (types / states `group_by` endpoints,
+  accessed 16 Oct 2026).
+* Apertus 1.5 (Swiss AI Initiative), served via the CSCS inference API.
+* Wikidata QIDs for affair types: listed in `src/extension/shared/vocab.json`.
+* Akoma Ntoso (OASIS LegalDocML), Popolo (person/membership roles), JATS (as a design reference for a middle layer).
+* pdf.js (Mozilla), pypdf, fpdf2, FastAPI.
+
