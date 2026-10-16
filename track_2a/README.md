@@ -97,6 +97,12 @@ FAIL edited.json | https://files.openparldata.ch/doc/5192/592b1e53… | 2 error(
 
 ## Samples
 
+* **Breadth run:** 32 more documents from 15 more parliaments in [`data/sample/urls_breadth.txt`](data/sample/urls_breadth.txt),
+  with results in [`eval/breadth_70b.json`](eval/breadth_70b.json) (29/32 extracted; table in the technical report §5g).
+* **Human check** (blind, 50 values): open [`eval/human_check/human_check.html`](eval/human_check/human_check.html),
+  mark each value, download the JSON, then `python eval/human_check/score.py human_check_*.json`.
+* **Standards crosswalk** (OpenParlData API, Akoma Ntoso, Popolo, W3C Web Annotation): [`docs/schema.md`](docs/schema.md).
+
 14 OpenParlData documents, federal / cantonal / communal × DE / FR / IT, all 14 processed. Inputs:
 [`data/sample/urls.txt`](data/sample/urls.txt). One validated record per document is in
 [`data/sample/records/`](data/sample/records); the full batch (records + raw Apertus output) is

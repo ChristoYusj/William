@@ -15,7 +15,12 @@ export function parseJson(text) {
       else if (c === '"') inStr = false;
     } else if (c === '"') inStr = true;
     else if (c === "{") depth++;
-    else if (c === "}" && --depth === 0) return JSON.parse(t.slice(start, i + 1));
+    else if (c === "}" && --depth === 0) {
+      const chunk = t.slice(start, i + 1);
+      try { return JSON.parse(chunk); }
+      // repair lone backslashes the model sometimes emits (e.g. "x\_y")
+      catch { return JSON.parse(chunk.replace(/\\(?!["\\/bfnrtu])/g, "\\\\")); }
+    }
   }
   throw new Error("unterminated JSON object in model output");
 }

@@ -52,7 +52,7 @@ def stats(src: str, labels: str | None = None) -> str:
     if labels:
         for line in Path(labels).read_text(encoding="utf-8").splitlines():
             if line.strip() and not line.startswith("#"):
-                lvl, lang, url = line.split("\t")
+                lvl, lang, url = line.split("\t")[:3]
                 lab[url.strip()] = (lvl, lang)
     groups = defaultdict(list)
     for it in items:

@@ -68,6 +68,43 @@ Akoma Ntoso. `opd-affair` describes **one affair as it is visible in one documen
   parliament's *decision*. Swiss documents often contain only the former.
 * **relation_types**: `replies_to, follow_up_of, same_subject, joint_treatment, replaced_by, cited`.
 
+## Crosswalk to existing standards
+
+`opd-affair` is a middle layer. Every field maps onto an established standard, so records can be exported without
+loss of meaning. Where a standard has no slot, the cell says so; those gaps are why a middle layer is useful.
+
+| opd-affair | OpenParlData API | Akoma Ntoso 3.0 (OASIS LegalDocML) | Popolo | Other |
+|---|---|---|---|---|
+| record (one affair in one document) | `affairs` + `docs` | `<doc name="{affair_type}">` (or `<bill>` for draft laws) | `Motion` | — |
+| `source.url`, `sha256`, `pages` | `docs.url`, `docs.hash` | `FRBRManifestation` / `FRBRthis`, `FRBRformat` | `Motion.sources[]` | PROV-O `prov:wasDerivedFrom` |
+| `body.level`, `body_key`, `opd_body_type` | `bodies.type`, `body_key` | `FRBRWork/FRBRcountry` (+ `FRBRsubtype`) | `Organization.classification` | BFS commune no. / canton code |
+| `body.parliament` | `bodies.legislative_name` | `TLCOrganization` | `Organization` (legislature) | Wikidata `legislative_wikidata_id` |
+| `affair.affair_number` | `affairs.number` | `FRBRWork/FRBRnumber`, `<docNumber>` | `Motion.identifier` | — |
+| `affair.title` | `affairs.title` | `<docTitle>` | `Motion.text` (title) | — |
+| `affair.type` (+ `opd_type_harmonized_id`, `wikidata`) | `type_harmonized_id`, `type_harmonized_wikidata_id` | `FRBRWork/FRBRsubtype`, `<docType>` | `Motion.classification` | Wikidata QID |
+| `affair.type_original` | `affairs.type_name` | `<docType>` (verbatim) | — | — |
+| `affair.submission_date` | `affairs.begin_date` | `FRBRWork/FRBRdate name="submission"`, `<eventRef type="generation">` | `Motion.date` | — |
+| `affair.actors[]` `role=submitter` | `contributors` (type author) | `FRBRWork/FRBRauthor`, `TLCPerson` + `TLCRole` | `Motion.creator_id`; `Membership.role` | — |
+| `affair.actors[]` `role=co_signatory` | `contributors` | `TLCPerson` + `TLCRole eId="cosignatory"` | `Membership.role` | — |
+| `party_or_group` | `persons.party` / `groups` | `TLCOrganization` | `Organization` (party / group) + `Membership` | — |
+| `affair.addressed_to` | — (no field) | `<question to="#…">`; `TLCOrganization` | — | **gap in OPD and Popolo** |
+| `affair.requests[]` | `texts` (unstructured) | `<mainBody>` paragraphs | `Motion.text` | **no structured slot anywhere** |
+| `affair.questions[]` {question, answer} | `texts` (unstructured) | `<debate>` → `<questions>`: `<question by to>` / `<answer>` | — | **no slot in OPD / Popolo** |
+| `affair.procedural_history[]` | `events` | `<lifecycle>` / `<eventRef date source type>`, `<workflow><step>` | `Event` | — |
+| `affair.state` (+ `opd_state_name_harmonized_id`) | `state_name_harmonized_id` | `<workflow><step outcome>` (latest) | `Motion.result` (when decided) | — |
+| `affair.decisions[]` {outcome, votes} | `votings` | `<workflow><step outcome>`; vote counts in `<debate>` `<voting><count>` | `VoteEvent` (`result`, `counts[option=yes/no/abstain]`) | — |
+| `affair.related_affairs[]` | `external_links` | `<references><TLCReference>`, `<ref href>` | — | — |
+| field provenance `page`, `quote`, `char_start/end` | — | `<proprietary>` only | — | **W3C Web Annotation** `TextQuoteSelector` (exact) + `TextPositionSelector` (start/end) + `FragmentSelector` (page) |
+| `status` (extracted / normalised / inferred / metadata) | — | — | — | PROV-O `prov:wasGeneratedBy` (activity = verbatim copy / rule / model inference) |
+
+What the crosswalk shows:
+* **Identity fields** (number, title, type, date, authors, parliament) map everywhere. A common core is feasible.
+* **The content of an affair** (requests, question/answer pairs, addressee) has no structured slot in OpenParlData or
+  Popolo. Akoma Ntoso has one (`<question>` / `<answer>`), but its full document model is far heavier. This is the
+  layer `opd-affair` adds.
+* **Value-level provenance** exists in none of the parliamentary standards. W3C Web Annotation selectors cover it
+  exactly and could be used for an RDF/JSON-LD export.
+
 ## Known gaps → proposals for 0.2
 
 1. **Document type ≠ affair type.** A consultation report attached to a parliamentary initiative, or an answer

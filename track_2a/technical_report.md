@@ -93,8 +93,9 @@ gold labels, and one is an AI check of every kept value, labelled as such.
 
 \* share of {number, title, type, submission date, addressee, state} that are present.
 
-The same per-language breakdown is printed by `make eval`. The weakest cell is communal FR, with 36 rejections. It
-comes from one Lausanne PDF whose text layer has **no space characters** ("RéponsedelaMunicipalité…").
+The same per-language breakdown is printed by `make eval`. Communal FR has the most rejections (36 of the 69 communal
+ones). They come from one Lausanne PDF whose text layer has **no space characters** ("RéponsedelaMunicipalité…").
+Communal DE has the lowest verified share (0.25), mostly from the Zürich 261 committee document.
 
 **(b) Ablations.** "Verified" counts include OPD metadata values.
 
@@ -144,6 +145,51 @@ The 18 errors are mostly the *wrong field*, not invented values:
 `normalised` is the weakest status: a paraphrase only needs *some* quote on the page. The fix for v0.2 is to require
 word overlap between a paraphrase and its quote. One case is worth noting: `type_original` "interpellazione"
 contradicts its own quote "TESTO DELL'INTERROGAZIONE".
+
+**(g) Breadth: 32 more documents from 15 more parliaments** ([`data/sample/urls_breadth.txt`](data/sample/urls_breadth.txt),
+[`eval/breadth_70b.json`](eval/breadth_70b.json); same prompts and verifier, no tuning):
+
+* cantons BE, VD, SG, AG, BS, NE, FR, VS, GR, JU, SO, TG, BL;
+* cities Winterthur (230), Geneva (6621) and BFS 1061;
+* languages detected: 24 DE, 7 FR.
+
+Results:
+
+* 29 of 32 extracted;
+* the 3 failures are 2 files that OpenParlData lists but its file store returns as **404** (VS, TG), and 1 cut-off model
+  answer;
+* 10 of 29 records flag a type that disagrees with OpenParlData's harmonized type (mostly `information_document`
+  vs the affair's type: the document-vs-affair problem again).
+
+| level | language | docs | verified | inferred | rejected | verified share | core coverage |
+|---|---|---|---|---|---|---|---|
+| cantonal | de | 19 | 166 | 62 | 90 | 0.52 | 0.67 |
+| cantonal | fr | 5 | 52 | 22 | 38 | 0.46 | 0.80 |
+| cantonal | all | 24 | 218 | 84 | 128 | 0.51 | 0.69 |
+| communal | de | 3 | 38 | 9 | 4 | 0.75 | 1.00 |
+| communal | fr | 2 | 26 | 5 | 4 | 0.74 | 0.92 |
+| communal | all | 5 | 64 | 14 | 8 | 0.74 | 0.97 |
+| all | all | 29 | 282 | 98 | 136 | 0.55 | 0.74 |
+
+The numbers match the first sample (verified share 0.55 vs 0.50, core coverage 0.74 vs 0.76): the approach carries
+over to parliaments it was not developed on. OpenParlData has **no Romansh document texts**, even for Graubünden, so
+Romansh extraction remains untested. This run also exposed two model-output failures, now handled in both
+implementations: invalid backslash escapes, and raw line breaks inside JSON strings (the latter in Python only).
+
+**(e) Human check (protocol ready, results pending).** To test the AI check itself, 50 of the 178 values
+(20 extracted, 15 normalised, 15 inferred; random, seed 20261016) are shown to team members **blind**, without the AI
+verdict, in [`eval/human_check/human_check.html`](eval/human_check/human_check.html).
+[`eval/human_check/score.py`](eval/human_check/score.py) reports precision per checker and agreement (raw and Cohen's
+kappa) with the AI check and between checkers. The AI check marks 42 of these 50 correct (0.84). Human results will be
+added here when they come in; until then, §5(d) is AI-only.
+
+**(f) Mapping to existing standards** ([`docs/schema.md`](docs/schema.md) §Crosswalk):
+
+* every field is mapped to the OpenParlData API, Akoma Ntoso 3.0 and Popolo, and value-level provenance to W3C Web
+  Annotation selectors;
+* identity fields map everywhere;
+* requests, question/answer pairs and the addressee have no structured slot in OpenParlData or Popolo;
+* value-level provenance exists in none of the parliamentary standards.
 
 **Data-quality findings in OpenParlData itself.**
 

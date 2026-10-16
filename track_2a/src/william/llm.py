@@ -86,7 +86,13 @@ def parse_json(text: str) -> dict:
         elif c == "}":
             depth -= 1
             if depth == 0:
-                return json.loads(t[start:i + 1])
+                chunk = t[start:i + 1]
+                try:
+                    return json.loads(chunk)
+                except json.JSONDecodeError:
+                    # repair lone backslashes the model sometimes emits (e.g. "x\_y")
+                    # also tolerate raw control characters (line breaks) inside strings
+                    return json.loads(re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', chunk), strict=False)
     raise LLMError("unterminated JSON object in model output")
 
 
