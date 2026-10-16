@@ -21,12 +21,24 @@
     }
   },
   "news": {
-    "google_news_rss": "https://news.google.com/rss/search?q={query}&hl={lang}-CH&gl=CH&ceid=CH:{lang}",
+    "google_news_rss": "https://news.google.com/rss/search?q={query}&hl={lang}&gl=CH&ceid=CH:{lang}",
     "supported_lang": [
       "de",
       "fr",
       "it"
     ],
-    "fallback_lang": "de"
-  }
+    "fallback_lang": "de",
+    "swiss_sites": {
+      "_note": "Google News has no Swiss edition for Italian (it-CH redirects to Italy), so Italian queries are restricted to Swiss outlets.",
+      "it": [
+        "rsi.ch",
+        "laregione.ch",
+        "cdt.ch",
+        "tio.ch",
+        "swissinfo.ch",
+        "ticinonews.ch"
+      ]
+    }
+  },
+  "json_retry_suffix": "\n\nYour previous answer was not valid or was cut off. Return ONLY the JSON object, compact (no indentation), with no text before or after it. Keep quotes short."
 }

@@ -153,8 +153,7 @@ def extract(doc: Document, *, model: str | None = None) -> dict:
     cfg = prompts()
     text, truncated = build_text(doc.pages, cfg["max_doc_chars"])
     system, user = render_prompt(text)
-    raw_text, usage = llm.chat(system, user, max_tokens=3500, model=model)
-    raw = llm.parse_json(raw_text)
+    raw, usage = llm.chat_json(system, user, max_tokens=6000, retry_suffix=cfg["json_retry_suffix"], model=model)
     rec = assemble(doc, raw, usage=usage, truncated=truncated, model=model)
     rec["extractor"]["raw_model_output"] = raw   # kept so verification can be re-run offline
     return rec

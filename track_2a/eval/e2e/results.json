@@ -1,0 +1,97 @@
+[
+ {
+  "check": "settings: key stored, default model shown",
+  "pass": true,
+  "detail": "swiss-ai/Apertus-v1.5-70B"
+ },
+ {
+  "check": "viewer: OPD PDF link auto-opens in William viewer",
+  "pass": true,
+  "detail": "moz-extension://0e0c6b8a-1d1b-4a8e-9c1a-7a11a0000001/viewer/viewer.html?file=https%3A%2F%2Ffiles.openparldata.ch%2Fdoc%2"
+ },
+ {
+  "check": "viewer: pages rendered with selectable text layer",
+  "pass": true,
+  "detail": "3 pages, 163 text spans"
+ },
+ {
+  "check": "viewer: document summary in document language",
+  "pass": true,
+  "detail": "Summary of the document · language it | Il Municipio di Lugano ha risposto all'interrogazione no. 1654 del consigliere Demis Fumasoli riguardo al rispetto dei c"
+ },
+ {
+  "check": "viewer: topic highlights present (inline in summary)",
+  "pass": true,
+  "detail": "2 inline / 2 total"
+ },
+ {
+  "check": "viewer: clicking a highlight lists Swiss news articles",
+  "pass": true,
+  "detail": "3 articles, e.g. Appalti pubblici a Lugano: ‘Nessuna reiterazione della problematica’"
+ },
+ {
+  "check": "viewer: 'Summarise selection' enables after selecting text",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "check": "viewer: selection summary",
+  "pass": true,
+  "detail": "Summary of the selection · language it"
+ },
+ {
+  "check": "viewer: extraction table + JSON record",
+  "pass": true,
+  "detail": "20 rows, type=question, verified_share=0.579"
+ },
+ {
+  "check": "viewer: p.N evidence link jumps to the page",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "check": "viewer: Download JSON",
+  "pass": true,
+  "detail": "592b1e53ea42d39cd74b6c66309cd362b91b0eb79393ee48b58137b3aaa9f283.opd-affair.json"
+ },
+ {
+  "check": "batch: 3 links processed (2 records, 1 clean error)",
+  "pass": true,
+  "detail": "status=3 / 3 done, tables=2, errors=['NetworkError when attempting to fetch resource.']"
+ },
+ {
+  "check": "batch: summaries with inline topic highlights",
+  "pass": true,
+  "detail": "3 inline highlights"
+ },
+ {
+  "check": "batch: Download JSON (all items)",
+  "pass": true,
+  "detail": "3 items"
+ },
+ {
+  "check": "batch: Download PDF report (valid, summary inside)",
+  "pass": true,
+  "detail": "11 pages"
+ },
+ {
+  "check": "popup: loads with buttons, no missing-key warning",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "check": "panel: page summary injected into a live website",
+  "pass": true,
+  "detail": "{'lang': 'de', 'located': 3, 'ok': True, 'topics': 4} | 2 inline highlights"
+ },
+ {
+  "check": "panel: highlight opens Swiss news list",
+  "pass": true,
+  "detail": "1 items"
+ },
+ {
+  "check": "panel: page scripts cannot access the extension API",
+  "pass": true,
+  "detail": ""
+ }
+]
