@@ -291,12 +291,15 @@ function render(card, it, o) {
     `</div>`;
 
   if (s && s.summary) {
-    let sum = esc(s.summary);
-    for (const tp of s.topics || []) {
-      if (!tp.phrase || !tp.in_summary) continue;
-      const p = esc(tp.phrase), idx = sum.toLowerCase().indexOf(p.toLowerCase());
-      if (idx >= 0) sum = sum.slice(0, idx) + `<mark class="hl">${sum.slice(idx, idx + p.length)}</mark>` + sum.slice(idx + p.length);
+    // highlight the spans the API located (fuzzy, so paraphrased topic phrases are found too)
+    const spans = (s.topics || []).filter(tp => Array.isArray(tp.span)).map(tp => tp.span).sort((x, y) => x[0] - y[0]);
+    let sum = "", pos = 0;
+    for (const [a0, b0] of spans) {
+      if (a0 < pos) continue;
+      sum += esc(s.summary.slice(pos, a0)) + `<mark class="hl">${esc(s.summary.slice(a0, b0))}</mark>`;
+      pos = b0;
     }
+    sum += esc(s.summary.slice(pos));
     html += `<section class="blk summary"><h4>Summary</h4><p>${sum}</p>` +
       ((s.key_points || []).length ? `<ul>${s.key_points.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : "") + `</section>`;
   }
