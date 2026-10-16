@@ -1,7 +1,7 @@
 // William engine — the same pipeline as src/william (Python), for the Firefox extension.
 // Prompts and vocabularies come from shared/prompts.json and shared/vocab.json (single source).
 import * as pdfjsLib from "../lib/pdf.min.mjs";
-import { parseJson, buildText, assemble, SCHEMA_VERSION, locatePhrase, highlightSegments, normLang } from "./core.js";
+import { parseJson, buildText, assemble, SCHEMA_VERSION, locatePhrase, highlightSegments, normLang, rankNews } from "./core.js";
 export { parseJson, buildText, assemble, SCHEMA_VERSION };
 export { PageIndex, normalise, dateSupported } from "./core.js";
 
@@ -233,13 +233,14 @@ export async function news(query, lang = "de", limit = 5) {
     try {
       const r = await fetch(url, { credentials: "omit" });
       const x = new DOMParser().parseFromString(await r.text(), "text/xml");
-      const items = [...x.querySelectorAll("item")].slice(0, limit).map((it) => {
+      const all = [...x.querySelectorAll("item")].slice(0, 20).map((it) => {
         const source = it.querySelector("source")?.textContent?.trim() || "";
         let title = it.querySelector("title")?.textContent?.trim() || "";
         if (source && title.endsWith(" - " + source)) title = title.slice(0, -(source.length + 3));
         return { title, url: it.querySelector("link")?.textContent?.trim() || "", source,
           published: it.querySelector("pubDate")?.textContent?.trim() || "", query: q };
       });
+      const items = rankNews(all, query, limit);
       if (items.length) return items;
     } catch {}
   }
