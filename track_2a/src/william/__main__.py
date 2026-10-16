@@ -20,6 +20,8 @@ def main(argv=None):
         p.add_argument("-o", "--out")
         p.add_argument("--no-summary", action="store_true")
         p.add_argument("--no-news", action="store_true")
+        p.add_argument("--translate", choices=["de", "fr", "it", "rm", "en"],
+                       help="also translate the summary with Apertus into this language")
     sc = sub.add_parser("schema")
     sc.add_argument("-o", "--out")
     a = ap.parse_args(argv)
@@ -35,7 +37,8 @@ def main(argv=None):
         return
 
     from .api import ExtractRequest, run_batch
-    items = run_batch(ExtractRequest(urls=a.urls, summary=not a.no_summary, news=not a.no_news))
+    items = run_batch(ExtractRequest(urls=a.urls, summary=not a.no_summary, news=not a.no_news,
+                                      translate_to=a.translate))
     if a.cmd == "extract":
         txt = json.dumps({"items": items}, indent=2, ensure_ascii=False)
         Path(a.out).write_text(txt, encoding="utf-8") if a.out else sys.stdout.write(txt + "\n")

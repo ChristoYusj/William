@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import re
 import unicodedata
+import json
+import re
 import xml.etree.ElementTree as ET
 from urllib.parse import quote_plus
 
@@ -26,7 +28,8 @@ def _lang(raw) -> str:
     return LANG_ALIASES.get(raw, raw[:2])
 
 
-def summarize(text: str, *, model: str | None = None, with_news: bool = True) -> dict:
+def summarize(text: str, *, model: str | None = None, with_news: bool = True,
+              translate_to: str | None = None) -> dict:
     p = prompts()["summarize"]
     body, truncated = (text[: prompts()["max_doc_chars"]], len(text) > prompts()["max_doc_chars"])
     out, usage = llm.chat(p["system"], p["user_template"].replace("{text}", body), max_tokens=1200, model=model)
@@ -43,8 +46,15 @@ def summarize(text: str, *, model: str | None = None, with_news: bool = True) ->
         if with_news:
             topic["articles"] = news(topic["query"], lang)
         topics.append(topic)
-    return {"language": lang, "summary": summary, "key_points": data.get("key_points") or [],
-            "topics": topics, "truncated": truncated, "usage": usage}
+    key_points = data.get("key_points") or []
+    out = {"language": lang, "summary": summary, "key_points": key_points,
+           "topics": topics, "truncated": truncated, "usage": usage}
+    if translate_to:
+        try:
+            out["translation"] = translate(summary, key_points, translate_to, source=lang, model=model)
+        except (llm.LLMError, ValueError) as e:  # keep the original summary if the translation fails
+            out["translation"] = {"language": translate_to, "error": f"{type(e).__name__}: {e}"}
+    return out
 
 
 def _stem(w: str) -> str:
@@ -77,6 +87,30 @@ def locate_phrase(summary: str, phrase: str) -> list[int] | None:
                     if best is None or cand[:2] > best[:2]:
                         best = cand
     return best[2] if best else None
+
+
+def translate_languages() -> dict:
+    return prompts()["translate"]["languages"]
+
+
+def translate(summary: str, key_points: list, target: str, *, source: str = "",
+              model: str | None = None) -> dict:
+    """Translate a summary and its key points with Apertus (target: de, fr, it, rm or en)."""
+    names = translate_languages()
+    if target not in names:
+        raise ValueError(f"unsupported language {target!r}; use one of {', '.join(names)}")
+    if target == source:
+        return {"language": target, "source_language": source, "summary": summary,
+                "key_points": list(key_points), "note": "already in the target language"}
+    p = prompts()["translate"]
+    vals = {"source": names.get(source, source or "the original language"), "target_name": names[target],
+            "summary": summary, "key_points": json.dumps([str(k) for k in key_points], ensure_ascii=False)}
+    user = re.sub(r"\{(source|target_name|summary|key_points)\}", lambda m: vals[m.group(1)], p["user_template"])
+    out, usage = llm.chat(p["system"], user, max_tokens=1600, model=model)
+    data = llm.parse_json(out)
+    kp = data.get("key_points")
+    return {"language": target, "source_language": source, "summary": str(data.get("summary") or ""),
+            "key_points": [str(k) for k in kp] if isinstance(kp, list) else [], "usage": usage}
 
 
 def summarize_pages(pages: list[str], **kw) -> dict:

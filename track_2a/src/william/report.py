@@ -64,11 +64,7 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
     pdf.set_margins(15, 12, 15)
     pdf.add_page()
     pdf.heading("Parliamentary affairs - summary report", 16)
-<<<<<<< Updated upstream
     pdf.para(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
-=======
-    pdf.p(f"{len(items)} link(s). Values marked [inferred] were not found verbatim in the source; "
->>>>>>> Stashed changes
           "[n] = normalised from a verified quote (date, vocabulary); [meta] = from OpenParlData metadata. "
           "Values whose quote could not be found in the document were removed.", 8.5, "I")
     pdf.ln(3)
@@ -89,6 +85,17 @@ def build(items: list[dict], *, include_json: bool = True) -> bytes:
         if s.get("summary"):
             pdf.para(s["summary"])
             for kp in s.get("key_points") or []:
+                pdf.para(f"  - {kp}", 9)
+            pdf.ln(2)
+        tr = s.get("translation") or {}
+        if tr.get("error"):
+            pdf.para(f"Translation into {str(tr.get('language', '')).upper()} failed: {tr['error']}", 8.5, "I")
+            pdf.ln(2)
+        elif tr.get("summary") and not tr.get("note"):
+            pdf.heading(f"Summary - {str(tr.get('source_language') or '?').upper()} > "
+                        f"{str(tr.get('language')).upper()} translation (Apertus)", 10)
+            pdf.para(tr["summary"])
+            for kp in tr.get("key_points") or []:
                 pdf.para(f"  - {kp}", 9)
             pdf.ln(2)
         t = a.get("type")
