@@ -2,7 +2,7 @@
 
 - **Track:** Track 2A — OpenParlData: Extracting Parliamentary Affairs from PDFs into One Common Structure
 - **Event:** Online
-- **Team:** `⟨team name⟩` — `⟨members⟩`
+- **Team:** RedPandas — Christopher Yazigi, Giovanni Yazbeck, Alfredo Pio Yazbeck
 - **Demo:** Firefox extension in `src/extension`; API via `make run`
 
 ## 1. Summary
